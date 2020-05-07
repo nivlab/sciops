@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Fishing Game</title>
+
+        <!-- Load libraries -->
+        <script src="../static/lib/jquery-3.3.1/jquery.min.js"></script>
+        <script src="../static/lib/jspsych-6.1.0/jspsych.js"></script>
+
+        <!-- Load experiment -->
+        <script src="../static/js/two-arm-experiment.js" type="text/javascript"></script>
+        <script src="../static/js/two-arm-surveys.js" type="text/javascript"></script>
+
+        <!-- Load jsPsych plug-ins -->
+        <script src="../static/js/jspsych-two-arm-trial.js" type="text/javascript"></script>
+        <script src="../static/js/jspsych-two-arm-comprehension.js" type="text/javascript"></script>
+        <script src="../static/lib/jspsych-6.1.0/plugins/jspsych-instructions.js" type="text/javascript"></script>
+
+        <!-- Load NivTurk plug-ins -->
+       <script src="../static/js/jspsych-pass-data.js" type="text/javascript"></script>
+       <script src="../static/js/jspsych-pass-message.js" type="text/javascript"></script>
+       <script src="../static/js/jspsych-reject-data.js" type="text/javascript"></script>
+
+        <!-- Load CSS styles -->
+        <link href="../static/css/fishing-competition.min.css" rel="stylesheet" type="text/css"></link>
+        <link href="../static/lib/jspsych-6.1.0/css/jspsych.css" rel="stylesheet" type="text/css"></link>
+
+    </head>
+    <body></body>
+    <script>
+
+    // Display alert message on back/refresh.
+    // https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onbeforeunload
+    function verify_unload(e){
+      e.preventDefault();
+      (e || window.event).returnValue = null;
+      return null;
+    };
+    window.addEventListener("beforeunload", verify_unload);
+
+    // Define images to preload.
+    preload_images = [
+      "../static/img/cloud01.svg",
+      "../static/img/cloud02.svg",
+      "../static/img/cloud03.svg",
+      "../static/img/animal-fish01.svg",
+      "../static/img/animal-fish02.svg",
+      "../static/img/animal-tire.svg",
+      "../static/img/animal-lion.svg",
+      "../static/img/animal-monkey.svg",
+      "../static/img/animal-snake.svg",
+      "../static/img/no-fishing.svg",
+      "../static/img/surfboard-blue.svg",
+      "../static/img/surfboard-green.svg",
+      "../static/img/surfboard-purple.svg",
+      "../static/img/surfboard-red.svg",
+      "../static/img/instructions01.png",
+      "../static/img/instructions02.png",
+      "../static/img/instructions03.png",
+      "../static/img/instructions04.png",
+      "../static/img/instructions05.png",
+      "../static/img/instructions06.png",
+      "../static/img/instructions07.png",
+      "../static/img/instructions08.png",
+      "../static/img/instructions09.png",
+    ];
+
+    // Define timeline.
+    var timeline = [];
+    timeline = timeline.concat(instructions_loop);
+    timeline = timeline.concat(ready);
+    // timeline = timeline.concat(bandit_trials);
+    // timeline = timeline.concat(demographics);
+
+    jsPsych.init({
+      timeline: timeline,
+      show_progress_bar: true,
+      preload_images: preload_images,
+      on_finish: function() {
+
+        // Remove requirement to verify redirect
+        window.removeEventListener("beforeunload", verify_unload);
+
+        // Add interactions to the data variable
+        var interaction_data = jsPsych.data.getInteractionData();
+        jsPsych.data.get().addToLast({interactions: interaction_data.json()});
+
+        // Testing
+        jsPsych.data.displayData();
+
+        if (missed_responses < missed_threshold) {
+
+          // Save complete dataset to disk.
+          pass_data("{{workerId}}", "{{assignmentId}}", "{{hitId}}",  "{{a}}", "{{tp_a}}", "{{b}}", "{{tp_b}}", "{{c}}", "{{tp_c}}");
+
+        } else {
+
+          // Save rejected dataset to disk.
+          reject_data('1011');
+
+        }
+
+      }
+    })
+
+    </script>
+</html>
