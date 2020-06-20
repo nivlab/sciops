@@ -6,39 +6,29 @@
   height: 100vh;
   width: 100vw;
 }
-.beach-grid {
-  display: grid;
-  grid-template-columns: 50% 50%;
-  grid-template-rows: auto;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate3d(-50%, -50%, 0);
-  transform: translate3d(-50%, -50%, 0);
-  height: 50vw;
-  width: 100vw;
-}
 .beach-container {
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  width: 40vw;
-  height: 30vw;
+  -webkit-transform: translate(-50%, 0%);
+  transform: translate(-50%, 0%);
+  width: 360px;
+  height: 240px;
   border: 3px solid #807256;
   border-radius: 12px;
   overflow: hidden;
 }
+.beach-container[side='top'] {
+  left: 50%;
+  top: 50px;
+}
 .beach-container[side='left'] {
-  left: 27.5%;
+  left: calc(50% - 0.5 * 360px - 15px);
+  top: calc(50px + 250px + 15px);
 }
 .beach-container[side='right'] {
-  left: 72.5%;
-}
-.beach-container[context='closed'] {
-  -webkit-filter: opacity(20%);
-  filter: opacity(20%);
+  left: calc(50% + 0.5 * 360px + 15px);
+  top: calc(50px + 250px + 15px);
 }
 
 /* ---------------------------------- */
@@ -278,8 +268,11 @@
   bottom: 10%;
   -webkit-transform: translate(-50%, 0%);
   transform: translate(-50%, 0%);
-  height: 55%;
-  width: 55%;
+  height: 65%;
+  width: 65%;
+}
+.surfboard[side='top'] {
+  left: 12.5%;
 }
 .surfboard[side='left'] {
   left: 12.5%;
@@ -301,9 +294,12 @@
 }
 .decal {
   position: absolute;
-  top: 60%;
+  top: 58%;
   -webkit-transform: translate3d(-50%, -50%, 0);
   transform: translate3d()(-50%, -50%, 0);
+}
+.decal[side='top'] {
+  left: 12.5%;
 }
 .decal[side='left'] {
   left: 12.5%;
@@ -313,20 +309,20 @@
 }
 .decal[context='red'] {
   content: url("../img/animal-lion.svg");
-  height: 14%;
-  width: 14%;
+  height: 19%;
+  width: 19%;
   -webkit-transform: translate3d(-50%, -50%, 0) scaleX(-1);
   transform: translate3d(-50%, -50%, 0) scaleX(-1);
 }
 .decal[context='green'] {
   content: url("../img/animal-snake.svg");
-  height: 15%;
-  width: 15%;
+  height: 19%;
+  width: 19%;
 }
 .decal[context='blue'] {
   content: url("../img/animal-elephant.svg");
-  height: 17%;
-  width: 17%;
+  height: 21%;
+  width: 21%;
 }
 .decal[context='purple'] {
   content: url("../img/animal-monkey.svg");
@@ -335,7 +331,6 @@
 }
 .shadow {
   position: absolute;
-  left: 86%;
   bottom: 11%;
   -webkit-ransform: translate(-50%, 50%) rotateX(80deg);
   transform: translate(-50%, 50%) rotateX(80deg);
@@ -344,6 +339,9 @@
   background: black;
   border-radius: 50%;
   opacity: 0.1;
+}
+.shadow[side='top'] {
+  left: 11%;
 }
 .shadow[side='left'] {
   left: 11%;

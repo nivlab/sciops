@@ -3,14 +3,16 @@
 //------------------------------------//
 
 // Define context (color) assignment.
-const contexts = jsPsych.randomization.sampleWithoutReplacement(['red','green','blue','purple'], 2);
-contexts.push('closed');
+const contexts = jsPsych.randomization.shuffle(['red','green','blue']);
+console.log(contexts)
 
 // Define choices.
-const choices = [37,39];
+const choices = [37,38,39];
 
 // Define timings.
-const choice_duration = 10000;
+// const choice_duration = 10000;
+const choice_duration = null;
+
 const feedback_duration = 2000;
 
 // Define comprehension threshold.
@@ -47,7 +49,7 @@ var instructions = {
 
 // Define comprehension check.
 var comprehension = {
-  type: 'two-arm-comprehension'
+  type: 'three-arm-comprehension'
 }
 
 // Define instructions loop.
@@ -108,7 +110,7 @@ for (i = 0; i < 2; i++) {
   for (j = 0; j < 2; j++) {
 
     const trial = {
-      type: 'two-arm-trial',
+      type: 'three-arm-trial',
       beach_left: j % 2 == 0 ? contexts[i] : 'closed',
       beach_right: j % 2 == 1 ? contexts[i] : 'closed',
       outcome_left: j % 2 == 0 ? jsPsych.randomization.sampleWithoutReplacement(outcomes[i])[0] : -1,
@@ -179,9 +181,8 @@ for (i = 0; i < 4; i++) {
 
     // Define trial.
     const trial = {
-      type: 'two-arm-trial',
-      beach_left: i % 2 == 0 ? contexts[j % 2] : contexts[1 - j % 2],
-      beach_right: i % 2 == 1 ? contexts[j % 2] : contexts[1 - j % 2],
+      type: 'three-arm-trial',
+      beaches: contexts,
       outcome_left: i % 2 == 0 ? outcomes[j % 2][j] : outcomes[1 - j % 2][j],
       outcome_right: i % 2 == 1 ? outcomes[j % 2][j] : outcomes[1 - j % 2][j],
       choices: choices,
