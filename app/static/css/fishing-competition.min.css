@@ -52,7 +52,7 @@
   position: absolute;
   left: 0%;
   top: 40%;
-  height: 37.5%;
+  height: 31%;
   width: 100%;
   border-radius:0 0 10% 10%;
   background: #ecc075;
@@ -119,13 +119,13 @@
 }
 @keyframes wave {
   0%   { transform: scaleY(1.00); }
-  35%  { transform: scaleY(1.30); }
+  35%  { transform: scaleY(1.20); }
   69%  { transform: scaleY(1.00); }
   100% { transform: scaleY(1.00); }
 }
 @-webkit-keyframes wave {
   0%   { transform: scaleY(1.00); }
-  35%  { transform: scaleY(1.30); }
+  35%  { transform: scaleY(1.20); }
   69%  { transform: scaleY(1.00); }
   100% { transform: scaleY(1.00); }
 }
@@ -352,52 +352,62 @@
 .shadow[context='closed'] {
   display: none;
 }
-.closed-sign {
+.fishing-rod {
   position: absolute;
-  left: 50%;
-  top: 55%;
-  -webkit-ransform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  width: 40%;
-  height: 40%;
-  background-color: white;
-  border-radius: 4px 4px;
-  display: none;
-}
-.closed-sign[context='closed'] {
-  display: inherit;
-}
-.closed-sign::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: calc(100% + 2px);
+  bottom: 0%;
+  left: 40%;
   -webkit-ransform: translate(-50%, 0%);
   transform: translate(-50%, 0%);
-  width: 75%;
-  height: 50%;
-  border-left: 6px solid grey;
-  border-right: 6px solid grey;
+  width: 10px;
+  height: 600px;
+  background: #866247;
+  background-image: repeating-linear-gradient(0deg, #866247, #866247 120px, #000000 120px, #000000 127px);
+  transform: perspective(9cm) skewX(-5deg) rotateX(45deg);
+  transform-origin: bottom;
 }
-.closed-sign .closed-symbol {
+.fishing-line {
   position: absolute;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  width: 70%;
-  height: 70%;
-  content: url("../img/no-fishing.svg");
-  overflow: visible;
+  bottom: calc(50% + 1px);
+  left: 48.5%;
+  width: 2px;
+  height: 65px;
+  background: white;
+  transform: skewX(16deg);
 }
+.bobber {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  -webkit-ransform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 6px;
+  background: #ffb547;
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+  -webkit-animation: bob linear 2s infinite;
+  animation: bob linear 2s infinite;
+}
+@keyframes bob {
+  0%   { transform: translateY( 0.0px); }
+  25%  { transform: translateY( 0.5px); }
+  50%  { transform: translateY( 0.0px); }
+  75%  { transform: translateY(-0.5px); }
+  100% { transform: translateY( 0.0px); }
+}
+
+/* ---------------------------------- */
+/* Fishing Competition Feedback       */
+/* ---------------------------------- */
+
 .fish-container {
   position: absolute;
   left: 50%;
   top: 50%;
   -webkit-ransform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  width: 20vw;
-  height: 20vw;
+  width: 180px;
+  height: 180px;
   border: 0.5px solid #807256;
   border-radius: 50% 50%;
   background-color: #fffefc;
@@ -405,8 +415,8 @@
 }
 .fish-container[context='feedback'] {
   opacity: 100%;
-  -webkit-animation: appear ease-in 0.5s;
-  animation: appear ease-in 0.5s;
+  -webkit-animation: appear ease-in 0.0s;
+  animation: appear ease-in 0.0s;
 }
 @keyframes appear {
   0%   { opacity: 0; }
@@ -424,8 +434,8 @@
   top: 50%;
   -webkit-ransform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  width: 50%;
-  height: 50%;
+  width: 60%;
+  height: 60%;
 }
 .fish[pattern='1'] {
   content: url("../img/animal-fish01.svg");
@@ -452,4 +462,9 @@
 }
 .fish[pattern='3'][outcome='0'] {
   display: inherit;
+}
+.score {
+  position: absolute;
+  right: calc(50% - 360px - 15px);
+  top: 50px;
 }

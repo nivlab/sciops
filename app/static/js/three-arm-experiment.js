@@ -4,16 +4,14 @@
 
 // Define context (color) assignment.
 const contexts = jsPsych.randomization.shuffle(['red','green','blue']);
-console.log(contexts)
 
 // Define choices.
-const choices = [37,38,39];
+const choices = [37,38,39];    // left, top, right
 
 // Define timings.
 // const choice_duration = 10000;
 const choice_duration = null;
-
-const feedback_duration = 2000;
+const feedback_duration = 1500;
 
 // Define comprehension threshold.
 const max_errors = 1;
@@ -21,6 +19,32 @@ const max_errors = 1;
 // Define missed repsonses count.
 var missed_threshold = 6;
 var missed_responses = 0;
+
+//------------------------------------//
+// Define images to preload.
+//------------------------------------//
+
+preload_images = [
+  "../static/img/cloud01.svg",
+  "../static/img/cloud02.svg",
+  "../static/img/cloud03.svg",
+  "../static/img/animal-fish01.svg",
+  "../static/img/animal-tire.svg",
+  "../static/img/animal-lion.svg",
+  "../static/img/animal-snake.svg",
+  "../static/img/surfboard-blue.svg",
+  "../static/img/surfboard-green.svg",
+  "../static/img/surfboard-red.svg",
+  "../static/img/instructions01.png",
+  "../static/img/instructions02.png",
+  "../static/img/instructions03.png",
+  "../static/img/instructions04.png",
+  "../static/img/instructions05.png",
+  "../static/img/instructions06.png",
+  "../static/img/instructions07.png",
+  "../static/img/instructions08.png",
+  "../static/img/instructions09.png",
+];
 
 //------------------------------------//
 // Define instructions block.
@@ -102,73 +126,6 @@ const outcomes = [
   [1,1,1,0,0,0,0,0,0,0]
 ]
 
-// Define forced choice trials.
-var forced_choice_trials = [];
-
-for (i = 0; i < 2; i++) {
-
-  for (j = 0; j < 2; j++) {
-
-    const trial = {
-      type: 'three-arm-trial',
-      beach_left: j % 2 == 0 ? contexts[i] : 'closed',
-      beach_right: j % 2 == 1 ? contexts[i] : 'closed',
-      outcome_left: j % 2 == 0 ? jsPsych.randomization.sampleWithoutReplacement(outcomes[i])[0] : -1,
-      outcome_right: j % 2 == 1 ? jsPsych.randomization.sampleWithoutReplacement(outcomes[i])[0] : -1,
-      choices: choices,
-      choice_duration: choice_duration,
-      feedback_duration: feedback_duration,
-      data: {
-        stimulus_L: j % 2,
-        stimulus_R: 1 - j % 2,
-        correct: choices[j % 2]
-      },
-      on_finish: function(data) {
-
-        // Evaluate missing data
-        if ( data.key == null ) {
-
-          // Set missing data to true.
-          data.missing = true;
-
-          // Increment counter. Check if experiment should end.
-          missed_responses++;
-          if (missed_responses >= missed_threshold) {
-            jsPsych.endExperiment();
-          }
-
-        } else {
-
-          // Set missing data to false.
-          data.missing = false;
-
-          // Define accuracy.
-          data.accuracy = data.key == data.correct;
-
-        }
-
-      }
-
-    }
-
-    // Define looping node.
-    const trial_node = {
-      timeline: [trial],
-      loop_function: function(data) {
-        return data.values()[0].missing;
-      }
-    }
-
-    // Append trial.
-    forced_choice_trials.push(trial);
-
-  }
-
-}
-
-// Randomize forced choice trials.
-forced_choice_trials = jsPsych.randomization.repeat(forced_choice_trials, 2);
-
 // Define trials.
 var bandit_trials = [];
 
@@ -182,15 +139,12 @@ for (i = 0; i < 4; i++) {
     // Define trial.
     const trial = {
       type: 'three-arm-trial',
-      beaches: contexts,
-      outcome_left: i % 2 == 0 ? outcomes[j % 2][j] : outcomes[1 - j % 2][j],
-      outcome_right: i % 2 == 1 ? outcomes[j % 2][j] : outcomes[1 - j % 2][j],
+      contexts: contexts,
+      outcomes: [1,1,1],
       choices: choices,
       choice_duration: choice_duration,
       feedback_duration: feedback_duration,
       data: {
-        stimulus_L: i % 2 == 0 ? j % 2 : 1 - j % 2,
-        stimulus_R: i % 2 == 1 ? j % 2 : 1 - j % 2,
         correct: i % 2 == 0 ? choices[j % 2] : choices[1 - j % 2]
       },
       on_finish: function(data) {
@@ -233,10 +187,6 @@ for (i = 0; i < 4; i++) {
     set.push(trial_node);
 
   }
-
-  // Append two forced choice trials.
-  set.push(forced_choice_trials[i*2]);
-  set.push(forced_choice_trials[i*2+1]);
 
   // Randomize order.
   bandit_trials = bandit_trials.concat(jsPsych.randomization.shuffle(set));

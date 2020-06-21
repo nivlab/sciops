@@ -14,28 +14,24 @@ jsPsych.plugins["three-arm-trial"] = (function() {
     name: 'three-arm-trial',
     description: '',
     parameters: {
-      beaches: {
+      contexts: {
         type: jsPsych.plugins.parameterType.HTML_STRING,
         array: true,
-        pretty_name: 'Beaches',
-        description: 'Beach stimuli in order (top, left, right).'
+        pretty_name: 'Contexts',
+        description: 'Context marker in order (left, top, right).'
       },
-      outcome_left: {
+      outcomes: {
         type: jsPsych.plugins.parameterType.INT,
-        pretty_name: 'Stimulus',
-        description: 'The HTML string to be displayed'
-      },
-      outcome_right: {
-        type: jsPsych.plugins.parameterType.INT,
-        pretty_name: 'Stimulus',
-        description: 'The HTML string to be displayed'
+        array: true,
+        pretty_name: 'Outcomes',
+        description: 'Context outcome if chosen (left, top, right).'
       },
       choices: {
         type: jsPsych.plugins.parameterType.KEYCODE,
         array: true,
         pretty_name: 'Choices',
         default: [37,38,39],
-        description: 'The keys the subject is allowed to press to respond to the stimulus.'
+        description: 'Keys corresponding to each context (left, top, right).'
       },
       choice_duration: {
         type: jsPsych.plugins.parameterType.INT,
@@ -46,7 +42,7 @@ jsPsych.plugins["three-arm-trial"] = (function() {
       feedback_duration: {
         type: jsPsych.plugins.parameterType.INT,
         pretty_name: 'Trial duration',
-        default: 2000,
+        default: 1500,
         description: 'How long to show feedback before it ends.'
       }
     }
@@ -75,44 +71,50 @@ jsPsych.plugins["three-arm-trial"] = (function() {
     // Add task container.
     new_html += '<div class="fishing-wrap">';
 
-    // Iteratively draw beaches.
+    // Iteratively draw contexts.
     const sides = ['top','left','right'];
     for (var i = 0; i < 3; i++) {
 
       // Open beach container.
-      new_html += `<div class="beach-container" side=${sides[i]}>`;
+      new_html += `<div class="beach-container" id="beach-${sides[i]}" side=${sides[i]}>`;
 
-      // Add landscape (left).
+      // Add landscape.
       new_html += '<div class="sky"></div>';
       new_html += '<div class="sand"></div>';
-      new_html += `<div class="wet-sand" context="${trial.beaches[i]}"></div>`;
-      new_html += `<div class="sea" context="${trial.beaches[i]}">`;
-      new_html += `<div class="seafoam" context="${trial.beaches[i]}"></div>`;
+      new_html += `<div class="wet-sand" context="${trial.contexts[i]}"></div>`;
+      new_html += `<div class="sea" context="${trial.contexts[i]}">`;
+      new_html += `<div class="seafoam" context="${trial.contexts[i]}"></div>`;
       new_html += '</div>';
       new_html += '<div class="sand-front"></div>';
-      new_html += `<div class="cloud" context="${trial.beaches[i]}" pattern="1"></div>`;
-      new_html += `<div class="cloud" context="${trial.beaches[i]}" pattern="2"></div>`;
-      new_html += `<div class="cloud" context="${trial.beaches[i]}" pattern="3"></div>`;
-      new_html += `<div class="shadow" side="${sides[i]}" context="${trial.beaches[i]}"></div>`;
+      new_html += `<div class="cloud" context="${trial.contexts[i]}" pattern="1"></div>`;
+      new_html += `<div class="cloud" context="${trial.contexts[i]}" pattern="2"></div>`;
+      new_html += `<div class="cloud" context="${trial.contexts[i]}" pattern="3"></div>`;
+      new_html += `<div class="shadow" side="${sides[i]}" context="${trial.contexts[i]}"></div>`;
+      // new_html += `<div class="fishing-line"></div>`;
+      // new_html += `<div class="fishing-rod"></div>`;
+      // new_html += `<div class="bobber"></div>`;
 
-      // Add context setters (left).
-      new_html += `<div class="surfboard" side="${sides[i]}" context="${trial.beaches[i]}"></div>`;
-      new_html += `<div class="decal" side="${sides[i]}" context="${trial.beaches[i]}"></div>`;
-      new_html += `<div class="closed-sign" context="${trial.beaches[i]}">`;
+      // Add context setters.
+      new_html += `<div class="surfboard" side="${sides[i]}" context="${trial.contexts[i]}"></div>`;
+      new_html += `<div class="decal" side="${sides[i]}" context="${trial.contexts[i]}"></div>`;
+      new_html += `<div class="closed-sign" context="${trial.contexts[i]}">`;
       new_html += '<div class="closed-symbol"></div>';
       new_html += '</div>';
 
-      // Add feedback (left).
-      new_html += '<div class="fish-container" id="fish-left">';
-      new_html += `<div class="fish" pattern="1" outcome="${trial.outcome_left}"></div>`;
-      new_html += `<div class="fish" pattern="2" outcome="${trial.outcome_left}"></div>`;
-      new_html += `<div class="fish" pattern="3" outcome="${trial.outcome_left}"></div>`;
+      // Add feedback.
+      new_html += `<div class="fish-container" id="fish-${sides[i]}">`;
+      new_html += `<div class="fish" pattern="1" outcome="${trial.outcomes[i]}"></div>`;
+      new_html += `<div class="fish" pattern="2" outcome="${trial.outcomes[i]}"></div>`;
+      new_html += `<div class="fish" pattern="3" outcome="${trial.outcomes[i]}"></div>`;
       new_html += '</div>';
 
-      // End beach (left).
+      // End beach.
       new_html += '</div>';
 
     }
+
+    // Add score.
+    // new_html += '<div class="score"></div>';
 
     // Close container.
     new_html += '</div>';
@@ -143,18 +145,18 @@ jsPsych.plugins["three-arm-trial"] = (function() {
       }
 
       // Update screen.
-      if (response.key == 37) {
-        trial.outcome = trial.outcome_left;
-        display_element.querySelector('#beach-right').setAttribute('context', 'closed');
-        if (trial.outcome_left >= 0) {
-          display_element.querySelector('#fish-left').setAttribute('context', 'feedback');
-        }
+      if (response.key == trial.choices[0]) {
+        response.choice = 1;
+        trial.outcome = trial.outcomes[0];
+        display_element.querySelector('#fish-left').setAttribute('context', 'feedback');
+      } else if (response.key == trial.choices[1]) {
+        response.choice = 2;
+        trial.outcome = trial.outcomes[1];
+        display_element.querySelector('#fish-top').setAttribute('context', 'feedback');
       } else {
-        trial.outcome = trial.outcome_right;
-        display_element.querySelector('#beach-left').setAttribute('context', 'closed');
-        if (trial.outcome_right >= 0) {
-          display_element.querySelector('#fish-right').setAttribute('context', 'feedback');
-        }
+        response.choice = 3;
+        trial.outcome = trial.outcomes[2];
+        display_element.querySelector('#fish-right').setAttribute('context', 'feedback');
       }
 
       jsPsych.pluginAPI.setTimeout(function() {
@@ -190,11 +192,10 @@ jsPsych.plugins["three-arm-trial"] = (function() {
 
       // gather the data to store for the trial
       var trial_data = {
-        "beach_left": trial.beaches[i],
-        "beach_right": trial.beach_right,
-        "outcome_left": trial.outcome_left,
-        "outcome_right": trial.outcome_right,
+        "contexts": trial.contexts,
+        "outcomes": trial.outcomes,
         "key": response.key,
+        "choice": response.choice,
         "rt": response.rt,
         "outcome": trial.outcome
       };

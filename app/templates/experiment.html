@@ -38,38 +38,11 @@
     };
     window.addEventListener("beforeunload", verify_unload);
 
-    // Define images to preload.
-    preload_images = [
-      "../static/img/cloud01.svg",
-      "../static/img/cloud02.svg",
-      "../static/img/cloud03.svg",
-      "../static/img/animal-fish01.svg",
-      "../static/img/animal-fish02.svg",
-      "../static/img/animal-tire.svg",
-      "../static/img/animal-lion.svg",
-      "../static/img/animal-monkey.svg",
-      "../static/img/animal-snake.svg",
-      "../static/img/no-fishing.svg",
-      "../static/img/surfboard-blue.svg",
-      "../static/img/surfboard-green.svg",
-      "../static/img/surfboard-purple.svg",
-      "../static/img/surfboard-red.svg",
-      "../static/img/instructions01.png",
-      "../static/img/instructions02.png",
-      "../static/img/instructions03.png",
-      "../static/img/instructions04.png",
-      "../static/img/instructions05.png",
-      "../static/img/instructions06.png",
-      "../static/img/instructions07.png",
-      "../static/img/instructions08.png",
-      "../static/img/instructions09.png",
-    ];
-
     // Define timeline.
     var timeline = [];
     // timeline = timeline.concat(instructions_loop);
     // timeline = timeline.concat(ready);
-    timeline = timeline.concat(bandit_trials);
+    timeline = timeline.concat(bandit_trials.slice(0,2));
     // timeline = timeline.concat(demographics);
 
     jsPsych.init({
