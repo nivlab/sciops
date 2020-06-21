@@ -111,84 +111,95 @@ var ready = {
 //------------------------------------//
 // Define 2-arm bandit task.
 //------------------------------------//
-// The 2-arm bandit task consists of two arms with
-// 70% and 30% reward probability, respectively.
-// The task is comprised of 40 free choice trials
-// and 8 forced choice trials. Outcomes are pseudo-
-// randomly determined such that participants will
-// experience 7 (3) wins for the better (worse) arm
-// every 10 trials. Moreover, the bandits are left/right
-// counterbalanced (including outcomes).
 
-// Define outcomes.
-const outcomes = [
-  [1,1,1,1,1,1,1,0,0,0],
-  [1,1,1,0,0,0,0,0,0,0]
-]
+// Define block lengths.
+var blocks = jsPsych.randomization.repeat([8, 9, 10, 11, 12], 2, false);
+blocks.unshift(12);
 
-// Define trials.
-var bandit_trials = [];
+// Initialize reward probabilities.
+probs = jsPsych.randomization.shuffle([0.7, 0.3, 0.3]);
 
-for (i = 0; i < 4; i++) {
+// Predefine trial outcomes.
+var outcomes = [];
+var correct = [];
 
-  // Initialize set.
-  const set = [];
+for (var i = 0; i < blocks.length; i++) {
 
-  for (j = 0; j < 10; j++) {
+  // Rotate reward probabilities
+  if (Math.random() > 0.5) {
+    probs.unshift(probs.pop());
+  } else {
+    probs.push(probs.shift());
+  }
 
-    // Define trial.
-    const trial = {
-      type: 'three-arm-trial',
-      contexts: contexts,
-      outcomes: [1,1,1],
-      choices: choices,
-      choice_duration: choice_duration,
-      feedback_duration: feedback_duration,
-      data: {
-        correct: i % 2 == 0 ? choices[j % 2] : choices[1 - j % 2]
-      },
-      on_finish: function(data) {
+  // Iteratively generate outcomes.
+  for (var j = 0; j < blocks[i]; j++) {
 
-        // Evaluate missing data
-        if ( data.key == null ) {
+    // Store correct choice.
+    correct.push( probs.reduce((iMax, x, i, arr) => x > arr[iMax] ? i : iMax, 0) )
 
-          // Set missing data to true.
-          data.missing = true;
-
-          // Increment counter. Check if experiment should end.
-          missed_responses++;
-          if (missed_responses >= missed_threshold) {
-            jsPsych.endExperiment();
-          }
-
-        } else {
-
-          // Set missing data to false.
-          data.missing = false;
-
-          // Define accuracy.
-          data.accuracy = data.key == data.correct;
-
-        }
-
-      }
-
+    // Simulate outcomes.
+    const trio = [];
+    for (var k = 0; k < probs.length; k++) {
+      trio.push(Math.random() > probs[k] ? 1 : 0);
     }
-
-    // Define looping node.
-    const trial_node = {
-      timeline: [trial],
-      loop_function: function(data) {
-        return data.values()[0].missing;
-      }
-    }
-
-    // Append trial.
-    set.push(trial_node);
+    outcomes.push(trio);
 
   }
 
-  // Randomize order.
-  bandit_trials = bandit_trials.concat(jsPsych.randomization.shuffle(set));
+}
+
+// Iteratively define trials.
+var trials = [];
+
+for (i = 0; i < outcomes.length; i++) {
+
+  // Define trial.
+  const trial = {
+    type: 'three-arm-trial',
+    contexts: contexts,
+    outcomes: outcomes[i],
+    choices: choices,
+    choice_duration: choice_duration,
+    feedback_duration: feedback_duration,
+    data: { correct: correct[i] + 1 },
+    on_finish: function(data) {
+
+      // Evaluate missing data
+      if ( data.key == null ) {
+
+        // Set missing data to true.
+        data.missing = true;
+
+        // Increment counter. Check if experiment should end.
+        missed_responses++;
+        if (missed_responses >= missed_threshold) {
+          jsPsych.endExperiment();
+        }
+
+      } else {
+
+        // Set missing data to false.
+        data.missing = false;
+
+        // Define accuracy.
+        data.accuracy = data.choice == data.correct;
+
+      }
+
+    }
+
+  }
+
+  // Define looping node.
+  const trial_node = {
+    timeline: [trial],
+    loop_function: function(data) {
+      return data.values()[0].missing;
+    }
+  }
+
+  // Push trial.
+  trials.push(trial_node);
 
 }

@@ -2,7 +2,7 @@
  * jspsych-three-arm-trial
  * Sam Zorowitz
  *
- * plugin for running one trial of the fishing 2-arm bandit task
+ * plugin for running one trial of the fishing 3-arm bandit task
  *
  **/
 
@@ -90,9 +90,6 @@ jsPsych.plugins["three-arm-trial"] = (function() {
       new_html += `<div class="cloud" context="${trial.contexts[i]}" pattern="2"></div>`;
       new_html += `<div class="cloud" context="${trial.contexts[i]}" pattern="3"></div>`;
       new_html += `<div class="shadow" side="${sides[i]}" context="${trial.contexts[i]}"></div>`;
-      // new_html += `<div class="fishing-line"></div>`;
-      // new_html += `<div class="fishing-rod"></div>`;
-      // new_html += `<div class="bobber"></div>`;
 
       // Add context setters.
       new_html += `<div class="surfboard" side="${sides[i]}" context="${trial.contexts[i]}"></div>`;
@@ -112,9 +109,6 @@ jsPsych.plugins["three-arm-trial"] = (function() {
       new_html += '</div>';
 
     }
-
-    // Add score.
-    // new_html += '<div class="score"></div>';
 
     // Close container.
     new_html += '</div>';
