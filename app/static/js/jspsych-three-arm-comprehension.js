@@ -1,16 +1,16 @@
 /**
- * jspsych-two-arm-comprehension
+ * jspsych-three-arm-comprehension
  * Sam Zorowitz
  *
- * plugin for running the comprehension check for the 2-arm bandit task
+ * plugin for running the comprehension check for the 3-arm bandit task
  *
  **/
 
-jsPsych.plugins['two-arm-comprehension'] = (function() {
+jsPsych.plugins['three-arm-comprehension'] = (function() {
   var plugin = {};
 
   plugin.info = {
-    name: 'two-arm-comprehension',
+    name: 'three-arm-comprehension',
     description: '',
     parameters: {
       button_label: {
@@ -39,8 +39,8 @@ jsPsych.plugins['two-arm-comprehension'] = (function() {
     var prompts = [
       "<b><i>True</i> or <i>False</i>:</b>&nbsp;&nbsp;Your goal is to catch as many fish as you can.",
       "<b><i>True</i> or <i>False</i>:</b>&nbsp;&nbsp;You are more likely to catch fish at some beaches than others.",
-      "<b><i>True</i> or <i>False</i>:</b>&nbsp;&nbsp;Even at the best beach, you will sometimes catch trash.",
-      "<b><i>True</i> or <i>False</i>:</b>&nbsp;&nbsp;You can catch fish at a closed beach.",
+      "<b><i>True</i> or <i>False</i>:</b>&nbsp;&nbsp;You will always catch fish at the best beach.",
+      "<b><i>True</i> or <i>False</i>:</b>&nbsp;&nbsp;How likely you are to catch a fish at a beach stays the same over time.",
       "<b><i>True</i> or <i>False</i>:</b>&nbsp;&nbsp;The number of fish you catch will affect your final performance bonus.",
     ];
 
@@ -57,7 +57,7 @@ jsPsych.plugins['two-arm-comprehension'] = (function() {
     var correct = [
       "True",
       "True",
-      "True",
+      "False",
       "False",
       "True",
     ]

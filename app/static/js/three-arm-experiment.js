@@ -13,7 +13,9 @@ const choice_duration = 10000;
 const feedback_duration = 1200;
 
 // Define comprehension threshold.
-const max_errors = 1;
+var max_errors = 0;
+var max_loops = 2;
+var num_loops = 0;
 
 // Define missed repsonses count.
 var missed_threshold = 6;
@@ -88,11 +90,25 @@ var instructions_loop = {
 
     // Check if instructions should repeat.
     if (num_errors > max_errors) {
-      return true;
+      num_loops++;
+      if (num_loops >= max_loops) {
+        low_quality = true;
+        return false;
+      } else {
+        return true;
+      }
     } else {
       return false;
     }
 
+  }
+}
+
+var comprehension_check = {
+  type: 'call-function',
+  func: function(){},
+  on_finish: function(trial) {
+    if (low_quality) { jsPsych.endExperiment(); }
   }
 }
 
@@ -112,11 +128,10 @@ var ready = {
 //------------------------------------//
 
 // Define block lengths.
-var blocks = jsPsych.randomization.repeat([8, 9, 10, 11, 12], 2, false);
-blocks.unshift(12);
+var blocks = [15, 15, 15, 15];
 
 // Initialize reward probabilities.
-probs = jsPsych.randomization.shuffle([0.7, 0.3, 0.3]);
+probs = jsPsych.randomization.shuffle([0.80, 0.20, 0.20]);
 
 // Predefine trial outcomes.
 var outcomes = [];
