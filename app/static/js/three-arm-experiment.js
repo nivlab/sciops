@@ -131,7 +131,7 @@ var ready = {
 var blocks = [15, 15, 15, 15];
 
 // Initialize reward probabilities.
-probs = jsPsych.randomization.shuffle([0.80, 0.20, 0.20]);
+var probs = jsPsych.randomization.shuffle([0.80, 0.20, 0.20]);
 
 // Predefine trial outcomes.
 var outcomes = [];
@@ -150,12 +150,12 @@ for (var i = 0; i < blocks.length; i++) {
   for (var j = 0; j < blocks[i]; j++) {
 
     // Store correct choice.
-    correct.push( probs.reduce((iMax, x, i, arr) => x > arr[iMax] ? i : iMax, 0) )
+    correct.push( probs.reduce((iMax, x, i, arr) => x > arr[iMax] ? i : iMax, 0) );
 
     // Simulate outcomes.
-    const trio = [];
+    var trio = [];
     for (var k = 0; k < probs.length; k++) {
-      trio.push(Math.random() > probs[k] ? 1 : 0);
+      trio.push(Math.random() < probs[k] ? 1 : 0);
     }
     outcomes.push(trio);
 
