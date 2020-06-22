@@ -21,6 +21,7 @@
   <script src="../static/js/jspsych-three-arm-comprehension.js" type="text/javascript"></script>
   <script src="../static/lib/jspsych-6.1.0/plugins/jspsych-instructions.js" type="text/javascript"></script>
   <script src="../static/js/jspsych-survey-demo.js" type="text/javascript"></script>
+  <script src="../static/lib/jspsych-6.1.0/plugins/jspsych-html-keyboard-response.js" type="text/javascript"></script>
   <script src="../static/lib/jspsych-6.1.0/plugins/jspsych-call-function.js" type="text/javascript"></script>
 
   <!-- Load CSS styles -->
@@ -53,7 +54,8 @@
   timeline = timeline.concat(instructions_loop);      // Instructions loop
   timeline = timeline.concat(comprehension_check);    // Comprehension check (implicit)
   timeline = timeline.concat(ready);                  // Ready check
-  timeline = timeline.concat(trials);                 // Bandit task
+  timeline = timeline.concat(trials;                 // Bandit task
+  timeline = timeline.concat(feedback);                 // Bandit task
   timeline = timeline.concat(demographics);           // Demographics form
 
   jsPsych.init({

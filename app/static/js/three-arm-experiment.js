@@ -124,7 +124,7 @@ var ready = {
 }
 
 //------------------------------------//
-// Define 2-arm bandit task.
+// Define 3-arm bandit task.
 //------------------------------------//
 
 // Define block lengths.
@@ -197,7 +197,7 @@ for (i = 0; i < outcomes.length; i++) {
         data.missing = false;
 
         // Define accuracy.
-        data.accuracy = data.choice == data.correct;
+        data.accuracy = (data.choice == data.correct ? 1 : 0);
 
       }
 
@@ -216,4 +216,28 @@ for (i = 0; i < outcomes.length; i++) {
   // Push trial.
   trials.push(trial_node);
 
+}
+
+//------------------------------------//
+// Define feedback screen.
+//------------------------------------//
+
+// Define feedback screen.
+var feedback = {
+  stimulus: '',
+  type: 'html-keyboard-response',
+  on_start: function(trial) {
+
+    // Compute overall accuracy.
+    var accuracy = jsPsych.data.get().filter({trial_type: 'three-arm-trial'}).select('accuracy');
+    var accuracy = accuracy.mean();
+
+    // Compute overall points.
+    var total = jsPsych.data.get().filter({trial_type: 'three-arm-trial'}).select('outcome');
+    var total = total.sum();
+
+    // Report accuracy to subject.
+    trial.stimulus = `Points: ${total}<br><br>Accuracy: ${accuracy}<br><br>Press any key to complete the experiment.`
+
+  }
 }
