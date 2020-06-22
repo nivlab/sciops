@@ -135,7 +135,7 @@ function arrayRotate(arr, reverse) {
 }
 
 // Preallocate space
-var blocks = [15, 15, 15, 15];    // number of trials
+var blocks = [15, 15, 15, 15, 15, 15];    // number of trials
 var probs  = [];
 var outcomes = [];
 var correct = [];
@@ -168,8 +168,6 @@ for (var i = 0; i < blocks.length; i++) {
 
 }
 
-console.log(probs)
-
 // Iteratively define trials.
 var trials = [];
 
@@ -183,7 +181,7 @@ for (i = 0; i < outcomes.length; i++) {
     choices: choices,
     choice_duration: choice_duration,
     feedback_duration: feedback_duration,
-    data: { correct: correct[i] },
+    data: { trial: i+1, correct: correct[i] },
     on_finish: function(data) {
 
       // Evaluate missing data
