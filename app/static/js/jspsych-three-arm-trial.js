@@ -72,7 +72,7 @@ jsPsych.plugins["three-arm-trial"] = (function() {
     new_html += '<div class="fishing-wrap">';
 
     // Iteratively draw contexts.
-    const sides = ['top','left','right'];
+    const sides = ['left','top','right'];
     for (var i = 0; i < 3; i++) {
 
       // Open beach container.
@@ -101,7 +101,6 @@ jsPsych.plugins["three-arm-trial"] = (function() {
       // Add feedback.
       new_html += `<div class="fish-container" id="fish-${sides[i]}">`;
       new_html += `<div class="fish" pattern="1" outcome="${trial.outcomes[i]}"></div>`;
-      new_html += `<div class="fish" pattern="2" outcome="${trial.outcomes[i]}"></div>`;
       new_html += `<div class="fish" pattern="3" outcome="${trial.outcomes[i]}"></div>`;
       new_html += '</div>';
 
@@ -140,15 +139,15 @@ jsPsych.plugins["three-arm-trial"] = (function() {
 
       // Update screen.
       if (response.key == trial.choices[0]) {
-        response.choice = 1;
+        response.choice = 0;
         trial.outcome = trial.outcomes[0];
         display_element.querySelector('#fish-left').setAttribute('context', 'feedback');
       } else if (response.key == trial.choices[1]) {
-        response.choice = 2;
+        response.choice = 1;
         trial.outcome = trial.outcomes[1];
         display_element.querySelector('#fish-top').setAttribute('context', 'feedback');
       } else {
-        response.choice = 3;
+        response.choice = 2;
         trial.outcome = trial.outcomes[2];
         display_element.querySelector('#fish-right').setAttribute('context', 'feedback');
       }

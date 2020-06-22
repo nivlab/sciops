@@ -127,41 +127,48 @@ var ready = {
 // Define 3-arm bandit task.
 //------------------------------------//
 
-// Define block lengths.
-var blocks = [15, 15, 15, 15];
+// Define rotate function.
+function arrayRotate(arr, reverse) {
+  if (reverse) arr.unshift(arr.pop());
+  else arr.push(arr.shift());
+  return arr;
+}
 
-// Initialize reward probabilities.
-var probs = jsPsych.randomization.shuffle([0.80, 0.20, 0.20]);
-
-// Predefine trial outcomes.
+// Preallocate space
+var blocks = [15, 15, 15, 15];    // number of trials
+var probs  = [];
 var outcomes = [];
 var correct = [];
 
 for (var i = 0; i < blocks.length; i++) {
 
-  // Rotate reward probabilities
-  if (Math.random() > 0.5) {
-    probs.unshift(probs.pop());
+  // Define reward probabilities for block
+  if (i==0) {
+    probs.push(jsPsych.randomization.shuffle([0.8, 0.2, 0.2]));
+  } else if (Math.random() > 0.5) {
+    probs.push(arrayRotate(probs[i-1].slice(), true));
   } else {
-    probs.push(probs.shift());
+    probs.push(arrayRotate(probs[i-1].slice(), false));
   }
 
   // Iteratively generate outcomes.
   for (var j = 0; j < blocks[i]; j++) {
 
     // Store correct choice.
-    correct.push( probs.reduce((iMax, x, i, arr) => x > arr[iMax] ? i : iMax, 0) );
+    correct.push( probs[i].reduce((iMax, x, i, arr) => x > arr[iMax] ? i : iMax, 0) );
 
     // Simulate outcomes.
     var trio = [];
-    for (var k = 0; k < probs.length; k++) {
-      trio.push(Math.random() < probs[k] ? 1 : 0);
+    for (var k = 0; k < probs[i].length; k++) {
+      trio.push(Math.random() < probs[i][k] ? 1 : 0);
     }
     outcomes.push(trio);
 
   }
 
 }
+
+console.log(probs)
 
 // Iteratively define trials.
 var trials = [];
@@ -176,7 +183,7 @@ for (i = 0; i < outcomes.length; i++) {
     choices: choices,
     choice_duration: choice_duration,
     feedback_duration: feedback_duration,
-    data: { correct: correct[i] + 1 },
+    data: { correct: correct[i] },
     on_finish: function(data) {
 
       // Evaluate missing data

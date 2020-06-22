@@ -443,19 +443,6 @@
 .fish[pattern='1'][outcome='0'] {
   display: none;
 }
-.fish[pattern='1'][outcome='2'] {
-  top: 33%;
-}
-.fish[pattern='2'] {
-  content: url("../img/animal-fish02.svg");
-  display: none;
-  -webkit-transform: translate(-50%, -50%) scaleX(-1);
-  transform: translate(-50%, -50%) scaleX(-1);
-}
-.fish[pattern='2'][outcome='2'] {
-  top: 67%;
-  display: inherit;
-}
 .fish[pattern='3'] {
   content: url("../img/animal-tire.svg");
   display: none;
