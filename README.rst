@@ -6,7 +6,7 @@ A fishing-themed 3-arm reversal learning bandit task.
 Quickstart
 ^^^^^^^^^^
 
-The following is the minimal set of commands needed to get started with `NivTurk <https://github.com/nivlab/nivturk>`_.:
+The following is the minimal set of commands needed to get started with `NivTurk <https://github.com/nivlab/nivturk>`_:
 
 .. code-block:: bash
 
