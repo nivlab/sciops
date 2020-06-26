@@ -63,7 +63,8 @@ max_bonus = 0.25
 
 ## Merge DataFrames.
 BONUS = METADATA.merge(DATA, on='subId', how='inner')
-BONUS['bonus'] = np.round(BONUS['accuracy'] * max_bonus + completion_bonus, 2)
+BONUS['bonus'] = np.round( (BONUS['accuracy'] - 0.33) / 0.67 * max_bonus, 2 )
+BONUS['bonus'] = np.where(BONUS['bonus'] > 0, BONUS['bonus'], 0)
 
 ## Save.
 BONUS.to_csv('bonus.csv', index=False, header=False, columns=('workerId','bonus'))
