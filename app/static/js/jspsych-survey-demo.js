@@ -179,12 +179,20 @@ jsPsych.plugins['survey-demo'] = (function() {
     html += '<label><input type="radio" name="fluency" value="Not at all" required>Not at all</label>';
     html += '</div></div>';
 
-    // Item 7: Prolific
+    // Item 7: MTurk
     html += '<div class="survey-demo-row">';
-    html += '<div class="survey-demo-prompt"><label for="fluency">Do you also complete studies on Prolific?</label></div>';
+    html += '<div class="survey-demo-prompt"><label for="fluency">Do you also complete studies on Amazon Mechanical Turk?</label></div>';
     html += '<div class="survey-demo-response">';
-    html += '<label><input type="radio" name="prolific" value="Yes" required>Yes</label>';
-    html += '<label><input type="radio" name="prolific" value="No" required>No</label>';
+    html += '<label><input type="radio" name="mturk" value="Yes" required>Yes</label>';
+    html += '<label><input type="radio" name="mturk" value="No" required>No</label>';
+    html += '</div></div>';
+
+    // Item 8: This study on MTurk
+    html += '<div class="survey-demo-row">';
+    html += '<div class="survey-demo-prompt"><label for="fluency">Have you previously completed THIS study on Amazon Mechanical Turk?</label></div>';
+    html += '<div class="survey-demo-response">';
+    html += '<label><input type="radio" name="mturk-this-study" value="Yes" required>Yes</label>';
+    html += '<label><input type="radio" name="mturk-this-study" value="No" required>No</label>';
     html += '</div></div>';
 
     // Close container.
