@@ -181,7 +181,7 @@ jsPsych.plugins['survey-demo'] = (function() {
 
     // Item 7: MTurk
     html += '<div class="survey-demo-row">';
-    html += '<div class="survey-demo-prompt"><label for="fluency">Do you also complete studies on Amazon Mechanical Turk?</label></div>';
+    html += '<div class="survey-demo-prompt"><label for="mturk">Do you also complete studies on Amazon Mechanical Turk?</label></div>';
     html += '<div class="survey-demo-response">';
     html += '<label><input type="radio" name="mturk" value="Yes" required>Yes</label>';
     html += '<label><input type="radio" name="mturk" value="No" required>No</label>';
@@ -189,7 +189,7 @@ jsPsych.plugins['survey-demo'] = (function() {
 
     // Item 8: This study on MTurk
     html += '<div class="survey-demo-row">';
-    html += '<div class="survey-demo-prompt"><label for="fluency">Have you previously completed THIS study on Amazon Mechanical Turk?</label></div>';
+    html += '<div class="survey-demo-prompt"><label for="mturk-this-study">Have you previously completed THIS study on Amazon Mechanical Turk?</label></div>';
     html += '<div class="survey-demo-response">';
     html += '<label><input type="radio" name="mturk-this-study" value="Yes" required>Yes</label>';
     html += '<label><input type="radio" name="mturk-this-study" value="No" required>No</label>';
