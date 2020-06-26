@@ -1,8 +1,19 @@
+import os, configparser
 from flask import (Blueprint, redirect, render_template, request, session, url_for)
 from .io import write_metadata
 
 ## Initialize blueprint.
 bp = Blueprint('complete', __name__)
+
+## Define root directory.
+ROOT_DIR = os.path.dirname(os.path.realpath(__file__))
+
+## Load and parse configuration file.
+cfg = configparser.ConfigParser()
+cfg.read(os.path.join(ROOT_DIR, 'app.ini'))
+
+## Specify completion URL.
+complete_url = "https://app.prolific.co/submissions/complete?cc=" + cfg['FLASK']['COMPLETION_CODE']
 
 @bp.route('/complete')
 def complete():
@@ -20,9 +31,4 @@ def complete():
         ## Update participant metadata.
         session['complete'] = True
         write_metadata(session, ['complete'], 'a')
-
-    ## DEV NOTE:
-    ## If you want a custom completion code, replace the return statement with:
-    ## > render_template('complete.html', value=session['complete'])
-
-    return render_template('complete.html')
+        return redirect(complete_url)
