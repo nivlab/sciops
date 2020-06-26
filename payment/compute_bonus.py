@@ -11,7 +11,7 @@ METADATA_DIR = os.path.join(ROOT_DIR, 'metadata')
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
 
 ## Locate files.
-files = sorted([f for f in os.listdir(METADATA_DIR) if f.startswith('A')])
+files = sorted([f for f in os.listdir(METADATA_DIR) if f.startswith('5')])
 
 METADATA = []
 for f in files:
@@ -35,15 +35,15 @@ files = sorted([f for f in os.listdir(DATA_DIR) if f.endswith('.json')])
 
 DATA = []
 for f in files:
-    
+
     ## Load file.
     subject = f.replace('.json','')
     with open(os.path.join(DATA_DIR, f), 'r') as f:
         JSON = json.load(f)
-    
+
     ## Locate learning trials.
     data = DataFrame([dd for dd in JSON if dd['trial_type'] == 'three-arm-trial'])
-    
+
     ## Compute accuracy.
     accuracy = data.accuracy.mean()
 
