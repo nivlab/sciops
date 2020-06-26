@@ -13,7 +13,7 @@ const choice_duration = 10000;
 const feedback_duration = 1200;
 
 // Define comprehension threshold.
-var max_errors = 6;                   // Participants always pass check
+var max_errors = 0;
 var max_loops = 2;
 var num_loops = 0;
 
@@ -91,12 +91,7 @@ var instructions_loop = {
     // Check if instructions should repeat.
     if (num_errors > max_errors) {
       num_loops++;
-      if (num_loops >= max_loops) {
-        low_quality = true;
-        return false;
-      } else {
-        return true;
-      }
+      return true;
     } else {
       return false;
     }
