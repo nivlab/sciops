@@ -13,7 +13,7 @@ const choice_duration = 10000;
 const feedback_duration = 1200;
 
 // Define comprehension threshold.
-var max_errors = 0;
+var max_errors = 6;                   // Participants always pass check
 var max_loops = 2;
 var num_loops = 0;
 
