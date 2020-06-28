@@ -181,10 +181,18 @@ jsPsych.plugins['survey-demo'] = (function() {
 
     // Item 7: Prolific
     html += '<div class="survey-demo-row">';
-    html += '<div class="survey-demo-prompt"><label for="fluency">Do you also complete studies on Prolific?</label></div>';
+    html += '<div class="survey-demo-prompt"><label for="prolific">Do you also complete studies on Prolific?</label></div>';
     html += '<div class="survey-demo-response">';
     html += '<label><input type="radio" name="prolific" value="Yes" required>Yes</label>';
     html += '<label><input type="radio" name="prolific" value="No" required>No</label>';
+    html += '</div></div>';
+
+    // Item 8: This study on Prolific
+    html += '<div class="survey-demo-row">';
+    html += '<div class="survey-demo-prompt"><label for="prolific-this-study">Have you previously completed THIS study on prolific?</label></div>';
+    html += '<div class="survey-demo-response">';
+    html += '<label><input type="radio" name="prolific-this-study" value="Yes" required>Yes</label>';
+    html += '<label><input type="radio" name="prolific-this-study" value="No" required>No</label>';
     html += '</div></div>';
 
     // Close container.

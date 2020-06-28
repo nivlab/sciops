@@ -188,9 +188,6 @@
 .cloud[pattern='3'] {
   content: url("../img/cloud03.svg")
 }
-.cloud[context='closed'] {
-  display: none;
-}
 .cloud[context='red'][pattern='1'] {
   left: 20%;
   top: 11%;
@@ -296,7 +293,7 @@
   position: absolute;
   top: 58%;
   -webkit-transform: translate3d(-50%, -50%, 0);
-  transform: translate3d()(-50%, -50%, 0);
+  transform: translate3d(-50%, -50%, 0);
 }
 .decal[side='top'] {
   left: 12.5%;
@@ -332,10 +329,10 @@
 .shadow {
   position: absolute;
   bottom: 11%;
-  -webkit-ransform: translate(-50%, 50%) rotateX(80deg);
-  transform: translate(-50%, 50%) rotateX(80deg);
+  -webkit-ransform: translate(-50%, 50%);
+  transform: translate(-50%, 50%);
   width: 15%;
-  height: 17%;
+  height: 3%;
   background: black;
   border-radius: 50%;
   opacity: 0.1;
@@ -348,52 +345,6 @@
 }
 .shadow[side='right'] {
   left: 86%;
-}
-.shadow[context='closed'] {
-  display: none;
-}
-.fishing-rod {
-  position: absolute;
-  bottom: 0%;
-  left: 40%;
-  -webkit-ransform: translate(-50%, 0%);
-  transform: translate(-50%, 0%);
-  width: 10px;
-  height: 600px;
-  background: #866247;
-  background-image: repeating-linear-gradient(0deg, #866247, #866247 120px, #000000 120px, #000000 127px);
-  transform: perspective(9cm) skewX(-5deg) rotateX(45deg);
-  transform-origin: bottom;
-}
-.fishing-line {
-  position: absolute;
-  bottom: calc(50% + 1px);
-  left: 48.5%;
-  width: 2px;
-  height: 65px;
-  background: white;
-  transform: skewX(16deg);
-}
-.bobber {
-  position: absolute;
-  bottom: 50%;
-  left: 50%;
-  -webkit-ransform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  width: 10px;
-  height: 6px;
-  background: #ffb547;
-  border-top-left-radius: 100px;
-  border-top-right-radius: 100px;
-  -webkit-animation: bob linear 2s infinite;
-  animation: bob linear 2s infinite;
-}
-@keyframes bob {
-  0%   { transform: translateY( 0.0px); }
-  25%  { transform: translateY( 0.5px); }
-  50%  { transform: translateY( 0.0px); }
-  75%  { transform: translateY(-0.5px); }
-  100% { transform: translateY( 0.0px); }
 }
 
 /* ---------------------------------- */
@@ -449,9 +400,4 @@
 }
 .fish[pattern='3'][outcome='0'] {
   display: inherit;
-}
-.score {
-  position: absolute;
-  right: calc(50% - 360px - 15px);
-  top: 50px;
 }
