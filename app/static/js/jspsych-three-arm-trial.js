@@ -89,14 +89,11 @@ jsPsych.plugins["three-arm-trial"] = (function() {
       new_html += `<div class="cloud" context="${trial.contexts[i]}" pattern="1"></div>`;
       new_html += `<div class="cloud" context="${trial.contexts[i]}" pattern="2"></div>`;
       new_html += `<div class="cloud" context="${trial.contexts[i]}" pattern="3"></div>`;
-      new_html += `<div class="shadow" side="${sides[i]}" context="${trial.contexts[i]}"></div>`;
 
       // Add context setters.
+      new_html += `<div class="shadow" side="${sides[i]}"></div>`;
       new_html += `<div class="surfboard" side="${sides[i]}" context="${trial.contexts[i]}"></div>`;
       new_html += `<div class="decal" side="${sides[i]}" context="${trial.contexts[i]}"></div>`;
-      new_html += `<div class="closed-sign" context="${trial.contexts[i]}">`;
-      new_html += '<div class="closed-symbol"></div>';
-      new_html += '</div>';
 
       // Add feedback.
       new_html += `<div class="fish-container" id="fish-${sides[i]}">`;
