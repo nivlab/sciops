@@ -88,7 +88,7 @@ var bisbas = {
     "I go out of my way to get things I want.",                                      // DRIVE2
     "If I see a chance to get something I want I move on it right away.",            // DRIVE 3
     "When I go after something I use a no-holds-barred approach.",                   // DRIVE4
-    "I feel good when I am insulted by a friend."
+    "I would feel bad if a loved one unexpectedly died."
   ],
   scale: [
     "Very false<br>for me",               // scored as 0
