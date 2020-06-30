@@ -185,12 +185,6 @@ for (i = 0; i < outcomes.length; i++) {
         // Set missing data to true.
         data.missing = true;
 
-        // Increment counter. Check if experiment should end.
-        missed_responses++;
-        if (missed_responses >= missed_threshold) {
-          jsPsych.endExperiment();
-        }
-
       } else {
 
         // Set missing data to false.
