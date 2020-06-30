@@ -1,97 +1,202 @@
-platform,subject,minutes,n_loops,missing,age,gender-categorical,gender-free-response,ethnicity,race,language,fluency,mturk,mturk-this-study
-prolific,02hfkd0x4jtnoiwsds69adoq,10.2,1,0,21,Male,,Not Hispanic or Latino,['Asian'],Yes,Very well,No,No
-prolific,0do1x8qmwi6ok206agh1xqwb,4.9,1,0,50,Female,,Not Hispanic or Latino,['Asian'],Yes,Very well,No,No
-prolific,0kw0yjeyfmbqohivbcjol0y4,13.7,1,0,22,Male,,Not Hispanic or Latino,['Black or African American'],No,Well,No,No
-prolific,0vl2swi8jsl18qhae18l9lfn,6.8,1,0,29,Female,,Not Hispanic or Latino,['Asian'],Yes,Very well,No,No
-prolific,12c8bstpywx1b84b0gh2tof4,18.8,2,0,19,Male,,Not Hispanic or Latino,['White'],Yes,Very well,No,No
-prolific,1sxr2nbpa4aj8f9ggyd14vjn,11.7,1,0,75,Male,,Not Hispanic or Latino,['White'],Yes,Very well,Yes,No
-prolific,3qz20dlryiffihwsltdnk6cn,8.5,1,0,29,Male,,Not Hispanic or Latino,['Asian'],Yes,Very well,No,No
-prolific,3yg7loing1p7y2bbmo5b777o,9.3,1,0,23,Female,,Not Hispanic or Latino,['White'],Yes,Very well,No,No
-prolific,4kfljupnt4llnjgshhe5xho5,11.8,1,0,38,Female,,Rather not say,['Rather not say'],Yes,Very well,No,No
-prolific,4szus5mziv7x6mwgfpa0oiq8,8.2,1,0,34,Female,,Not Hispanic or Latino,['White'],Yes,Very well,No,No
-prolific,4vw992lb5egmeaykdxcetamb,9.1,1,0,23,Female,,Not Hispanic or Latino,['White'],Yes,Very well,No,No
-prolific,5vlapy2kltynt6q6usdmw53x,7.8,1,0,24,Female,,Not Hispanic or Latino,['White'],Yes,Very well,Yes,No
-prolific,7onu45df12zkrxfc750nn4sa,11.3,1,0,39,Male,,Not Hispanic or Latino,['White'],Yes,Very well,No,No
-prolific,7sw6swyfiqm06ookrrxv1ejk,22.9,2,1,30,Male,,Not Hispanic or Latino,['White'],Yes,Very well,No,No
-prolific,8lfe345vgkvurp8du9sfe3cu,10.1,1,0,51,Female,,Not Hispanic or Latino,['White'],Yes,Very well,No,No
-prolific,9kzs2lfi4bmyk5xz03ck58ne,8.1,1,1,21,Male,,Not Hispanic or Latino,['White'],Yes,Very well,No,No
-prolific,9s73oel30gm6y0mvrbrhg5sl,8.9,1,2,35,Female,,Not Hispanic or Latino,['White'],Yes,Very well,No,No
-prolific,a2v38wfhjdt19iwmixx5ubbn,10.9,1,0,29,Male,,Hispanic or Latino,['Rather not say'],No,Very well,No,No
-prolific,a4sq9uovavhzmy3ugpw14nes,9.7,1,0,32,Male,,Not Hispanic or Latino,['White'],Yes,Very well,Yes,No
-prolific,acyid5qbf3sxlj6irj8rue2i,8.6,1,0,21,Female,,Not Hispanic or Latino,['Asian'],Yes,Very well,No,No
-prolific,adledzgxw4grcbjza71kl0bz,16.1,1,0,20,Female,,Hispanic or Latino,['Black or African American'],Yes,Very well,No,No
-prolific,b6ntfmchp7gcv2hhdnmy8dcx,7.7,1,0,21,Female,,Not Hispanic or Latino,['White'],Yes,Very well,No,No
-prolific,bd1lnrnygthu88n7uhqouupu,8.7,1,0,29,Female,,Not Hispanic or Latino,['White'],No,Very well,No,No
-prolific,bgdbxmyihscd8j5yck7zpncx,12.2,1,0,63,Male,,Not Hispanic or Latino,['White'],Yes,Very well,Yes,No
-prolific,brbcu0xzd02uqsem1xrt52wr,10.6,1,0,33,Male,,Not Hispanic or Latino,['White'],Yes,Very well,No,No
-prolific,bzkr2dox2xt1y9h4s7wpssde,7.9,1,0,19,Female,,Not Hispanic or Latino,['White'],Yes,Very well,No,No
-prolific,d4kdo4b2j6sp5t7p2c7ay6u2,12.6,2,0,23,Female,,Not Hispanic or Latino,['Asian'],Yes,Very well,No,No
-prolific,d9hniznzrxs4dgpe5u2oh4gp,7.1,1,0,23,Female,,Not Hispanic or Latino,['White'],Yes,Very well,Yes,No
-prolific,drsp05u7fyun1p5gbhu3a7r9,10.9,1,0,36,Female,,Hispanic or Latino,['White'],Yes,Very well,No,No
-prolific,dz9dqzx96f5jbaaue75gaip4,14.2,1,0,39,Male,,Not Hispanic or Latino,['White'],Yes,Very well,No,No
-prolific,emabcgvxonq2ef9by0gz9zgi,7.2,1,0,34,Female,,Not Hispanic or Latino,['White'],Yes,Very well,No,No
-prolific,fiqso5uscn2zlqereap76xmw,8.7,1,0,37,Female,,Not Hispanic or Latino,['White'],Yes,Very well,No,No
-prolific,fuqsuj8ayzevglbwkk56ps6r,11.1,1,0,19,Female,,Not Hispanic or Latino,['White'],Yes,Very well,Yes,No
-prolific,g5eqvctv9id6b9ptz7kpkpcs,13.3,1,0,25,Female,,Not Hispanic or Latino,['Asian'],Yes,Very well,No,No
-prolific,gg3va1kde4m54v1ewawz8bo7,8.9,2,0,25,Male,,Not Hispanic or Latino,['Asian'],Yes,Very well,No,No
-prolific,gm54uazasq1wwy757lnxv8a7,13.8,1,0,36,Male,,Not Hispanic or Latino,['White'],Yes,Very well,Yes,No
-prolific,grkd2z4k0wsugzpaadomco2b,7.6,1,0,23,Female,,Not Hispanic or Latino,['White'],Yes,Very well,No,No
-prolific,gt2taip1p76tvaqyb4294t47,9.3,1,0,39,Female,,Not Hispanic or Latino,['White'],Yes,Very well,Yes,No
-prolific,i25gjxbngzv1icp6foea9h68,7.6,1,0,35,Male,,Not Hispanic or Latino,['Asian'],Yes,Well,Yes,No
-prolific,i6affm1b3nhuvqtt5axqrbx9,12.4,2,0,20,Male,,Not Hispanic or Latino,['White'],No,Well,No,No
-prolific,jnabdy80h0q1gk2nwhrpcq4c,6.8,1,0,37,Female,,Not Hispanic or Latino,['White'],Yes,Very well,No,No
-prolific,jsqd8nqe3yz1wf39o073cupk,7.5,1,0,34,Female,,Not Hispanic or Latino,['White'],Yes,Very well,No,No
-prolific,k4r8vpzt3fw549gr1ud5u95y,8.6,2,1,32,Male,,Not Hispanic or Latino,['Asian'],Yes,Very well,No,No
-prolific,kwiconcwj088eqixqr19bdvk,8.6,1,0,39,Female,,Not Hispanic or Latino,['White'],Yes,Very well,No,No
-prolific,l3dgmgy4ntgblrflll7epil4,15.6,1,0,24,Other,Nonbinary,Not Hispanic or Latino,['White'],Yes,Very well,No,No
-prolific,lhrpsrhtf4ubnk9dev13a55u,11.4,1,0,28,Female,,Not Hispanic or Latino,['Asian'],No,Very well,No,No
-prolific,m4wzuj1s8ja9agm0qoc2xj95,8.5,1,0,31,Female,,Not Hispanic or Latino,['Rather not say'],Yes,Very well,No,No
-prolific,miokf3xp31sodz9fu1ooo8rv,12.4,2,0,36,Male,,Not Hispanic or Latino,['White'],Yes,Very well,No,No
-prolific,ml99dlvnxomrv0ljb817mo1s,9.0,2,0,24,Male,,Not Hispanic or Latino,['Asian'],Yes,Very well,No,No
-prolific,ne5nmyju0k0oi4ez7ql5rkbc,7.6,1,0,27,Male,,Not Hispanic or Latino,"['Asian', 'White']",Yes,Very well,No,No
-prolific,o1tws8uglfy7iud0zcdhb0of,15.4,2,1,24,Male,,Not Hispanic or Latino,['White'],Yes,Very well,No,No
-prolific,o6kb7svqlmiv784yyvo82og9,12.5,1,0,41,Male,,Not Hispanic or Latino,['White'],Yes,Very well,No,No
-prolific,obyyqp9qfruwsd0srd1za801,13.6,3,2,46,Male,,Not Hispanic or Latino,['Asian'],No,Very well,No,No
-prolific,ofrox51pmggtdf039k1xu98q,8.0,1,0,21,Male,,Not Hispanic or Latino,['White'],Yes,Very well,No,No
-prolific,ozklnmnvkoeg9rhy7e65pj31,13.4,1,0,33,Female,,Not Hispanic or Latino,['Rather not say'],Yes,Very well,No,No
-prolific,p63k33kd0va3yr9hsisv7nza,14.2,1,2,43,Female,,Not Hispanic or Latino,['Asian'],No,Very well,No,No
-prolific,pfs02c9pkgwibojrw7huyt8j,6.5,1,0,29,Female,,Not Hispanic or Latino,['White'],Yes,Very well,No,No
-prolific,pfvcy6m8s0xkkfd9llpty0gt,8.4,1,0,20,Male,,Rather not say,['Rather not say'],Yes,Very well,No,No
-prolific,pj2juz9u4o3412tuhaaon2mx,7.3,1,0,27,Female,,Not Hispanic or Latino,['White'],Yes,Very well,No,No
-prolific,po1nb7atf5j4ghhdgotzdk87,9.6,1,0,37,Male,,Not Hispanic or Latino,['White'],Yes,Very well,No,No
-prolific,prixwwn7ldvehxeuaw036cka,8.9,1,1,29,Female,,Not Hispanic or Latino,['Asian'],No,Very well,No,No
-prolific,ptz9jbgy1fhpy8jo3lpshxna,8.7,1,0,27,Female,,Not Hispanic or Latino,['White'],Yes,Very well,No,No
-prolific,pydsub3305ez6hew5ads85ge,11.3,1,0,38,Female,,Not Hispanic or Latino,['White'],Yes,Very well,No,No
-prolific,qcdk2tj1c6i20hiduqjeh67w,10.2,2,0,28,Female,,Not Hispanic or Latino,['White'],Yes,Very well,No,No
-prolific,qqi5znxg9c08psfg0wbsi1jc,8.9,1,0,32,Female,,Not Hispanic or Latino,['White'],Yes,Very well,No,No
-prolific,rd874rrg3n6blz5e2vmch8ks,15.0,1,0,22,Male,,Not Hispanic or Latino,['White'],Yes,Very well,No,No
-prolific,rmj5e5y59rzx15cktxgyyfya,15.0,4,2,25,Male,,Not Hispanic or Latino,['White'],Yes,Very well,No,Yes
-prolific,s6dmy269v6v8tq2sxx6ijbsi,8.6,1,0,32,Male,,Not Hispanic or Latino,['Asian'],Yes,Very well,No,No
-prolific,s8xztpmugvi5i1hiiy0caf1l,12.9,1,0,29,Female,,Not Hispanic or Latino,['White'],Yes,Very well,No,No
-prolific,sfcoka8iitssmd15lnc8mb23,6.4,1,0,19,Male,,Not Hispanic or Latino,['White'],Yes,Very well,No,No
-prolific,u3985tl25civw7cwkponfq3v,28.9,1,0,34,Female,,Hispanic or Latino,['White'],Yes,Very well,Yes,No
-prolific,u4llbg249clqj7gecwc19dj2,6.0,1,0,18,Male,,Not Hispanic or Latino,['White'],Yes,Well,No,No
-prolific,u5gp53g7omv2ivz6ce9napx8,15.2,2,2,54,Female,,Not Hispanic or Latino,['White'],Yes,Very well,No,No
-prolific,u8ugvmr32frcnzlceuo67kt0,18.3,1,0,25,Male,,Not Hispanic or Latino,['White'],Yes,Very well,No,No
-prolific,uukqsvy7zzeqfqovqzd1pa64,6.7,1,0,26,Female,,Not Hispanic or Latino,['Asian'],No,Very well,No,No
-prolific,uy4dfkzf724ww53jtl7euz3e,10.8,3,0,32,Female,,Not Hispanic or Latino,['White'],Yes,Very well,No,No
-prolific,v2h8o96cg4bhv88n2a134lzf,10.0,1,0,38,Male,,Not Hispanic or Latino,['White'],Yes,Very well,No,No
-prolific,vagifv6u15xfnf6u3kh9vq6r,14.5,1,0,46,Male,,Not Hispanic or Latino,['Asian'],No,Very well,No,No
-prolific,vjt1f5j28jg0m1mme6atp0jt,5.4,1,1,30,Male,,Not Hispanic or Latino,['White'],Yes,Very well,Yes,No
-prolific,wbmh5irelure1ly1hmnbdml3,10.6,1,0,24,Male,,Hispanic or Latino,['White'],Yes,Very well,No,No
-prolific,x0141yy1fat9j4de4yerqoeh,9.1,1,0,25,Female,,Not Hispanic or Latino,['Black or African American'],Yes,Very well,No,No
-prolific,x0tr8sfr0g0hf2wcinx2sltl,8.7,1,0,56,Female,,Not Hispanic or Latino,['White'],Yes,Very well,No,No
-prolific,x9xony0cxtk8q4m0egvrv3p7,11.0,1,0,34,Female,,Rather not say,['Rather not say'],Yes,Very well,No,No
-prolific,xd78fudntrmkohbpq9cgjdik,9.5,1,0,48,Female,,Not Hispanic or Latino,['White'],Yes,Very well,No,No
-prolific,xlvutciogdrl2r9g45gz7ldl,8.8,1,0,64,Male,,Not Hispanic or Latino,['White'],Yes,Very well,No,No
-prolific,xod95zhzmdzosg5eoygdfe35,10.2,1,2,39,Female,,Not Hispanic or Latino,"['Asian', 'White']",Yes,Very well,No,No
-prolific,xuoje6vh4hw7rm08jc79muav,9.8,1,0,53,Female,,Not Hispanic or Latino,['White'],Yes,Very well,No,No
-prolific,y20qesh4on6pf8bl4d8xnfxw,10.1,1,0,25,Male,,Hispanic or Latino,['Rather not say'],Yes,Very well,No,No
-prolific,yfnacg4i0v7jifyfakxjbd1q,13.4,1,0,28,Female,,Not Hispanic or Latino,['Asian'],No,Well,No,No
-prolific,yjylqgzycho9i25v2kjx1lo0,10.3,1,0,29,Female,,Not Hispanic or Latino,['White'],Yes,Very well,No,No
-prolific,ym6mi7m98bwg02h1q56c9brf,9.9,1,0,32,Female,,Not Hispanic or Latino,['White'],Yes,Very well,No,No
-prolific,ypz0pdffitn3le2tum2n6vhx,8.4,2,0,18,Male,,Not Hispanic or Latino,['Asian'],No,Very well,No,No
-prolific,yy3a6xvbwcgzufjmpng6wb3d,7.8,1,0,18,Male,,Not Hispanic or Latino,['Asian'],Yes,Very well,No,No
-prolific,z8a14walv6et4id5gwsv4s7t,13.5,1,1,38,Female,,Not Hispanic or Latino,"['Black or African American', 'White']",Yes,Very well,No,No
-prolific,zk7jn70yddea3o8731mzpoz6,15.1,1,3,24,Male,,Rather not say,['Native Hawaiian or other Pacific Islander'],Yes,Very well,No,No
-prolific,zoaj7vekc9hzlt1rxkbt1f5h,10.5,1,1,19,Male,,Not Hispanic or Latino,['White'],Yes,Very well,No,No
+platform,age,ethnicity,fluency,gender-categorical,gender-free-response,language,minutes,missing,mturk,mturk-this-study,n_loops,race,subject
+prolific,21,Not Hispanic or Latino,Very well,Male,,Yes,10.2,0,No,No,1,['Asian'],02hfkd0x4jtnoiwsds69adoq
+prolific,50,Not Hispanic or Latino,Very well,Female,,Yes,4.9,0,No,No,1,['Asian'],0do1x8qmwi6ok206agh1xqwb
+prolific,26,Not Hispanic or Latino,Very well,Male,,Yes,18.0,0,No,No,1,['White'],0imgqq6qokryvins8vmkeh7v
+prolific,22,Not Hispanic or Latino,Well,Male,,No,13.7,0,No,No,1,['Black or African American'],0kw0yjeyfmbqohivbcjol0y4
+prolific,22,Not Hispanic or Latino,Very well,Male,,Yes,5.6,0,Yes,No,1,['White'],0tztck6s2pmdsciuznilgj90
+prolific,29,Not Hispanic or Latino,Very well,Female,,Yes,6.8,0,No,No,1,['Asian'],0vl2swi8jsl18qhae18l9lfn
+prolific,19,Not Hispanic or Latino,Very well,Male,,Yes,18.8,0,No,No,2,['White'],12c8bstpywx1b84b0gh2tof4
+prolific,29,Not Hispanic or Latino,Very well,Male,,Yes,5.3,0,No,No,1,['Asian'],1i545xikf02ck7ekr6psckaq
+prolific,24,Not Hispanic or Latino,Very well,Male,,Yes,6.9,0,No,No,2,['Asian'],1id28gbzeshkr8a3rjqtu7gm
+prolific,75,Not Hispanic or Latino,Very well,Male,,Yes,11.7,0,Yes,No,1,['White'],1sxr2nbpa4aj8f9ggyd14vjn
+prolific,61,Not Hispanic or Latino,Very well,Female,,Yes,9.9,0,No,No,1,['White'],1u2wyleqh3t6iqx93tokdv0k
+prolific,50,Not Hispanic or Latino,Very well,Female,,Yes,14.1,0,No,No,1,['White'],25fuwx9wj8mwr4avjszslbbx
+prolific,28,Not Hispanic or Latino,Very well,Male,,Yes,11.3,1,No,No,2,['White'],2g95z4j2bkkzbjeeh5wex9qe
+prolific,29,Rather not say,Very well,Female,,Yes,17.1,0,No,No,1,['Black or African American'],2leyyrsxpwbmugus6n9l7hgm
+prolific,27,Not Hispanic or Latino,Very well,Male,,Yes,8.6,0,No,No,1,['Asian'],2sdnu1yjjuxyew3zpe8nwlhb
+prolific,24,Not Hispanic or Latino,Very well,Female,,Yes,7.3,0,No,No,1,['White'],354ipv8jxmf3sgg4kl6iwjyg
+prolific,29,Not Hispanic or Latino,Very well,Male,,Yes,8.5,0,No,No,1,['Asian'],3qz20dlryiffihwsltdnk6cn
+prolific,23,Not Hispanic or Latino,Very well,Female,,Yes,9.3,0,No,No,1,['White'],3yg7loing1p7y2bbmo5b777o
+prolific,60,Not Hispanic or Latino,Very well,Female,,Yes,9.2,0,No,No,1,['White'],4558saz9j220kta4eyyti4lz
+prolific,37,Not Hispanic or Latino,Very well,Female,,Yes,11.6,0,No,No,2,['White'],465libnx33ipciqmfy8yh88w
+prolific,38,Rather not say,Very well,Female,,Yes,11.8,0,No,No,1,['Rather not say'],4kfljupnt4llnjgshhe5xho5
+prolific,34,Not Hispanic or Latino,Very well,Female,,Yes,8.2,0,No,No,1,['White'],4szus5mziv7x6mwgfpa0oiq8
+prolific,23,Not Hispanic or Latino,Very well,Female,,Yes,9.1,0,No,No,1,['White'],4vw992lb5egmeaykdxcetamb
+prolific,23,Not Hispanic or Latino,Very well,Male,,Yes,6.7,0,No,No,1,['White'],54j8pa9apq5tj4fkft6dso0v
+prolific,22,Not Hispanic or Latino,Very well,Female,,Yes,5.4,0,No,No,2,['Asian'],54ju60u1l79ogrexh490fh3s
+prolific,52,Not Hispanic or Latino,Very well,Female,,Yes,9.9,0,Yes,No,1,['White'],5a7qv48urh69t3za7xww81ue
+prolific,40,Rather not say,Very well,Male,,Yes,20.7,0,No,No,7,['Rather not say'],5m3nhzzzppo3vc3k6if20tnm
+prolific,20,Not Hispanic or Latino,Very well,Female,,Yes,6.8,0,Yes,No,1,['Asian'],5moe0thth6evd7ri4hpzlxwm
+prolific,36,Not Hispanic or Latino,Very well,Male,,Yes,7.8,1,Yes,No,1,['White'],5tqi72vno74hjnv7elkchmn7
+prolific,24,Not Hispanic or Latino,Very well,Female,,Yes,7.8,0,Yes,No,1,['White'],5vlapy2kltynt6q6usdmw53x
+prolific,21,Not Hispanic or Latino,Well,Female,,No,7.6,0,Yes,No,1,['Asian'],65z4s3erqhtq0y32l4ud5c77
+prolific,42,Not Hispanic or Latino,Very well,Male,,Yes,10.1,0,No,No,1,['White'],6ueltttfobtmc33ejn29z66s
+prolific,38,Not Hispanic or Latino,Very well,Male,,Yes,97.3,0,No,No,1,['White'],77drfp2k71bu1i898kgrkloj
+prolific,32,Not Hispanic or Latino,Very well,Female,,Yes,13.9,0,No,No,1,['Black or African American'],7ezim729gp6n5w6uep9hptuu
+prolific,39,Not Hispanic or Latino,Very well,Male,,Yes,11.3,0,No,No,1,['White'],7onu45df12zkrxfc750nn4sa
+prolific,30,Not Hispanic or Latino,Very well,Male,,Yes,22.9,1,No,No,2,['White'],7sw6swyfiqm06ookrrxv1ejk
+prolific,37,Not Hispanic or Latino,Very well,Male,,Yes,8.8,0,No,No,1,['White'],84vog25x6i4fgbjucffyhd5p
+prolific,51,Not Hispanic or Latino,Very well,Female,,Yes,10.1,0,No,No,1,['White'],8lfe345vgkvurp8du9sfe3cu
+prolific,24,Not Hispanic or Latino,Very well,Female,,Yes,7.9,0,No,No,1,['White'],8p2ni1ijdad6gblaeiq7rgzi
+prolific,33,Not Hispanic or Latino,Very well,Male,,No,9.9,0,Yes,No,2,['Asian'],9k89ceqjj2pul71i5uhx7kt5
+prolific,21,Not Hispanic or Latino,Very well,Male,,Yes,8.1,1,No,No,1,['White'],9kzs2lfi4bmyk5xz03ck58ne
+prolific,35,Not Hispanic or Latino,Very well,Female,,Yes,8.9,2,No,No,1,['White'],9s73oel30gm6y0mvrbrhg5sl
+prolific,29,Hispanic or Latino,Very well,Male,,No,10.9,0,No,No,1,['Rather not say'],a2v38wfhjdt19iwmixx5ubbn
+prolific,32,Not Hispanic or Latino,Very well,Male,,Yes,9.7,0,Yes,No,1,['White'],a4sq9uovavhzmy3ugpw14nes
+prolific,21,Not Hispanic or Latino,Very well,Female,,Yes,8.6,0,No,No,1,['Asian'],acyid5qbf3sxlj6irj8rue2i
+prolific,20,Hispanic or Latino,Very well,Female,,Yes,16.1,0,No,No,1,['Black or African American'],adledzgxw4grcbjza71kl0bz
+prolific,21,Not Hispanic or Latino,Very well,Female,,No,10.9,0,No,No,1,['Asian'],as4opn0p6i53xieis0t6eqgj
+prolific,26,Not Hispanic or Latino,Very well,Other,"genderfluid, assigned F",Yes,11.6,0,No,No,1,['White'],aw52ysj006w4svfzx022ho6a
+prolific,30,Not Hispanic or Latino,Very well,Female,,Yes,8.9,0,No,No,1,['White'],b50ed6wgqvfuz39mn3dw9s5i
+prolific,21,Not Hispanic or Latino,Very well,Female,,Yes,7.7,0,No,No,1,['White'],b6ntfmchp7gcv2hhdnmy8dcx
+prolific,29,Not Hispanic or Latino,Very well,Female,,No,8.7,0,No,No,1,['White'],bd1lnrnygthu88n7uhqouupu
+prolific,63,Not Hispanic or Latino,Very well,Male,,Yes,12.2,0,Yes,No,1,['White'],bgdbxmyihscd8j5yck7zpncx
+prolific,22,Not Hispanic or Latino,Very well,Female,,No,7.4,0,No,No,1,['Asian'],bglkgiekgvpk66wserkvszvn
+prolific,29,Not Hispanic or Latino,Very well,Female,,Yes,6.4,0,Yes,No,1,['White'],bpx7zoh3jy0thvu8qzq8lf0w
+prolific,33,Not Hispanic or Latino,Very well,Male,,Yes,10.6,0,No,No,1,['White'],brbcu0xzd02uqsem1xrt52wr
+prolific,19,Not Hispanic or Latino,Very well,Female,,Yes,7.9,0,No,No,1,['White'],bzkr2dox2xt1y9h4s7wpssde
+prolific,22,Not Hispanic or Latino,Very well,Male,,Yes,12.8,0,No,No,1,['White'],c0vajovs4eeyqef7vqaq0ae3
+prolific,23,Hispanic or Latino,Very well,Male,,No,9.8,0,No,No,1,['White'],clbuh3a2585h6gnz793fuy9c
+prolific,24,Not Hispanic or Latino,Very well,Male,,Yes,10.1,0,No,No,1,['Asian'],cng3i38r1jvcidbz5s9p6pw8
+prolific,25,Not Hispanic or Latino,Very well,Male,,Yes,7.7,0,No,No,1,['White'],cwgfb4shdtmzip7h3libx8if
+prolific,36,Not Hispanic or Latino,Very well,Male,,Yes,6.3,1,No,No,1,['White'],cyf4lwt71hzndc26n3gok5gn
+prolific,23,Not Hispanic or Latino,Very well,Female,,Yes,12.6,0,No,No,2,['Asian'],d4kdo4b2j6sp5t7p2c7ay6u2
+prolific,45,Not Hispanic or Latino,Very well,Male,,Yes,10.5,0,No,No,1,['White'],d548x9pit2z980gmf8mcce2g
+prolific,23,Not Hispanic or Latino,Very well,Female,,Yes,7.1,0,Yes,No,1,['White'],d9hniznzrxs4dgpe5u2oh4gp
+prolific,19,Not Hispanic or Latino,Very well,Male,,Yes,8.6,0,No,No,1,['White'],ddmw598i3zvxrzwq9tinro14
+prolific,34,Not Hispanic or Latino,Very well,Female,,Yes,8.8,0,Yes,No,1,['Asian'],dduz8pfhwdmhubex0xukns3v
+prolific,30,Not Hispanic or Latino,Very well,Female,,Yes,10.3,0,No,No,1,['White'],dfr3ft3vadd2ecq1pqhkiiid
+prolific,36,Hispanic or Latino,Very well,Female,,Yes,10.9,0,No,No,1,['White'],drsp05u7fyun1p5gbhu3a7r9
+prolific,39,Not Hispanic or Latino,Very well,Male,,Yes,14.2,0,No,No,1,['White'],dz9dqzx96f5jbaaue75gaip4
+prolific,21,Not Hispanic or Latino,Well,Male,,Yes,8.1,0,No,No,1,['White'],e0nvk8pb717u3eqm3wsl2gkf
+prolific,32,Not Hispanic or Latino,Very well,Male,,Yes,7.0,0,No,No,1,['Asian'],ef4f7206jrf8matkgc345hmc
+prolific,67,Not Hispanic or Latino,Very well,Male,,Yes,10.1,0,Yes,No,1,['White'],ehwkf4wl2iz2imaw3cx7ysx3
+prolific,34,Not Hispanic or Latino,Very well,Female,,Yes,7.2,0,No,No,1,['White'],emabcgvxonq2ef9by0gz9zgi
+prolific,24,Not Hispanic or Latino,Very well,Female,,Yes,13.8,0,No,No,1,['Rather not say'],evqas6s8izco827tpqjvoxcj
+prolific,28,Not Hispanic or Latino,Very well,Male,,Yes,8.9,1,No,No,1,['Asian'],f9xjoighh0qfwmm86mqyv5f5
+prolific,27,Not Hispanic or Latino,Very well,Female,,Yes,9.8,0,No,No,1,['Asian'],ff6kgadu0qjiwk84rukj1h84
+prolific,37,Not Hispanic or Latino,Very well,Female,,Yes,8.7,0,No,No,1,['White'],fiqso5uscn2zlqereap76xmw
+prolific,19,Not Hispanic or Latino,Very well,Female,,Yes,11.1,0,Yes,No,1,['White'],fuqsuj8ayzevglbwkk56ps6r
+prolific,25,Not Hispanic or Latino,Very well,Female,,Yes,13.3,0,No,No,1,['Asian'],g5eqvctv9id6b9ptz7kpkpcs
+prolific,25,Not Hispanic or Latino,Very well,Male,,Yes,8.9,0,No,No,2,['Asian'],gg3va1kde4m54v1ewawz8bo7
+prolific,36,Not Hispanic or Latino,Very well,Male,,Yes,13.8,0,Yes,No,1,['White'],gm54uazasq1wwy757lnxv8a7
+prolific,23,Not Hispanic or Latino,Very well,Female,,Yes,7.6,0,No,No,1,['White'],grkd2z4k0wsugzpaadomco2b
+prolific,39,Not Hispanic or Latino,Very well,Female,,Yes,9.3,0,Yes,No,1,['White'],gt2taip1p76tvaqyb4294t47
+prolific,18,Not Hispanic or Latino,Very well,Female,,Yes,7.1,0,No,No,1,['White'],h3s7f80w8xa29f1pe7wotkx8
+prolific,23,Not Hispanic or Latino,Very well,Female,,Yes,6.4,0,No,No,1,['Asian'],h5hs7yvdwt3561x7r3lb2ic3
+prolific,33,Not Hispanic or Latino,Very well,Female,,Yes,25.4,0,Yes,No,4,['Asian'],hhlynjf4hzepmv9w0mbcxqr6
+prolific,32,Not Hispanic or Latino,Very well,Female,,Yes,14.0,0,No,No,1,['White'],hrbrgwqw7co5zozydcd3fgrz
+prolific,18,Not Hispanic or Latino,Very well,Female,,Yes,8.1,0,No,No,1,['White'],i0ugmx5o8r0kmwjzjg0izrr6
+prolific,35,Not Hispanic or Latino,Well,Male,,Yes,7.6,0,Yes,No,1,['Asian'],i25gjxbngzv1icp6foea9h68
+prolific,20,Not Hispanic or Latino,Well,Male,,No,12.4,0,No,No,2,['White'],i6affm1b3nhuvqtt5axqrbx9
+prolific,27,Hispanic or Latino,Well,Male,,No,19.6,0,No,No,3,['Rather not say'],i7go7bwvda0otq6epxskd21k
+prolific,21,Not Hispanic or Latino,Very well,Female,,Yes,10.9,0,No,No,8,['White'],ii6vjnrw5osveykviroi5sjs
+prolific,22,Not Hispanic or Latino,Very well,Female,,No,7.6,0,No,No,1,['Asian'],jakm2wy22dv5pig2gfe7sip6
+prolific,27,Not Hispanic or Latino,Very well,Male,,No,8.1,0,No,No,1,['White'],jenzwgz5xzbpfou39t519cbq
+prolific,20,Not Hispanic or Latino,Very well,Male,,Yes,10.4,0,Yes,No,1,['White'],jfvqy4bcxgd0018eo9v0aemz
+prolific,37,Not Hispanic or Latino,Very well,Female,,Yes,6.8,0,No,No,1,['White'],jnabdy80h0q1gk2nwhrpcq4c
+prolific,24,Not Hispanic or Latino,Very well,Female,,No,10.6,0,No,No,6,['Asian'],jpjqotrhlpgroq452sz8q1pp
+prolific,29,Not Hispanic or Latino,Very well,Female,,Yes,8.7,1,No,No,1,['White'],jsiz28uvujubuu9fh299yt2x
+prolific,34,Not Hispanic or Latino,Very well,Female,,Yes,7.5,0,No,No,1,['White'],jsqd8nqe3yz1wf39o073cupk
+prolific,25,Not Hispanic or Latino,Very well,Female,,Yes,6.5,0,No,No,1,['Asian'],jwf8igqmhrzi0d5auaw283ge
+prolific,42,Not Hispanic or Latino,Very well,Male,,No,9.7,0,No,No,1,['White'],k20lt88h187bwdhylafnqt2u
+prolific,32,Not Hispanic or Latino,Very well,Male,,Yes,8.6,1,No,No,2,['Asian'],k4r8vpzt3fw549gr1ud5u95y
+prolific,70,Not Hispanic or Latino,Very well,Female,,Yes,15.0,1,No,No,1,['White'],k9loevk12co5ni85iv4n1nhy
+prolific,30,Not Hispanic or Latino,Well,Male,,No,11.8,0,No,No,1,['White'],ko9z51q0qculkdsls68k4ph7
+prolific,39,Not Hispanic or Latino,Very well,Female,,Yes,8.6,0,No,No,1,['White'],kwiconcwj088eqixqr19bdvk
+prolific,24,Not Hispanic or Latino,Very well,Other,Nonbinary,Yes,15.6,0,No,No,1,['White'],l3dgmgy4ntgblrflll7epil4
+prolific,25,Not Hispanic or Latino,Well,Female,,Yes,6.7,0,No,No,1,['Asian'],lfefipdfxe5vmdz550ub6rab
+prolific,28,Not Hispanic or Latino,Very well,Female,,No,11.4,0,No,No,1,['Asian'],lhrpsrhtf4ubnk9dev13a55u
+prolific,19,Not Hispanic or Latino,Very well,Female,,Yes,6.7,0,No,No,1,['Asian'],ln0nrlca6tvkni2ac7xi7h7p
+prolific,45,Not Hispanic or Latino,Very well,Female,,Yes,7.9,0,Yes,No,1,['White'],m1nml3stwvbiv4tyez8791cz
+prolific,35,Rather not say,Very well,Male,,Yes,8.7,0,No,No,1,['Rather not say'],m2d9cakvpjzfvssrwsue1l8x
+prolific,31,Not Hispanic or Latino,Very well,Female,,Yes,8.5,0,No,No,1,['Rather not say'],m4wzuj1s8ja9agm0qoc2xj95
+prolific,20,Not Hispanic or Latino,Very well,Male,,Yes,6.9,0,Yes,No,1,['White'],mg7hs29j7m7upg6e67lt7xnc
+prolific,36,Not Hispanic or Latino,Very well,Male,,Yes,12.4,0,No,No,2,['White'],miokf3xp31sodz9fu1ooo8rv
+prolific,18,Not Hispanic or Latino,Very well,Male,,Yes,7.7,0,No,No,1,['White'],mkx1kg37cbbam013vv3o4d5n
+prolific,24,Not Hispanic or Latino,Very well,Male,,Yes,9.0,0,No,No,2,['Asian'],ml99dlvnxomrv0ljb817mo1s
+prolific,46,Not Hispanic or Latino,Very well,Female,,No,14.6,1,No,No,1,['White'],mn3egk3kcwj6f1iqo6txxdc8
+prolific,67,Not Hispanic or Latino,Very well,Female,,Yes,9.1,0,Yes,No,2,['White'],mw91qbdbkogx67zcyhafmq4o
+prolific,24,Not Hispanic or Latino,Very well,Male,,Yes,8.8,0,No,No,1,['Asian'],mx811ate6r8f9iz7i54tx8qh
+prolific,47,Not Hispanic or Latino,Very well,Female,,Yes,10.9,0,No,No,1,['White'],mzbjh9jcagvog8amt8gmj6l9
+prolific,27,Not Hispanic or Latino,Very well,Male,,Yes,7.6,0,No,No,1,"['Asian', 'White']",ne5nmyju0k0oi4ez7ql5rkbc
+prolific,27,Not Hispanic or Latino,Very well,Female,,Yes,9.1,0,No,No,1,['Asian'],neoj5f2tsstve521cz90zd7y
+prolific,24,Not Hispanic or Latino,Very well,Male,,Yes,15.4,1,No,No,2,['White'],o1tws8uglfy7iud0zcdhb0of
+prolific,41,Not Hispanic or Latino,Very well,Male,,Yes,12.5,0,No,No,1,['White'],o6kb7svqlmiv784yyvo82og9
+prolific,46,Not Hispanic or Latino,Very well,Male,,No,13.6,2,No,No,3,['Asian'],obyyqp9qfruwsd0srd1za801
+prolific,21,Not Hispanic or Latino,Very well,Male,,Yes,8.0,0,No,No,1,['White'],ofrox51pmggtdf039k1xu98q
+prolific,25,Not Hispanic or Latino,Very well,Male,,Yes,7.5,1,No,No,1,['White'],og5eiqhl4ell3pvt7e47zjx1
+prolific,33,Not Hispanic or Latino,Very well,Female,,Yes,13.4,0,No,No,1,['Rather not say'],ozklnmnvkoeg9rhy7e65pj31
+prolific,43,Not Hispanic or Latino,Very well,Female,,No,14.2,2,No,No,1,['Asian'],p63k33kd0va3yr9hsisv7nza
+prolific,29,Not Hispanic or Latino,Very well,Female,,Yes,6.5,0,No,No,1,['White'],pfs02c9pkgwibojrw7huyt8j
+prolific,20,Rather not say,Very well,Male,,Yes,8.4,0,No,No,1,['Rather not say'],pfvcy6m8s0xkkfd9llpty0gt
+prolific,43,Not Hispanic or Latino,Very well,Male,,No,12.3,2,No,No,1,['White'],pinf9kszx4wbdkhy5l1hwa6c
+prolific,27,Not Hispanic or Latino,Very well,Female,,Yes,7.3,0,No,No,1,['White'],pj2juz9u4o3412tuhaaon2mx
+prolific,33,Not Hispanic or Latino,Very well,Female,,Yes,11.3,0,No,No,2,['Asian'],pky1krp9005h74sp6c3uzav9
+prolific,37,Not Hispanic or Latino,Very well,Male,,Yes,9.6,0,No,No,1,['White'],po1nb7atf5j4ghhdgotzdk87
+prolific,29,Not Hispanic or Latino,Very well,Female,,No,8.9,1,No,No,1,['Asian'],prixwwn7ldvehxeuaw036cka
+prolific,27,Not Hispanic or Latino,Very well,Female,,Yes,8.7,0,No,No,1,['White'],ptz9jbgy1fhpy8jo3lpshxna
+prolific,22,Hispanic or Latino,Well,Other,Nonbinary,Yes,11.5,0,No,No,1,['American Indian/Alaska Native'],pv0jxvb2357a5p0fwzibuqry
+prolific,38,Not Hispanic or Latino,Very well,Female,,Yes,11.3,0,No,No,1,['White'],pydsub3305ez6hew5ads85ge
+prolific,28,Not Hispanic or Latino,Very well,Female,,Yes,10.2,0,No,No,2,['White'],qcdk2tj1c6i20hiduqjeh67w
+prolific,32,Not Hispanic or Latino,Very well,Female,,Yes,8.9,0,No,No,1,['White'],qqi5znxg9c08psfg0wbsi1jc
+prolific,28,Not Hispanic or Latino,Very well,Female,,Yes,6.8,0,No,No,1,['Asian'],r8kvfvak4zlrwvn6pisn9vn3
+prolific,46,Not Hispanic or Latino,Very well,Female,,Yes,8.6,0,Yes,No,1,['Asian'],rajsvfwo2n9j6m1oj6c91rj3
+prolific,22,Not Hispanic or Latino,Very well,Male,,Yes,15.0,0,No,No,1,['White'],rd874rrg3n6blz5e2vmch8ks
+prolific,31,Not Hispanic or Latino,Very well,Female,,Yes,8.7,0,No,No,1,['Black or African American'],res0ruqjbr1gufnelh1gmu11
+prolific,24,Not Hispanic or Latino,Very well,Female,,Yes,10.1,2,Yes,No,3,['White'],rlfnbchmxcdnmvh8rchpiker
+prolific,25,Not Hispanic or Latino,Very well,Male,,Yes,15.0,2,No,Yes,4,['White'],rmj5e5y59rzx15cktxgyyfya
+prolific,22,Not Hispanic or Latino,Very well,Female,,Yes,9.2,0,No,No,1,['White'],rz9oz1fa9mxw4p8xg1zex3dn
+prolific,32,Not Hispanic or Latino,Very well,Male,,Yes,8.6,0,No,No,1,['Asian'],s6dmy269v6v8tq2sxx6ijbsi
+prolific,29,Not Hispanic or Latino,Very well,Female,,Yes,12.9,0,No,No,1,['White'],s8xztpmugvi5i1hiiy0caf1l
+prolific,19,Not Hispanic or Latino,Very well,Female,,Yes,6.5,0,No,No,1,['Asian'],scx3y6124yw45ct8lh80lxdm
+prolific,19,Not Hispanic or Latino,Very well,Male,,Yes,6.4,0,No,No,1,['White'],sfcoka8iitssmd15lnc8mb23
+prolific,28,Not Hispanic or Latino,Very well,Female,,Yes,13.0,0,No,No,2,['White'],siqr7b26o4dl4t1qe59wdsyk
+prolific,31,Not Hispanic or Latino,Very well,Female,,Yes,9.9,0,No,No,1,['Asian'],swq3fvf9fr79ha3hyl3pseuu
+prolific,22,Hispanic or Latino,Very well,Female,,No,9.4,0,No,No,1,['White'],t1yzez4ovd27jbq0hyrpx1lm
+prolific,24,Not Hispanic or Latino,Very well,Female,,Yes,6.1,0,No,No,1,['White'],tblx1m7ct4qr442pn677n41o
+prolific,26,Not Hispanic or Latino,Very well,Female,,Yes,9.1,0,No,No,1,['Asian'],tgt0ui62axqihws96b9rp7q7
+prolific,21,Not Hispanic or Latino,Very well,Male,,Yes,8.0,0,No,No,1,['Rather not say'],tmm6coys6dyyzbvl87at5f2z
+prolific,34,Hispanic or Latino,Very well,Female,,Yes,28.9,0,Yes,No,1,['White'],u3985tl25civw7cwkponfq3v
+prolific,26,Not Hispanic or Latino,Very well,Male,,Yes,9.3,0,No,No,1,['White'],u4hewdfbi95vkie80f4arixr
+prolific,18,Not Hispanic or Latino,Well,Male,,Yes,6.0,0,No,No,1,['White'],u4llbg249clqj7gecwc19dj2
+prolific,54,Not Hispanic or Latino,Very well,Female,,Yes,15.2,2,No,No,2,['White'],u5gp53g7omv2ivz6ce9napx8
+prolific,25,Not Hispanic or Latino,Very well,Male,,Yes,18.3,0,No,No,1,['White'],u8ugvmr32frcnzlceuo67kt0
+prolific,19,Not Hispanic or Latino,Very well,Female,,Yes,12.1,0,No,No,1,['White'],ucftdalpyct4hvytx6pvkp3n
+prolific,33,Not Hispanic or Latino,Very well,Female,,Yes,10.3,0,No,No,1,['White'],ulg8tc0zx06x1i6z1sgm5t4z
+prolific,53,Not Hispanic or Latino,Very well,Male,,Yes,8.7,0,No,No,1,"['American Indian/Alaska Native', 'White']",uuh7v8p7kao4kesi6uu6tvw9
+prolific,26,Not Hispanic or Latino,Very well,Female,,No,6.7,0,No,No,1,['Asian'],uukqsvy7zzeqfqovqzd1pa64
+prolific,32,Not Hispanic or Latino,Very well,Female,,Yes,10.8,0,No,No,3,['White'],uy4dfkzf724ww53jtl7euz3e
+prolific,38,Not Hispanic or Latino,Very well,Male,,Yes,10.0,0,No,No,1,['White'],v2h8o96cg4bhv88n2a134lzf
+prolific,44,Not Hispanic or Latino,Very well,Female,,Yes,12.8,0,No,No,4,['White'],v9ausuant19jns40jd4luox9
+prolific,46,Not Hispanic or Latino,Very well,Male,,No,14.5,0,No,No,1,['Asian'],vagifv6u15xfnf6u3kh9vq6r
+prolific,30,Not Hispanic or Latino,Very well,Male,,Yes,5.4,1,Yes,No,1,['White'],vjt1f5j28jg0m1mme6atp0jt
+prolific,35,Not Hispanic or Latino,Very well,Female,,Yes,9.2,0,No,No,1,['White'],w2mr1qy43bjo0tukpzsj8bem
+prolific,24,Hispanic or Latino,Very well,Male,,Yes,10.6,0,No,No,1,['White'],wbmh5irelure1ly1hmnbdml3
+prolific,32,Not Hispanic or Latino,Very well,Male,,Yes,10.7,0,No,No,1,['American Indian/Alaska Native'],wdioev3k4jeqerrhvrwol0tb
+prolific,43,Not Hispanic or Latino,Very well,Male,,Yes,13.0,0,No,No,1,['White'],wff878hbkprp629llodp0m48
+prolific,19,Not Hispanic or Latino,Very well,Male,,No,7.3,0,No,No,1,['Asian'],wlj16w5ezr0c3vxwa8kpkei4
+prolific,24,Not Hispanic or Latino,Very well,Male,,Yes,9.5,0,No,No,1,['White'],wqv0k771mdewidtut1vlckwa
+prolific,30,Not Hispanic or Latino,Very well,Female,,No,9.7,0,No,No,1,['Asian'],wxiwvk4ltgldotcyc6r0r4u2
+prolific,25,Not Hispanic or Latino,Very well,Female,,Yes,9.1,0,No,No,1,['Black or African American'],x0141yy1fat9j4de4yerqoeh
+prolific,56,Not Hispanic or Latino,Very well,Female,,Yes,8.7,0,No,No,1,['White'],x0tr8sfr0g0hf2wcinx2sltl
+prolific,34,Rather not say,Very well,Female,,Yes,11.0,0,No,No,1,['Rather not say'],x9xony0cxtk8q4m0egvrv3p7
+prolific,48,Not Hispanic or Latino,Very well,Female,,Yes,9.5,0,No,No,1,['White'],xd78fudntrmkohbpq9cgjdik
+prolific,64,Not Hispanic or Latino,Very well,Male,,Yes,8.8,0,No,No,1,['White'],xlvutciogdrl2r9g45gz7ldl
+prolific,25,Not Hispanic or Latino,Very well,Female,,Yes,10.7,0,No,No,1,['White'],xmcftp4w2e52rl9zsgzpyrxh
+prolific,39,Not Hispanic or Latino,Very well,Female,,Yes,10.2,2,No,No,1,"['Asian', 'White']",xod95zhzmdzosg5eoygdfe35
+prolific,53,Not Hispanic or Latino,Very well,Female,,Yes,9.8,0,No,No,1,['White'],xuoje6vh4hw7rm08jc79muav
+prolific,25,Not Hispanic or Latino,Very well,Female,,Yes,12.2,0,No,No,1,['Black or African American'],xus1hcgd5jscu5yugxpbjjus
+prolific,29,Not Hispanic or Latino,Very well,Female,,Yes,10.4,0,No,No,3,['White'],xvpdzry1jqz4fq3gom48b9c6
+prolific,25,Hispanic or Latino,Very well,Male,,Yes,10.1,0,No,No,1,['Rather not say'],y20qesh4on6pf8bl4d8xnfxw
+prolific,39,Not Hispanic or Latino,Very well,Female,,Yes,7.7,0,Yes,No,1,['White'],y8t2sd3dutbsp5rki7byp72x
+prolific,28,Not Hispanic or Latino,Well,Female,,No,13.4,0,No,No,1,['Asian'],yfnacg4i0v7jifyfakxjbd1q
+prolific,29,Not Hispanic or Latino,Very well,Female,,Yes,10.3,0,No,No,1,['White'],yjylqgzycho9i25v2kjx1lo0
+prolific,32,Not Hispanic or Latino,Very well,Female,,Yes,9.9,0,No,No,1,['White'],ym6mi7m98bwg02h1q56c9brf
+prolific,18,Not Hispanic or Latino,Very well,Male,,No,8.4,0,No,No,2,['Asian'],ypz0pdffitn3le2tum2n6vhx
+prolific,30,Not Hispanic or Latino,Very well,Male,,Yes,8.2,0,No,No,1,['White'],yrfvdu0d1fl5g8994ej278vz
+prolific,18,Not Hispanic or Latino,Very well,Male,,Yes,7.8,0,No,No,1,['Asian'],yy3a6xvbwcgzufjmpng6wb3d
+prolific,38,Not Hispanic or Latino,Very well,Female,,Yes,13.5,1,No,No,1,"['Black or African American', 'White']",z8a14walv6et4id5gwsv4s7t
+prolific,24,Rather not say,Very well,Male,,Yes,15.1,3,No,No,1,['Native Hawaiian or other Pacific Islander'],zk7jn70yddea3o8731mzpoz6
+prolific,19,Not Hispanic or Latino,Very well,Male,,Yes,10.5,1,No,No,1,['White'],zoaj7vekc9hzlt1rxkbt1f5h
+prolific,21,Not Hispanic or Latino,Very well,Female,,Yes,10.6,1,No,No,1,['Asian'],zs4sf8n0ws77fp0e0a75jflw
