@@ -35,6 +35,11 @@ for f in files:
     n_missing = data.missing.sum()
     data = data.query('missing==False')
         
+    ## Error-catching: exclude incomplete datasets.
+    if data.shape[0] < 90: 
+        print(f'Skipping {subject}')
+        continue
+        
     ## Define columns of interest.
     cols = ['trial','correct','choice','key','rt','accuracy','outcome']
     
@@ -105,11 +110,12 @@ SURVEYS = DataFrame(SURVEYS).sort_values(['subject'])
 METADATA = DataFrame(METADATA).sort_values(['subject'])
 
 ## Insert platform metadata.
-DATA.insert(0, 'platform', 'prolific')
-SURVEYS.insert(0, 'platform', 'prolific')
-METADATA.insert(0, 'platform', 'prolific')
+DATA.insert(0, 'platform', 'mturk')
+SURVEYS.insert(0, 'platform', 'mturk')
+METADATA.insert(0, 'platform', 'mturk')
 
 ## Save.
 DATA.to_csv(os.path.join(DATA_DIR, 'data.csv'), index=False)
 SURVEYS.to_csv(os.path.join(DATA_DIR, 'surveys.csv'), index=False)
 METADATA.to_csv(os.path.join(DATA_DIR, 'metadata.csv'), index=False)
+print(f'N = {METADATA.shape[0]}')

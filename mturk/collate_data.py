@@ -35,6 +35,11 @@ for f in files:
     n_missing = data.missing.sum()
     data = data.query('missing==False')
         
+    ## Error-catching: exclude incomplete datasets.
+    if data.shape[0] < 90: 
+        print(f'Skipping {subject}')
+        continue
+        
     ## Define columns of interest.
     cols = ['trial','correct','choice','key','rt','accuracy','outcome']
     
@@ -113,3 +118,4 @@ METADATA.insert(0, 'platform', 'mturk')
 DATA.to_csv(os.path.join(DATA_DIR, 'data.csv'), index=False)
 SURVEYS.to_csv(os.path.join(DATA_DIR, 'surveys.csv'), index=False)
 METADATA.to_csv(os.path.join(DATA_DIR, 'metadata.csv'), index=False)
+print(f'N = {METADATA.shape[0]}')
