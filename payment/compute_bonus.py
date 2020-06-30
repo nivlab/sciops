@@ -11,7 +11,7 @@ METADATA_DIR = os.path.join(ROOT_DIR, 'metadata')
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
 
 ## Locate files.
-files = sorted([f for f in os.listdir(METADATA_DIR) if f.startswith('A')])
+files = sorted([f for f in os.listdir(METADATA_DIR) if f.startswith('5')])
 
 METADATA = []
 for f in files:
