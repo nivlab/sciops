@@ -43,9 +43,18 @@ for f in files:
     
     ## Locate learning trials.
     data = DataFrame([dd for dd in JSON if dd['trial_type'] == 'three-arm-trial'])
+    data = data.query('missing==False')
     
-    ## Compute accuracy.
-    accuracy = data.accuracy.mean()
+    ## Error-catching: require full dataset.
+    if data.shape[0] < 90: 
+
+        ## Fix accuracy to zero.
+        accuracy = 0
+
+    else:
+
+        ## Compute accuracy.
+        accuracy = data.accuracy.mean()
 
     ## Store.
     DATA.append( dict(subId=subject, accuracy=accuracy) )
