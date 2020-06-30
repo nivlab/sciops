@@ -1,0 +1,47 @@
+platform,subject,minutes,n_loops,missing,age,gender-categorical,gender-free-response,ethnicity,race,language,fluency,prolific,prolific-this-study
+mturk,0a8zkiu9rpf0mxo0h9ecdyzh,8.6,1,1,48,Female,,Not Hispanic or Latino,['White'],Yes,Very well,No,No
+mturk,0g4fx9g2wryeio74yzgqwpq8,7.4,1,0,39,Male,,Not Hispanic or Latino,['White'],Yes,Very well,No,No
+mturk,1emkh8fj8n8ujo3jfrrswpna,16.5,1,0,37,Male,,Not Hispanic or Latino,['Asian'],Yes,Very well,No,No
+mturk,1h67fnjgm45dzniy6y91vld7,16.3,1,0,33,Male,,Not Hispanic or Latino,['Black or African American'],Yes,Very well,No,No
+mturk,2gbv6cbysitn0o9t9m53f3xi,9.9,1,0,51,Male,,Not Hispanic or Latino,['White'],Yes,Very well,No,No
+mturk,48kl2yj4bk3oit3lc8y2c8qf,22.6,15,4,30,Female,,Not Hispanic or Latino,['White'],Yes,Very well,Yes,No
+mturk,5ia4n00eepgph445l075pzvt,7.0,1,0,64,Female,,Not Hispanic or Latino,['White'],Yes,Very well,No,No
+mturk,6ddzcn9af3ba6dv3c91n5enx,7.1,1,0,31,Female,,Not Hispanic or Latino,['Black or African American'],Yes,Very well,No,No
+mturk,6ebn8yjdbepfbi3vshim0fa4,18.2,1,0,58,Female,,Not Hispanic or Latino,['White'],Yes,Very well,No,No
+mturk,6g0smxt28qc8rof31hj311l7,5.1,1,0,23,Female,,Not Hispanic or Latino,['White'],Yes,Very well,No,No
+mturk,6o83uqmv0frbft9n0ojoh68u,15.8,19,0,34,Male,,Not Hispanic or Latino,['White'],Yes,Well,No,No
+mturk,6u3el0wrisrdbl98ibq0opof,6.6,1,0,27,Male,,Not Hispanic or Latino,"['Black or African American', 'White']",Yes,Very well,No,No
+mturk,79wkgbbalgknlalvcbuej04n,8.3,1,0,32,Female,,Not Hispanic or Latino,"['Asian', 'White']",Yes,Very well,No,No
+mturk,8gms1x5mpu3zq71ytb9tjrss,6.2,1,0,41,Male,,Not Hispanic or Latino,['White'],Yes,Very well,Yes,No
+mturk,elw3bumjdsy00i3eny567iz0,5.6,1,0,35,Female,,Not Hispanic or Latino,['White'],Yes,Very well,Yes,No
+mturk,f413rfthchh1liluwockcj93,12.4,1,0,65,Female,,Not Hispanic or Latino,['White'],Yes,Very well,Yes,No
+mturk,fexsj0u5oib0e90p5kvm0lal,6.4,1,0,48,Female,,Not Hispanic or Latino,['White'],Yes,Very well,No,No
+mturk,fl0bey18x3e1awvawxjz06jf,10.7,1,0,32,Female,,Not Hispanic or Latino,['White'],Yes,Very well,No,No
+mturk,g0hcri7lt06it7zaxn7bdehy,8.8,1,1,56,Female,,Not Hispanic or Latino,"['Native Hawaiian or other Pacific Islander', 'White']",Yes,Very well,No,No
+mturk,h1pemdlnh3c9vhbgryg1ixhn,6.8,1,0,29,Female,,Not Hispanic or Latino,['White'],Yes,Very well,No,No
+mturk,hjga6ro8xdcijnzxcabiekgh,5.6,1,0,32,Female,,Not Hispanic or Latino,['White'],Yes,Very well,No,No
+mturk,icgpg7hk8l4t8vf3fi5rwhpy,8.6,2,0,39,Male,,Not Hispanic or Latino,['White'],Yes,Very well,Yes,Yes
+mturk,iij7l7ztcavt3v3b8beljv40,21.9,4,0,57,Male,,Not Hispanic or Latino,['White'],Yes,Very well,Yes,No
+mturk,ilccg6au6ebu6vrvwcnsxvnp,5.1,1,0,24,Female,,Not Hispanic or Latino,['White'],Yes,Very well,No,No
+mturk,j49ycui0iz38y7r8xtr8tnna,7.8,1,0,40,Male,,Not Hispanic or Latino,['White'],Yes,Very well,No,No
+mturk,kz2mnejtguvxh70ucjcunti8,8.0,1,0,40,Male,,Not Hispanic or Latino,['White'],Yes,Very well,Yes,No
+mturk,lfmnxogaj6os5ptjy6jcrdx5,6.7,1,0,30,Female,,Not Hispanic or Latino,['White'],Yes,Very well,Yes,No
+mturk,lq0d2xsr43y3la4p6u2kw6dk,12.1,2,0,40,Female,,Not Hispanic or Latino,['White'],Yes,Very well,No,No
+mturk,m94kxuxvt80yh510yh7slut7,11.0,1,2,33,Female,,Not Hispanic or Latino,['White'],Yes,Very well,No,No
+mturk,mc9b0kvhdjz7jqifqhgajsyr,7.9,1,0,39,Female,,Not Hispanic or Latino,['White'],Yes,Very well,Yes,No
+mturk,nf8od7h3v3autbl7bobc44vj,17.7,6,0,25,Male,,Not Hispanic or Latino,['White'],Yes,Very well,Yes,No
+mturk,o1a5ftr9a4e138psg4vt96xo,13.0,2,0,32,Male,,Not Hispanic or Latino,['White'],Yes,Well,Yes,Yes
+mturk,phbhdjtlsux8o4b6lw205gdn,5.7,1,0,39,Male,,Not Hispanic or Latino,['White'],Yes,Very well,No,No
+mturk,req395sg5aaa99tgui0irfk8,17.5,8,0,30,Male,,Not Hispanic or Latino,['Black or African American'],Yes,Very well,Yes,No
+mturk,s00v1x1d54te4umlyvvwaic6,7.4,2,0,45,Female,,Not Hispanic or Latino,['White'],Yes,Very well,No,No
+mturk,szygpouygrmb7vi2zvcsi7kj,9.5,1,3,62,Female,,Not Hispanic or Latino,['White'],Yes,Very well,No,No
+mturk,tlw8dxp34gf5zt4nfb7yftnf,8.1,1,0,36,Female,,Not Hispanic or Latino,['White'],Yes,Very well,No,No
+mturk,tw1nzqjjixjzlwy9kc1t7qdu,6.6,2,0,33,Male,,Rather not say,['White'],Yes,Very well,Yes,No
+mturk,w4ascja5gszgs3ox6eh471me,15.2,25,1,30,Male,,Hispanic or Latino,['Black or African American'],Yes,Very well,Yes,No
+mturk,waigs5rf1gkl2y4f6yt2la5q,8.9,1,0,32,Male,,Not Hispanic or Latino,['White'],Yes,Very well,Yes,No
+mturk,x12oo9pn58e61fflukvug2mr,7.5,1,0,29,Male,,Not Hispanic or Latino,['White'],Yes,Very well,No,No
+mturk,xe6oqx37xdawxlzrgixjkrxn,6.6,1,0,54,Female,,Not Hispanic or Latino,['White'],Yes,Very well,No,No
+mturk,ycz8oq9t09kjdd31e6iws4zh,7.7,1,0,34,Female,,Not Hispanic or Latino,['Black or African American'],Yes,Very well,Yes,No
+mturk,z4quosqgyjnj8vmg4rc84q3i,7.2,1,0,36,Female,,Not Hispanic or Latino,['White'],Yes,Very well,Yes,No
+mturk,zaz4ydbrsd4x6rstq0t1d95s,19.9,15,0,65,Male,,Not Hispanic or Latino,['White'],Yes,Very well,No,No
+mturk,zwmgj98ty8oq9j77mhqho8gx,12.5,2,0,34,Male,,Not Hispanic or Latino,['Black or African American'],Yes,Very well,Yes,No

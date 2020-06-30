@@ -105,9 +105,9 @@ SURVEYS = DataFrame(SURVEYS).sort_values(['subject'])
 METADATA = DataFrame(METADATA).sort_values(['subject'])
 
 ## Insert platform metadata.
-DATA.insert(0, 'platform', 'prolific')
-SURVEYS.insert(0, 'platform', 'prolific')
-METADATA.insert(0, 'platform', 'prolific')
+DATA.insert(0, 'platform', 'mturk')
+SURVEYS.insert(0, 'platform', 'mturk')
+METADATA.insert(0, 'platform', 'mturk')
 
 ## Save.
 DATA.to_csv(os.path.join(DATA_DIR, 'data.csv'), index=False)
