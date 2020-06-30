@@ -189,7 +189,7 @@ jsPsych.plugins['survey-demo'] = (function() {
 
     // Item 8: This study on Prolific
     html += '<div class="survey-demo-row">';
-    html += '<div class="survey-demo-prompt"><label for="prolific-this-study">Have you previously completed THIS study on prolific?</label></div>';
+    html += '<div class="survey-demo-prompt"><label for="prolific-this-study">Have you previously completed THIS study on Prolific?</label></div>';
     html += '<div class="survey-demo-response">';
     html += '<label><input type="radio" name="prolific-this-study" value="Yes" required>Yes</label>';
     html += '<label><input type="radio" name="prolific-this-study" value="No" required>No</label>';
@@ -297,6 +297,29 @@ jsPsych.plugins['survey-demo'] = (function() {
           value: field.value
         });
       }
+    }
+
+    // add checkbox responses
+    var checkbox_types = document.querySelectorAll('input[type=checkbox]');
+    var checkbox_names = [];
+    for (var i = 0; i < checkbox_types.length; i++) {
+        if (! checkbox_names.includes(checkbox_types[i].name) ){
+          checkbox_names.push(checkbox_types[i].name)
+        }
+    }
+
+    for (var i = 0; i < checkbox_names.length; i++ ){
+      var checkboxes = document.querySelectorAll(`input[name=${checkbox_names[i]}]:checked`)
+      var responses = [];
+
+      for (var j = 0; j < checkboxes.length; j++) {
+        responses.push(checkboxes[j].value)
+      }
+      serialized.push({
+        name: checkbox_names[i],
+        value: responses
+      })
+
     }
 
     return serialized;
