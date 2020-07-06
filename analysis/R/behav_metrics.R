@@ -9,41 +9,46 @@ source(here("utilities", "sum_scores.R"))
 prop_correct <- as.vector(by(behav_data$accuracy, INDICES=behav_data$subject, FUN=mean))
 
 #### metrics 2-4: win-stay rate, lose-stay rate, wsls ratio ####
-behav_data$win_stay <- NA
-behav_data$lose_stay <- NA
-for (i in 1:dim(behav_data)[1]){
-  
-  if (behav_data$trial[i] == 1){
-    next
-  } else if (behav_data$outcome[i-1] == 1){
-    
-    if (behav_data$choice[i] == behav_data$choice[i-1]){
-      behav_data$win_stay[i] <- 1
-    } else {
-      behav_data$win_stay[i] <- 0
-    }
-    
-  } else if (behav_data$outcome[i-1] == 0){
-    
-    if (behav_data$choice[i] == behav_data$choice[i-1]){
-      behav_data$lose_stay[i] <- 1
-    } else {
-      behav_data$lose_stay[i] <- 0
-    }
-    
-  }
-  
-}
-win_stay_rate <- as.vector(by(behav_data$win_stay, INDICES=behav_data$subject, FUN=mean, na.rm=T))
-lose_stay_rate <- as.vector(by(behav_data$lose_stay, INDICES=behav_data$subject, FUN=mean, na.rm=T))
-WSLS_ratio <- (win_stay_rate - lose_stay_rate) / (win_stay_rate + lose_stay_rate)
+prev_reward_locs    <- which(behav_data$outcome == 1 & behav_data$trial != 1) + 1
+prev_nonreward_locs <- which(behav_data$outcome == 0 & behav_data$trial != 1) + 1
+
+win_stay_rate       <- as.vector(by( data=behav_data[prev_reward_locs, "choice"] == behav_data[prev_reward_locs-1, "choice"],
+                                INDICES=behav_data[prev_reward_locs, "subject"],
+                                FUN=mean))
+lose_stay_rate      <- as.vector(by( data=behav_data[prev_nonreward_locs, "choice"] == behav_data[prev_nonreward_locs-1, "choice"],
+                                INDICES=behav_data[prev_nonreward_locs, "subject"],
+                                FUN=mean))
+WSLS_ratio          <- (win_stay_rate - lose_stay_rate) / (win_stay_rate + lose_stay_rate)
 
 
 #### metric 5: RT difference following reward versus nonreward ####
-prev_reward_locs <- which(behav_data$outcome == 1 & behav_data$trial != 1) + 1
-prev_nonreward_locs <- which(behav_data$outcome == 0 & behav_data$trial != 1) + 1
-
-prev_reward_rt <- as.vector(by(behav_data[prev_reward_locs, "rt"], INDICES=behav_data[prev_reward_locs, "subject"], FUN=mean))
+prev_reward_rt    <- as.vector(by(behav_data[prev_reward_locs, "rt"], INDICES=behav_data[prev_reward_locs, "subject"], FUN=mean))
 prev_nonreward_rt <- as.vector(by(behav_data[prev_nonreward_locs, "rt"], INDICES=behav_data[prev_nonreward_locs, "subject"], FUN=mean))
+reward_rt_diff    <- prev_reward_rt - prev_nonreward_rt
 
-reward_rt_diff <- prev_reward_rt - prev_nonreward_rt
+
+#### write to csv ####
+
+# combine metrics
+# all_metrics <- data.frame(survey_data$subject, survey_data$platform, prop_correct, win_stay_rate, lose_stay_rate, WSLS_ratio, reward_rt_diff)
+all_metrics <- data.frame(survey_data$subject[order(survey_data$subject)], survey_data$platform[order(survey_data$subject)], prop_correct, win_stay_rate, lose_stay_rate, WSLS_ratio)
+# names(all_metrics) <- c("subject", "platform", "prop_correct", "win_stay_rate", "lose_stay_rate", "WSLS_ratio", "reward_rt_diff")
+names(all_metrics) <- c("subject", "platform", "prop_correct", "win_stay_rate", "lose_stay_rate", "WSLS_ratio")
+
+# if file doesn't exist, write it
+metric_filename <- here("..", "..", "data", "metrics.csv")
+if (!file.exists(metric_filename)){
+  write.csv(all_metrics, file=metric_filename, row.names=F)
+} else{
+  
+  # otherwise, write only the columns that don't already exist
+  existing_file <- as.data.frame(read.csv(metric_filename, header=T))
+  existing_cols <- colnames(existing_file)
+  new_metrics <- all_metrics[, !(colnames(all_metrics) %in% existing_cols)]
+  new_names <- colnames(all_metrics)[!(colnames(all_metrics) %in% existing_cols)]
+  all_metrics <- cbind(existing_file, new_metrics)
+  colnames(all_metrics) <- c(existing_cols, new_names)
+  write.csv(all_metrics, file=metric_filename, row.names=F)
+  
+}
+
