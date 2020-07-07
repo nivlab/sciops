@@ -30,10 +30,8 @@ reward_rt_diff    <- prev_reward_rt - prev_nonreward_rt
 #### write to csv ####
 
 # combine metrics
-# all_metrics <- data.frame(survey_data$subject, survey_data$platform, prop_correct, win_stay_rate, lose_stay_rate, WSLS_ratio, reward_rt_diff)
-all_metrics <- data.frame(survey_data$subject[order(survey_data$subject)], survey_data$platform[order(survey_data$subject)], prop_correct, win_stay_rate, lose_stay_rate, WSLS_ratio)
-# names(all_metrics) <- c("subject", "platform", "prop_correct", "win_stay_rate", "lose_stay_rate", "WSLS_ratio", "reward_rt_diff")
-names(all_metrics) <- c("subject", "platform", "prop_correct", "win_stay_rate", "lose_stay_rate", "WSLS_ratio")
+all_metrics <- data.frame(survey_data$subject, survey_data$platform, prop_correct, win_stay_rate, lose_stay_rate, WSLS_ratio, reward_rt_diff)
+names(all_metrics) <- c("subject", "platform", "prop_correct", "win_stay_rate", "lose_stay_rate", "WSLS_ratio", "reward_rt_diff")
 
 # if file doesn't exist, write it
 metric_filename <- here("..", "..", "data", "metrics.csv")
