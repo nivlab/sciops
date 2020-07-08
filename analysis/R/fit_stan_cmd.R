@@ -52,9 +52,9 @@ tic()
 samples <- stan(file   = model$model_file,         # file containing stan code
                 data   = stan_data,                # list containing stan data
                 pars   = model$parameters,         # parameters to monitor
-                iter   = 250,                      # total samples to draw
-                warmup = 150,                      # unmonitored samples
-                chains = 1,                        # number of parallel chains 
+                iter   = 2500,                      # total samples to draw
+                warmup = 1250,                      # unmonitored samples
+                chains = 4,                        # number of parallel chains 
                 thin   = 1                         # thinning factor
 )
 toc()
