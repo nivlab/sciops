@@ -1,5 +1,5 @@
 #! /usr/bin/env bash
-#SBATCH -o /mnt/lustre/projects/qn57/dbennett/turk-rsl/logs/silver-screen-%j.out
+#SBATCH -o /mnt/lustre/projects/qn57/dbennett/silver-screen/logs/silver-screen-%j.out
 #SBATCH -t 30
 
 echo "In the directory: `pwd` "
