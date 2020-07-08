@@ -1,0 +1,1 @@
+sbatch -c 4 -J "RW_symmetric" batch_sample.sh model_RW_symmetric
