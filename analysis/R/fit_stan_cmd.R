@@ -12,7 +12,7 @@ turk        <- read.csv(here("..", "..", "data", "mturk", "data", "data.csv"), h
 behav_data  <- as.data.frame(rbind(prolific,turk))
 
 # optionally subset data
-behav_data <- subset(behav_data, behav_data$subject %in% unique(behav_data$subject)[1:20])
+# behav_data <- subset(behav_data, behav_data$subject %in% unique(behav_data$subject)[1:20])
 
 # format data for stan
 stan_data <- list(

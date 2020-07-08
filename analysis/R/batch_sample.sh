@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
-#SBATCH -o /mnt/lustre/projects/qn57/dbennett/silver-screen/logs/silver-screen-%j.out
-#SBATCH -t 30
+#SBATCH -o /mnt/lustre/projects/qn57/dbennett/silver-screen/analysis/R/logs/silver-screen-%j.out
+#SBATCH -t 1200
 
 echo "In the directory: `pwd` "
 echo "As the user: `whoami` "
