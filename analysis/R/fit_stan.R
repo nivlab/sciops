@@ -51,8 +51,9 @@ samples <- stan(file   = model$model_file,         # file containing stan code
                 pars   = model$parameters,         # parameters to monitor
                 iter   = 250,                      # total samples to draw
                 warmup = 150,                      # unmonitored samples
-                chains = 1,                        # number of parallel chains 
-                thin   = 1                         # thinning factor
+                chains = 2,                        # number of parallel chains 
+                thin   = 1,                         # thinning factor
+                save_warmup = TRUE
 )
 toc()
 
