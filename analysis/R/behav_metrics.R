@@ -31,11 +31,15 @@ load(here("RW_symmetric_parameters.Rdata"))
 RW_symm_eta <- est_pars[,2]
 RW_symm_beta <- est_pars[,1]
 
+#### metric 7 and 8: mean RT and number of long RT trials (> 1 second) ####
+median_RT <- as.vector(by(behav_data$rt, INDICES=behav_data$subject, FUN=median))
+n_long_RT <- as.vector(by(behav_data$rt > 1, INDICES=behav_data$subject, FUN=sum))
+
 #### write to csv ####
 
 # combine metrics
-all_metrics <- data.frame(survey_data$subject, survey_data$platform, prop_correct, win_stay_rate, lose_stay_rate, WSLS_ratio, reward_rt_diff, RW_symm_eta, RW_symm_beta)
-names(all_metrics) <- c("subject", "platform", "prop_correct", "win_stay_rate", "lose_stay_rate", "WSLS_ratio", "reward_rt_diff", "RW_symm_eta", "RW_symm_beta")
+all_metrics <- data.frame(survey_data$subject, survey_data$platform, prop_correct, win_stay_rate, lose_stay_rate, WSLS_ratio, reward_rt_diff, RW_symm_eta, RW_symm_beta, median_RT, n_long_RT)
+names(all_metrics) <- c("subject", "platform", "prop_correct", "win_stay_rate", "lose_stay_rate", "WSLS_ratio", "reward_rt_diff", "RW_symm_eta", "RW_symm_beta", "median_RT", "n_long_RT")
 
 # if file doesn't exist, write it
 metric_filename <- here("..", "..", "data", "metrics.csv")
