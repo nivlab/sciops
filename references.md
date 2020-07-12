@@ -1,7 +1,13 @@
 # References
 
 ## To-Read
+- [ ] Meade and Craig (2012)
+- [ ] Insufficient effort responding: Examining an insidious confound in survey data.
+- [ ] Kung et al. (2017): Are Attention Check Questions a Threat to Scale Validity?
+- [ ] Breitsohl & Steidelmuller: The Impact of Insufficient Effort Responding Detection Methods on Substantive Responses: Results from an Experiment Testing Parameter Invariance
+- [ ] The Differential Impacts of Two Forms of Insufficient Effort Responding (neat simulation study)
 - [ ] Detecting Careless Responding in Survey Data Using Stochastic Gradient Boosting (useful for refs to mine)
+- [ ] A little garbage in, lots of garbage out: Assessing the impact of careless responding in personality survey data (factor mixture model study)
 
 ## [Huang et al. (2012)](doi.org/10.1007/s10869-011-9231-8): Detecting and Deterring Insufficient Effort Responding to Surveys
 
@@ -29,3 +35,7 @@ There are three core results of interest to us:
 ## [Barends & de Vries (2019)](http://dx.doi.org/10.1016/j.paid.2019.02.015): Noncompliant responding: Comparing exclusion criteria in MTurk personality research to improve data quality
 
 Evidence that MTurk participants know to look for common infrequency/bogus/instructed items.
+
+## [Leiner (2019)](http://dx.doi.org/10.18148/srm/2019.v13i3.7403): Too Fast, too Straight, too Weird: Non-Reactive Indicators for Meaningless Data in Internet Surveys
+
+Not much in the way of new insights, but study provides AUC analysis of several common screening methods. Also makes some helpful suggestions for detecting low-effort response patterns (straight-lining, zig-zagging).
