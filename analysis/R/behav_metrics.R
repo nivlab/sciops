@@ -3,7 +3,7 @@
 require(here)
 
 # read data and calculate sum scores
-source(here("utilities", "sum_scores.R"))
+source(here("utilities", "source_data.R"))
 
 #### metric 1: proportion correct ####
 prop_correct <- as.vector(by(behav_data$accuracy, INDICES=behav_data$subject, FUN=mean))
