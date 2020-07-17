@@ -46,9 +46,6 @@ survey_data$shaps <- -survey_data$shaps
 # read metrics
 metrics <- read.csv(here("..", "..", "data", "metrics.csv"))
 
-# set screening criterion
-include_ix <- survey_data$platform %in% c("prolific", "mturk")
-
 # first pass: correlations with different measures with/without screening
 survey_measures <- c("seven_down", "seven_up", "bas_rwd", "bas_drive", "bis", "gad7", "pswq", "shaps")
 survey_names <- c("Depression (7-up)", "Hypomania (7-down)", "BAS reward sensitivity", "BAS drive", "BIS", "State anxiety (GAD-7)", "Trait Anxiety (PSWQ)", "Anhedonia (SHAPS, reverse-scored)")
