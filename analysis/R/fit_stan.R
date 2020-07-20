@@ -21,23 +21,10 @@ stan_data <- list(
     "new_subj_ix" = 1 * (behav_data$trial == 1)
 )
 
-# specify model
-model_RW_symmetric <- list(
-  
-  "model_name" = "RW_symmetric",
-  "model_file" = here("stan_models", "RW_symmetric.stan"),
-  "savename" = here("stan_samples", "RW_symmetric_samples.Rdata"),
-  "parameters" = c( "beta_mu",
-                    "eta_mu",
-                    "sigma",
-                    "beta",
-                    "eta",
-                    "choice_log_likelihood",
-                    "choice_pred"),
-  "indiv_parameters" = c("beta",
-                         "eta")
-) 
-model <- model_RW_symmetric
+# source model
+source(here("stan_models", "model_library.R"))
+
+model <- model_RW_asymmetric
 
 
 # specify parallel options for stan
