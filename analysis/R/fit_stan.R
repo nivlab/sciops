@@ -23,9 +23,7 @@ stan_data <- list(
 
 # source model
 source(here("stan_models", "model_library.R"))
-
 model <- model_RW_asymmetric
-
 
 # specify parallel options for stan
 rstan_options(auto_write = TRUE)

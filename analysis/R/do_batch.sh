@@ -1,1 +1,1 @@
-sbatch -c 4 -J "RW_symmetric" batch_sample.sh model_RW_symmetric
+sbatch -c 4 -J "RW_asymmetric" batch_sample.sh model_RW_asymmetric
