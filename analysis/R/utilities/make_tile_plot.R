@@ -1,8 +1,6 @@
 #### housekeeping ####
 # dependencies
-require(here)
-require(psych)
-require(gridExtra)
+require(reshape2)
 
 tile_plot <- function(metrics, behav_measures, survey_data, survey_measures, include_ix, title=""){
   
@@ -36,27 +34,3 @@ tile_plot <- function(metrics, behav_measures, survey_data, survey_measures, inc
   
   return(plot_ix)
 }
-
-# read data and calculate sum scores
-source(here("utilities", "source_data.R"))
-
-# reorder shaps so it is a measure of anhedonia
-survey_data$shaps <- -survey_data$shaps
-
-# read metrics
-metrics <- read.csv(here("..", "..", "data", "metrics.csv"))
-
-# first pass: correlations with different measures with/without screening
-survey_measures <- c("seven_down", "seven_up", "bas_rwd", "bas_drive", "bis", "gad7", "pswq", "shaps")
-survey_names <- c("Depression (7-up)", "Hypomania (7-down)", "BAS reward sensitivity", "BAS drive", "BIS", "State anxiety (GAD-7)", "Trait Anxiety (PSWQ)", "Anhedonia (SHAPS, reverse-scored)")
-behav_measures <- c("prop_correct", "WSLS_ratio", "RW_symm_beta", "RW_symm_eta")
-behav_names <- c("Proportion correct", "WSLS ratio", "Softmax beta", "Learning rate") 
-
-# plot correlations under different inclusion criteria
-all_plot <- tile_plot(title="All participants\n", metrics, behav_measures, survey_data, survey_measures, include_ix=survey_data$n_infreq_fail >= 0)
-include_plot <- tile_plot(title="Participants included with any-fail criterion\n", metrics, behav_measures, survey_data, survey_measures, include_ix=survey_data$n_infreq_fail == 0)
-exclude_plot <- tile_plot(title="Participants excluded with any-fail criterion\n", metrics, behav_measures, survey_data, survey_measures, include_ix=survey_data$n_infreq_fail > 0)
-
-all_plot
-include_plot
-exclude_plot
