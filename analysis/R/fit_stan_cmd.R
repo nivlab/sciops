@@ -5,6 +5,7 @@ args = commandArgs(trailingOnly=TRUE)
 require(here)
 require(rstan)
 require(tictoc)
+require(shinystan)
 
 # read in behavioural data and merge
 prolific    <- read.csv(here("..", "..", "data", "prolific", "data", "data.csv"), header=T)
