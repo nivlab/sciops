@@ -41,12 +41,29 @@ RW_asymm_kappa <- est_pars[,3]
 RW_asymm_eta <- est_pars[,2]
 RW_asymm_beta <- est_pars[,1]
 
+#### metric 13: perseveration after switch
+n_perseveration <- matrix(NA, nrow=length(unique(behav_data$subject)), ncol=5)
+for (i in 1:length(unique(behav_data$subject))){
+  p_data <- subset(behav_data, behav_data$subject == unique(behav_data$subject)[i])
+  
+  switch_indices <- c(which(diff(p_data$correct) != 0) + 1, 90)
+
+  for (j in 1:(length(switch_indices)-1)){
+    choices <- p_data[switch_indices[j] : switch_indices[j+1], "choice"]
+    prev_correct <- p_data[switch_indices[j]-1, "correct"]
+    new_correct <- p_data[switch_indices[j], "correct"] 
+    n_perseveration[i,j] <- sum(which(choices == prev_correct) < min(which(choices == new_correct)))
+  }
+  
+}
+
+mean_perseveration <- apply(n_perseveration, MARGIN=1, FUN=mean, na.rm=T)
 
 #### write to csv ####
 
 # combine metrics
-all_metrics <- data.frame(survey_data$subject, survey_data$platform, prop_correct, win_stay_rate, lose_stay_rate, WSLS_ratio, reward_rt_diff, RW_symm_eta, RW_symm_beta, median_RT, n_long_RT, RW_asymm_eta, RW_asymm_beta, RW_asymm_kappa)
-names(all_metrics) <- c("subject", "platform", "prop_correct", "win_stay_rate", "lose_stay_rate", "WSLS_ratio", "reward_rt_diff", "RW_symm_eta", "RW_symm_beta", "median_RT", "n_long_RT", "RW_asymm_eta", "RW_asymm_beta", "RW_asymm_kappa")
+all_metrics <- data.frame(survey_data$subject, survey_data$platform, prop_correct, win_stay_rate, lose_stay_rate, WSLS_ratio, reward_rt_diff, RW_symm_eta, RW_symm_beta, median_RT, n_long_RT, RW_asymm_eta, RW_asymm_beta, RW_asymm_kappa, mean_perseveration)
+names(all_metrics) <- c("subject", "platform", "prop_correct", "win_stay_rate", "lose_stay_rate", "WSLS_ratio", "reward_rt_diff", "RW_symm_eta", "RW_symm_beta", "median_RT", "n_long_RT", "RW_asymm_eta", "RW_asymm_beta", "RW_asymm_kappa", "mean_perseveration")
 
 # if file doesn't exist, write it
 metric_filename <- here("..", "..", "data", "metrics.csv")
