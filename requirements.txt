@@ -1,0 +1,8 @@
+## Numerical computing libraries
+numpy
+pandas
+numba
+
+## Visualization libraries
+matplotlib
+seaborn
