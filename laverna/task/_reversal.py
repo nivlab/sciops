@@ -30,18 +30,20 @@ def simulate_reversal_task(blocks, n_arms=3, p_target=0.8, p_other=0.2, size=1):
     -------
     rewards : array, shape (n_games, n_trials, n_arms)
         Binary rewards.
+    pi : array, shape (n_games, n_blocks)
+        Optimal choice.
     """
     
     ## Initialize targets.
     P = np.random.multinomial(1, np.ones(n_arms) / n_arms, size)
     P = np.where(P, p_target, p_other)
     
-    ## Initialize indices.
-    row_ix, col_ix = np.ogrid[:P.shape[0], :P.shape[1]]
-    
     ## Main loop.
-    R = []
+    R = []; pi = [] 
     for n_trials in blocks:
+        
+        ## Store optimal choice.
+        pi.append(P.argmax(axis=1))
         
         ## Simulate block of outcomes. Store.
         r = np.random.binomial(1, P, size=(n_trials,size,n_arms))
@@ -51,7 +53,11 @@ def simulate_reversal_task(blocks, n_arms=3, p_target=0.8, p_other=0.2, size=1):
         for i, j in enumerate(np.random.choice([1,-1], size, replace=True)):
             P[i] = np.roll(P[i], j)
                 
-    return np.row_stack(R).swapaxes(0,1)
+    ## Concatenate outcomes.
+    R = np.row_stack(R).swapaxes(0,1)
+    pi = np.stack(pi, axis=1)
+                
+    return R, pi
 
 
 class ReversalTask(object):
@@ -113,7 +119,7 @@ class ReversalTask(object):
         
         ## Initialize Q-values.
         if self.Q is None or reset:
-            self.Q = np.repeat(q0, (n_agents, n_arms)).astype(float)
+            self.Q = float(q0) * np.ones((n_agents, n_arms), dtype=float)
             
         ## Preallocate space.
         Y = np.ones((n_agents, n_trials), dtype=int)
@@ -122,7 +128,7 @@ class ReversalTask(object):
         for i in range(n_trials):
             
             ## Compute choice likelihood.
-            theta = np.apply_along_axis(softmax, 1, reversal.Q * reversal.beta[:,np.newaxis])
+            theta = np.apply_along_axis(softmax, 1, self.Q * self.beta[:,np.newaxis])
             theta = (1 - self.xi[:,np.newaxis]) * theta + (self.xi[:,np.newaxis] / n_arms)
             
             ## Simulate choice.
