@@ -13,6 +13,15 @@
 
 In-person undergraduate sample for study of low-effort/inattentive responding. Advocate for use of (1) response time, (2) psychometric antonyms, and (3) individual reliability scores. Also suggests warning text about low-effort responding (e.g. "sophisticated statistical control methods"). Find evidence that removing low-effort respondents improves internal consistency and factor scores. Importantly, this paper provides evidence that  10%–20% of careless respondents in a sample are sufficient to render a single-factor confirmatory model incorrect.
 
+## [Maniaci & Rogge (2014)](http://dx.doi.org/10.1016/j.jrp.2013.09.008): Caring about carelessness: Participant inattention and its effects on research
+
+Really lovely paper
+
+1. Evidence that inattentive responding reduces internal consistency
+2. Evidence that inattentive responding suppresses correlations 
+3. Removing can increase statistical power
+4. Nice use of a simulation method
+
 ## [Huang et al. (2015)](https://doi.org/10.1007/s10869-014-9357-6): Detecting Insufficient Effort Responding with an Infrequency Scale: Evaluating Validity and Participant Reactions
 
 Overview of the infrequency item approach.
@@ -55,3 +64,7 @@ Evidence that MTurk participants know to look for common infrequency/bogus/instr
 ## [Leiner (2019)](http://dx.doi.org/10.18148/srm/2019.v13i3.7403): Too Fast, too Straight, too Weird: Non-Reactive Indicators for Meaningless Data in Internet Surveys
 
 Not much in the way of new insights, but study provides AUC analysis of several common screening methods. Also makes some helpful suggestions for detecting low-effort response patterns (straight-lining, zig-zagging).
+
+## [Dennis et al. (2020)](https://doi.org/10.2308/bria-18-044): Online Worker Fraud and Evolving Threats to the Integrity of MTurk Data: A Discussion of Virtual Private Servers and the Limitations of IP-Based Screening Procedures
+
+Example of the idea that online labor markets are always evolving. Need multitude of methods and constantly evolving practices. Some evidence of fraudulence. 
