@@ -17,6 +17,18 @@ In-person undergraduate sample for study of low-effort/inattentive responding. A
 
 Overview of the infrequency item approach.
 
+## [Hauser & Schwarz (2016)](https://doi.org/10.3758/s13428-015-0578-z): Attentive Turkers: MTurk participants perform better on online attention checks than do subject pool participants
+
+Find high rates of passing instructed items. Suggest this is a measure of quality. Do not discuss the possibility of random responding elsewhere.
+
+Note 1: Good references for MTurk data quality and multi-tasking.
+
+Note 2: Some good discussion on how reputation screening can actually self-select certain types of participants.
+
+## [Thomas & Clifford (2017)](http://dx.doi.org/10.1016/j.chb.2017.08.038): Validity and Mechanical Turk: An assessment of exclusion methods and interactive experiments
+
+Really excellent review of online study quality and methods to detect careless respondents. Similarly make the argument that the most common instructed items may not be particularly sensitive measures of attention, and that multiple screening methods should be used.
+
 ## [Buchanan & Scofield (2018)](https://doi.org/10.3758/s13428-018-1035-6) Methods to detect low quality data and its implication for psychological research
 
 Directly references and addresses "automated form fillers" (e.g. "Form Filler" Google
@@ -32,9 +44,13 @@ There are three core results of interest to us:
 2. The screening metrics are largely uncorrelated. Of the 233 individuals identified by screening techniques, almost half (115) were only identified by a single technique (77 were identified by two techniques). Thus, multiple screening techniques are warranted insofar that they may pick up on different forms of low-effort/inattentive responding. Some metrics show correlations where one would expect (e.g. psychometric synonyms and personal reliability are both intended to flag inconsistent responses, while longstring and IRV are both intended to flag invariant responses). Interestingly, invariant responders were more likely to miss infrequency items, suggesting that invariance strategies should be complimented by inconsistency strategies.
 3. Screening out participants changes inter-item and inter-scale correlations. Importantly, some screening metrics (invariance metrics) may also reduce the internal consistency of unidimensional scales. As such, longstring should be used with caution.
 
+## [Aruguete et al. (2019)](https://doi.org/10.1080/13645579.2018.1563966): How serious is the ‘carelessness’ problem on Mechanical Turk?
+
+Use of consistency items in surveys flags more MTurkers than in-person respondents. Merely another method to point out. 
+
 ## [Barends & de Vries (2019)](http://dx.doi.org/10.1016/j.paid.2019.02.015): Noncompliant responding: Comparing exclusion criteria in MTurk personality research to improve data quality
 
-Evidence that MTurk participants know to look for common infrequency/bogus/instructed items.
+Evidence that MTurk participants know to look for common infrequency/bogus/instructed items. Make the recommendation that multiple screening methods needed. Won't flag all individuals with just one item or one approach. 
 
 ## [Leiner (2019)](http://dx.doi.org/10.18148/srm/2019.v13i3.7403): Too Fast, too Straight, too Weird: Non-Reactive Indicators for Meaningless Data in Internet Surveys
 
