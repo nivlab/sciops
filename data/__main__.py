@@ -118,6 +118,11 @@ METADATA = DataFrame(METADATA).sort_values(['platform','subject'])
 SURVEYS = DataFrame(SURVEYS).sort_values(['platform','subject'])
 DATA = concat(DATA).sort_values(['platform','subject','trial'])
 
+## Update non-overlapping columns.
+METADATA.insert(11, 'other-platform', np.where(METADATA['prolific'].isnull(), METADATA['mturk'], METADATA['prolific']))
+METADATA.insert(12, 'prev-complete', np.where(METADATA['prolific-this-study'].isnull(), METADATA['mturk-this-study'], METADATA['prolific-this-study']))
+METADATA = METADATA.drop(columns=['prolific','prolific-this-study','mturk','mturk-this-study'])
+
 ## Save.
 METADATA.to_csv(os.path.join(ROOT_DIR, 'metadata.csv'), index=False)
 SURVEYS.to_csv(os.path.join(ROOT_DIR, 'surveys.csv'), index=False)
