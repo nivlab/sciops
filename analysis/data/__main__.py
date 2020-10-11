@@ -96,7 +96,6 @@ for f in files:
     
     ## Assemble behavioral data.
     data = DataFrame([dd for dd in JSON if dd['trial_type'] == 'three-arm-trial'])
-    n_missing = data.missing.sum()
     data = data.query('missing==False')
         
     ## Define columns of interest.
@@ -111,6 +110,7 @@ for f in files:
     ## Insert subject ID. Append.
     data.insert(0,'platform',platform)
     data.insert(1,'subject',subject)
+    data.insert(2,'block',(data.trial-1)//15+1)
     DATA.append(data)    
     
 ## Concatenate data.
