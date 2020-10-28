@@ -17,6 +17,7 @@
 \usepackage[flushleft]{threeparttable}
 \usepackage{array}
 \usepackage[font=small, labelfont=it]{caption}
+\usepackage{booktabs} % for pretty tables
 
 % specify footnote margins
 \renewcommand\footnotelayout{%
@@ -78,155 +79,75 @@
 \setlength{\parindent}{0em}
 \setlength{\parskip}{1em}
 
-\section{Introduction}
+\section{Main}
 
-In recent years, online labor markets (e.g. Amazon Mechanical Turk, Prolific, Crowdflower) have become increasingly popular as a source of research participants in the behavioral sciences \cite{stewart2017crowdsourcing}, largely due to the ease with which these services allow for collecting large, diverse samples. Similarly, the advantages of online data collection platforms have been recognized for clinical research \cite{chandler2016conducting} and are increasingly used in studies of computational psychiatry. Here they are offer additional advantages. The ability to collect large samples facilitates transdiagnostic analysis, studying symptom co-occurrence and relation to behaviors \cite{gillan2016taking, rutledge2019machine}. Online platforms makes it easier to recruit and study otherwise difficult-to-reach populations \cite{strickland2019use}. Online platforms also make re-recruitment easier, making it possible to validate the reliability of measurements tools \cite{enkavi2019large} and possibly study longitudinal processes over long timescales \cite{kothe2019retention}. Some examples here: gillan
+Paragraph 1: Rise of online studies. Utility for clinical research. Need to define TASK somewhere here.
 
+Paragraph 2: Drawbacks to online studies. Noise. Data quality overview. Focus on unsystematic noise.
 
-Paragraph 2: These advantages not without costs: online means giving up the control of the laboratory. Participants may be distracted, multi-tasking, and with different incentives than usual in-lab participants. Fortunately, many previous studies have found data quality on online crowdsourcing websites not altogether different or worse than in-lab samples. This isn't to say bad data doesn't exist: estimates vary, but non-negligible data bad and new issues arise. For the most part, however, noise has been treated as unsystematic something that can be overcome with increased samples  \cite{gillan2016taking, chandler2020participant}. 
+Paragraph 3: Noise is not systematic. As has been pointed out, careless responding can overinflate prevalence of symptoms and can yield spurious correlations. OR Need to define TASK somewhere here.
 
-> Although typical undergraduate subject populations are often motivated to participate in studies because of an interest in psychology, MTurk participants are unsupervised and anonymous, complete surveys in unknown locations, and are motivated by financial incentives
+Paragraph 4: Not clear the extent to which this is an issue. For example, if screening in both types of data, might be not an issue. Even without screening, behavioral screening might be enough. Finally, behavior is complex and might not show up.
 
-We specifically want to draw attention to a less appreciated fact: when traits are rare, such as in psychiatry, careless responding is more likely to manifest as symptom endorsement \cite{chandler2020participant, ophir2020turker}. Rather than mask true correlations, this can induce spurious correlations in data. This effect is well documented in personality psychology, where the presence of careless respondents can induce correlations between questionnaires and bias estimated factors in factor analysis. To our knowledge, however, discussion of this point has been limited to associations between self-report measures and not with respect to behavioral experiments. There is no reason to expect, however, that this result should be limited to those domains and may similarly be an issue for computational psychiatry.
-
-Paragraph 4: not enough to speculate -- must demonstrate this is an issue. what we gonna show: (a) the minority of individuals screen. (b) behavior and survey screens may not correlate. (c) these correlations do arise. We close with some recommendations based on simulations. 
-
-\section{Core Problem}
-
-In this first section, we illustrate the core problem: namely, how C/IE responding can give rise to spurious correlations between measures of task behavior and self-reported symptoms. For our example, we have in mind a typical use case in computational psychiatry: a researcher runs a study involving a behavioral task and at least one self-report symptom measure. Specifically, we have in mind tasks where the primary outcome measure is an index of decision making. That is, we are primarily concerned with tasks where on each trial a participant must decide how to respond to some stimuli. This decision may be what is the appropriate response given some rule (e.g. color-naming in the Stroop task), which stimulus is greater (e.g. dot-motion in perceptual decision making, or which stimulus is the most valuable (e.g. decisions from description, bandit tasks). Importantly, what all of these tasks share is an explicit or implicit rule for accuracy. That is, we are not measuring idiosyncratic preferences: attentive participants should respond in a coherent and consistent fashion (e.g. prefer more valuable to less valuable).
-
-To illustrate how C/IE responding can give rise to spurious correlations in these paradigms, we introduce a simple computational framework relating responding on behavioral and self-report measures. Beginning first with task behavior, we assume that a decision, $y_{i,j}$, with $k$ response levels made by participant $i$ on trial $j$ is governed by:
-
-\begin{equation}
-    p(y_{i,j} = k \mid \psi_i, \pi_i) = (1-\pi)\text{Cog}(\psi_i) + \frac{\pi}{k}
-\end{equation}
-
-Here, $\psi_i$ is the set of latent parameters of a cognitive model governing behavior on a particular task. For example, $\psi_i$ may correspond to the parameters of a drift diffusion model or Q-learning model. More importantly, $\pi_i$ is a lapse rate which controls the degree of C/IE responding. Specifically, a participant always responds consistent with the internal model when $\pi=0$, but only responds randomly when $\pi=1$. We note that this definition assumes that C/IE responding manifests only as statistically random responding. As will be discussed below, we believe this is an overly simplistic assumption, as there exist a great multitude of low-effort heuristic strategies beyond random responding a participant may engage in. We make this assumption in this section strictly for illustrative purposes.
-
-Turning now to self-report behavior, we assume that a response, $y$, with $k$ response levels made by participant $i$ to item $j$ is governed by:
-
-\begin{equation}
-    p(y_{i,j} = k \mid \phi_i, \pi_i) = (1-\pi)\text{IRT}(\phi_i) + \frac{\pi}{k}
-\end{equation}
-
-Here, $\phi_i$ is a set of latent item response parameters governing a participant's pattern of endorsement (for a review see Burkner). Again, $\pi_i$ is a lapse rate. As above, we assume that C/IE responding manifests as statistically random responding (i.e. equal likelihood of endorsing all response levels). Of course, there exist alternate forms of C/IE responding on self-report measures (e.g. straight-lining, zig-zagging). To reiterate, we make this assumption for strictly illustrative purposes. 
-
-Crucially, we assume that the degree of C/IE responding by modality is related across individuals. That is, we assume a correlation between $\pi$ and $\pi$ such that participants more likely to engage in C/IE responding on one measure is also more likely to engage in C/IE responding on the other. As will be discussed below, we do not assume that the degree of C/IE responding for an individual is identical across modalities (i.e. $\pi \neq \pi$). Participants may be more (or less) motivated to respond carefully on certain modalities for a variety of reasons (e.g. task difficulty, participant abilities, monetary incentives). Regardless, we assume there exists some shared variance in C/IE responding by modality across individuals.  
-
-To illustrate how spurious correlations may arise, we used this framework to simulate four datasets under varying conditions (Figure 1). In each dataset, we simulated 1000 participants responses to both a behavioral and self-report measure. Crucially, we manipulated two key variables: the fraction of C/IE respondents and the skewness of the distribution of self-report scores. Specifically, we manipulated whether the fraction of C/IE respondents was 0\% (Figures 1a, 1c) or 15\% (Figures 1b, 1d), a rate similar to what has been reported in the literature. We independently manipulated whether the skew of the self-report total scores was symmetric (Figures 1a, 1b) or right-skewed (Figures 1c, 1d). We then computed Spearman correlations between behavior and self-report for 1000 random subsamples of 100 participants.
-
-\begin{figure}[!b]
-    \centering
-    \includegraphics[scale=0.6]{figures/figure_01.png}
-    \caption{Caption}
-    \label{fig:simulations}
-\end{figure}
-
-We draw your attention to two key results of this simulation. First, under a model of statistical randomness, C/IE respondents will fall to the center of the range of total scores. This follows naturally from the definition of statistically random responding (i.e. the mean of a uniform distribution is the center of its range). As such when the distribution of total scores is symmetric, C/IE respondents will resemble the modal participant. However, when the distribution of total scores is asymmetric, C/IE respondents will show elevated (attenuated) total scores when the distribution is right-skewed (left-skewed). That is, for skewed symptom measures where higher scores indicate greater pathology, C/IE respondents will falsely appear as endorsing higher levels of illness.
-
-
-Most importantly, this has consequences for the experimenter correlating behavior and self-report measures. In the absence of C/IE respondents, regardless of total score distribution, behavior-symptom correlations are centered at zero with false positive rates around the 5\% level (Figures 1a, 1c). Similarly, the presence of C/IE respondents does not impact behavior-symptom correlations when the total score distribution is symmetric (Figure 1b). When the total score distribution is asymmetric, however, the presence of C/IE respondents means the distribution of behavior-symptom correlations is no longer centered at zero and the false positive rate is substantially elevated (Figure 1d). In other words, the combination of asymmetric total scores and C/IE responding yields favorable conditions for spurious behavioral-symptom correlations. Crucially, this is precisely the sort of condition we find ourselves in psychiatry, where many symptoms of interest have low overall endorsement in the general population.
-
-Thus, we have shown how spurious behavior-symptom correlations may arise in presence of C/IE respondents. However, as panel 1c suggests, removing these participants should prevent or decrease the likelihood of spurious correlations. Thus the question next turns to how common is this scenario. 
-
-Before moving on, we wish to address one portion of our assumptions: namely statistically random responding for self-report measures. Random responding in one heuristic pattern, but there are others. For example, C/IE participants also show straight-lining (i.e. choosing the same response level for most or all items) and zig-zagging (i.e. choosing adjacent response levels of successive items). We note that these heuristic strategies will also give rise to these problems in aggregate. By definition, zig-zagging will yield approximately uniform response patterns. In aggregate, a collection of straight-liners choosing different response levels will form a uniform distribution in aggregate that will also yield similar patterns of correlations.
-
-[supplementary figure?]
-
-\section{State of screening practices}
-
-As demonstrated in the preceding section, the presence of C/IE respondents can yield spurious correlations between measures of task and self-report behaviors in scenarios common to psychiatry. As such, it is imperative for researchers to detect and remove these participants prior to analysis. This raises two questions: (1) do researchers screen participants of online studies for C/IE responding, and if so (2) what how do they do so? The answers to these questions should, in part, tell us how worried we need to be about the above pattern of results.
-
-In this section, we conduct a cursory review of the literature to evaluate the state of screening practices in online studies of psychiatric behavior. Studies were identified through a set of searches in Google Scholar entailing permutations of keywords related to online labor platforms (e.g. "online", "mechanical turk", "prolific"), psychiatry, and behavioral tasks. Studies were included in the review insofar that they met the following criteria: (a) recruited participants online, (b) collected responses on at least one self-report symptom measure, and (c) collected responses to at least one experimental task. Using these criteria, we identified 49 studies suitable for inclusion (the complete list of studies and their associated search queries are included in the supplement). Next, we reviewed the methods of each study to identify whether (a) participants were excluded (or adjusted for) based on task and/or self-report behaviors and if so (b) what criteria were used. We note that the goal of this review was not to be exhaustive, but rather to provide a representative overview of the practices common in this subfield.
-
-Summary statistics about the prevalence and types of screening are provided in Table 1. Turning first to exclusion criteria based on task behavior, the majority of studies in our sample (39/48; 81\%) used at least approach to identify C/IE respondents in task behavior. Of those studies, just over half used only one form of evaluation. Unsurprisingly, there was considerable heterogeneity in the methods used to screen task behavior across studies. Most common was screening based on performance accuracy (numbers), or responding above chance levels. Almost as common was screening based on response variability (numbers), or using. Less common methods were screening based on response times and failed comprehension checks. Briefly, we note that many studies excluded based on missing data but we do not consider that here as that many not reflect C/IE responding, but instead technical issues. In sum, the majority of studies utilized at least one method for screening behavioral data (though the method(s) used varied considerably across studies). 
-
-By comparison, only the minority of studies performed at least one form of screening for C/IE responding in self-report data. The majority of studies performing self-report screening employed only one method. By far, the most common method was the use of attention checks. Attention checks can be subdivided into different categories. For example, instructed items explicitly tell a participant which response option to choose; those failing to do so are presumably C/IE respondents. In contrast, infrequency items are those which have only one or a small set of valid responses. Most attention checks fell into the former category; only one study in sample reported using infrequency items. Most other studies using attention checks did not disclose the check they used; though there are valid reasons for doing so, this prevents us from knowing their methods. Far less were so-called unobtrusive or statistical methods. Only a handful of studies reported using screening based on personal consistency with repeat items, entropy, or outlier detection. 
-
-To summarize whereas screening for C/IE responding in task behavior is ostensibly the norm, screening self-report behavior is far less prevalent. Indeed, whereas approximately 80\% of studies used at least one method for screening behavioral data, fewer than 40\% of studies did the same for self-report data. One possible explanation for this pattern of results is that researchers assume that screening methods for task and self-report behaviors are equally sensitive to C/IE responding. That is, researchers may believe that both types of screening measures will detect the same participants and are as such redundant. If this is the case, to our knowledge this assumption has yet to be empirically demonstrated. Thus, we ran an experiment blah blah blah.
-
-Before moving on, we pause to discuss two important pattern of results from this literature review. First, we found that the majority of studies used only one single method to detect C/IE responding. This is concerning for several reasons. First, multiple empirical investigations of self-report screening metrics have demonstrated that different metrics are sensitive to different heuristric strategies and employing only one may mean missing other bad data. Though this has been less researched in the. context of task behavior, it is likely no less true. For example, WSLS and accuracy. Similarly, metrics are a SNR issue and multiple metrics allow for better resolution of true and false positives. 
-
-Second, and more controversially, that the majroity of studies using instructed items is ocncerning. Less effective on MTurk. Empirical evidence that folks know to look for them. Popularly discussed on formums (link 1, linke 2). In our studies, have found less sensitive measure than others. We encourage researchers to swap or at least use multiple.  
-
-\begin{tabular}{ |p{3cm}||p{3cm}|p{3cm}|p{3cm}|  }
- \hline
- \multicolumn{2}{|c|}{Behavioral Screening} &
- \multicolumn{2}{|c|}{Self-Report Screening} \\
- \hline
- Accuracy & 18 (37\%) & Attention Check & 17 (35\%) \\
- Variability & 15 (31\%) & Instructed & 10 (20\%) \\
- Response Time & 7 (14\%) & Unspecified &  5 (10\%) \\
- Comprehension & 5 (10\%) & Unobtrusive &  4 (8\%) \\
- Other & 16 (33\%) & &  \\
- \hline
- At least 1 & 39 (80\%) & At least 1 & 19 (39\%) \\
- \hline
-\end{tabular}
-
-\section{Methods}
-
-\subsection{Participants}
-
-405 participants were recruited online to participate in a behavioral experiment in May, 2020. Approximately half of participants were recruited from Amazon Mechanical Turk (N=204), whereas the remaining half were recruited from Prolific (N=200). All participants consented to participate. Participants demographics are reported in Table S1. Importantly N participants admitted to participating twice: once on MTurk and once on Prolific, and were removed from all subsequent analyses.  All participants were paid at a rate of \$12/hr plus a performance bonus of up to blah (average rate: blah). All things approved by Princeton. 
-
-400 participants agreed to participate online during month of May 2020. 200 participants from MTurk. 200 participants from Prolific. All participants consented to participate. All participants were paid at a rate of \$12/hr plus a performance bonus of up to blah (average rate: blah). All things approved by Princeton IRB.  
-
-Importantly, participants from MTurk were recruited via CloudResearch (formally TurkPrime). Describe methods. Similarly describe methods for Prolific. Address MTurk screening requirement. 
-
-\subsection{Symptom Measures}
-
-After consenting but prior to start of experiment, participants completed four measures: (1) GAD-7, (2) 7U7D, (3) BIS-BAS, (4) SHAPS. Importantly, these four were selected due to modal responding (two right-skewed, one symmetric, one left-skewed). 
-
-\textbf{GAD-7}
-
-\textbf{7u7d}
-
-\textbf{BIS/BAS}
-
-\textbf{SHAPS}
-
-Describe infrequency items. Describe recommendations, describe cat and mouse situation. Provide one example. All previously vetted. 
-
-\subsection{Reversal Learning Task}
-
-Participants completed a 3-arm probabilistic learning task, similar to [citations]. On every trial, participants were able to choose one of three options. On any trial, there was always one best option, rewarding with 80\% probability; remaining arms rewarded with 20\% probability. Crucially, every 15 trials the contingencies switched such that one of the two suboptimal arms became optimal. Participants completed 90 total trials. Decision phase 2000ms, outcome phase 1000ms. The total experiment lasted 8 minutes.
-
-The cover story was fishing. Three beaches, trying to catch the most fish. Participants explicitly told some beaches better than others, and that the best beach may change over time. Participants had to answer four comprehension check questions: [list questions]. Participants had to complete all comprehension checks to continue, but were never excluded (similar to Gillan). Note that this may have caused attrition.
-
-\subsection{Survey Analysis}
-
-\textbf{Infrequency fail}
-
-\textbf{Entropy}
-
-\textbf{Reliability}
-
-\textbf{Mahalanobis D}
-
-\textbf{Reading Times}
-
-\subsection{Behavior Analysis}
+Paragraph 5: our current results call into question.
 
 \section{Results}
 
-\subsection{Description}
+\subsection{Screening for C/IE responding is common for task behavior but not for self-report behavior}
 
-What participant metadata to include? Percentage of overlap between MTurk and Prolific? 
+The presence of C/IE responding in a dataset can result in spurious correlations between measures of behavior. As such, it is imperative for researchers to detect and remove those participants whom complete online experiments with insufficient effort. The extent to which experimenters evaluate the quality of both the task and self-report data they collect is unclear. We suspect that whereas screening of task data is standard practice, the screening of self-report data is far less prevalent in online human behavioral research. 
 
-Description of infrequency item fails. Probably want to describe more fails on MTurk than Prolific. 
+To provide quantitative support to this claim, we performed a cursory literature review of online human behavioral studies. (See Methods for details of the literature search and the list of studies included.) Briefly, we identified studies for inclusion through searches on Google Scholar using permutations of query terms related to online labor platforms, experimental paradigms, and symptom measures. We included studies that (a) recruited participants online, (b) measured behavior on at least one experimental task, and (c) measured behavior on at least one self-report symptom measure. This resulted in the inclusion of 49 studies. We then evaluated whether and how those studies performed task and self-report behavior screening. We note that this review was not meant to be systematic, but instead to provide a representative overview of the screening practices common to online behavioral studies.
 
-\subsection{Agreement of screening metrics}
+Summary statistics about the prevalence and types of screening practices are provided in Table~\ref{tab:screening}. Of the 49 online behavioral studies meeting inclusion criteria, roughly 80\% (39/49) used at least one approach to identify C/IE responding in task behavior. Of those studies, just over half relied on a single evaluative method. As might be expected, there was considerable heterogeneity in task behavior screening methods. Most common was identifying participants whose performance was indistinguishable from chance-level on some measure of accuracy. Almost as common was screening based on response variability, or identifying participants who predominantly responded in the same fashion (e.g. used only 1 key). Less common approaches were screening based on response times and instruction comprehension questions. 
 
-Paragraph 1: First we compare metrics based on Spearman correlation. 
+In contrast, only the minority of online behavioral studies in our sample used at least one approach to identify C/IE responding in self-report behavior. Of those studies the most common method was the use of attention checks, which operate under the assumption that certain responses are unlikely under inattentive responding. Attention checks can be subdivided into different categories such as instructed items, where participants are explicitly told which response to select, and infrequency items, where only one or a small set of responses are valid. Of those studies that specified what type of attention check was used, instructed items were the most common form of attention check. Only a handful of studies employed statistical or so-called unobtrusive screening methods such as outlier detection or personal consistency. 
 
-Paragraph 2: Second we compare metrics based on dice coefficient.
+In sum whereas screening for C/IE responding in task behavior is ostensibly the norm for online behavioral studies, screening self-report behavior is far less prevalent. One possible explanation for this pattern of results is that researchers (implicitly) assume that screening both task and self-report behavior is redundant. That is, researchers may believe that task and self-report screening methods will identify the same participants as having exhibited C/IE responding. To our knowledge, however, this crucial assumption has never been empirically verified. In the next section, we explicitly test this hypothesis in a large sample of online participants.
 
-Paragraph 3: In sum, it seems to be that behavior and survey metrics may not always agree. That is, screening on behavior alone is not guaranteed inattentive survey responders. What are the consequences? 
 
-\subsection{Correlation Analysis}
+\begin{table}[t]
+\centering
+\setlength{\tabcolsep}{12pt}
+\begin{tabular}{lrrrr}
+\toprule
+& \multicolumn{2}{c}{Task Screening} & \multicolumn{2}{c}{Self-Report Screening} \\
+\cmidrule(lr){2-3} \cmidrule(lr){4-5}
+Frequency & \multicolumn{2}{c}{N=39 (80\%)} & \multicolumn{2}{c}{N=19 (39\%)} \\
+\midrule
+Method & Accuracy & 18 (46\%) & Attention Check & 17 (89\%) \\
+& Variability & 15 (38\%) & Instructed & 10 (53\%) \\
+& Response Time & 7 (18\%) & Unspecified & 5 (26\%) \\
+& Comprehension & 5 (13\%) & Unobtrusive & 4 (21\%) \\
+& Other & 16 (41\%) \\
+\bottomrule
+\end{tabular}
+\caption{The prevalence and types of task and self-report behavior screening practices in a representative sample (N=49) of online behavioral studies.}
+\label{tab:screening}
+\end{table}
 
-\section{Simulation Results / Recommendations}
+
+Before continuing, we wish to briefly highlight two additional results from our literature review. First, we found that the majority of studies used only one single method to detect C/IE responding. This is worrisome from the perspective of signal detection theory. As has been previously reported, measures of C/IE responding have different sensitivities: some measures will identify only the worst participants, whereas others will flag many more respondents. As such, using only a single measure runs the risk of false positives (in the case of high sensitivity) and false negatives (in the case of low sensitivity). Similarly, different measures are sensitive to different \emph{types} of C/IE responding. Using only one measure may thus only identify a subset of C/IE respondents. As has been discussed elsewhere, the use of multiple measures is encouraged to more accurately and sensitively identify C/IE responding in a dataset.
+
+Second, we found that the majority of studies that did screen self-report data relied on instructed items. This is separately worrisome as a growing body of research disputes their efficacy for online studies. There is empirical evidence that these items are less sensitive online elsewhere. A quick search online reveals that instructed items are frequently discussed in forums used by workers in online labor markets. Most concerning, there is empirical evidence that of a subset of participants that screen for these items and respond randomly where else. We encourage other methods and, as above, a multitude of methods. 
+
+\subsection{Task and self-report measures of C/IE responding}
+
+To measure the correspondence between measures of C/IE responding based on task and self-report behaviors, we conducted an behavioral experiment in two prominent online labor marketplaces (see Methods for complete details). In total, 400 participants were recruited from Amazon Mechanical Turk (N=) and Prolific (N=) to complete an online study comprised of one behavioral task and several self-report symptom measures. We recruited participants from both platforms in order to improve the generalizability of our findings. The demographics of each sample are summarized in Table XX. 
+
+Participants completed a 3-arm probabilistic reversal learning bandit task. During the task, participants were presented with three options and could only choose one, after which they received feedback (reward or no-reward). Participants were instructed to choose the option that yielded reward most often, which they would learn through trial-and-error. Feedback was probabilistic such that the best option on a given trial returned reward on 80\% of trials and the other options only 20\%. Importantly, the best option changed every 15 trials. Participants were made explicitly aware that the best option would change over time, but they were not told when or how often this would occur. Participants completed 90 trials of the task (5 total reversals). 
+ 
+Prior to the start of the behavioral experiment, participants also completed four standard self-report symptom measures: the generalized anxiety disorder scale (GAD7), the 7-up/7-down, the BIS/BAS, and the Snaith-Hamilton Pleasure Scale. The measures were selected to provide a range of response distributions. For example, the GAD-7 and 7-up/7-down are substantially asymmetric.
+
+To measure the level of correspondence between task- and self-report-based measures of C/IE responding, we computed a number of metrics from the task and self-report behavior of each subject. For the task behavior, we estimated the following metrics: response variability, accuracy, win-stay lose-shift, and fraction of trials with suspicious response times. For the self-report behavior, we estimated the following metrics: number of suspicious responses to infrequency items, inter-item standard deviation (ISD), personal reliability, Mahalanobis distance, and the per-item reading time. 
+
+To provide an overall sense of the quality of the data, we first focus on the task accuracy and infrequency scores. Based on task accuracy, XX\% of participants were flagged as exhibiting C/IE responding. That is, XX\% of participants showed accuracy levels at levels indistinguishable from chance. In contrast, the infrequnecy items flagged XX\% of participants as exhibiting C/IE responding. This discrepancy between identification rates is already suggestive of differences between task and self-report screening measures. Interestingly, the rates of flagged participants differed by platform. 
+
+Give overall rates here. Basically want to discuss: (1) different by platform, (2) different by method. 
+
+Core result 1: continuous (spearman) correlaiton analysis. 
+
+\subsection{}
 
 \section{Discussion}
 
@@ -240,32 +161,9 @@ Topic XX: incentives for performance in online tasks
 
 Topic XX: Accidentally screening out participants of interest
 
-\section{Supplement}
+\section{Methods}
 
-\begin{tabular}{ |p{2cm}|p{4.5cm}|p{2.5cm}|p{2.5cm}|  }
- \hline
- & & MTurk (N=205) & Prolific (N=201) \\
-  \hline
- Variable & Range & N (\%)  & N (\%) \\
- \hline
-  & 18-25 & 16 (7.8) & 79 (39.3) \\
-  & 26-35 & 86 (42.0) & 69 (34.3) \\ 
-  & 36-45 & 49 (23.9) & 31 (15.4) \\
-  & 46-55 & 26 (12.7) & 13 (6.5) \\
-  & 55+ & 28 (13.7) & 9 (4.5) \\
-  \hline
-  & Female & 86 (42.0) & 112 (55.7) \\ 
-  & Male & 119 (58.0) & 86 (42.8) \\ 
-  & Other & 0 (0.0) & 3 (1.5) \\
-  \hline
-  & Hispanic or Latino & 27 (13.2) & 10 (5.0) \\
-  & Not Hispanic or Latino & 174 (84.9) & 184 (91.5) \\ 
-  & Unknown & 2 (1.0) & 0 (0.0) \\
-  & Rather not say & 2 (1.0) & 7 (3.5) \\
-  \hline
-  & Yes & 90 (43.9) & 28 (13.9) \\
-  & No & 115 (56.1) & 173 (86.1) \\ 
-\end{tabular}
+\section{Supplement}
 
 \bibliography{main}
 
