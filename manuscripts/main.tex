@@ -126,24 +126,22 @@ Method & Accuracy & 18 (46\%) & Attention Check & 17 (89\%) \\
 \label{tab:screening}
 \end{table}
 
-
 Before continuing, we wish to briefly highlight two additional results from our literature review. First, we found that the majority of studies used only one single method to detect C/IE responding. This is worrisome from the perspective of signal detection theory. As has been previously reported, measures of C/IE responding have different sensitivities: some measures will identify only the worst participants, whereas others will flag many more respondents. As such, using only a single measure runs the risk of false positives (in the case of high sensitivity) and false negatives (in the case of low sensitivity). Similarly, different measures are sensitive to different \emph{types} of C/IE responding. Using only one measure may thus only identify a subset of C/IE respondents. As has been discussed elsewhere, the use of multiple measures is encouraged to more accurately and sensitively identify C/IE responding in a dataset.
 
 Second, we found that the majority of studies that did screen self-report data relied on instructed items. This is separately worrisome as a growing body of research disputes their efficacy for online studies. There is empirical evidence that these items are less sensitive online elsewhere. A quick search online reveals that instructed items are frequently discussed in forums used by workers in online labor markets. Most concerning, there is empirical evidence that of a subset of participants that screen for these items and respond randomly where else. We encourage other methods and, as above, a multitude of methods. 
 
 \subsection{Task and self-report measures of C/IE responding}
 
-To measure the correspondence between measures of C/IE responding based on task and self-report behaviors, we conducted an behavioral experiment in two prominent online labor marketplaces (see Methods for complete details). In total, 400 participants were recruited from Amazon Mechanical Turk (N=) and Prolific (N=) to complete an online study comprised of one behavioral task and several self-report symptom measures. We recruited participants from both platforms in order to improve the generalizability of our findings. The demographics of each sample are summarized in Table XX. 
+To measure the correspondence between measures of C/IE responding based on task and self-report behaviors, we conducted an behavioral experiment in two prominent online labor marketplaces (see Methods for complete details). In total, 386 total participants from Amazon Mechanical Turk (N=186) and Prolific (N=200) completed an online study comprised of one behavioral task and several self-report symptom measures. We recruited participants from both platforms in order to improve the generalizability of our findings. The demographics of each sample are reported in the Supplement.
 
 Participants completed a 3-arm probabilistic reversal learning bandit task. During the task, participants were presented with three options and could only choose one, after which they received feedback (reward or no-reward). Participants were instructed to choose the option that yielded reward most often, which they would learn through trial-and-error. Feedback was probabilistic such that the best option on a given trial returned reward on 80\% of trials and the other options only 20\%. Importantly, the best option changed every 15 trials. Participants were made explicitly aware that the best option would change over time, but they were not told when or how often this would occur. Participants completed 90 trials of the task (5 total reversals). 
  
 Prior to the start of the behavioral experiment, participants also completed four standard self-report symptom measures: the generalized anxiety disorder scale (GAD7), the 7-up/7-down, the BIS/BAS, and the Snaith-Hamilton Pleasure Scale. The measures were selected to provide a range of response distributions. For example, the GAD-7 and 7-up/7-down are substantially asymmetric.
 
-To measure the level of correspondence between task- and self-report-based measures of C/IE responding, we computed a number of metrics from the task and self-report behavior of each subject. For the task behavior, we estimated the following metrics: response variability, accuracy, win-stay lose-shift, and fraction of trials with suspicious response times. For the self-report behavior, we estimated the following metrics: number of suspicious responses to infrequency items, inter-item standard deviation (ISD), personal reliability, Mahalanobis distance, and the per-item reading time. 
+To measure the level of correspondence between task- and self-report-based measures of C/IE responding, we computed a number of metrics from the task and self-report behavior of each subject. For the task behavior, we estimated the following metrics: response variability, accuracy, win-stay lose-shift, and fraction of trials with suspicious response times. For the self-report behavior, we estimated the following metrics: number of suspicious responses to infrequency items, inter-item standard deviation (ISD), personal reliability, Mahalanobis distance, and the per-item reading time. Each metric was selected because it has previously been used.
 
-To provide an overall sense of the quality of the data, we first focus on the task accuracy and infrequency scores. Based on task accuracy, XX\% of participants were flagged as exhibiting C/IE responding. That is, XX\% of participants showed accuracy levels at levels indistinguishable from chance. In contrast, the infrequnecy items flagged XX\% of participants as exhibiting C/IE responding. This discrepancy between identification rates is already suggestive of differences between task and self-report screening measures. Interestingly, the rates of flagged participants differed by platform. 
+To provide an overall sense of the quality of the data, we first focus on the task accuracy and the infrequency item metrics as these represent the most common screening methods of each behavioral modality. Only 26 participants (7\%) were flagged as exhibiting choice behavior at or above chance levels. In contrast, 85 participants (22\%) responded suspiciously to one or more of the infrequency items while completing of self-report symptom inventories. This discrepancy in the proportion of participants flagged by each method is consistent with previous studies which have found differing sensitivities to C/IE responding. Notably, the proportions of flagged participants were marginally but significantly greater on Mechanical Turk compared to Prolific for both accuracy ($z=2.224, p=0.026$) and infrequency ($z = 2.223, p = 0.026$) metrics.
 
-Give overall rates here. Basically want to discuss: (1) different by platform, (2) different by method. 
 
 Core result 1: continuous (spearman) correlaiton analysis. 
 
@@ -163,8 +161,131 @@ Topic XX: Accidentally screening out participants of interest
 
 \section{Methods}
 
+\subsection{Literature Review}
+
+\subsection{Experiment}
+
+\subsubsection{Sample}
+
+409 total participants were recruited to participate in an online behavioral experiment in May, 2020. Specifically, 208 participants were recruited from Amazon Mechanical Turk (MTurk) and 201 participants were recruited from Prolific.  This study was approved by the Institutional Review Board of Princeton University (\#5291), and all participants provided written informed consent. Total study duration was approximately 10 minutes per participant. Participants received monetary compensation for their time (rate \$12/hr), plus an incentive-compatible bonus based on task performance. 
+
+Participants from Mechanical Turk were recruited with the aid of CloudResearch services and were eligible if they resided in the United States or Canada. Following recent recommendations, Mechanical Turk workers were not excluded based on HIT approval rate or number of HITs approved. Participants from Prolific were similarly eligible if they resided in the United States. No other exclusion criteria were applied during recruitment. 
+
+The data from multiple participants who completed the experiment were excluded prior to analysis. Three participants (all Mechanical Turk) were excluded due to missing data. In addition, 20 participants were excluded for having previously completed the experiment on the other platform (MTurk: N=19, Prolific: N=1). This left a final sample of N=386 participants (MTurk: N=186, Prolific: N=200) for analysis. The demographics of the sample split by labor market is provided in Table S1. Notably, the participants recruited from MTurk were older ($M = 7.7 \ \text{yrs}, t = 6.567, p < 0.001$) and comprised of fewer women ($z = 6.567, p = 0.011$). Interestingly, 38\% of MTurk users in our sample reported also completing work on Prolific, whereas only 14\% of Prolific users in our sample reported completing work on MTurk. 
+
+\subsubsection{Experimental Task}
+
+Participants performed a probabilistic reversal learning task, explicitly designed to be similar to previous computational psychiatry studies. On every trial of the task, participants were presented with three choice options and were required to choose one. After their choice, participants were presented with probabilistic feedback: a reward (1 point) or a non-reward (0 points). On any trial one choice option dominated the others. When chosen, the dominant option yielded reward with 80\% probability; the subordinate options yielded reward with only 20\% probability. Importantly, dominant option changed every 15 trials. Participants completed 90 trials of the task (1 learning block, 5 reversal blocks). 
+
+As a cover story, the probabilistic reversal learning task was introduced to participants as a fishing game. In the game, each choice option was a beach scene made distinguishable by a colored surfboard with unique symbol. Participants were told they were choosing which beach to fish at. Feedback was presented as either a fish (1 point) or trash (0 points). Participants were instructed to earn the most points possible by learning (through trial-and-error) and choosing the best choice option. Participants were also instructed that the best option could change during the task, but were not informed about how often or when this would occur (see the Supplement for the complete instructions). Prior to beginning the experiment, participants had to correctly answer four comprehension questions about the instructions. Failing to correctly answer all items forced the participant to start the instructions over.
+
+The task was programmed in jsPsych and distributed using custom web-application software. Both the experiment code and 
+
+\subsubsection{Self-Report Measures}
+
+Prior to completing the reversal learning task, participants completed 5 self-report symptom measures. The symptom measures were selected for inclusion based on their frequency in clinical research and for having an assorted range of response distributions (e.g. symmetric, right-skewed, left-skewed).
+
+\textbf{Seven-Up/Seven-Down}: The Seven-Up/Seven-Down (7u/7d) scale is a 14-item measure of manic and depressive tendencies. It is an abbreviation of the General Behavior Inventory, wherein only items that maximally discriminated between depression and mania were included. It has good psychometric properties and predictive validity. Items are scored on 4-point scale from 0 (Never or hardly ever) to 3 (Very often; almost constantly). Total scores on both subscales are usually strongly right-skewed, with few participants exhibiting moderate to high levels of symptom endorsement. 
+
+\textbf{Generalized Anxiety Disorder-7}: the Generalized Anxiety Disorder-7 (GAD-7) is a 7-item measure of general anxiety. It has good psychometric properties in primary care settings and in the general population. The GAD-7 assesses how much a respondent has been bothered by each of seven core anxiety symptoms over the last 2 weeks. Items are scored on 4-point scale from 0 (not at all) to 3 (nearly every day). Total scores on the GAD-7 are usually right-skewed, with few participants exhibiting moderate to high levels of symptom endorsement.
+
+\textbf{Behavioral Inhibition/Behavioral Activation Scales}: the Behavioral Inhibition and Behavioral Activation Scales (BIS/BAS) are a measure of approach and avoidance motivations. The original 42-item measure was recently abbreviated to a 14-item measure, which we use here.
+
+\textbf{Snaith-Hamilton Pleasure Scale}:
+
+\textbf{Penn State Worry Questionnaire}:
+
+\subsection{Analysis}
+
+\subsubsection{Correspondence of screening measures}
+
+To measure the correspondence of task- and self-report-based screening metrics, we estimated a number of standard measures of data quality from each participant's task and self-report behavior. Beginning first with the self-report data, we included five common measures of data quality, each described below.
+
+\textbf{Infrequency items}: We embedded four infrequency items across the self-report measures. The infrequency items were questions that should have only one response. We measured the number of suspicious responses made by each participant. For thresholded analyses, participants were flagged if they responded incorrectly to any of these items.
+
+\textbf{Inter-item standard deviation}: The inter-item standard deviation (ISD) is an intrapersonal measure of response variability. For a given subscale $j$, the ISD is defined as:
+
+\begin{equation*}
+    ISD_j = \sqrt{\frac{\sum^k_{j=1}(x_j - \bar{x_i})^2}{k-1}}
+\end{equation*}
+
+where $x_j$ is a participant's response to item $j$, $x_i$ is a respondent's average score across all scale items, and $k$ is the total number of scale items. The ISD measures the level of dispersion around a participant's average response, and has previously been shown to be sensitive to C/IE responding. A composite ISD was computed per participant by summing across each individual subscale.
+
+\textbf{Personal reliability}: The personality reliability coefficient was computed by correlating the average score of random split-halves of items for each subscale. 1000 random split-halves were computed per subscale and participant.  A composite score was computed per participant by summing across each individual subscale. Lower scores indicate greater response inconsistency.
+
+\textbf{Mahalanobis D}: The Mahalanobis distance is an outlier detection method. For a participant $i$, the Mahalanobis D is defined as:
+
+\begin{equation*}
+    D = \sqrt{(X_i - \bar{X})^T \cdot \Sigma^{-1}_{XX} \cdot (X_i - \bar{X})^T }
+\end{equation*}
+
+where $(X_i - \bar{X})$ represents the vector of mean-centered item responses for participant $i$ and $\Sigma^{-1}_{XX}$ represents the inverted covariance matrix of all items. s. Larger deviation from the normative response pattern yields higher D values and is considered a potential indicator of C/IE responding. A single $D$ statistic was computed for each of the participants using all self-report items.
+
+\textbf{Response Time}: One checks were based on time measurements, with a reading-speed threshold of 10 words per second (Sisso, 2019).
+
+In addition, four measures of data quality were computed from the task behavior data. These are described in turn below.
+
+\textbf{Variability}: 
+
+\textbf{Accuracy}: 
+
+\textbf{Win-Stay Lose-Shift}: 
+
+\textbf{Response Times}:
+
+In three analyses, we measured the correspondence of the metrics above. In the first analysis, the similarity of the unthresholded (continuous) metrics were computed via pairwise Spearman correlations. For significance testing, we performed a permutation test with 5000 null shuffles and corrected for multiple comparisons using family-wise error rates. In the second and third analyses, the similarity of the thresholded metrics were computed via pairwise Dice coefficients. The metrics were thresholded taking the top 25\% and 10\% worst respondents for each metric. For significance testing, we again performed a permutation test with 5000 null shuffles and corrected for multiple comparisons using family-wise error rates.
+
+\pagebreak
 \section{Supplement}
 
-\bibliography{main}
+\begin{table}
+\centering
+\setlength{\tabcolsep}{15pt}
+\begin{tabular}{ rrrrr }
+\toprule
+& \multicolumn{2}{c}{MTurk} & \multicolumn{2}{c}{Prolific} \\
+\cmidrule(lr){2-3} \cmidrule(lr){4-5}
+Total & \multicolumn{2}{c}{N=186} & \multicolumn{2}{c}{N=200} \\
+\midrule
+Age & N & \% & N & \% \\
+\cmidrule(lr){1-5}
+18-25   &      16 &   8.6 &       78 &  39.0 \\
+26-35   &      76 &  40.9 &       69 &  34.5 \\
+36-45   &      46 &  24.7 &       31 &  15.5 \\
+46-55   &      22 &  11.8 &       13 &   6.5 \\
+55+     &      26 &  14.0 &        9 &   4.5 \\
+\midrule
+Gender & N & \% & N & \% \\
+\cmidrule(lr){1-5}
+Female             &    83 &  44.6 &    112 &  56.0 \\
+Male               &   103 &  55.4 &     85 &  42.5 \\
+Other              &     0 &   0.0 &      3 &   1.5 \\
+\midrule
+Ethnicity & N & \% & N & \% \\
+\cmidrule(lr){1-5}
+Hispanic or Latino     &    15 &   8.1 &     10 &   5.0 \\
+Not Hispanic or Latino &   168 &  90.3 &    183 &  91.5 \\
+Rather not say         &     2 &   1.1 &      7 &   3.5 \\
+Unknown                &     1 &   0.5 &      0 &   0.0 \\
+\midrule
+Race & N & \% & N & \% \\
+\cmidrule(lr){1-5}
+African American                 &    21 &  11.3 &      7 &   3.5 \\
+Asian                                     &     5 &   2.7 &     53 &  26.5 \\
+White                                     &   151 &  81.2 &    121 &  60.5 \\
+Multiracial                               &     6 &   3.2 &      4 &   2.0 \\
+Rather not say                            &     1 &   0.5 &     12 &   6.0 \\
+\midrule
+*Use other platform & N & \% & N & \% \\
+\cmidrule(lr){1-5}
+Yes            &      71 &  38.2 &       28 &  14.0 \\
+No             &     115 &  61.8 &      172 &  86.0 \\
+\bottomrule
+\end{tabular}
+\caption{The demographics of each sample by online labor market. On average, the samples were similar though the sample from Mechanical Turk was older (t = 6.567, p $<$ 0.001) and comprised of fewer women (z = 6.567, p = 0.011). *Note: the demographics do not include 20 participants (MTurk: N=19; Prolific: N=1) excluded for participating in the study twice, once per platform.}
+\label{tab:demographics}
+\end{table}
+
+% \bibliography{main}
 
 \end{document}
