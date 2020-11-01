@@ -91,6 +91,17 @@ Paragraph 4: Not clear the extent to which this is an issue. For example, if scr
 
 Paragraph 5: our current results call into question.
 
+In recent years, online labor markets (e.g. Amazon Mechanical Turk, Prolific, Crowdflower) have become increasingly popular as a source of research participants in the behavioral sciences \cite{stewart2017crowdsourcing}, largely due to the ease with which these services allow for collecting large, diverse samples. Similarly, the advantages of online data collection platforms have been recognized for clinical research \cite{chandler2016conducting} and are increasingly used in studies of computational psychiatry. Here they are offer additional advantages. The ability to collect large samples facilitates transdiagnostic analysis, studying symptom co-occurrence and relation to behaviors \cite{gillan2016taking, rutledge2019machine}. Online platforms makes it easier to recruit and study otherwise difficult-to-reach populations \cite{strickland2019use}. Online platforms also make re-recruitment easier, making it possible to validate the reliability of measurements tools \cite{enkavi2019large} and possibly study longitudinal processes over long timescales \cite{kothe2019retention}. Some examples here: gillan
+
+
+Paragraph 2: These advantages not without costs: online means giving up the control of the laboratory. Participants may be distracted, multi-tasking, and with different incentives than usual in-lab participants. Fortunately, many previous studies have found data quality on online crowdsourcing websites not altogether different or worse than in-lab samples. This isn't to say bad data doesn't exist: estimates vary, but non-negligible data bad and new issues arise. For the most part, however, noise has been treated as unsystematic something that can be overcome with increased samples  \cite{gillan2016taking, chandler2020participant}. 
+
+> Although typical undergraduate subject populations are often motivated to participate in studies because of an interest in psychology, MTurk participants are unsupervised and anonymous, complete surveys in unknown locations, and are motivated by financial incentives
+
+We specifically want to draw attention to a less appreciated fact: when traits are rare, such as in psychiatry, careless responding is more likely to manifest as symptom endorsement \cite{chandler2020participant, ophir2020turker}. Rather than mask true correlations, this can induce spurious correlations in data. This effect is well documented in personality psychology, where the presence of careless respondents can induce correlations between questionnaires and bias estimated factors in factor analysis. To our knowledge, however, discussion of this point has been limited to associations between self-report measures and not with respect to behavioral experiments. There is no reason to expect, however, that this result should be limited to those domains and may similarly be an issue for computational psychiatry.
+
+Paragraph 4: not enough to speculate -- must demonstrate this is an issue. what we gonna show: (a) the minority of individuals screen. (b) behavior and survey screens may not correlate. (c) these correlations do arise. We close with some recommendations based on simulations. 
+
 \section{Results}
 
 \subsection{Screening for C/IE responding is common for task behavior but not for self-report behavior}
@@ -132,36 +143,65 @@ Second, we found that the majority of studies that did screen self-report data r
 
 \subsection{Task and self-report measures of C/IE responding}
 
-To measure the correspondence between measures of C/IE responding based on task and self-report behaviors, we conducted an behavioral experiment in two prominent online labor marketplaces (see Methods for complete details). In total, 386 total participants from Amazon Mechanical Turk (N=186) and Prolific (N=200) completed an online study comprised of one behavioral task and several self-report symptom measures. We recruited participants from both platforms in order to improve the generalizability of our findings. The demographics of each sample are reported in the Supplement.
+In order to the measure the correspondence of screening metrics estimated from task and self-report behavior, we conducted an online behavioral experiment. A finale sample of 386 participants from the Amazon Mechanical Turk (N=186) and Prolific (N=200) online labor markets completed the study and were included for analysis (see Methods for details). As part of the experiment, participants completed a probabilistic reversal learning task and 5 self-report symptom measures. The reversal learning task required participants to learn through trial-and-error which of three choice options yielded reward most often. The self-report measures assayed psychiatric symptoms related to depression, mania, anxiety, reward motivation, and anhedonia. The self-report measures were intentionally chosen based on previous literature to have a variety of response distributions. 
 
-Participants completed a 3-arm probabilistic reversal learning bandit task. During the task, participants were presented with three options and could only choose one, after which they received feedback (reward or no-reward). Participants were instructed to choose the option that yielded reward most often, which they would learn through trial-and-error. Feedback was probabilistic such that the best option on a given trial returned reward on 80\% of trials and the other options only 20\%. Importantly, the best option changed every 15 trials. Participants were made explicitly aware that the best option would change over time, but they were not told when or how often this would occur. Participants completed 90 trials of the task (5 total reversals). 
- 
-Prior to the start of the behavioral experiment, participants also completed four standard self-report symptom measures: the generalized anxiety disorder scale (GAD7), the 7-up/7-down, the BIS/BAS, and the Snaith-Hamilton Pleasure Scale. The measures were selected to provide a range of response distributions. For example, the GAD-7 and 7-up/7-down are substantially asymmetric.
+We then estimated measures of C/IE responding from each participant's task and self-report behavior (see Methods for full description). In line with the narrative review, we screened participants' task behavior for C/IE responding using the following metrics: response variability, or the fraction of responses using only one key; accuracy, or the fraction of choices of the dominant response option; win-stay lose-shift rates, or the difference in likelihood of repeating the previous choice following a rewarded vs. unrewarded trial; and fraction of suspicious response times. In line with previous studies, we screened participants' self-report behavior for C/IE responding using the following metrics: infrequency items, or the number of suspicious responses to bogus items; inter-item standard deviation, or the dispersion of responses around a participant's modal response on a given subscale; personal reliability, or the correlation between multiple random split-halves of a participant's responses; Mahalonbis distance, or the extent to which a participant is an outlier with respect to the total sample of participants; and reading time, or the average time taken responding to each item. 
 
-To measure the level of correspondence between task- and self-report-based measures of C/IE responding, we computed a number of metrics from the task and self-report behavior of each subject. For the task behavior, we estimated the following metrics: response variability, accuracy, win-stay lose-shift, and fraction of trials with suspicious response times. For the self-report behavior, we estimated the following metrics: number of suspicious responses to infrequency items, inter-item standard deviation (ISD), personal reliability, Mahalanobis distance, and the per-item reading time. Each metric was selected because it has previously been used.
+To provide an overall sense of the quality of the data, we first focus on the task accuracy and the infrequency item metrics as these represent the most common screening methods of each behavioral modality. Only 26 participants (7\%) were flagged as exhibiting choice behavior at or above chance levels. In contrast, 85 participants (22\%) responded suspiciously to one or more of the infrequency items while completing of self-report symptom inventories. This discrepancy in the proportion of participants flagged by each method is consistent with previous studies which have found differing sensitivities to C/IE responding. Though we will not address platform differences here, we note the proportions of flagged participants were marginally but significantly greater on Mechanical Turk compared to Prolific for both accuracy ($z=2.224, p=0.026$) and infrequency ($z = 2.223, p = 0.026$) metrics.
 
-To provide an overall sense of the quality of the data, we first focus on the task accuracy and the infrequency item metrics as these represent the most common screening methods of each behavioral modality. Only 26 participants (7\%) were flagged as exhibiting choice behavior at or above chance levels. In contrast, 85 participants (22\%) responded suspiciously to one or more of the infrequency items while completing of self-report symptom inventories. This discrepancy in the proportion of participants flagged by each method is consistent with previous studies which have found differing sensitivities to C/IE responding. Notably, the proportions of flagged participants were marginally but significantly greater on Mechanical Turk compared to Prolific for both accuracy ($z=2.224, p=0.026$) and infrequency ($z = 2.223, p = 0.026$) metrics.
+As a first test of correspondence between the behavior and self-report metrics, we computed pairwise correlations on the unthresholded (continuous) metric data using Spearman's rank correlation. We tested for significant correlations using a permutation test with 5000 permutations of the data, correcting for multiple comparisons using the family-wise error rate. The resulting pairwise correlation matrix is presented in Figure 1a. With the exception of reading time, the self-report metrics exhibited moderate to strong intra-item correlations. The strong correlations between ISD, personal reliability, and Mahalonobis D are unsurprising as these have been previously shown to be sensitive to statistically random responding. Their correlations with the infrequency items provides face validity for the latter. The lack of correlation with reading time is consistent with previous research and evidence that workers wait to submit pages to avoid suspicion. 
 
+The pattern of correlations for the task-based metrics is noticeably different. The only significant correlation surviving multiple corrections is between accuracy and win-stay lose-shift. This makes intuitive sense as, by definition, a sensitivity to rewarding and unrewarding outcomes should guide a participant to choosing the dominant response option. Crucially, there were few surviving correlations between task- and self-report-based metrics. Only accuracy showed any significant correspondence between self-report based measures (specifically the infrequency items, personality reliability, and the Mahalonobis distance). Even still, the degree of correspondence between these metrics was roughly half that observed for the correlations between self-report metrics. This is initial evidence that task- and self-report-based measures of C/IE responding are not redundant. 
 
-Core result 1: continuous (spearman) correlaiton analysis. 
+A second way to measure the correspondence of the screening metrics is to compare the overlap in the sets of participants each metric flags after thresholding. Though measures like accuracy and infrequency have relatively clear threshold cutoffs (e.g. chance level performance), the majority of the metrics evaluated here do not. As such, we evaluated the metrics with respect to the top 25\% and 10\% of suspicious participants flagged by each measure. Conveniently, these percentiles roughly correspond to the fraction of participants flagged by the infrequency items and accuracy metrics, respectively. For each percentile threshold, we computed pairwise similarities on the thresholded metric data using Dice similarity. As above, we tested for significant correlations using a permutation test with 5000 permutations of the data, correcting for multiple comparisons using the family-wise error rate.
 
-\subsection{}
+The pairwise Dice similarity matrix at the 25\% and 10\% percentiles are presented in Figure 1b and 1c, respectively. At both threshold levels, the pattern of results resembles what was observed for the unthresholded correlations. With the exception of reading time again, the self-report metrics show moderate to strong levels of agreement when flagging the most suspicious participants. Conversely, the task-based metrics show little agreement with exception of the accuracy and win-stay lose-shift metrics. Again we find that on average the self-report and task metrics exhibit chance levels of agreement, with the exception of accuracy. As before, where there are significant correspondence between self-report and task metrics, they are roughly half that observed for correspondence among the self-report metrics. 
+
+In sum, the correlation analyses suggest that demonstrate that in principle task- and self-report-based measures of C/IE responding should not be assumed to be redundant. If anything, the current data suggests that metrics derived from these two types of behavioral data show low overall levels of correspondence, at least in comparison to within-modality levels of correspondence. It is worth emphasizing that, in the threshold-based analyses, the highest level of correspondence never exceeded 0.4. That is, these two types of metrics are flagging different participants in the majority of cases. Though there may be instances where these metrics are in greater agreement (a point we will come back to in the discussion), an experimenter simply cannot assume that task-based screening is sufficient to identify all C/IE responding in self-report data.
+
+Before turning to the consequences of failing to screen on self-report data, we first want to demonstrate that the self-report metrics are indeed sensitive to C/IE responding. Though much previous work using these metrics have already done so, it is worth verifying this is the case in the present data. Since we are measuring the relationship between task and self-report for the first time, it behooves us to make sure that these metrics are indeed sensitive.
+
+The first approach is to compare the proportion of participants meeting clinical cutoffs before and after screening. In the following, we will use only infrequency items to screen out C/IE responding. Specifically, we will use a conservative threshold and cite as evidence any suspicious response to an infrequency item as evidence of C/IE responding. The fraction of participants at or above clinical levels of symptom endorsement for each symptom measure is reported in Table XX. Using a clinical cutoff score of 12, we observe substantial reductions in the fraction of participants endorsing moderate-to-high levels of symptoms on the the mania (7u) and depression (7d) subscales of the Seven-up/Seven-down symptom measure. Importantly, this screening reduces the overall rate of clinical endorsement in the remaining sample to levels observed in epidemiological studies of mania and depression. Similarly, using a clinical cutoff score of 10, we observe a similarly substantial reduction in the fraction of participants endorsing high levels of anxiety symptoms on the GAD-7. Interestingly, a substantial proportion of participants still endorse high levels of anxiety though this may reflect the time period in which this data was collected (during COVID-19 pandemic). Finally, SHAPS...
+
+A second approach is to compare the internal consistency of the measures in the flagged vs. non-flagged samples. Because these symptom questionnaires are vetted in clinical populations, if the flagged participants were simply psychiatric participants with noisier responding we should still expect the internal consistency to be valid. We compute the internal consistency of each measure as the mean pairwise Spearman correlation of items within each subscale. The correlation structure is presented in Figure XX. As can be visually observed, the internal consistency (on-diagonal blocks) are on noticeably reduced between the two groups. We compare this difference statistically of the average of these scores using permutation testing by permuting the labels of the participants (flagged vs. non-flagged). We do this to control for differences in sample size between the two groups. We found a significant difference, indicating that this reduction is credible above and above differences in group size. This is additional that suggests that the flagged participants are truly engaging in C/IE responding. 
+
+\subsection{Spurious correlations}
+
+Paragraph 1: Distributions of responses between groups
+
+Paragraph 2: behavioral metrics
+
+Paragraph 3: Correlation structure 
+
+Paragraph 4: Correlation structure by sample size
+
+Paragraph 5: Model-agnostic analysis 
 
 \section{Discussion}
 
-Topic XX: Continuum of human effort
+Paragraph 1:N: restate results
 
-Topic XX: not a problem specific to online studies, but probably worse there due to lack of monitoring and different incentives.
+Paragraph N+1: low correspondence between different measures highlights the need for utilizing multiple measures. this study highlights that metrics may be differentially sensitive, but also sensitive to different types of motivation. accuracy was insufficient on its own. This is worrisome as this as that is the modal screening form. However, the results also suggest that infrequency items were not perfectly sensitive on their own, as evidenced by mania. given that our literature review highlighted that many folks using only one method, this is concerning. 
 
-Topic XX: how many to expect across platforms and by method. mturk vs. prolific differences. cat and mouse problems.
+Paragraph N+2: Relatedly, these results suggest that low-effort responding is not straightforward. Participants may feel unmotivated in some parts, but not others. This no doubt reflects, in part, the difficulty of the objective. Our RL task was not particularly difficult, so low effort could still do reasonable well. Separately, our experiments are setup to incentivize performance only on task but not self-report. 
 
-Topic XX: incentives for performance in online tasks
+Paragraph N+3: Briefly worth addressing platform differences. Should say differences are not surprising but we don't think that should be cause for alarm. Cite Cloudresearch tools. Cite better checks. 
 
-Topic XX: Accidentally screening out participants of interest
+Paragraph N+4: Limitations
+
+Paragraph N+5: Future directions 1: how big of a problem is this. how many bad subjects do you need?
+
+Paragraph N+6: Future directions 2: answers to above is in part limited by lack of better models of low-effort responding. more effort to study what heuristic responses would look like. And are these rational? 
+
+Paragraph N+7: Future directions 3: really making sure we're not throwing baby out with bathwater. confirm actually low-effort vs. psychiatric
+
+Conclusion: 
 
 \section{Methods}
 
 \subsection{Literature Review}
+
+To quantify the prevalence and types of data screening practices, we conducted a literature review of online behavioral studies.
 
 \subsection{Experiment}
 
@@ -179,7 +219,7 @@ Participants performed a probabilistic reversal learning task, explicitly design
 
 As a cover story, the probabilistic reversal learning task was introduced to participants as a fishing game. In the game, each choice option was a beach scene made distinguishable by a colored surfboard with unique symbol. Participants were told they were choosing which beach to fish at. Feedback was presented as either a fish (1 point) or trash (0 points). Participants were instructed to earn the most points possible by learning (through trial-and-error) and choosing the best choice option. Participants were also instructed that the best option could change during the task, but were not informed about how often or when this would occur (see the Supplement for the complete instructions). Prior to beginning the experiment, participants had to correctly answer four comprehension questions about the instructions. Failing to correctly answer all items forced the participant to start the instructions over.
 
-The task was programmed in jsPsych and distributed using custom web-application software. Both the experiment code and 
+The task was programmed in jsPsych and distributed using custom web-application software. Both the experiment code and web-software is publicly available.
 
 \subsubsection{Self-Report Measures}
 

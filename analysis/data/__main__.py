@@ -123,6 +123,18 @@ METADATA.insert(11, 'other-platform', np.where(METADATA['prolific'].isnull(), ME
 METADATA.insert(12, 'prev-complete', np.where(METADATA['prolific-this-study'].isnull(), METADATA['mturk-this-study'], METADATA['prolific-this-study']))
 METADATA = METADATA.drop(columns=['prolific','prolific-this-study','mturk','mturk-this-study'])
 
+## Update BIS/Bas.
+cols = ['bisbas-q01','bisbas-q02','bisbas-q03','bisbas-q04',
+        'bisbas-q05','bisbas-q06','bisbas-q07','bisbas-q08',
+        'bisbas-q09','bisbas-q10','bisbas-q11','bisbas-q12']
+SURVEYS[cols] = (3 - SURVEYS[cols].astype(int)) + 1
+
+## Update SHAPS.
+cols = ['shaps-q01','shaps-q02','shaps-q03','shaps-q04','shaps-q05',
+        'shaps-q06','shaps-q07','shaps-q08','shaps-q09','shaps-q10',
+        'shaps-q11','shaps-q12','shaps-q13','shaps-q14']
+SURVEYS[cols] = 3 - SURVEYS[cols].astype(int)
+
 ## Save.
 METADATA.to_csv(os.path.join(ROOT_DIR, 'metadata.csv'), index=False)
 SURVEYS.to_csv(os.path.join(ROOT_DIR, 'surveys.csv'), index=False)
