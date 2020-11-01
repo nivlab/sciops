@@ -44,8 +44,8 @@ generated quantities {
     matrix[15,3] contrasts;
     
     for (i in 1:15) {
-        contrasts[i,1] = mean( (1-reject_ix) .* W[i] );
-        contrasts[i,2] = mean( reject_ix .* W[i] );
+        contrasts[i,1] = sum( (1-reject_ix) .* W[i] ) / sum(1-reject_ix);
+        contrasts[i,2] = sum( reject_ix .* W[i] ) / sum(reject_ix);
         contrasts[i,3] = contrasts[i,1] - contrasts[i,2];
     }
     
