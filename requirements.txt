@@ -1,8 +1,12 @@
 ## Numerical computing libraries
 numpy
+scipy
 pandas
+statsmodels
 numba
+h5py
+tqdm
 
 ## Visualization libraries
 matplotlib
-seaborn
+seaborn >= 0.11.0
