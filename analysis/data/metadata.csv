@@ -1,4 +1,4 @@
-platform,subject,total_time,interactions,age,gender-categorical,gender-free-response,ethnicity,race,language,fluency,other-platform,prev-complete,n_loops
+platform,subject,total_time,interactions,age,gender-categorical,gender-free-response,ethnicity,race,language,fluency,other_platform,prev_complete,n_loops
 mturk,02rwq76tp9lcye8vrl41llnh,938.0,4,35,Male,,Hispanic or Latino,['White'],Yes,Very well,Yes,No,5
 mturk,0a8zkiu9rpf0mxo0h9ecdyzh,513.0,0,48,Female,,Not Hispanic or Latino,['White'],Yes,Very well,No,No,1
 mturk,0g4fx9g2wryeio74yzgqwpq8,443.0,10,39,Male,,Not Hispanic or Latino,['White'],Yes,Very well,No,No,1
