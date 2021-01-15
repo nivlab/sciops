@@ -1,4 +1,4 @@
-import os, h5py
+import os
 import numpy as np
 from pandas import DataFrame, read_csv
 from os.path import dirname, join
@@ -103,18 +103,18 @@ corr = corr.merge(gb)
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
 print('1.6 Extracting Stan parameters.')
 
-## Extract behavior.
-with h5py.File(os.path.join('stan_results',f'td_m1_np_mcmc.hdf5'), 'r') as hdf5:
-    theta_pr = hdf5['theta_pr'][:]
-    beta = hdf5['beta'][:]
-    eta_p = hdf5['eta_p'][:]
-    eta_n = hdf5['eta_n'][:]
-    
+## Load StanFit.
+df = read_csv('stan_results/rstd.tsv', sep='\t')
+
+## Extract parameters of interest.
+beta  = df.filter(regex='beta').median().values
+eta_p = df.filter(regex='^eta_p').median().values
+eta_n = df.filter(regex='^eta_n').median().values
+kappa = df.filter(regex='theta_pr\[3').median().values
+
 ## Convert to DataFrame.
-params = DataFrame(
-    np.column_stack([theta_pr.T, beta, eta_p, eta_n]),
-    columns=['beta_pr','eta_pr','kappa_pr','beta','eta_p','eta_n']
-)
+params = DataFrame(np.column_stack([beta,eta_p,eta_n,kappa]),
+                   columns=['beta','eta_p','eta_n','kappa'])
 
 ## Append metadata.
 params['platform'] = corr.sort_values('subject').platform.values
