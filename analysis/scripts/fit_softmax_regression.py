@@ -120,8 +120,8 @@ print('Saving data.')
 
 ## Extract and save Stan summary.
 summary = StanFit.summary()
-summary.to_csv(os.path.join(ROOT_DIR, 'stan_results', f'{stan_model}_{D}d_summary.tsv'), sep='\t')
+summary.to_csv(os.path.join(ROOT_DIR, 'stan_results', f'{stan_model}_summary.tsv'), sep='\t')
 
 ## Extract and save samples.
 samples = StanFit.draws_pd()
-samples.to_csv(os.path.join(ROOT_DIR, 'stan_results', f'{stan_model}_{D}d.tsv'), sep='\t', index=False)
+samples.to_csv(os.path.join(ROOT_DIR, 'stan_results', f'{stan_model}.tsv'), sep='\t', index=False)
