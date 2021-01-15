@@ -4,9 +4,11 @@ scipy
 pandas
 statsmodels
 numba
-h5py
 tqdm
+
+## Probabilistic programming libraries
+cmdstanpy
 
 ## Visualization libraries
 matplotlib
-seaborn >= 0.11.0
+seaborn >= 0.11.1

@@ -1,22 +1,40 @@
+/** 
+* Softmax Regression
+*
+* The softmax regression model estimates the impact of rewards, nonrewards, 
+* and previous choices from successively distant choices on future choices. 
+* For rewards and nonrewards, the model estimates the decision weight, which 
+* represents the bias to choose a particular option according to the outcome 
+* experienced from selection of that option in the recent past. Separately,
+* the model accounts for the inherent tendency to repeat choices regardless 
+* of outcomes (i.e., perseveration). 
+*
+* The softmax regession model is adapted from Seymour et al. (2012),
+* https://doi.org/10.1523/JNEUROSCI.0053-12.2012.
+*
+*/
 data {
 
     // Metadata
-    int  N;                  // Number of subjects
-    int  K;                  // Number of arms
-    int  T;                  // Number of trials
+    int  N;                         // Number of subjects
+    int  K;                         // Number of arms
+    int  L;                         // Number of lags
+    int  T;                         // Number of trials
     
     // Data
-    matrix[T,15]  X[N,K];    // Design matrices
-    int           Y[N,T];    // Choice data
+    int  Y[N,T];                    // Choice data
     
-    // Subject-mapping
-    row_vector<lower=0,upper=1>[N] reject_ix; 
+    // Design matrices
+    matrix[T,L*3]  X[N,K];          // History of rewards, nonrewards, and choices
+    
+    // Mappings
+    vector[N] pass_ix;              // Denotes subject quality (Pass = 1, Fail = 0)
 
 }
 parameters {
 
-    // Subject-level parameters
-    matrix[15,N]  W;
+    // Regression weights
+    matrix[L*3,N]  W;
 
 }
 model {
@@ -26,26 +44,26 @@ model {
     
     // Main loop
     for (i in 1:N) {
-        
-        // Preallocate space
-        matrix[T,3]  Q;
-        
-        // Iteratively compute Q-values
-        for (j in 1:K) { Q[:,j] = X[i,j] * W[:,i]; }
+                
+        // Compute sum of weights per arm
+        matrix[T,K]  beta;
+        for (k in 1:K) { beta[:,k] = X[i,k] * W[:,i]; }
         
         // Iteratively compute choice likelihood
-        for (j in 1:T) { Y[i,j] ~ categorical_logit( Q[j]' ); }
+        for (j in 1:T) { Y[i,j] ~ categorical_logit( beta[j]' ); }
     
     }
 
 }
 generated quantities {
 
+    // Define contrasts matrix
     matrix[15,3] contrasts;
     
+    // Iteratively compute contrasts
     for (i in 1:15) {
-        contrasts[i,1] = sum( (1-reject_ix) .* W[i] ) / sum(1-reject_ix);
-        contrasts[i,2] = sum( reject_ix .* W[i] ) / sum(reject_ix);
+        contrasts[i,1] = W[i] * pass_ix / sum(pass_ix);
+        contrasts[i,2] = W[i] * (1-pass_ix) / sum(1-pass_ix);
         contrasts[i,3] = contrasts[i,1] - contrasts[i,2];
     }
     

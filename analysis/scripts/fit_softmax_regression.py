@@ -1,11 +1,9 @@
-import h5py, os, pystan
+import os
 import numpy as np
 from os.path import dirname
 from pandas import DataFrame, read_csv
-from scipy.stats import norm
-from stantools.io import load_model
-from stantools.model import waic
-from stantools.stats import phi_approx
+from cmdstanpy import CmdStanModel, set_cmdstan_path
+set_cmdstan_path('/path/to/cmdstan')
 ROOT_DIR = dirname(dirname(os.path.realpath(__file__)))
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
@@ -15,12 +13,15 @@ ROOT_DIR = dirname(dirname(os.path.realpath(__file__)))
 ## I/O parameters.
 stan_model = 'softmax_regression'
 
+## Model parameters.
+L = 5
+
 ## Sampling parameters.
-samples = 2000
-warmup = 1500
+iter_warmup   = 1500
+iter_sampling = 500
 chains = 4
 thin = 1
-n_jobs = 4
+parallel_chains = 4
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
 ### Load and prepare data.
@@ -30,11 +31,11 @@ n_jobs = 4
 data = read_csv(os.path.join(ROOT_DIR, 'data', 'data.csv'))
 
 ## Restrict participants.
-reject = read_csv(os.path.join(ROOT_DIR, 'data', 'reject.csv'))
-data = data[data.subject.isin(reject.subject)].reset_index(drop=True)
+metrics = read_csv(os.path.join(ROOT_DIR, 'data', 'metrics.csv'))
+data = data[data.subject.isin(metrics.subject)].reset_index(drop=True)
 
 ## Define reject index.
-reject_ix = np.where(reject.infreq > 0, 1, 0)
+pass_ix = np.where(metrics.infreq > 0, 0, 1)
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
 ### Assemble data for Stan.
@@ -103,34 +104,24 @@ Y = data.pivot_table('choice', ['platform','subject'], 'trial').values.astype(in
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
 
 ## Assemble data.
-dd = dict(N=N, K=K, T=T, X=X, Y=Y, reject_ix=reject_ix)
+dd = dict(N=N, K=K, L=L, T=T, X=X, Y=Y, pass_ix=pass_ix)
 
 ## Load StanModel
-StanModel = load_model(os.path.join(ROOT_DIR,'stan_models',stan_model))
+StanModel = CmdStanModel(stan_file=os.path.join(ROOT_DIR,'stan_models',f'{stan_model}.stan'))
 
-## Fit model.
-StanFit = StanModel.sampling(data=dd, iter=samples, warmup=warmup, chains=chains, thin=thin, n_jobs=n_jobs, seed=47404)
-
-## Extract parameters.
-StanDict = StanFit.extract()
+## Fit Stan model.
+StanFit = StanModel.sample(data=dd, chains=chains, iter_warmup=iter_warmup, iter_sampling=iter_sampling, 
+                           thin=thin, parallel_chains=parallel_chains, seed=0, show_progress=True)
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
-### Save data.
+### Save samples.
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
 print('Saving data.')
 
-## Save summary file.
+## Extract and save Stan summary.
 summary = StanFit.summary()
-summary = DataFrame(summary['summary'], columns=summary['summary_colnames'],
-                    index=summary['summary_rownames'])
-summary = summary.loc[[s for s in summary.index if not s.startswith('log_lik')]]
-summary.to_csv(os.path.join(ROOT_DIR,'stan_results',f'{stan_model}.csv'))
+summary.to_csv(os.path.join(ROOT_DIR, 'stan_results', f'{stan_model}_{D}d_summary.tsv'), sep='\t')
 
-## Save parameters.    
-with h5py.File(os.path.join(ROOT_DIR, 'stan_results', f'{stan_model}_mcmc.hdf5'), 'w') as f:
-        
-    ## Iteratively add Stan samples.
-    for k, v in StanDict.items():
-        if k == 'lp__': continue
-        elif k == 'contrasts': f.create_dataset(k, data=v)
-        else: f.create_dataset(k, data=np.median(v, axis=0))
+## Extract and save samples.
+samples = StanFit.draws_pd()
+samples.to_csv(os.path.join(ROOT_DIR, 'stan_results', f'{stan_model}_{D}d.tsv'), sep='\t', index=False)

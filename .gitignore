@@ -106,6 +106,6 @@ venv.bak/
 
 # project specific
 .DS_Store
-*.pkl
 .Rproj.user
 .Rhistory
+*.hpp
