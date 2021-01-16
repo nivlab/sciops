@@ -3,7 +3,7 @@ import numpy as np
 from os.path import dirname
 from pandas import read_csv, get_dummies
 from cmdstanpy import CmdStanModel, set_cmdstan_path
-set_cmdstan_path('/Users/szoro/Documents/software/cmdstan')
+set_cmdstan_path('/path/to/cmdstan')
 ROOT_DIR = dirname(dirname(os.path.realpath(__file__)))
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
@@ -59,7 +59,7 @@ X = np.column_stack([np.ones(X.shape[0]), X])
 C = np.apply_along_axis(np.bincount, 0, Y-1, minlength=4).T + 1
 
 ## Define fail index.
-fail_ix = np.where(metrics.infreq > 0, 1, 0)
+pass_ix = np.where(metrics.infreq > 0, 0, 1)
 
 ## Define metadata.
 N, M = Y.shape
@@ -73,7 +73,7 @@ M, K = X.shape
 dd = dict(N=N, M=M, K=K, Y=Y, X=X, C=C, fail_ix=fail_ix)
 
 ## Load StanModel
-StanModel = CmdStanModel(stan_file=os.path.join(ROOT_DIR, 'stan_models', f'{stan_model}.stan'))
+StanModel = CmdStanModel(stan_file=os.path.join(ROOT_DIR,'stan_models',f'{stan_model}.stan'))
 
 ## Fit Stan model.
 StanFit = StanModel.sample(data=dd, chains=chains, iter_warmup=iter_warmup, iter_sampling=iter_sampling, 
@@ -90,4 +90,4 @@ summary.to_csv(os.path.join(ROOT_DIR, 'stan_results', f'{stan_model}_summary.tsv
 
 ## Extract and save samples.
 samples = StanFit.draws_pd()
-samples.to_csv(os.path.join(ROOT_DIR, 'stan_results', f'{stan_model}.tsv'), sep='\t', index=False)
+samples.to_csv(os.path.join(ROOT_DIR, 'stan_results', f'{stan_model}.tsv.gz'), sep='\t', index=False, compression='gzip')
