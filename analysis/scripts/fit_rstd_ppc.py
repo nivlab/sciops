@@ -18,7 +18,7 @@ metrics = read_csv(os.path.join('data', 'metrics.csv'))
 data = data[data.subject.isin(metrics.subject)].reset_index(drop=True)
 
 ## Load parameters.
-params = read_csv(os.path.join('stan_results', 'rstd.tsv'), sep='\t')
+params = read_csv(os.path.join('stan_results', 'rstd.tsv.gz'), sep='\t', compression='gzip')
 
 ## Reformat data.
 data = data.sort_values(['subject','trial']).reset_index(drop=True)
