@@ -95,4 +95,5 @@ ppc = y_hat.merge(a_hat, on=['platform','subject','trial'])
 ppc = ppc.sort_values(['platform','subject','trial'])
 
 ## Save.
-ppc.to_csv(os.path.join(ROOT_DIR, 'stan_results', 'rstd_ppc.tsv'), sep='\t', index=False)
+f = os.path.join(ROOT_DIR, 'stan_results', 'rstd_ppc.tsv.gz')
+ppc.to_csv(f, sep='\t', index=False, compression='gzip')
