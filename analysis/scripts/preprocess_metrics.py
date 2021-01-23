@@ -10,7 +10,7 @@ DATA_DIR = os.path.join(ROOT_DIR, 'data')
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
 
 ## Define subscales. 
-subscales = ['7u','7d','gad7','pswq','bis','bas_r','bas_d','shaps']
+subscales = ['7u','7d','gad7','pswq','bis','bas','shaps']
 minlengths = [4,4,4,4,4,4,4,5]
 
 ## Define permutation statistics (personal reliability).
