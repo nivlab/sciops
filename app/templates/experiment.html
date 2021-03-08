@@ -5,29 +5,27 @@
 
   <!-- Load libraries -->
   <script src="../static/lib/jquery-3.3.1/jquery.min.js"></script>
-  <script src="../static/lib/jspsych-6.1.0/jspsych.js"></script>
+  <script src="../static/lib/jspsych-6.2.0/jspsych.js"></script>
+
+  <!-- Load NivTurk plug-ins -->
+  <script src="/static/js/nivturk-plugins.js" type="text/javascript"></script>
 
   <!-- Load experiment -->
   <script src="../static/js/three-arm-experiment.js" type="text/javascript"></script>
   <script src="../static/js/three-arm-surveys.js" type="text/javascript"></script>
 
-  <!-- Load NivTurk plug-ins -->
-  <script src="../static/js/jspsych-pass-data.js" type="text/javascript"></script>
-  <script src="../static/js/jspsych-pass-message.js" type="text/javascript"></script>
-  <script src="../static/js/jspsych-reject-data.js" type="text/javascript"></script>
-
   <!-- Load jsPsych plug-ins -->
   <script src="../static/js/jspsych-three-arm-trial.js" type="text/javascript"></script>
   <script src="../static/js/jspsych-three-arm-comprehension.js" type="text/javascript"></script>
   <script src="../static/js/jspsych-survey-template.js" type="text/javascript"></script>
-  <script src="../static/lib/jspsych-6.1.0/plugins/jspsych-instructions.js" type="text/javascript"></script>
+  <script src="../static/lib/jspsych-6.2.0/plugins/jspsych-instructions.js" type="text/javascript"></script>
   <script src="../static/js/jspsych-survey-demo.js" type="text/javascript"></script>
-  <script src="../static/lib/jspsych-6.1.0/plugins/jspsych-html-keyboard-response.js" type="text/javascript"></script>
-  <script src="../static/lib/jspsych-6.1.0/plugins/jspsych-call-function.js" type="text/javascript"></script>
+  <script src="../static/lib/jspsych-6.2.0/plugins/jspsych-html-keyboard-response.js" type="text/javascript"></script>
+  <script src="../static/lib/jspsych-6.2.0/plugins/jspsych-call-function.js" type="text/javascript"></script>
 
   <!-- Load CSS styles -->
   <link href="../static/css/fishing-competition.min.css" rel="stylesheet" type="text/css"></link>
-  <link href="../static/lib/jspsych-6.1.0/css/jspsych.css" rel="stylesheet" type="text/css"></link>
+  <link href="../static/lib/jspsych-6.2.0/css/jspsych.css" rel="stylesheet" type="text/css"></link>
 
 </head>
 <body></body>
@@ -44,7 +42,7 @@
 
   // Add version metadata.
   jsPsych.data.addProperties({
-    task_version: 'screening-mturk',
+    task_version: 'mturk',
   });
 
   // Define global variables.
@@ -54,10 +52,8 @@
   var timeline = [];
   timeline = timeline.concat(surveys);
   timeline = timeline.concat(instructions_loop);      // Instructions loop
-  // timeline = timeline.concat(comprehension_check);    // Comprehension check (implicit)
   timeline = timeline.concat(ready);                  // Ready check
   timeline = timeline.concat(trials);                 // Bandit task
-  // timeline = timeline.concat(feedback);              // Performance feedback
   timeline = timeline.concat(demographics);           // Demographics form
 
   jsPsych.init({
@@ -79,12 +75,12 @@
       if (low_quality) {
 
         // Save rejected dataset to disk.
-        reject_data('1011');
+        redirect_reject("1005");
 
       } else {
 
         // Save complete dataset to disk.
-        pass_data("{{workerId}}", "{{assignmentId}}", "{{hitId}}",  "{{a}}", "{{tp_a}}", "{{b}}", "{{tp_b}}", "{{c}}", "{{tp_c}}");
+        redirect_success("{{workerId}}", "{{assignmentId}}", "{{hitId}}",  "{{a}}", "{{tp_a}}", "{{b}}", "{{tp_b}}", "{{c}}", "{{tp_c}}");
 
       }
 
