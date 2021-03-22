@@ -52,7 +52,7 @@ Y = items.filter(regex='_').values + 1
 
 ## Define design matrix.
 X = ['_'.join(k.split('_')[:-1]) for k in items.filter(regex='_').columns.tolist()]
-X = get_dummies(X)[['7u','7d','gad7','bis','bas_r','bas_d','shaps']].values
+X = get_dummies(X)[['7u','7d','gad7','bis','bas','shaps']].values
 X = np.column_stack([np.ones(X.shape[0]), X])
 
 ## Define counts.
