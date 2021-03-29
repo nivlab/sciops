@@ -8,6 +8,7 @@ tqdm
 
 ## Probabilistic programming libraries
 cmdstanpy
+arviz
 
 ## Visualization libraries
 matplotlib
