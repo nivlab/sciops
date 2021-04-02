@@ -1,21 +1,35 @@
 # analysis
 
-## Project Organization
+This folder contains the analysis code and data for the manuscript. Please see the section below for further details on organization.
 
-    ├── data                     <- Data organized for use in analysis.
+## Folder Organization
+
+    ├── data                     <- Data for use in analysis.
     │   
-    ├── raw                      <- Raw data files from MTurk/Prolific.
+    ├── raw                      <- Raw data files from MTurk & Prolific.
     │   
     ├── scripts                  <- Scripts used in preprocessing and analyzing data.
     │   
-    ├── stan_models              <- Stan model code for analyzing data.
+    ├── stan_models              <- Stan model code.
     │   
-    ├── stan_results             <- Stan result files (compressed).
+    ├── stan_results             <- Stan fits & summaries.
     │   
-    ├── results_01a.ipynb        <- Notebook containing results from narrative review.
+    ├── intro.ipynb              <- Notebook containing the code for Figure 1.
     │   
-    ├── results_02a.ipynb        <- Notebook containing plots of total score distributions.
+    ├── results_01a.ipynb        <- Notebook containing the literature review and Table 1.
     │   
-    ├── results_02b.ipynb        <- Notebook containing similarity analyses of data quality metrics.
+    ├── results_02a.ipynb        <- Notebook containing the code for Figure 2.
     │   
-    ├── results_02c.ipynb        <- Notebook containing validation analyses of data quality metrics.
+    ├── results_02b.ipynb        <- Notebook containing the correspondence analysis and Figure 3.
+    │   
+    ├── results_02c.ipynb        <- Notebook containing the validation analyses and Table 2.
+    │   
+    ├── results_03a.ipynb        <- Notebook containing the correlation analyses and Figures 4 & S1.
+    │   
+    ├── results_03b.ipynb        <- Notebook containing the bootstrapping analyses and Figure 5.
+    │   
+    ├── results_03c.ipynb        <- Notebook containing the softmax regression analyses and Figure 6.
+    │   
+    ├── supp_01.ipynb            <- Notebook containing the demographics info and Table S1.
+    │   
+    ├── results_03c.ipynb        <- Notebook containing the posterior predictive check and Figure S2.
