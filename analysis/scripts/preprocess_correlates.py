@@ -104,13 +104,13 @@ corr = corr.merge(gb)
 print('1.6 Extracting Stan parameters.')
 
 ## Load StanFit.
-df = read_csv('stan_results/rstd.tsv', sep='\t')
+df = read_csv('stan_results/rstd.tsv.gz', sep='\t', compression='gzip')
 
 ## Extract parameters of interest.
 beta  = df.filter(regex='beta').median().values
 eta_p = df.filter(regex='^eta_p').median().values
 eta_n = df.filter(regex='^eta_n').median().values
-kappa = df.filter(regex='theta_pr\[3').median().values
+kappa = (eta_p - eta_n) / (eta_p + eta_n)
 
 ## Convert to DataFrame.
 params = DataFrame(np.column_stack([beta,eta_p,eta_n,kappa]),
