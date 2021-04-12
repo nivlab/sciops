@@ -7,7 +7,7 @@
 Spurious Correlations in Online Psychiatry Studies
 ==================================================
 
-Code and data for Zorowitz, Niv, & Bennett (forthcoming), *Inattentive responding can induce spurious associations between task behavior and symptom measures*.
+Code and data for Zorowitz, Niv, & Bennett (submitted), *Inattentive responding can induce spurious associations between task behavior and symptom measures*.
 
 Project Organization
 ^^^^^^^^^^^^^^^^^^^^
