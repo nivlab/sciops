@@ -39,6 +39,9 @@ var seven_up = {
     "Have there been periods of several days or more when your thinking was so clear and quick that it was much better than most other people's?",
     "Have you had times when your thoughts and ideas came so fast that you couldn't get them all out, or they came so quickly that others complained that they couldn't keep up with your ideas?",
 
+    // Infrequency item
+    "Have there been times of a couple days or more when you were able remember your own name?"
+
   ],
   scale: [
     "Never or<br>hardly ever",
@@ -50,9 +53,10 @@ var seven_up = {
     false, false, false, false, false, false, false
   ],
   instructions: 'Below are some questions about behaviors that occur in the general population.<br>Using the scale below, select the number that best describes how often you experience these behaviors.',
-  scale_repeat: 7,
+  scale_repeat: 8,
   survey_width: 950,
   item_width: 50,
+  infrequency_items: [7],
   data: {survey: '7u'},
 }
 
@@ -67,7 +71,10 @@ var seven_down = {
     "Have there been times of several days or more when you really got down on yourself and felt worthless?",
     "Have you had periods when it seemed that the future was hopeless and things could not improve?",
     "Have there been periods lasting several days or more when you were so down in the dumps that you thought you might never snap out of it?",
-    "Have there been times when you have felt that you would be better off dead?"
+    "Have there been times when you have felt that you would be better off dead?",
+
+    // Infrequency item
+    "Have there been times of a couple days or more when you were able to breathe underwater (without an oxygen tank)?"
 
   ],
   scale: [
@@ -80,9 +87,10 @@ var seven_down = {
     false, false, false, false, false, false, false
   ],
   instructions: 'Below are some questions about behaviors that occur in the general population.<br>Using the scale below, select the number that best describes how often you experience these behaviors.',
-  scale_repeat: 7,
+  scale_repeat: 8,
   survey_width: 950,
   item_width: 50,
+  infrequency_items: [7],
   data: {survey: '7d'},
 }
 
@@ -102,7 +110,7 @@ var pswq = {
     "I notice that I have been worrying about things.",
 
     // Infrequency item
-    "I am usually able to remember my own name."
+    "I was worried about the Canine Winter Olympics."
 
   ],
   scale: [
@@ -120,14 +128,6 @@ var pswq = {
   item_width: 40,
   infrequency_items: [8],
   data: {survey: 'pswq'},
-  on_finish: function(data) {
-
-    // Score response on infrequncy item.
-    const scores = [1,1,1,0.5,0];
-    data.infrequency = scores[data.responses['Q09']];
-
-  }
-
 }
 
 // Hexaco artistic interests / creativity
@@ -144,7 +144,7 @@ var artistic = {
     "I have difficulty imagining things.",
 
     // Infrequency item
-    "I can live for months without any oxygen."
+    'Please select "Neutral" as your response.'
 
   ],
   scale: [
@@ -156,19 +156,14 @@ var artistic = {
     "Agree",
     "Strongly<br>Agree"
   ],
-  reverse: [false, false, true, false, true, true, false],
+  reverse: [
+    false, false, true, false, true, true, false
+  ],
   instructions: "The following are some statements about you. Please read each statement and decide<br>how much you agree or disagree with that statement.",
   survey_width: 950,
   item_width: 35,
   infrequency_items: [6],
   data: {survey: 'artistic'},
-  on_finish: function(data) {
-
-    // Score response on infrequncy item.
-    const scores = [0,0,0,0.5,1,1,1];
-    data.infrequency = scores[data.responses['Q07']];
-
-  }
 }
 
 // Hexaco greed avoidance
@@ -185,7 +180,7 @@ var greed = {
     "I put on a show to impress people.",
 
     // Infrequency item
-    "I have never used a computer."
+    "I have used a computer."
 
   ],
   scale: [
@@ -197,19 +192,14 @@ var greed = {
     "Agree",
     "Strongly<br>Agree"
   ],
-  reverse: [false, false, false, false, false, false, false],
+  reverse: [
+    false, false, false, false, false, false, false
+  ],
   instructions: "The following are some statements about you. Please read each statement and decide<br>how much you agree or disagree with that statement.",
   survey_width: 950,
   item_width: 35,
   infrequency_items: [6],
   data: {survey: 'greed'},
-  on_finish: function(data) {
-
-    // Score response on infrequncy item.
-    const scores = [0,0,0,0.5,1,1,1];
-    data.infrequency = scores[data.responses['Q07']];
-
-  }
 }
 
 //------------------------------------//
