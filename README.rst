@@ -2,30 +2,33 @@
         :target: https://www.python.org/downloads/release/python-360/
 
 .. image:: https://img.shields.io/github/license/mashape/apistatus.svg
-        :target: https://github.com/nivlab/sciops/blob/master/LICENSE
+        :target: https://github.com/nivlab/NivLink/blob/master/LICENSE
 
-Spurious Correlations in Online Psychiatry Studies
-==================================================
+NivTurk
+=======
 
-Code and data for Zorowitz, Niv, & Bennett (submitted), *Inattentive responding can induce spurious associations between task behavior and symptom measures*.
+Niv lab tools for securely serving and storing data from online computational psychiatry experiments.
 
-Project Organization
-^^^^^^^^^^^^^^^^^^^^
-::
+Quickstart
+^^^^^^^^^^
 
-    ├── analysis                     <- Notebooks, data, and code.
-    │   
-    ├── figures                      <- Figures for the manuscript.
-    │   
-    ├── forums                       <- Examples of workers discussing attention checks.
-    │   
-    ├── manuscripts                  <- LaTeX-formatted manuscripts.
+The following is the minimal set of commands needed to get started with NivTurk (assuming you have already a virtual machine with python 3.6+ installed):
+
+.. code-block:: bash
+
+    ssh <user-name>@<server-name>.princeton.edu
+    git clone https://github.com/nivlab/nivturk.git
+    cd nivturk
+    pip install -r requirements.txt
+    gunicorn -b 0.0.0.0:9000 -w 4 app:app
 
 
-Contact
-^^^^^^^
-Sam Zorowitz (zorowitz [at] princeton.edu)
+Documentation
+^^^^^^^^^^^^^
+
+For details on how to serve your experiment, how the code is organized, and how data is stored, please see the
+`Documentation <https://nivlab.github.io/nivturk>`_.
 
 Acknowledgements
 ^^^^^^^^^^^^^^^^
-The research reported in this manuscript was supported in part by the National Institute of Mental Health (NIMH) under award number 5R01MH119511-02, and by the National Center for Advancing Translational Sciences (NCATS), a component of the National Institute of Health (NIH), under award number UL1TR003017. The content is  solely the responsibility of the authors and does not necessarily represent the official views of the National Institutes of Health. SZ was supported by an NSF Grad-uate Research Fellowship. DB was supported by an Early Career Fellowship from the Australian National Health and Medical Research Council (#1165010).
+NivTurk was developed with support from the National Center for Advancing Translational Sciences (NCATS), a component of the National Institute of Health (NIH), under award number UL1TR003017.

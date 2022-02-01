@@ -1,15 +1,3 @@
-## Numerical computing libraries
 numpy
-scipy
-pandas
-statsmodels
-numba
-tqdm
-
-## Probabilistic programming libraries
-cmdstanpy
-arviz
-
-## Visualization libraries
-matplotlib
-seaborn >= 0.11.1
+flask==1.1.2
+gunicorn
