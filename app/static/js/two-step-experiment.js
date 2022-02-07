@@ -14,10 +14,6 @@ const feedback_duration = 1200;
 const randomize_s1 = true;             // randomize left/right position of state 1 bandits
 const randomize_s2 = false;            // randomize left/right position of state 2 bandits
 
-// Define quality assurance parameters.
-var missed_threshold = 6;
-var missed_responses = 0;
-
 //---------------------------------------//
 // Define stimulus features.
 //---------------------------------------//
@@ -137,13 +133,6 @@ for (let i=0; i < outcomes.length; i++){
 
         // Set missing data to true.
         data.missing = true;
-
-        // Increment counter. Check if experiment should end.
-        missed_responses++;
-        if (missed_responses >= missed_threshold) {
-          low_quality = true;
-          jsPsych.endExperiment();
-        }
 
       } else {
 

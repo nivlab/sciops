@@ -88,7 +88,7 @@ def index():
             logs = f.read()
 
         ## Case 3a: previously started experiment.
-        if 'block' in logs:
+        if 'surveys' in logs:
 
             ## Update metadata.
             session['workerId'] = info['workerId']
