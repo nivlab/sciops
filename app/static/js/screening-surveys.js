@@ -110,7 +110,7 @@ var pswq = {
     "I notice that I have been worrying about things.",
 
     // Infrequency item
-    "I was worried about the Canine Winter Olympics."
+    "I was worried about the canine World Cup."
 
   ],
   scale: [
