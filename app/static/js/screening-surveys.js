@@ -26,7 +26,8 @@ var DEMO = {
   data: {survey: 'demographics'}
 };
 
-var seven_up = {
+// Seven-up / seven-down mania subscale
+var mania = {
   type: 'survey-template',
   items: [
 
@@ -57,10 +58,11 @@ var seven_up = {
   survey_width: 950,
   item_width: 50,
   infrequency_items: [7],
-  data: {survey: '7u'},
+  data: {survey: 'mania'},
 }
 
-var seven_down = {
+// Seven-up / seven-down depression subscale
+var depression = {
   type: 'survey-template',
   items: [
 
@@ -91,43 +93,41 @@ var seven_down = {
   survey_width: 950,
   item_width: 50,
   infrequency_items: [7],
-  data: {survey: '7d'},
+  data: {survey: 'depression'},
 }
 
-// Penn State Worry Questionnaire
-var pswq = {
+// HITOP anxiety
+var anxiety = {
   type: 'survey-template',
   items: [
 
     // Worry symptoms
-    "My worries overwhelm me.",
-    "Many situations make me worry.",
-    "I know I should not worry about things, but I just can't help it.",
-    "When I'm under pressure I worry a lot.",
-    "I'm always worrying about something.",
-    "As soon as I finish one task, I start to worry about everything else I have to do.",
-    "I have been a worrier all my life.",
-    "I notice that I have been worrying about things.",
+    "I was overwhelmed by anxiety.",
+    "I worried about almost everything.",
+    "I had a lot of nervous energy.",
+    "I felt very stressed.",
+    "I felt nervous and on edge.",
+    "I felt tense.",
+    "Thoughts were racing in my head.",
 
     // Infrequency item
     "I was worried about the canine World Cup."
 
   ],
   scale: [
-    "Not at all<br>typical",
-    "Not very<br>typical",
-    "Somewhat<br>typical",
-    "Fairly<br>typical",
-    "Very<br>typical"
+    "Not at all", 
+    "A little", 
+    "Moderately", 
+    "A lot"
   ],
   reverse: [
-    false, false, false, false, false, false, false, false, false
+    false, false, false, false, false, false, false, false
   ],
-  instructions: 'Select the option that best describes how typical or characteristic each item is of you.',
+  instructions: 'Have there been significant times during the <b>last 12 months</b> in which the following statements applied to you?',
   survey_width: 950,
   item_width: 40,
-  infrequency_items: [8],
-  data: {survey: 'pswq'},
+  infrequency_items: [7],
+  data: {survey: 'anxiety'},
 }
 
 // Hexaco artistic interests / creativity
@@ -207,4 +207,4 @@ var greed = {
 //------------------------------------//
 
 // Define survey block
-var SURVEYS = jsPsych.randomization.shuffle([seven_up, seven_down, pswq, artistic, greed]);
+var SURVEYS = jsPsych.randomization.shuffle([mania, depression, anxiety, artistic, greed]);
