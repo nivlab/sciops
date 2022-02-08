@@ -40,7 +40,7 @@ var seven_up = {
     "Have you had times when your thoughts and ideas came so fast that you couldn't get them all out, or they came so quickly that others complained that they couldn't keep up with your ideas?",
 
     // Infrequency item
-    "Have there been times of a couple days or more when you were able remember your own name?"
+    "Have there been times in your life where you blinked your eyes at least once per day?"
 
   ],
   scale: [
