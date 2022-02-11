@@ -206,14 +206,17 @@ const quiz_04 = {
   prompts: [
     `Which rocket ship went mostly to the <b><font color='${task_info.font_colors[0]}'>${task_info.planet_names[0]}</font></b> planet?`,
     `Which rocket ship went mostly to the <b><font color='${task_info.font_colors[1]}'>${task_info.planet_names[1]}</font></b> planet?`,
+    "Have you completed this study before on Prolific?",
   ],
   options: [
     task_info.rocket_names,
     task_info.rocket_names,
+    ["Yes", "No"]
   ],
   correct: [
     task_info.rocket_names[0],
     task_info.rocket_names[1],
+    "No"
   ]
 }
 
