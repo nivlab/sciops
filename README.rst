@@ -13,12 +13,10 @@ Project Organization
 ^^^^^^^^^^^^^^^^^^^^
 ::
 
-    ├── analysis                     <- Notebooks, data, and code.
-    │   
-    ├── figures                      <- Figures for the manuscript.
-    │   
+    ├── 01_Original                  <- Notebooks, data, and code from the original study.
+    ├── 02_Replication               <- Notebooks, data, and code from the replication study.
+    ├── 03_Replication               <- Notebooks, data, and code from the patient study.
     ├── forums                       <- Examples of workers discussing attention checks.
-    │   
     ├── manuscripts                  <- LaTeX-formatted manuscripts.
 
 
