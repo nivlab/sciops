@@ -45,6 +45,13 @@ for platform in ['mturk', 'prolific']:
         DEMO = [dd for dd in JSON if dd['trial_type'] == 'survey-demo']
         if DEMO: dd.update(DEMO[0]['responses'])
 
+        ## Debriefing.
+        debrief = [dd for dd in JSON if dd['trial_type'] == 'two-step-comprehension'][-1]
+        responses = debrief['responses']
+        if len(responses) != 3: dd['prev_complete'] = 0
+        elif responses[-1] == 'No': dd['prev_complete'] = 0
+        else: dd['prev_complete'] = 1
+            
         ## Append.
         METADATA.append(dd)
 
@@ -71,7 +78,6 @@ for platform in ['mturk', 'prolific']:
             dd[f'{prefix}_key'] = len(survey['key_events'])
             dd[f'{prefix}_mouse'] = len(survey['mouse_events'])
             dd[f'{prefix}_ipi'] = np.round(np.median(np.diff(survey['radio_events']) * 1e-3), 3)
-            dd[f'{prefix}_infreq'] = survey.get('infrequency', np.nan)
             dd[f'{prefix}_sl'] = np.round(survey['straightlining'], 3)
             dd[f'{prefix}_zz'] = np.round(survey['zigzagging'], 3)
             dd[f'{prefix}_bot'] = survey['honeypot']
@@ -89,13 +95,36 @@ for platform in ['mturk', 'prolific']:
 SURVEYS = DataFrame(SURVEYS).sort_values(['platform','subject'])
 METADATA = DataFrame(METADATA).sort_values(['platform','subject'])
 
+## Format columns.
+METADATA = METADATA.rename(columns={'gender-categorical':'gender'})
+
 ## Include summary data.
-SURVEYS.insert(2, 'infreq', SURVEYS.filter(regex='infreq').sum(axis=1))
-SURVEYS.insert(3, 'straightlining', SURVEYS.filter(regex='sl').mean(axis=1).round(3))
-SURVEYS.insert(4, 'zigzagging', SURVEYS.filter(regex='zz').mean(axis=1).round(3))
-SURVEYS.insert(5, 'ipi', SURVEYS.filter(regex='ipi').mean(axis=1).round(3))
-SURVEYS.insert(6, 'bot', SURVEYS.filter(regex='bot').sum(axis=1))
+METADATA.insert(2, 'bot', np.where(SURVEYS.filter(regex='bot').sum(axis=1), 1, 0))
+
+## Extract items.
+cols = np.concatenate([
+    ['platform', 'subject'],
+    SURVEYS.filter(regex='mania_q0[1-7]').columns,
+    SURVEYS.filter(regex='depression_q0[1-7]').columns,
+    SURVEYS.filter(regex='anxiety_q0[1-7]').columns,
+    SURVEYS.filter(regex='artistic_q0[1-6]').columns,
+    SURVEYS.filter(regex='greed_q0[1-6]').columns,
+])
+ITEMS = SURVEYS[cols]
+
+## Compute total scores.
+SCORES = DataFrame(dict(
+    platform = SURVEYS.platform,
+    subject = SURVEYS.subject,
+    mania = SURVEYS.filter(regex='mania_q0[1-7]').sum(axis=1),
+    depression = SURVEYS.filter(regex='depression_q0[1-7]').sum(axis=1),
+    anxiety = SURVEYS.filter(regex='anxiety_q0[1-7]').sum(axis=1),
+    artistic = SURVEYS.filter(regex='artistic_q0[1-6]').sum(axis=1),
+    greed = SURVEYS.filter(regex='greed_q0[1-6]').sum(axis=1)
+))
 
 ## Save.
+ITEMS.to_csv(os.path.join(DATA_DIR, 'items.csv'), index=False)
+SCORES.to_csv(os.path.join(DATA_DIR, 'scores.csv'), index=False)
 SURVEYS.to_csv(os.path.join(DATA_DIR, 'surveys.csv'), index=False)
 METADATA.to_csv(os.path.join(DATA_DIR, 'metadata.csv'), index=False)
