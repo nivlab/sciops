@@ -17,10 +17,10 @@ The code for this project is divided across five branches:
 ::
 
     main (current branch)         <- all of the data and analysis code
-    mturk-reversal-learning       <- software for the reversal learning experiment (MTurk version)
-    mturk-two-step                <- software for the two-step experiment (MTurk version)
-    prolific-reversal-learning    <- software for the reversal learning experiment (Prolific version)
-    prolific-two-step             <- software for the reversal learning experiment (Prolific version)
+    mturk-reversal-learning       <- software for the reversal learning experiment  (MTurk version)
+    mturk-two-step                <- software for the two-step experiment           (MTurk version)
+    prolific-reversal-learning    <- software for the reversal learning experiment  (Prolific version)
+    prolific-two-step             <- software for the two step experiment           (Prolific version)
 
 The organization of the main branch (current branch) is as follows:
 
