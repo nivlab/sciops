@@ -11,13 +11,26 @@ Code and data for Zorowitz, Niv, & Bennett (submitted), *Inattentive responding 
 
 Project Organization
 ^^^^^^^^^^^^^^^^^^^^
+
+The code for this project is divided across five branches:
+
 ::
 
-    ├── 01_Original                  <- Notebooks, data, and code from the original study.
-    ├── 02_Replication               <- Notebooks, data, and code from the replication study.
-    ├── 03_Patients                  <- Notebooks, data, and code from the patient study.
-    ├── forums                       <- Examples of workers discussing attention checks.
-    ├── manuscripts                  <- LaTeX-formatted manuscripts.
+    main (current branch)         <- all of the data and analysis code
+    mturk-reversal-learning       <- software for the reversal learning experiment (MTurk version)
+    mturk-two-step                <- software for the two-step experiment (MTurk version)
+    prolific-reversal-learning    <- software for the reversal learning experiment (Prolific version)
+    prolific-two-step             <- software for the reversal learning experiment (Prolific version)
+
+The organization of the main branch (current branch) is as follows:
+
+::
+
+    ├── 01_Original               <- Notebooks, data, and code from the original study.
+    ├── 02_Replication            <- Notebooks, data, and code from the replication study.
+    ├── 03_Patients               <- Notebooks, data, and code from the patient study.
+    ├── forums                    <- Examples of workers discussing attention checks.
+    ├── manuscripts               <- LaTeX-formatted manuscripts.
 
 
 Contact
