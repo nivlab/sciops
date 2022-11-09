@@ -4,10 +4,10 @@
 .. image:: https://img.shields.io/github/license/mashape/apistatus.svg
         :target: https://github.com/nivlab/NivLink/blob/master/LICENSE
 
-NivTurk
-=======
+mturk-two-step
+==============
 
-Niv lab tools for securely serving and storing data from online computational psychiatry experiments.
+A space-themed version of the two-step task (MTurk branch).
 
 Quickstart
 ^^^^^^^^^^
