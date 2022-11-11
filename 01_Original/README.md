@@ -24,12 +24,14 @@ This folder contains the analysis code and data for the manuscript. Please see t
     │   
     ├── results_02c.ipynb        <- Notebook containing the validation analyses and Table 2.
     │   
-    ├── results_03a.ipynb        <- Notebook containing the correlation analyses and Figures 4 & S1.
+    ├── results_03a.ipynb        <- Notebook containing the correlation analyses and Figures 4, S1, & S2.
     │   
-    ├── results_03b.ipynb        <- Notebook containing the bootstrapping analyses and Figure 5.
+    ├── results_03b.ipynb        <- Notebook containing the bootstrapping analyses and Figure 5, S3, & S4.
     │   
     ├── results_03c.ipynb        <- Notebook containing the softmax regression analyses and Figure 6.
     │   
     ├── supp_01.ipynb            <- Notebook containing the demographics info and Table S1.
     │   
-    ├── results_03c.ipynb        <- Notebook containing the posterior predictive check and Figure S2.
+    ├── supp_02.ipynb            <- Notebook containing the posterior predictive check and Figure S5.
+    │   
+    ├── supp_03.ipynb            <- Notebook containing the analyses for Table S2.
