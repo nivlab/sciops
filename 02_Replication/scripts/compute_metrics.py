@@ -158,16 +158,16 @@ rt['survey_rt'] = rt.filter(regex='rt').sum(axis=1)
 metrics = metrics.merge(rt)
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
-### 1.6 Key Variability.
+### 1.6 Side Variability.
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
-print('1.6 Computing key variability.')
+print('1.6 Computing side variability.')
 
 ## Compute most chosen option within subjects.
 f = lambda x: np.abs(np.mean(x) - 0.5)
 gb = data.groupby(['platform','subject']).state_1_key.apply(f).reset_index()
 
 ## Rename columns.
-gb = gb.rename(columns={'state_1_key':'key_var'})
+gb = gb.rename(columns={'state_1_key':'side_var'})
 
 ## Merge with reject.
 metrics = metrics.merge(gb)
