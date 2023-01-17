@@ -50,11 +50,13 @@
 % set up the author block
 \setlength{\affilsep}{2em}   % set the space between author and affiliation
 \author[1]{Samuel Zorowitz}
-\author[1,2]{Yael Niv}
-\author[1,3]{Daniel Bennett}
-\affil[1]{Princeton Neuroscience Institute, Princeton University, USA}
-\affil[2]{Department of Psychology, Princeton University, USA}
-\affil[3]{School of Psychological Sciences, Monash University, Australia}
+\author[2]{Johanne Solis}
+\author[1,3]{Yael Niv}
+\author[4]{Daniel Bennett}
+\affil[1]{Princeton Neuroscience Institute, Princeton University, NJ, USA}
+\affil[2]{Rutgers-Princeton Center for Computational Cognitive Neuropsychiatry, Rutgers University, NJ, USA}
+\affil[3]{Department of Psychology, Princeton University, NJ, USA}
+\affil[4]{School of Psychological Sciences, Monash University, Victoria, Australia}
 
 % specify the title
 \title{Response to reviewers for ``Inattentive responding can induce spurious associations between task behavior and symptom measures''}
@@ -90,8 +92,6 @@ The results of this additional study relate to a point that we originally made i
 
 Of course, it may be the case that there are some psychiatric syndromes for which patients are unable to complete self-report surveys accurately. However, except for individuals experiencing acute mental health crises (e.g. mania, psychosis), we suggest that our results are in line with the common usage of self-report surveys in psychiatric research. As such, although we do not dispute that overcontrol bias is an important conceptual issue, we conclude that there are both empirical and theoretical reasons to believe that this issue does not undermine our results.
 
-In addition, if these results are not yet sufficient to ease your mind regarding psychiatric overcontrol, in another new study that we detail on in response to your critique 3 below, we tested a new sample for correlations between self report of non-symptom measures (greed avoidance and artistic interests), and also found these measures to have spurious correlations with task performance when no C/IE screening was applied. Since there is no reason to expect that the correlation is specifically driven by psychopathology, an overcontrol of those suffering from psychiatric conditions should not have affected these correlations in the way it did. See more details below, and in Appendix B of the paper. 
-
 \textbf{2. Lack of novelty: If the noise in the data is real, then the current findings become unsurprising because similar ``spurious correlations'' due to inadequate quality control have been well documented in other areas of science, including cognitive neuroscience (e.g. effect of poor motion control on imaging results, as shown in Friston et al 1996; Feller et al 2016 and many others). The presented data represents a specific manifestation of a general issue in experimental science and statistics, but is not something completely new.}
 
 We agree with the reviewer that our overarching point (i.e., that poor data quality controls can lead to spurious inferences) has been discussed, in the most general sense, elsewhere in science. Nevertheless, delineating specific instances of under-appreciated methodological biases can have major impact on methodological and empirical work within a field, as reflected in the reviewer's own suggested citations (as well as, e.g., \cite{eklund2016cluster, bradley2021unrepresentative}). In addition, our manuscript is able, by very virtue of its specificity, to make actionable recommendations for researchers studying individual differences in cognitive processes (including in computational psychiatry). We would argue that these recommendations are a major novel contribution of our work that could not readily have been extracted from, for example, publications demonstrating motion-induced artefacts in fMRI analyses. Indeed, since the publication of our initial manuscript on PsyArxiv, many researchers in computational psychiatry have changed their experiment designs to include infrequency items as we suggest (with the preprint already cited 24 times). If the need for this design feature were obvious from the extant literature, our paper should not have made such a difference in the practices in the field.
@@ -118,7 +118,7 @@ We thank the reviewer for this recommendation. We were indeed guided by the pape
 
 \textbf{2. Essentially, the authors show that correlations between different measures of inattentiveness (i.e., unusually high symptom levels on psychiatric measures and performance on behavioral measures) should not be interpreted as meaningful. While this is certainly true, this is a very incremental point vs. a significant and novel contribution. In another point to narrowness, this spurious correlation should affect between-subjects measures only; did the authors look at outcomes that are within subjects and how might these be affected?}
 
-We respectfully disagree with the reviewer's view that the results here lack novelty (see also response to Reviewer 1, point \#2). Though the perils of C/IE responding for individual-differences questionnaire research has been documented before \cite{chandler2020participant, arias2020little}, we are unaware of any manuscript prior to ours addressing the risk of spurious correlations from C/IE responding for individual-differences cognitive science research (including computational psychiatry). To this point, our literature review revealed that, whereas the majority of behavioral researchers were applying quality controls to their behavioral data, only the minority of researchers were doing the same for their self-report data (and fewer still were following best practices). This suggests that, although behavioral researchers were aware of the need for data quality assurance protocols in general, few in this growing and impactful field were aware of the need for rigorous screening of their self-report data. Importantly, this may have already led to spurious results in the field. If it were commonly accepted that correlations between unusually high symptom levels on psychiatric measures and performance on behavioral measures are not meaningful, this would have been a cornerstone in the field of computational psychiatry, as this field is predominantly interested in such correlations. Nevertheless, we had not heard of this idea prior to doing our own research on the matter.
+We respectfully disagree with the reviewer's view that the results here lack novelty (see also response to Reviewer 1, point \#2). Though the perils of C/IE responding for individual-differences questionnaire research has been documented before \cite{chandler2020participant, arias2020little}, we are unaware of any manuscript prior to ours addressing the risk of spurious correlations from C/IE responding for individual-differences cognitive science research (including computational psychiatry). To this point, our literature review revealed that, whereas the majority of behavioral researchers were applying quality controls to their behavioral data, only the minority of researchers were doing the same for their self-report data (and fewer still were following best practices). This suggests that, although behavioral researchers were aware of the need for data quality assurance protocols in general, few in this growing and impactful field were aware of the need for rigorous screening of their self-report data.
 
 \textbf{3. I recommend taking a look at Itay Sisso's tool to identify ``bots'' who may have completed the survey: \url{http://mail.sjdm.org/pipermail/jdm-society/2018-November/008014.html} as the ``bot'' respondents would provide a gold-standard for higher versus lower quality workers.}
 
@@ -308,7 +308,7 @@ The difference in numbers of excluded participants (i.e., MTurk: N=19; Prolific:
 
 \textbf{P22 - why did the authors not choose to select participants based on Prolific or mTurk scores? These should be reported in the paper. Do these scores correlate with C/IE responding?}
 
-If by ``MTurk/Prolific scores'' the reviewer is referring to platform-specific metrics like HIT Approval Rate, we did not use these as inclusion criteria because previous research has found they are not discriminating between low- and high-quality participants \cite{robinson2019tapped}. This is noted in the methods under the ``Sample'' section:
+If by ``MTurk/Prolific scores'' the reviewer is referring to platform-specific metrics like HIT Approval Rate, we did not use these as inclusion criteria because previous research has found they are not discriminating between low- and high-quality participants \cite{robinson2019tapped}. This is already noted in the methods under the ``Sample'' section:
 
 \begin{displayquote}
 Following recent recommendations, MTurk workers were not excluded based on work approval rate or number of previous jobs approved [53].
