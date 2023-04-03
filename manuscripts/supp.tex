@@ -19,6 +19,7 @@
 \usepackage[font=small, labelfont=it]{caption}
 \usepackage{booktabs}
 \usepackage{xcolor,soul}
+\usepackage[export]{adjustbox}    % center wide tables on page
 
 % specify footnote margins
 \renewcommand\footnotelayout{%
@@ -95,7 +96,7 @@
     \includegraphics[width=17cm]{../figures/supp_01.png}
     \centering
     \captionsetup{width=0.88\textwidth}
-    \caption{Signed Spearman rank correlations between task behavior (y-axis) and symptom measures (x-axis) under different regimes of data screening and participant exclusions. Only statistically significant correlations are shown ($p<0.05$ not corrected for multiple comparisons). Black Xs indicate significant correlations ablated under screening. No Screening = no exclusions; Accuracy Only = exclusions based on chance-level performance in the reversal-learning task; Infrequency Only = exclusions based on invalid or improbable responses to infrequency items; Both Types = exclusions based on the previous two measures. Acronyms: Acc = choice accuracy; Pts = total points earned; WS = win-stay rate; LS = lose-shift rate; Pers = perseveration errors; $\beta$ = inverse temperature; $\eta_p$ = positive learning rate; $\eta_n$ = negative learning rate; $\kappa$ = learning rate asymmetry.}
+    \caption{Signed Spearman rank correlations between task behavior (y-axis) and symptom measures (x-axis) under different regimes of data screening and participant exclusions. (A) No Screening = no exclusions ($N=386$). (B) Accuracy Only = exclusions based on chance-level performance in the reversal-learning task ($N=352$). (C) Infrequency Only = exclusions based on invalid or improbable responses to infrequency items ($N=301$). (D) Both Types = exclusions based on the previous two measures ($N=283$). Only statistically significant correlations are shown ($p<0.05$ not corrected for multiple comparisons). Black Xs indicate significant correlations ablated under screening. Acronyms: Acc = choice accuracy; Pts = total points earned; WS = win-stay rate; LS = lose-shift rate; Pers = perseveration errors; $\beta$ = inverse temperature; $\eta_p$ = positive learning rate; $\eta_n$ = negative learning rate; $\kappa$ = learning rate asymmetry.}
     \label{fig:correlations_s1}
 \end{figure}
 
@@ -105,7 +106,7 @@
     \includegraphics[width=16cm]{../figures/supp_02.png}
     \centering
     \captionsetup{width=0.88\textwidth}
-    \caption{The pattern of significant behavior-symptom correlations before (panel A) and after (panel B) screening compared to the resulting pattern when random subsets of participants (22\% of total, matched to screening using the infrequency measure) are removed (panel C). Panels A and B are reproduced from Figure \ref{fig:correlations} for convenience. Panel C: the fraction of significant correlations in 5000 bootstrapped samples. Panel D: The similarity of the pattern of correlations after removal of random subsets to that before and after screening using the infrequency measure. Similarity was calculated using the simple matching coefficient. Random removal subsets were significantly more similar to the ``No Screening" than to the ``Infrequency" screening datasets (two-tailed, paired-samples $t$-test: $t = 262.490$, $p < 0.001$, $d = 3.713$, 95\% CI = [0.136, 0.138]).}
+    \caption{The pattern of significant behavior-symptom correlations before (A; $N=386$) and after (B; $N=301$) screening compared to the resulting pattern when random subsets of participants ($N=301$, matched to screening using the infrequency measure) are removed (C). Panels (A) and (B) are reproduced from Figure 4 for convenience. (C) The fraction of significant correlations in 5000 bootstrapped samples. (D) The similarity of the pattern of correlations after removal of random subsets to that before and after screening using the infrequency measure ($N=5000$ bootstrapped samples). Similarity was calculated using the simple matching coefficient. Random removal subsets were significantly more similar to the ``No Screening" than to the ``Infrequency" screening datasets (two-tailed, paired-samples $t$-test: $t = 262.490$, $p < 0.001$, $d = 3.713$, 95\% CI = [0.136, 0.138]).}
     \label{fig:random}
 \end{figure}
 
@@ -115,7 +116,7 @@
     \includegraphics[width=16cm]{../figures/supp_03.png}
     \centering
     \captionsetup{width=0.88\textwidth}
-    \caption{False positive rates for spurious correlations \emph{increase} with sample size. \textit{Left:} Bootstrapped Spearman correlations between inverse temperature ($\beta$) and depression scores (7-down) as a function of sample size and proportion of C/IE participants. The grey error bars indicate 95\% bootstrap confidence intervals. The thick dashed lines indicate the threshold for statistical significance for the Spearman correlation at the corresponding sample size. Markers are jittered along the x-axis for legibility. \textit{Right:} False positive rates for inverse temperature ($\beta$) and depression scores (7-down) as a function of sample size and proportion of C/IE participants. False positive rate was calculated as the proportion of bootstrap samples in which the correlation between $\beta$ and 7-down was statistically significant. The horizontal dotted line denotes the expected false positive rate at $\alpha = 0.05$.}
+    \caption{False positive rates for spurious correlations \emph{increase} with sample size. \textit{Left:} Spearman rank correlations and 95\% bootstrap confidence intervals between inverse temperature ($\beta$) and depression scores (7-down) as a function of sample size and proportion of C/IE participants. The thick dashed lines indicate the threshold for statistical significance for the Spearman correlation at the corresponding sample size. Markers are jittered along the x-axis for legibility. \textit{Right:} False positive rates for inverse temperature ($\beta$) and depression scores (7-down) as a function of sample size and proportion of C/IE participants. False positive rate was calculated as the proportion of bootstrap samples in which the correlation between $\beta$ and 7-down was statistically significant. The horizontal dotted line denotes the expected false positive rate at $\alpha = 0.05$.}
     \label{fig:bootstrap_s1}
 \end{figure}
 
@@ -125,7 +126,7 @@
     \includegraphics[width=16cm]{../figures/supp_04.png}
     \centering
     \captionsetup{width=0.88\textwidth}
-    \caption{True correlations are independent of the proportion of C/IE participants in the sample. \textit{Left:} Bootstrapped Spearman correlations between learning rate asymmetry ($\kappa$) and anxiety scores (GAD-7) as a function of sample size and proportion of C/IE participants. The grey error bars indicate 95\% bootstrap confidence intervals. The thick dashed lines indicate the threshold for statistical significance for the Spearman correlation at the corresponding sample size. Markers are jittered along the x-axis for legibility. \textit{Right:} True positive rates for learning rate asymmetry ($\kappa$) and anxiety scores (GAD-7) as a function of sample size and proportion of C/IE participants. True positive rate was calculated as the proportion of bootstrap samples in which the correlation between $\kappa$ and GAD-7 was statistically significant. The horizontal dotted line denotes the expected false positive rate at $\alpha = 0.05$.}
+    \caption{True correlations are independent of the proportion of C/IE participants in the sample. \textit{Left:} Spearman rank correlations and 95\% bootstrap confidence intervals between learning rate asymmetry ($\kappa$) and anxiety scores (GAD-7) as a function of sample size and proportion of C/IE participants. The thick dashed lines indicate the threshold for statistical significance for the Spearman correlation at the corresponding sample size. Markers are jittered along the x-axis for legibility. \textit{Right:} True positive rates for learning rate asymmetry ($\kappa$) and anxiety scores (GAD-7) as a function of sample size and proportion of C/IE participants. True positive rate was calculated as the proportion of bootstrap samples in which the correlation between $\kappa$ and GAD-7 was statistically significant. The horizontal dotted line denotes the expected false positive rate at $\alpha = 0.05$.}
     \label{fig:bootstrap_s2}
 \end{figure}
 
@@ -136,7 +137,7 @@
     \includegraphics[width=16cm]{../figures/supp_05.png}
     \centering
     \captionsetup{width=0.88\textwidth}
-    \caption{Posterior predictive checks for the risk-sensitive temporal difference learning model. \textit{Panel A:} Observed (black) and predicted (blue) learning curves averaged across the group. \textit{Panel B:} Observed versus predicted choice accuracy for each participant. \textit{Panel C:} Distribution of average predictive density across participants.}
+    \caption{Posterior predictive checks for the risk-sensitive temporal difference learning model. (A) Observed (black) and predicted (blue) learning curves averaged across the group ($N=375$). (B) Observed versus predicted choice accuracy across participants ($N=375$). (C) Distribution of average predictive density across participants ($N=375$).}
     \label{fig:posterior_check}
 \end{figure}
 
@@ -196,23 +197,23 @@
 \subsection*{Careless participants show different behaviors on the reversal learning task}
 \begin{table}[H]
     \centering
-    \begin{tabular}{lrrr}
+    \begin{tabular}{lcccccc}
     \toprule
-    {} &  Attentive &    C/IE &   $t$-value \\
+    {} &  Attentive &    C/IE &   $t$-value &   $p$-value &  Cohen's $D$ & 95\% CI \\
     \midrule
-    Acc      &      0.587 &   0.532 &  $4.008^*$  \\
-    Pts      &     50.163 &  47.729 &  $2.376^*$  \\
-    WS       &      0.898 &   0.776 &  $5.387^*$  \\
-    LS       &      0.609 &   0.751 &  $-5.335^*$ \\
-    Pers     &      0.245 &   0.259 &  $-1.505$ \ \\
-    $\beta$  &      6.754 &   4.082 &  $5.404^*$  \\
-    $\eta_p$ &      0.643 &   0.551 &  $2.846^*$  \\
-    $\eta_n$ &      0.738 &   0.784 & $-1.516$ \  \\
-    $\kappa$ &     -0.069 &  -0.218 &  $3.729^*$  \\
+    Acc      &      0.587 &   0.532 &  4.008 &  $<$0.001 &  0.492 &    [0.028, 0.082] \\
+    Pts      &     50.163 &  47.729 &  2.376 &     0.019 &  0.292 &    [0.426, 4.441] \\
+    WS       &      0.898 &   0.776 &  5.387 &  $<$0.001 &  0.662 &    [0.077, 0.165] \\
+    LS       &      0.609 &   0.751 & -5.335 &  $<$0.001 &  0.655 &  [-0.195, -0.090] \\
+    Pers     &      0.245 &   0.259 & -1.505 &     0.139 &  0.185 &   [-0.033, 0.004] \\
+    $\beta$  &      6.754 &   4.082 &  5.404 &  $<$0.001 &  0.664 &    [1.702, 3.640] \\
+    $\eta_p$ &      0.643 &   0.551 &  2.846 &     0.007 &  0.350 &    [0.029, 0.157] \\
+    $\eta_n$ &      0.738 &   0.784 & -1.516 &     0.120 &  0.186 &   [-0.106, 0.013] \\
+    $\kappa$ &     -0.069 &  -0.218 &  3.729 &  $<$0.001 &  0.458 &    [0.071, 0.227] \\
     \bottomrule
     \end{tabular}
     \captionsetup{width=0.88\textwidth}
-    \caption{Measures of task behavior compared between attentive and C/IE participants. Acronyms: Acc = choice accuracy; Pts = total points earned; WS = win-stay rate; LS = lose-shift rate; Pers = perseveration errors; $\beta$ = inverse temperature; $\eta_p$ = positive learning rate; $\eta_n$ = negative learning rate; $\kappa$ = learning rate asymmetry. *Denotes statistical significance ($\alpha=0.05$, not corrected for multiple comparisons).}
+    \caption{Measures of task behavior compared between attentive ($N=301$) and C/IE ($N=85$) participants. Metrics compared using two-tailed, two-sample permutation $t$-test with $df=384$ ($\alpha = 0.05$, not corrected for multiple comparisons). Acronyms: Acc = choice accuracy; Pts = total points earned; WS = win-stay rate; LS = lose-shift rate; Pers = perseveration errors; $\beta$ = inverse temperature; $\eta_p$ = positive learning rate; $\eta_n$ = negative learning rate; $\kappa$ = learning rate asymmetry.}
 \end{table}
 
 \clearpage
@@ -222,68 +223,71 @@ The following are the unthresholded results of the screening measure corresponde
 
 \begin{table}[H]
     \centering
-    \small
+    \begin{adjustbox}{center}
+    \tiny
     \begin{tabular}{rccccccccc}
-    \toprule
-    {} &      INF &      ISD &      REL &      MAH &    READ &     VAR &     ACC &   WSLS & RT \\
-    \midrule
-    INF  &        - &          &          &          &         &         &         &        &    \\
-    ISD  &   0.372* &        - &          &          &         &         &         &        &    \\
-    REL  &  -0.408* &  -0.811* &        - &          &         &         &         &        &    \\
-    MAH  &   0.406* &   0.843* &  -0.643* &        - &         &         &         &        &    \\
-    READ &   -0.111 &   0.193* &  -0.168* &    0.138 &       - &         &         &        &    \\
-    VAR  &   -0.061 &   -0.029 &    0.058 &   -0.024 &  -0.026 &       - &         &        &    \\
-    ACC  &  -0.206* &   -0.154 &    0.099 &  -0.182* &  -0.074 &   0.027 &       - &        &    \\
-    WSLS &    0.060 &    0.102 &   -0.089 &    0.115 &   0.103 &  -0.060 &  0.221* &      - &    \\
-    RT   &    0.040 &   -0.019 &    0.014 &    0.013 &  -0.158 &  -0.007 &  -0.094 &  -0.05 &  - \\
-    \bottomrule
+        \toprule
+        {} &      INF &      ISD &      REL &      MAH &    READ &     VAR &     ACC &   WSLS & RT \\
+        \midrule
+        INF  &                           - &                             &                             &                          &                 &                 &                            &                 &    \\
+    ISD  &   \textbf{0.337 ($<$0.001)} &                           - &                             &                          &                 &                 &                            &                 &    \\
+    REL  &  \textbf{-0.360 ($<$0.001)} &  \textbf{-0.804 ($<$0.001)} &                           - &                          &                 &                 &                            &                 &    \\
+    MAH  &   \textbf{0.406 ($<$0.001)} &   \textbf{0.836 ($<$0.001)} &  \textbf{-0.608 ($<$0.001)} &                        - &                 &                 &                            &                 &    \\
+    READ &              -0.111 (0.644) &   \textbf{0.209 ($<$0.001)} &     \textbf{-0.193 (0.002)} &            0.138 (0.220) &               - &                 &                            &                 &    \\
+    VAR  &              -0.061 (1.000) &              -0.038 (1.000) &               0.068 (0.999) &           -0.024 (1.000) &  -0.026 (1.000) &               - &                            &                 &    \\
+    ACC  &  \textbf{-0.206 ($<$0.001)} &              -0.133 (0.273) &               0.044 (1.000) &  \textbf{-0.182 (0.009)} &  -0.074 (0.996) &   0.027 (1.000) &                          - &                 &    \\
+    WSLS &               0.060 (1.000) &               0.103 (0.794) &              -0.085 (0.971) &            0.115 (0.574) &   0.103 (0.790) &  -0.060 (1.000) &  \textbf{0.221 ($<$0.001)} &               - &    \\
+    RT   &               0.040 (1.000) &              -0.025 (1.000) &               0.017 (1.000) &            0.013 (1.000) &  -0.158 (0.067) &  -0.007 (1.000) &             -0.094 (0.910) &  -0.050 (1.000) &  - \\
+        \bottomrule
     \end{tabular}
-    \captionsetup{width=0.88\textwidth}
-    \caption{Spearman's rank correlations of task and self-report data screening measures. Each entry corresponds to the Spearman correlation between two screening measures. Acronyms: INF = infrequency item; ISD = inter-item standard deviation; REL = personal reliability; MAH = Mahalanobis distance; READ = reading time; VAR = choice variability; ACC = choice accuracy; WSLS = win-stay lose-shift rate; RT = suspicious response times. *Denotes statistical significance after correcting for multiple comparisons.}
+    \end{adjustbox}
+    \caption{Spearman rank correlations ($p$-value) of task and self-report data screening measures ($N=386$). Each entry corresponds to the Spearman correlation between two screening measures. Acronyms: INF = infrequency item; ISD = inter-item standard deviation; REL = personal reliability; MAH = Mahalanobis distance; READ = reading time; VAR = choice variability; ACC = choice accuracy; WSLS = win-stay lose-shift rate; RT = suspicious response times. Bolded entries indicate statistical significance for a two-sided rank correlation test ($\alpha = 0.05$, corrected for multiple comparisons).}
 \end{table}
 
 \begin{table}[H]
     \centering
-    \small
+    \begin{adjustbox}{center}
+    \tiny
     \begin{tabular}{rccccccccc}
-    \toprule
-    {} &     INF &     ISD &     REL &    MAH &   READ &    VAR &     ACC &  WSLS & RT \\
-    \midrule
-    INF  &       - &         &         &        &        &        &         &       &    \\
-    ISD  &  0.462* &       - &         &        &        &        &         &       &    \\
-    REL  &  0.484* &  0.691* &       - &        &        &        &         &       &    \\
-    MAH  &  0.516* &  0.732* &  0.619* &      - &        &        &         &       &    \\
-    READ &   0.319 &   0.165 &   0.165 &  0.216 &      - &        &         &       &    \\
-    VAR  &   0.208 &   0.216 &   0.238 &  0.259 &  0.292 &      - &         &       &    \\
-    ACC  &  0.379* &   0.312 &   0.258 &  0.344 &  0.237 &  0.282 &       - &       &    \\
-    WSLS &   0.253 &   0.247 &   0.227 &  0.258 &  0.299 &  0.303 &  0.505* &     - &    \\
-    RT   &   0.267 &   0.219 &   0.271 &  0.271 &  0.333 &  0.251 &   0.239 &  0.26 &  - \\
-    \bottomrule
+        \toprule
+        {} &     INF &     ISD &     REL &    MAH &   READ &    VAR &     ACC &  WSLS & RT \\
+        \midrule
+        INF  &                          - &                            &                            &                &                &                &                            &                &    \\
+    ISD  &  \textbf{0.462 ($<$0.001)} &                          - &                            &                &                &                &                            &                &    \\
+    REL  &  \textbf{0.484 ($<$0.001)} &  \textbf{0.691 ($<$0.001)} &                          - &                &                &                &                            &                &    \\
+    MAH  &  \textbf{0.516 ($<$0.001)} &  \textbf{0.732 ($<$0.001)} &  \textbf{0.619 ($<$0.001)} &              - &                &                &                            &                &    \\
+    READ &              0.319 (0.688) &              0.165 (1.000) &              0.165 (1.000) &  0.216 (1.000) &              - &                &                            &                &    \\
+    VAR  &              0.208 (1.000) &              0.216 (1.000) &              0.238 (1.000) &  0.259 (1.000) &  0.292 (0.981) &              - &                            &                &    \\
+    ACC  &     \textbf{0.379 (0.011)} &              0.312 (0.792) &              0.258 (1.000) &  0.344 (0.180) &  0.237 (1.000) &  0.282 (0.998) &                          - &                &    \\
+    WSLS &              0.253 (1.000) &              0.247 (1.000) &              0.227 (1.000) &  0.258 (1.000) &  0.299 (0.964) &  0.303 (0.901) &  \textbf{0.505 ($<$0.001)} &              - &    \\
+    RT   &              0.267 (1.000) &              0.219 (1.000) &              0.271 (1.000) &  0.271 (1.000) &  0.333 (0.363) &  0.251 (1.000) &              0.239 (1.000) &  0.260 (1.000) &  - \\
+        \bottomrule
     \end{tabular}
-    \captionsetup{width=0.88\textwidth}
-    \caption{Dice similarity coefficients (top 10\%) for task and self-report data screening measures. Each entry corresponds to the Dice coefficient between two screening measures for the 10\% most suspicious participants. Acronyms: INF = infrequency item; ISD = inter-item standard deviation; REL = personal reliability; MAH = Mahalanobis distance; READ = reading time; VAR = choice variability; ACC = choice accuracy; WSLS = win-stay lose-shift rate; RT = suspicious response times. *Denotes statistical significance after correcting for multiple comparisons.}
+    \end{adjustbox}
+    \caption{Dice similarity coefficients ($p$-value) for task and self-report data screening measures for the top 10\% most suspicious participants. Each entry corresponds to the Dice coefficient between two screening measures for the 10\% most suspicious participants. Acronyms: INF = infrequency item; ISD = inter-item standard deviation; REL = personal reliability; MAH = Mahalanobis distance; READ = reading time; VAR = choice variability; ACC = choice accuracy; WSLS = win-stay lose-shift rate; RT = suspicious response times. Bolded entries indicate statistical significance for a two-sided Dice similarity permutation test ($\alpha = 0.05$, corrected for multiple comparisons).}
 \end{table}
 
 \begin{table}[H]
     \centering
-    \small
+    \begin{adjustbox}{center}
+    \tiny
     \begin{tabular}{rccccccccc}
-    \toprule
-    {} &     INF &     ISD &     REL &    MAH &    READ &    VAR &     ACC &   WSLS & RT \\
-    \midrule
-    INF  &       - &         &         &        &         &        &         &        &    \\
-    ISD  &  0.355* &       - &         &        &         &        &         &        &    \\
-    REL  &  0.355* &  0.564* &       - &        &         &        &         &        &    \\
-    MAH  &  0.355* &  0.667* &  0.359* &      - &         &        &         &        &    \\
-    READ &  0.290* &   0.231 &   0.154 &  0.231 &       - &        &         &        &    \\
-    VAR  &   0.116 &   0.080 &   0.080 &  0.160 &   0.133 &      - &         &        &    \\
-    ACC  &  0.269* &   0.137 &   0.164 &  0.192 &   0.247 &  0.171 &       - &        &    \\
-    WSLS &   0.242 &   0.103 &   0.154 &  0.205 &   0.231 &  0.240 &  0.630* &      - &    \\
-    RT   &   0.164 &   0.105 &   0.132 &  0.184 &  0.289* &  0.164 &   0.225 &  0.237 &  - \\
-    \bottomrule
+        \toprule
+        {} &     INF &     ISD &     REL &    MAH &    READ &    VAR &     ACC &   WSLS & RT \\
+        \midrule
+        INF  &                          - &                            &                            &                &                         &                &                            &                &    \\
+    ISD  &  \textbf{0.355 ($<$0.001)} &                          - &                            &                &                         &                &                            &                &    \\
+    REL  &  \textbf{0.355 ($<$0.001)} &  \textbf{0.564 ($<$0.001)} &                          - &                &                         &                &                            &                &    \\
+    MAH  &  \textbf{0.355 ($<$0.001)} &  \textbf{0.667 ($<$0.001)} &  \textbf{0.359 ($<$0.001)} &              - &                         &                &                            &                &    \\
+    READ &     \textbf{0.290 (0.006)} &              0.231 (0.231) &              0.154 (0.999) &  0.231 (0.231) &                       - &                &                            &                &    \\
+    VAR  &              0.116 (1.000) &              0.080 (1.000) &              0.080 (1.000) &  0.160 (0.996) &           0.133 (1.000) &              - &                            &                &    \\
+    ACC  &     \textbf{0.269 (0.020)} &              0.137 (1.000) &              0.164 (0.985) &  0.192 (0.809) &           0.247 (0.088) &  0.171 (0.968) &                          - &                &    \\
+    WSLS &              0.242 (0.121) &              0.103 (1.000) &              0.154 (0.999) &  0.205 (0.635) &           0.231 (0.231) &  0.240 (0.140) &  \textbf{0.630 ($<$0.001)} &              - &    \\
+    RT   &              0.164 (0.988) &              0.105 (1.000) &              0.132 (1.000) &  0.184 (0.879) &  \textbf{0.289 (0.007)} &  0.164 (0.985) &              0.225 (0.307) &  0.237 (0.162) &  - \\
+        \bottomrule
     \end{tabular}
-    \captionsetup{width=0.88\textwidth}
-    \caption{Dice similarity coefficients (top 25\%) for task and self-report data screening measures. Each entry corresponds to the Dice coefficient between two screening measures for the 25\% most suspicious participants. Acronyms: INF = infrequency item; ISD = inter-item standard deviation; REL = personal reliability; MAH = Mahalanobis distance; READ = reading time; VAR = choice variability; ACC = choice accuracy; WSLS = win-stay lose-shift rate; RT = suspicious response times. *Denotes statistical significance after correcting for multiple comparisons.}
+    \end{adjustbox}
+    \caption{Dice similarity coefficients ($p$-value) for task and self-report data screening measures for the top 25\% most suspicious participants. Each entry corresponds to the Dice coefficient between two screening measures for the 25\% most suspicious participants. Acronyms: INF = infrequency item; ISD = inter-item standard deviation; REL = personal reliability; MAH = Mahalanobis distance; READ = reading time; VAR = choice variability; ACC = choice accuracy; WSLS = win-stay lose-shift rate; RT = suspicious response times. Bolded entries indicate statistical significance for a two-sided Dice similarity permutation test ($\alpha = 0.05$, corrected for multiple comparisons).}
 \end{table}
 
 \clearpage
@@ -293,90 +297,94 @@ The following are the unthresholded results of the correlation analyses between 
 
 \begin{table}[H]
     \centering
-    \small
+    \begin{adjustbox}{center}   
+    \scriptsize
     \begin{tabular}{rccccccc}
-    \toprule
-    {} &       7u &       7d &    GAD-7 &      BIS &     BAS &   SHAPS &    PSWQ \\
-    \midrule
-    Acc      &  -0.295* &  -0.166* &  -0.093* &  -0.134* &  -0.020 &  -0.051 &  -0.037 \\
-    Pts      &  -0.225* &   -0.076 &   -0.023 &  -0.144* &  -0.061 &  -0.051 &   0.024 \\
-    WS       &  -0.327* &  -0.160* &  -0.129* &  -0.171* &  -0.006 &  -0.048 &  -0.062 \\
-    LS       &   0.285* &   0.158* &   0.146* &    0.050 &  -0.037 &   0.000 &  0.110* \\
-    Pers     &   0.134* &    0.066 &    0.032 &   0.166* &   0.018 &   0.080 &  -0.004 \\
-    $\beta$  &  -0.370* &  -0.157* &  -0.114* &  -0.185* &   0.017 &  -0.063 &  -0.043 \\
-    $\eta_p$ &  -0.097* &  -0.105* &  -0.101* &   -0.033 &  -0.020 &  -0.015 &  -0.041 \\
-    $\eta_n$ &   0.168* &   0.094* &   0.108* &   -0.050 &  -0.056 &  -0.020 &   0.042 \\
-    $\kappa$ &  -0.175* &  -0.137* &  -0.147* &   -0.008 &  -0.020 &  -0.028 &  -0.061 \\
-    \bottomrule
+        \toprule
+        {} &       7u &       7d &    GAD-7 &      BIS &     BAS &   SHAPS &    PSWQ \\
+        \midrule
+        Acc      &  \textbf{-0.295 ($<$0.001)} &     \textbf{-0.166 (0.001)} &  \textbf{-0.093 (0.041)} &     \textbf{-0.134 (0.006)} &  -0.020 (0.328) &  -0.051 (0.158) &          -0.037 (0.232) \\
+    Pts      &  \textbf{-0.225 ($<$0.001)} &              -0.076 (0.065) &           -0.023 (0.315) &     \textbf{-0.144 (0.003)} &  -0.061 (0.104) &  -0.051 (0.154) &           0.024 (0.321) \\
+    WS       &  \textbf{-0.327 ($<$0.001)} &  \textbf{-0.160 ($<$0.001)} &  \textbf{-0.129 (0.009)} &  \textbf{-0.171 ($<$0.001)} &  -0.006 (0.449) &  -0.048 (0.178) &          -0.062 (0.116) \\
+    LS       &   \textbf{0.285 ($<$0.001)} &   \textbf{0.158 ($<$0.001)} &   \textbf{0.146 (0.002)} &               0.050 (0.157) &  -0.037 (0.241) &   0.000 (0.494) &  \textbf{0.110 (0.015)} \\
+    Pers     &      \textbf{0.134 (0.004)} &               0.066 (0.111) &            0.032 (0.271) &   \textbf{0.166 ($<$0.001)} &   0.018 (0.370) &   0.080 (0.064) &          -0.004 (0.469) \\
+    $\beta$  &  \textbf{-0.370 ($<$0.001)} &  \textbf{-0.157 ($<$0.001)} &  \textbf{-0.114 (0.019)} &  \textbf{-0.185 ($<$0.001)} &   0.017 (0.377) &  -0.063 (0.105) &          -0.043 (0.204) \\
+    $\eta_p$ &     \textbf{-0.097 (0.037)} &     \textbf{-0.105 (0.023)} &  \textbf{-0.101 (0.029)} &              -0.033 (0.274) &  -0.020 (0.351) &  -0.015 (0.402) &          -0.041 (0.213) \\
+    $\eta_n$ &   \textbf{0.168 ($<$0.001)} &      \textbf{0.094 (0.032)} &   \textbf{0.108 (0.016)} &              -0.050 (0.165) &  -0.056 (0.143) &  -0.020 (0.351) &           0.042 (0.205) \\
+    $\kappa$ &  \textbf{-0.175 ($<$0.001)} &     \textbf{-0.137 (0.004)} &  \textbf{-0.147 (0.002)} &              -0.008 (0.444) &  -0.020 (0.356) &  -0.028 (0.294) &          -0.061 (0.118) \\
+        \bottomrule
     \end{tabular}
-    \captionsetup{width=0.88\textwidth}
-    \caption{Spearman correlations between task behavior and self-report symptom measures when no screening and rejections have been applied. Acronyms: Acc = choice accuracy; Pts = total points earned; WS = win-stay rate; LS = lose-shift rate; Pers = perseveration errors; $\beta$ = inverse temperature; $\eta_p$ = positive learning rate; $\eta_n$ = negative learning rate; $\kappa$ = learning rate asymmetry. *Denotes statistical significance ($\alpha=0.05$, not corrected for multiple comparisons).}
+    \end{adjustbox}
+    \caption{Spearman rank correlation ($p$-value) between task behavior and self-report symptom measures when no screening and rejections have been applied ($N=386$). Acronyms: Acc = choice accuracy; Pts = total points earned; WS = win-stay rate; LS = lose-shift rate; Pers = perseveration errors; $\beta$ = inverse temperature; $\eta_p$ = positive learning rate; $\eta_n$ = negative learning rate; $\kappa$ = learning rate asymmetry. Bolded entries indicate statistical significance for a two-sided rank correlation test ($\alpha = 0.05$, not corrected for multiple comparisons).}
 \end{table}
 
 \begin{table}[H]
     \centering
-    \small
+    \begin{adjustbox}{center}
+    \scriptsize
     \begin{tabular}{rccccccc}
-    \toprule
-    {} &       7u &       7d &    GAD-7 &      BIS &     BAS &   SHAPS &    PSWQ \\
-    \midrule
-    Acc      &  -0.263* &  -0.144* &  -0.105* &  -0.106* &  -0.009 &  -0.020 &  -0.033 \\
-    Pts      &  -0.187* &   -0.042 &   -0.020 &  -0.126* &  -0.055 &  -0.028 &   0.036 \\
-    WS       &  -0.291* &  -0.137* &  -0.123* &  -0.161* &  -0.019 &   0.006 &  -0.044 \\
-    LS       &   0.314* &   0.170* &   0.156* &    0.034 &  -0.036 &  -0.037 &  0.124* \\
-    Pers     &    0.083 &    0.022 &    0.011 &   0.151* &   0.010 &   0.076 &  -0.021 \\
-    $\beta$  &  -0.332* &  -0.134* &  -0.109* &  -0.173* &   0.010 &  -0.040 &  -0.023 \\
-    $\eta_p$ &   -0.056 &   -0.089 &  -0.105* &   -0.013 &  -0.029 &   0.034 &  -0.035 \\
-    $\eta_n$ &   0.259* &   0.134* &   0.122* &   -0.021 &  -0.063 &   0.019 &   0.053 \\
-    $\kappa$ &  -0.171* &  -0.125* &  -0.150* &   -0.016 &  -0.032 &  -0.033 &  -0.060 \\
-    \bottomrule
+        \toprule
+        {} &       7u &       7d &    GAD-7 &      BIS &     BAS &   SHAPS &    PSWQ \\
+        \midrule
+        Acc      &  \textbf{-0.263 ($<$0.001)} &  \textbf{-0.144 (0.006)} &  \textbf{-0.105 (0.025)} &     \textbf{-0.106 (0.022)} &  -0.009 (0.436) &  -0.020 (0.363) &          -0.033 (0.272) \\
+    Pts      &  \textbf{-0.187 ($<$0.001)} &           -0.042 (0.219) &           -0.020 (0.355) &     \textbf{-0.126 (0.009)} &  -0.055 (0.149) &  -0.028 (0.300) &           0.036 (0.254) \\
+    WS       &  \textbf{-0.291 ($<$0.001)} &  \textbf{-0.137 (0.004)} &  \textbf{-0.123 (0.012)} &     \textbf{-0.161 (0.001)} &  -0.019 (0.358) &   0.006 (0.457) &          -0.044 (0.210) \\
+    LS       &   \textbf{0.314 ($<$0.001)} &   \textbf{0.170 (0.001)} &   \textbf{0.156 (0.002)} &               0.034 (0.255) &  -0.036 (0.253) &  -0.037 (0.236) &  \textbf{0.124 (0.008)} \\
+    Pers     &               0.083 (0.057) &            0.022 (0.348) &            0.011 (0.429) &      \textbf{0.151 (0.002)} &   0.010 (0.437) &   0.076 (0.090) &          -0.021 (0.338) \\
+    $\beta$  &  \textbf{-0.332 ($<$0.001)} &  \textbf{-0.134 (0.004)} &  \textbf{-0.109 (0.027)} &  \textbf{-0.173 ($<$0.001)} &   0.010 (0.430) &  -0.040 (0.239) &          -0.023 (0.335) \\
+    $\eta_p$ &              -0.056 (0.165) &           -0.089 (0.051) &  \textbf{-0.105 (0.024)} &              -0.013 (0.397) &  -0.029 (0.287) &   0.034 (0.271) &          -0.035 (0.265) \\
+    $\eta_n$ &   \textbf{0.259 ($<$0.001)} &   \textbf{0.134 (0.004)} &   \textbf{0.122 (0.011)} &              -0.021 (0.351) &  -0.063 (0.130) &   0.019 (0.362) &           0.053 (0.161) \\
+    $\kappa$ &     \textbf{-0.171 (0.001)} &  \textbf{-0.125 (0.008)} &  \textbf{-0.150 (0.002)} &              -0.016 (0.386) &  -0.032 (0.265) &  -0.033 (0.277) &          -0.060 (0.127) \\
+        \bottomrule
     \end{tabular}
-    \captionsetup{width=0.88\textwidth}
-    \caption{Spearman correlations between task behavior and self-report symptom measures after applying rejections based on choice accuracy (7\% of sample). Acronyms: Acc = choice accuracy; Pts = total points earned; WS = win-stay rate; LS = lose-shift rate; Pers = perseveration errors; $\beta$ = inverse temperature; $\eta_p$ = positive learning rate; $\eta_n$ = negative learning rate; $\kappa$ = learning rate asymmetry. *Denotes statistical significance ($\alpha=0.05$, not corrected for multiple comparisons).}
+    \end{adjustbox}
+    \caption{Spearman rank correlation ($p$-value) between task behavior and self-report symptom measures after applying rejections based on choice accuracy ($N=352$). Acronyms: Acc = choice accuracy; Pts = total points earned; WS = win-stay rate; LS = lose-shift rate; Pers = perseveration errors; $\beta$ = inverse temperature; $\eta_p$ = positive learning rate; $\eta_n$ = negative learning rate; $\kappa$ = learning rate asymmetry. Bolded entries indicate statistical significance for a two-sided rank correlation test ($\alpha = 0.05$, not corrected for multiple comparisons).}
 \end{table}
 
 \begin{table}[H]
     \centering
-    \small
+    \begin{adjustbox}{center}        
+    \scriptsize
     \begin{tabular}{rccccccc}
-    \toprule
-    {} &       7u &      7d &    GAD-7 &      BIS &     BAS &   SHAPS &    PSWQ \\
-    \midrule
-    Acc      &  -0.210* &  -0.048 &    0.009 &   -0.082 &  -0.020 &  -0.005 &   0.009 \\
-    Pts      &  -0.167* &   0.040 &    0.070 &  -0.107* &  -0.046 &  -0.011 &   0.071 \\
-    WS       &  -0.220* &  -0.045 &   -0.008 &  -0.143* &  -0.025 &   0.001 &   0.016 \\
-    LS       &   0.219* &   0.084 &   0.113* &    0.019 &  -0.021 &  -0.050 &   0.082 \\
-    Pers     &    0.088 &  -0.028 &   -0.024 &   0.127* &   0.006 &   0.048 &  -0.052 \\
-    $\beta$  &  -0.257* &  -0.038 &    0.047 &  -0.180* &  -0.011 &  -0.032 &   0.056 \\
-    $\eta_p$ &   -0.052 &  -0.064 &   -0.079 &   -0.015 &  -0.008 &   0.004 &  -0.055 \\
-    $\eta_n$ &   0.165* &   0.067 &   0.141* &   -0.037 &  -0.089 &  -0.030 &   0.054 \\
-    $\kappa$ &  -0.111* &  -0.046 &  -0.137* &    0.011 &   0.015 &   0.002 &  -0.054 \\
-    \bottomrule
+        \toprule
+        {} &       7u &      7d &    GAD-7 &      BIS &     BAS &   SHAPS &    PSWQ \\
+        \midrule
+        Acc      &  \textbf{-0.210 ($<$0.001)} &  -0.048 (0.203) &            0.009 (0.433) &              -0.082 (0.078) &  -0.020 (0.360) &  -0.005 (0.454) &   0.009 (0.431) \\
+    Pts      &     \textbf{-0.167 (0.001)} &   0.040 (0.234) &            0.070 (0.114) &     \textbf{-0.107 (0.030)} &  -0.046 (0.205) &  -0.011 (0.410) &   0.071 (0.114) \\
+    WS       &  \textbf{-0.220 ($<$0.001)} &  -0.045 (0.226) &           -0.008 (0.450) &     \textbf{-0.143 (0.007)} &  -0.025 (0.322) &   0.001 (0.494) &   0.016 (0.386) \\
+    LS       &   \textbf{0.219 ($<$0.001)} &   0.084 (0.069) &   \textbf{0.113 (0.026)} &               0.019 (0.364) &  -0.021 (0.351) &  -0.050 (0.186) &   0.082 (0.076) \\
+    Pers     &               0.088 (0.068) &  -0.028 (0.312) &           -0.024 (0.347) &      \textbf{0.127 (0.015)} &   0.006 (0.457) &   0.048 (0.204) &  -0.052 (0.176) \\
+    $\beta$  &  \textbf{-0.257 ($<$0.001)} &  -0.038 (0.254) &            0.047 (0.205) &  \textbf{-0.180 ($<$0.001)} &  -0.011 (0.428) &  -0.032 (0.301) &   0.056 (0.158) \\
+    $\eta_p$ &              -0.052 (0.184) &  -0.064 (0.138) &           -0.079 (0.082) &              -0.015 (0.409) &  -0.008 (0.449) &   0.004 (0.474) &  -0.055 (0.173) \\
+    $\eta_n$ &      \textbf{0.165 (0.002)} &   0.067 (0.120) &   \textbf{0.141 (0.007)} &              -0.037 (0.266) &  -0.089 (0.064) &  -0.030 (0.312) &   0.054 (0.174) \\
+    $\kappa$ &     \textbf{-0.111 (0.029)} &  -0.046 (0.225) &  \textbf{-0.137 (0.008)} &               0.011 (0.426) &   0.015 (0.396) &   0.002 (0.484) &  -0.054 (0.180) \\
+        \bottomrule
     \end{tabular}
-    \captionsetup{width=0.88\textwidth}
-    \caption{Spearman correlations between task behavior and self-report symptom measures after applying rejections based on infrequency items (22\% of sample). Acronyms: Acc = choice accuracy; Pts = total points earned; WS = win-stay rate; LS = lose-shift rate; Pers = perseveration errors; $\beta$ = inverse temperature; $\eta_p$ = positive learning rate; $\eta_n$ = negative learning rate; $\kappa$ = learning rate asymmetry. *Denotes statistical significance ($\alpha=0.05$, not corrected for multiple comparisons).}
+    \end{adjustbox}
+    \caption{Spearman rank correlation ($p$-value) between task behavior and self-report symptom measures after applying rejections based on infrequency items ($N=301$). Acronyms: Acc = choice accuracy; Pts = total points earned; WS = win-stay rate; LS = lose-shift rate; Pers = perseveration errors; $\beta$ = inverse temperature; $\eta_p$ = positive learning rate; $\eta_n$ = negative learning rate; $\kappa$ = learning rate asymmetry. Bolded entries indicate statistical significance for a two-sided rank correlation test ($\alpha = 0.05$, not corrected for multiple comparisons).}
 \end{table}
 
 \begin{table}[H]
     \centering
-    \small
+    \begin{adjustbox}{center}        
+    \scriptsize
     \begin{tabular}{rccccccc}
-    \toprule
-    {} &       7u &      7d &    GAD-7 &      BIS &     BAS &   SHAPS &    PSWQ \\
-    \midrule
-    Acc      &  -0.229* &  -0.090 &   -0.072 &   -0.053 &   0.016 &   0.034 &  -0.040 \\
-    Pts      &  -0.177* &   0.016 &    0.011 &   -0.086 &  -0.013 &   0.025 &   0.038 \\
-    WS       &  -0.227* &  -0.085 &   -0.057 &  -0.131* &  -0.025 &   0.049 &  -0.007 \\
-    LS       &   0.236* &   0.094 &   0.107* &    0.008 &  -0.016 &  -0.075 &   0.079 \\
-    Pers     &    0.095 &  -0.007 &    0.014 &   0.110* &  -0.015 &   0.037 &  -0.025 \\
-    $\beta$  &  -0.255* &  -0.072 &   -0.008 &  -0.165* &  -0.011 &  -0.015 &   0.028 \\
-    $\eta_p$ &   -0.045 &  -0.088 &  -0.108* &    0.004 &  -0.000 &   0.049 &  -0.073 \\
-    $\eta_n$ &   0.196* &   0.046 &   0.098* &   -0.015 &  -0.085 &   0.008 &   0.024 \\
-    $\kappa$ &  -0.114* &  -0.046 &  -0.134* &    0.007 &   0.012 &  -0.004 &  -0.051 \\
-    \bottomrule
+        \toprule
+        {} &       7u &      7d &    GAD-7 &      BIS &     BAS &   SHAPS &    PSWQ \\
+        \midrule
+        Acc      &  \textbf{-0.229 ($<$0.001)} &  -0.090 (0.065) &           -0.072 (0.116) &           -0.053 (0.190) &   0.016 (0.383) &   0.034 (0.280) &  -0.040 (0.247) \\
+    Pts      &     \textbf{-0.177 (0.003)} &   0.016 (0.388) &            0.011 (0.436) &           -0.086 (0.075) &  -0.013 (0.414) &   0.025 (0.324) &   0.038 (0.267) \\
+    WS       &  \textbf{-0.227 ($<$0.001)} &  -0.085 (0.081) &           -0.057 (0.179) &  \textbf{-0.131 (0.016)} &  -0.025 (0.341) &   0.049 (0.201) &  -0.007 (0.461) \\
+    LS       &   \textbf{0.236 ($<$0.001)} &   0.094 (0.059) &   \textbf{0.107 (0.036)} &            0.008 (0.453) &  -0.016 (0.387) &  -0.075 (0.101) &   0.079 (0.080) \\
+    Pers     &               0.095 (0.056) &  -0.007 (0.459) &            0.014 (0.411) &   \textbf{0.110 (0.038)} &  -0.015 (0.392) &   0.037 (0.274) &  -0.025 (0.332) \\
+    $\beta$  &  \textbf{-0.255 ($<$0.001)} &  -0.072 (0.121) &           -0.008 (0.457) &  \textbf{-0.165 (0.003)} &  -0.011 (0.426) &  -0.015 (0.405) &   0.028 (0.326) \\
+    $\eta_p$ &              -0.045 (0.233) &  -0.088 (0.072) &  \textbf{-0.108 (0.029)} &            0.004 (0.473) &  -0.000 (0.505) &   0.049 (0.211) &  -0.073 (0.119) \\
+    $\eta_n$ &   \textbf{0.196 ($<$0.001)} &   0.046 (0.213) &   \textbf{0.098 (0.047)} &           -0.015 (0.389) &  -0.085 (0.088) &   0.008 (0.459) &   0.024 (0.342) \\
+    $\kappa$ &     \textbf{-0.114 (0.032)} &  -0.046 (0.228) &  \textbf{-0.134 (0.007)} &            0.007 (0.442) &   0.012 (0.425) &  -0.004 (0.495) &  -0.051 (0.209) \\
+        \bottomrule
     \end{tabular}
-    \captionsetup{width=0.88\textwidth}
-    \caption{Spearman correlations between task behavior and self-report symptom measures after applying rejections based on both choice accuracy and infrequency items. Acronyms: Acc = choice accuracy; Pts = total points earned; WS = win-stay rate; LS = lose-shift rate; Pers = perseveration errors; $\beta$ = inverse temperature; $\eta_p$ = positive learning rate; $\eta_n$ = negative learning rate; $\kappa$ = learning rate asymmetry. *Denotes statistical significance ($\alpha=0.05$, not corrected for multiple comparisons).}
+    \end{adjustbox}
+    \caption{Spearman rank correlation ($p$-value) between task behavior and self-report symptom measures after applying rejections based on both choice accuracy and infrequency items ($N=283$). Acronyms: Acc = choice accuracy; Pts = total points earned; WS = win-stay rate; LS = lose-shift rate; Pers = perseveration errors; $\beta$ = inverse temperature; $\eta_p$ = positive learning rate; $\eta_n$ = negative learning rate; $\kappa$ = learning rate asymmetry. Bolded entries indicate statistical significance for a two-sided rank correlation test ($\alpha = 0.05$, not corrected for multiple comparisons).}
 \end{table}
 
 \clearpage
@@ -438,7 +446,7 @@ The regression weights for each event, averaged within attentive and C/IE partic
     \includegraphics[width=16cm]{../figures/main_03c.png}
     \centering
     \captionsetup{width=0.88\textwidth}
-    \caption{Softmax regression decision weights in attentive (red) and C/IE (blue) participants. The weights dictate the extent to which the recent history of rewards, nonrewards, or previous choices influence current choice. Error bars indicate the 95\% highest density interval of each weight. *Denotes where the 95\% highest density interval of the difference in weights excluded zero.}
+    \caption{Softmax regression decision weights and 95\% highest density intervals in attentive (red) and C/IE (blue) participants. The weights reflect the extent to which the recent history of rewards, nonrewards, or previous choices influence current choice. *Denotes where the 95\% highest density interval of the difference in weights excluded zero.}
     \label{fig:regression}
 \end{figure}
 
@@ -524,9 +532,9 @@ The task was programmed in jsPsych \cite{deleeuw_2015_jspsych-2} and distributed
 
 \subsubsection*{Self-report measures}
 
-Prior to the start of the two-step task, participants completed four self-report measures in a randomized order. One was the 14-item seven-up/seven-down scale (7u/7d; \cite{youngstrom_2013_susd-2}), which measures lifetime incidence of depressive and (hypo)mania symptoms. This scale is expected to elicit lower rates of symptom endorsement, thereby resulting in asymmetric (right-skewed) score distributions. Participants also completed a 7-item measure of general anxiety symptoms over the last year (e.g. ``I was overwhelmed by anxiety.''; \cite{watson2022development}). This scale is expected to elicit moderate rates of symptom endorsement, thereby resulting in a symmetric score distribution. We therefore expected the depression and mania measures to be at greater risk for spurious correlations with behavior on the two-step task than the anxiety measure. 
+Prior to the start of the two-step task, participants completed four self-report measures in a randomized order. One was the 14-item seven-up/seven-down scale (7u/7d; \cite{youngstrom_2013_susd-2}), which measures lifetime incidence of depressive and (hypo)mania symptoms. This scale is expected to elicit lower rates of symptom endorsement, thereby resulting in asymmetric (right-skewed) score distributions. Participants also completed a 7-item measure of general anxiety symptoms over the last year (e.g., ``I was overwhelmed by anxiety.''; \cite{watson2022development}). This scale is expected to elicit moderate rates of symptom endorsement, thereby resulting in a symmetric score distribution. We therefore expected the depression and mania measures to be at greater risk for spurious correlations with behavior on the two-step task than the anxiety measure. 
 
-In addition, participants completed a 6-item measure of artistic interests (e.g. ``I believe in the importance of art''; \cite{ashton2007empirical}). Based on previous studies, this scale is expected to elicit high rates of endorsement, thereby resulting in an asymmetric score distribution. Finally, participants completed a 6-item measure of greed avoidance, which measures attitudes towards wealth and status (e.g. ``I am out for my own personal gain''; \cite{ashton2007empirical}). Based on previous studies, this scale is expected to elicit moderate rates of endorsement, thereby resulting in a symmetric score distribution. We therefore expected the artistic interests scale to be at greater risk for spurious correlations with behavior on the two-step task than the greed avoidance scale . 
+In addition, participants completed a 6-item measure of artistic interests (e.g., ``I believe in the importance of art''; \cite{ashton2007empirical}). Based on previous studies, this scale is expected to elicit high rates of endorsement, thereby resulting in an asymmetric score distribution. Finally, participants completed a 6-item measure of greed avoidance, which measures attitudes towards wealth and status (e.g., ``I am out for my own personal gain''; \cite{ashton2007empirical}). Based on previous studies, this scale is expected to elicit moderate rates of endorsement, thereby resulting in a symmetric score distribution. We therefore expected the artistic interests scale to be at greater risk for spurious correlations with behavior on the two-step task than the greed avoidance scale. 
 
 \subsubsection*{Correspondence of screening measures}
 
@@ -569,32 +577,29 @@ To begin our analysis of the replication dataset, we examined the number of part
     \includegraphics[width=15cm]{../figures/repl_02a.png}
     \centering
     \captionsetup{width=0.88\textwidth}
-    \caption{Raincloud plots of total symptom scores in attentive (red) and C/IE (blue) participants. Each colored dot represents the symptom score for one participant. Black circles: average score within each group (error bars denote 95\% bootstrap confidence interval). Shaded plots: estimated distribution of responses for each group of participants.}
+    \caption{Raincloud plots of total symptom scores in attentive ($N=338$; red) and C/IE ($N=55$; blue) participants. Each colored dot represents the symptom score for one participant. Black circles: average score within each group (error bars denote 95\% bootstrap confidence interval). Shaded plots: estimated distribution of responses for each group of participants.}
     \label{fig:repl_distributions}
 \end{figure}
 
-Previously, we observed a mean-shift in the average level of symptom endorsement for participants suspected of engaging in C/IE responding relative to attentive participants on measures for which the overall rate of symptom endorsement is low. This result was (mostly) replicated in the current dataset. Total scores were noticeably exaggerated in participants suspected of C/IE responding for the symptom measures where overall rates of symptom endorsement were the lowest (e.g. mania; Figure \ref{fig:repl_distributions}, leftmost plot). Where there were higher rates of symptom endorsement overall (e.g. anxiety), the distributions of symptom scores between the two groups of participants were more similar (Figure \ref{fig:repl_distributions}, middle plots). Permutation testing confirmed that observed mean-shifts in symptom scores for C/IE participants were statistically significant for the most skewed symptom measures (Table \ref{tab:rep_validation}).
+Previously, we observed a mean-shift in the average level of symptom endorsement for participants suspected of engaging in C/IE responding relative to attentive participants on measures for which the overall rate of symptom endorsement is low. This result was (mostly) replicated in the current dataset. Total scores were noticeably exaggerated in participants suspected of C/IE responding for the symptom measures where overall rates of symptom endorsement were the lowest (e.g., mania; Figure \ref{fig:repl_distributions}, leftmost plot). Where there were higher rates of symptom endorsement overall (e.g., anxiety), the distributions of symptom scores between the two groups of participants were more similar (Figure \ref{fig:repl_distributions}, middle plots). Permutation testing confirmed that observed mean-shifts in symptom scores for C/IE participants were statistically significant for the most skewed symptom measures (Table \ref{tab:rep_validation}).
 
 For the personality measures, however, an interesting pattern emerged (Figure \ref{fig:repl_distributions}, rightmost plots). We did not observe a statistically significant mean-shift in total scores for the subscale with the most skewed score distribution (i.e., artistic interests). However, an unexpected and statistically significant mean-shift in the average level of endorsement was observed for the more symmetrically-distributed greed-avoidance subscale. The reason for this finding is unclear. Regardless, this finding presents an opportunity to test for spurious correlations between behavioral and self-report measures in the presence of a mean-shift in scores in the absence of (substantially) skewed score distributions. 
 
 \begin{table}[!t]
     \centering
     \small
-    \begin{tabular}{lcccc}
+    \begin{tabular}{lccccccc}
         \toprule
-        & & \multicolumn{3}{c}{Total Score} \\
-        \cmidrule(lr){3-5}
-        Subscale & Skew &  Attentive & C/IE & $t$-value \\
+        Subscale & Skew &  Attentive & C/IE & $t$-value & $p$-value & Cohen's $D$ & 95\% CI \\
         \midrule
-        Mania      &  1.07 &   3.25 &   6.27 & $-6.05^*$ \\
-        Depression &  0.89 &   5.72 &   6.95 & $-1.57$   \\
-        Anxiety    &  0.44 &   8.54 &   8.65 & $-0.13$   \\
-        Artistic interests   & -0.92 &  28.07 &  26.29 & $1.87$    \\
-        Greed avoidance     &  0.55 &  11.77 &  16.44 & $-4.17^*$  \\
+        Mania                &  1.065 &      3.249 &   6.273 & -6.054 &  $<$0.001 &  0.880 &  [-4.003, -2.045] \\
+        Depression           &  0.889 &      5.719 &   6.945 & -1.572 &  0.119 &  0.229 &   [-2.756, 0.303] \\
+        Anxiety              &  0.438 &      8.536 &   8.655 & -0.127 &  0.900 &  0.019 &   [-1.950, 1.712] \\
+        Artistic interests   & -0.918 &     28.068 &  26.291 &  1.872 &  0.061 &  0.272 &   [-0.083, 3.637] \\
+        Greed avoidance      &  0.550 &     11.769 &  16.436 & -4.166 &  $<$0.001 &  0.606 &  [-6.863, -2.472] \\
         \bottomrule
     \end{tabular}
-    \captionsetup{width=0.88\textwidth}
-    \caption{Descriptive statistics of the self-report measures between attentive and C/IE participants. Skew: the empirical skewness of the distribution of total symptom scores. Total score: the average symptom score across attentive and C/IE participants. *Denotes statistical significance ($\alpha=0.05$, not corrected for multiple comparisons).}
+    \caption{Comparison of the self-report total scores between attentive ($N=338$) and C/IE ($N=55$) participants. Scores compared using two-tailed, two-sample permutation $t$-test with $df=391$ ($\alpha = 0.05$, not corrected for multiple comparisons).}    
     \label{tab:rep_validation}
 \end{table}
 
@@ -606,7 +611,7 @@ Next, we evaluated the degree of correspondence between behavioral and self-repo
     \includegraphics[width=16cm, trim=0 0 3cm 0]{../figures/repl_02b.png}
     \centering
     \captionsetup{width=0.88\textwidth}
-    \caption{Similarity of task and self-report data screening measures. Each tile corresponds to the Spearman rank correlation (left) and Dice similarity coefficient (right) between two screening measures. Acronyms: INF = infrequency item; ISD = inter-item standard deviation; REL = personal reliability; MAH = Mahalanobis distance; READ = reading time; SV = side variability; CV = choice variability; WSLS = win-stay lose-shift rate; RT = suspicious response times. Similarity scores have been thresholded after correcting for multiple comparisons. Numbers denote the strength of statistically significant correlations. Cross-modality correlations between task-behavior (left) and infrequency-item self-report measures (bottom) are in the dashed rectangle.}
+    \caption{Similarity of task and self-report data screening measures. Each tile corresponds to the Spearman rank correlation (left) and Dice similarity coefficient (right) between two screening measures across $N=393$ participants. Acronyms: INF = infrequency item; ISD = inter-item standard deviation; REL = personal reliability; MAH = Mahalanobis distance; READ = reading time; SV = side variability; CV = choice variability; WSLS = win-stay lose-shift rate; RT = suspicious response times. Similarity scores have been thresholded after correcting for multiple comparisons. Numbers denote the strength of statistically significant correlations. Cross-modality correlations between task-behavior (left) and infrequency-item self-report measures (bottom) are in the dashed rectangle.}
     \label{fig:repl_correspondence}
 \end{figure}
 
@@ -626,7 +631,7 @@ Next, we excluded participants from the analysis based on task-behavior screenin
     \includegraphics[width=17cm]{../figures/repl_03a.png}
     \centering
     \captionsetup{width=0.88\textwidth}
-    \caption{Absolute Spearman rank correlations between task behavior (y-axis) and symptom measures (x-axis) under different regimes of data screening and participant exclusions. Only statistically significant correlations are shown ($p<0.05$, not corrected for multiple comparisons). Black Xs indicate significant correlations ablated under screening. No Screening = no exclusions; WSLS Only = exclusions based on chance-level performance in the two-step task; Infrequency Only = exclusions based on invalid or improbable responses to infrequency items; Both Types = exclusions based on the previous two measures. Acronyms: PrevRew = sensitivity to reward on the previous trial; PrevTrans = sensitivity to transition type on previous trial; MB/MF = index of model-based/model-free behavior (interaction between \textit{PrevRew} \& \textit{PrevTrans}).}
+    \caption{Absolute Spearman rank correlations between task behavior (y-axis) and symptom measures (x-axis) under different regimes of data screening and participant exclusions. (A) No Screening = no exclusions. (B) WSLS Only = exclusions based on chance-level performance in the two-step task. (C) Infrequency Only = exclusions based on invalid or improbable responses to infrequency items. (D) Both Types = exclusions based on the previous two measures. Only statistically significant correlations are shown ($p<0.05$, not corrected for multiple comparisons). Black Xs indicate significant correlations ablated under screening. Acronyms: PrevRew = sensitivity to reward on the previous trial; PrevTrans = sensitivity to transition type on previous trial; MB/MF = index of model-based/model-free behavior (interaction between \textit{PrevRew} \& \textit{PrevTrans}).}
     \label{fig:repl_correlations}
 \end{figure}
 
@@ -636,11 +641,88 @@ These findings suggest that some of the significant behavior-symptom correlation
 
 Here we reported findings from a replication study whose purpose was to examine the generalizability of our original findings under new labor market conditions, different behavioral measures, and different self-report measures. To this end, we recruited an independent sample of almost 400 participants, using CloudResearch's and Prolific's latest data-quality filters, to complete the two-step task and a novel set of self-report measures. As evidence of the efficacy of the new data-quality filters, the proportion of participants flagged for C/IE responding in the self-report measures was noticeably smaller in the replication sample (14\%) compared to original sample (22\%). This decrease in the number of participants suspected of C/IE responding was observed for both MTurk and Prolific (though, as in the original study, the proportion of low-quality participants was significantly, albeit marginally, smaller for Prolific than MTurk). Regardless, although the new online labor platform quality-control measures seem to be effective, they did not completely solve the problem; indeed, the proportion of participants engaging in C/IE responding was reduced only by one-third.
 
-Next, we compared the distribution of self-report scale scores for attentive participants and participants suspected of engaging in C/IE responding. Replicating our previous result, we observed a mean-shift in the average level of symptom endorsement for participants suspected of C/IE responding relative to attentive participants, only when the overall rate of symptom endorsement was low. Specifically, flagged participants showed significantly elevated scores on the hypomania scale (with its right-skewed score distribution) but not so on the anxiety scale (with its symmetric score distribution). Interestingly, we found the opposite pattern for the personality measures: scores for participants engaging in C/IE responding were not significantly different than those of their attentive counterparts on the artistic interests scale (with its left-skewed score distribution), but was so for the greed avoidance scale (with its more symmetric score distribution). One possible explanation for the discrepancy in findings between the symptom and personality measures is the direction of the skew for the artistic interests scale. Previously, using random-intercept item factor analysis, we observed that participants engaging in C/IE responding were more likely to use the right-half of the response scale. As such, such a pattern of responding is more likely to produce a mean-shift in scale scores, compared to attentive participants, on a scale with a right-skewed distribution (e.g. mania, depression scales) than a scale with a left-skewed distribution (e.g. artistic interests scale). Further research is still needed to characterize patterns of C/IE responding. 
+Next, we compared the distribution of self-report scale scores for attentive participants and participants suspected of engaging in C/IE responding. Replicating our previous result, we observed a mean-shift in the average level of symptom endorsement for participants suspected of C/IE responding relative to attentive participants, only when the overall rate of symptom endorsement was low. Specifically, flagged participants showed significantly elevated scores on the hypomania scale (with its right-skewed score distribution) but not so on the anxiety scale (with its symmetric score distribution). Interestingly, we found the opposite pattern for the personality measures: scores for participants engaging in C/IE responding were not significantly different than those of their attentive counterparts on the artistic interests scale (with its left-skewed score distribution), but was so for the greed avoidance scale (with its more symmetric score distribution). One possible explanation for the discrepancy in findings between the symptom and personality measures is the direction of the skew for the artistic interests scale. Previously, using random-intercept item factor analysis, we observed that participants engaging in C/IE responding were more likely to use the right-half of the response scale. As such, such a pattern of responding is more likely to produce a mean-shift in scale scores, compared to attentive participants, on a scale with a right-skewed distribution (e.g., mania, depression scales) than a scale with a left-skewed distribution (e.g., artistic interests scale). Further research is still needed to characterize patterns of C/IE responding. 
 
 The results in the replication study did corroborate the findings of the original study in terms of the degree of correspondence between behavioral and self-report screening measures, suggesting that measures of C/IE responding in task and self-report data do not identify the same set of participants. Even with a more difficult task (i.e., the two-step task), we observed relatively low correspondence between self-report and task-based screening measures. This supports our suggestion that both forms of screening are necessary to identify participants providing low-quality responses. Finally, we examined the consequences of various types of screening methods for correlations between behavioral and self-report measures. As in the original study, we detected significant spurious correlations when no screening was applied. This included correlations between model-based planning on the two-step task and scores on the greed avoidance scale, for which there is no theoretical reason to predict a correlation. Instead, this correlation almost certainly reflects the mean-shift in scores between attentive participants and participants flagged for C/IE responding on the greed avoidance scale. As evidence of this, excluding participants who failed one or more infrequency items ablated this correlation. In contrast to the original study, excluding participants based on poor performance on the two-step task was also sufficient to ablate this correlation. Thus, there may be instances where screening based on poor behavioral performance is sufficient to prevent spurious correlations. However, in the absence of perfect information as to when those situations should arise, we conclude that it is simply safer to screen participants on both dimensions of performance. 
 
 In summary, we conclude that the results of the original study are not limited to the task and self-report measures used in that study, or to online platforms at a particular point in time. Despite legitimate advances in data quality controls, online labor platforms still suffer from participants engaging in C/IE responding. Given \textit{a priori} uncertainty regarding the ability of task measures alone to screen such participants, we recommend also using infrequency items to detect inattentive responding on self-report measures. Finally, and most importantly, this second study strengthened the finding that C/IE responding is likely to result in mean-shifts in scores for symptom scales with overall low rates of endorsement, which are in turn capable of yielding spurious correlations between self-report and behavioral measures. The best safeguard against such spurious correlations continues to be screening in both domains. 
+
+\break
+\subsection*{Correlations between behavior and symptom measures}
+
+The following are the unthresholded results of the correlation analyses between task behavior and self-report scores.  
+
+\begin{table}[H]
+    \centering
+    \begin{adjustbox}{center}   
+    \small
+    \begin{tabular}{rccccc}
+        \toprule
+        {} & Mania & Depression & Anxiety & Artistic Interests & Greed Avoidance \\
+        \midrule
+        Stay      &  \textbf{-0.262 ($<$0.001)} &           -0.078 (0.055) &   0.017 (0.366) &  -0.000 (0.509) &  \textbf{-0.127 (0.007)} \\
+        PrevRew   &     \textbf{-0.115 (0.013)} &  \textbf{-0.104 (0.019)} &  -0.035 (0.255) &   0.059 (0.119) &           -0.058 (0.126) \\
+        PrevTrans &     \textbf{-0.093 (0.032)} &           -0.059 (0.115) &  -0.039 (0.215) &  -0.041 (0.215) &            0.006 (0.452) \\
+        MB/MF     &  \textbf{-0.224 ($<$0.001)} &           -0.012 (0.410) &   0.004 (0.476) &   0.018 (0.362) &  \textbf{-0.092 (0.037)} \\
+        \bottomrule
+    \end{tabular}
+    \end{adjustbox}
+    \caption{Spearman rank correlation ($p$-value) between task behavior and self-report symptom when no screening and rejections have been applied. Acronyms: PrevRew = sensitivity to reward on the previous trial; PrevTrans = sensitivity to transition type on previous trial; MB/MF = index of model-based/model-free behavior (interaction between \textit{PrevRew} \& \textit{PrevTrans}). Bolded entries indicate statistical significance for a two-sided rank correlation test ($\alpha = 0.05$, not corrected for multiple comparisons).}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{adjustbox}{center}   
+    \small
+    \begin{tabular}{rccccc}
+        \toprule
+        {} & Mania & Depression & Anxiety & Artistic Interests & Greed Avoidance \\
+        \midrule
+        Stay      &  \textbf{-0.201 ($<$0.001)} &           -0.050 (0.154) &   0.018 (0.373) &  -0.042 (0.215) &  -0.082 (0.061) \\
+        PrevRew   &              -0.088 (0.051) &  \textbf{-0.097 (0.044)} &  -0.046 (0.204) &   0.039 (0.242) &  -0.020 (0.341) \\
+        PrevTrans &              -0.084 (0.057) &           -0.048 (0.187) &  -0.022 (0.339) &  -0.036 (0.264) &   0.006 (0.451) \\
+        MB/MF     &  \textbf{-0.195 ($<$0.001)} &            0.036 (0.265) &   0.028 (0.304) &  -0.013 (0.395) &  -0.064 (0.123) \\
+        \bottomrule
+    \end{tabular}
+    \end{adjustbox}
+    \caption{Spearman rank correlation ($p$-value) between task behavior and self-report symptom after applying rejections based on WSLS behavior. Acronyms: PrevRew = sensitivity to reward on the previous trial; PrevTrans = sensitivity to transition type on previous trial; MB/MF = index of model-based/model-free behavior (interaction between \textit{PrevRew} \& \textit{PrevTrans}). Bolded entries indicate statistical significance for a two-sided rank correlation test ($\alpha = 0.05$, not corrected for multiple comparisons).}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{adjustbox}{center}   
+    \small
+    \begin{tabular}{rccccc}
+        \toprule
+        {} & Mania & Depression & Anxiety & Artistic Interests & Greed Avoidance \\
+        \midrule
+        Stay      &  \textbf{-0.159 (0.002)} &           -0.043 (0.211) &   0.029 (0.307) &  -0.080 (0.076) &  -0.052 (0.185) \\
+        PrevRew   &           -0.085 (0.075) &           -0.091 (0.058) &  -0.032 (0.297) &   0.041 (0.230) &  -0.028 (0.314) \\
+        PrevTrans &           -0.064 (0.120) &  \textbf{-0.107 (0.026)} &  -0.053 (0.157) &  -0.040 (0.226) &   0.026 (0.328) \\
+        MB/MF     &  \textbf{-0.139 (0.005)} &            0.016 (0.387) &   0.004 (0.478) &  -0.062 (0.129) &   0.015 (0.395) \\
+        \bottomrule
+    \end{tabular}
+    \end{adjustbox}
+    \caption{Spearman rank correlation ($p$-value) between task behavior and self-report symptom after applying rejections based on infrequency items. Acronyms: PrevRew = sensitivity to reward on the previous trial; PrevTrans = sensitivity to transition type on previous trial; MB/MF = index of model-based/model-free behavior (interaction between \textit{PrevRew} \& \textit{PrevTrans}). Bolded entries indicate statistical significance for a two-sided rank correlation test ($\alpha = 0.05$, not corrected for multiple comparisons).}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \begin{adjustbox}{center}   
+    \small
+    \begin{tabular}{rccccc}
+        \toprule
+        {} & Mania & Depression & Anxiety & Artistic Interests & Greed Avoidance \\
+        \midrule
+        Stay      &  \textbf{-0.141 (0.007)} &           -0.049 (0.188) &   0.025 (0.340) &  -0.081 (0.072) &  -0.057 (0.166) \\
+        PrevRew   &           -0.081 (0.078) &  \textbf{-0.097 (0.049)} &  -0.032 (0.289) &   0.033 (0.281) &  -0.018 (0.381) \\
+        PrevTrans &           -0.050 (0.192) &           -0.093 (0.054) &  -0.031 (0.299) &  -0.033 (0.286) &   0.027 (0.321) \\
+        MB/MF     &  \textbf{-0.138 (0.008)} &            0.038 (0.242) &   0.026 (0.322) &  -0.063 (0.135) &   0.001 (0.488) \\
+        \bottomrule
+    \end{tabular}
+    \end{adjustbox}
+    \caption{Spearman rank correlation ($p$-value) between task behavior and self-report symptom after applying rejections based on both WSLS behavior and infrequency items. Acronyms: PrevRew = sensitivity to reward on the previous trial; PrevTrans = sensitivity to transition type on previous trial; MB/MF = index of model-based/model-free behavior (interaction between \textit{PrevRew} \& \textit{PrevTrans}). Bolded entries indicate statistical significance for a two-sided rank correlation test ($\alpha = 0.05$, not corrected for multiple comparisons).}
+\end{table}
 
 \break
 \section*{Appendix C: Attention checks in healthy and psychiatric patients}
@@ -658,6 +740,8 @@ Participants were recruited as part of two independent studies to investigate re
 In both studies, participants volunteered for a multi-session study conducted online via video conferencing. Specifically, participants completed each session from their homes while on Zoom with a study coordinator. During each session, while participants were completing self-report questionnaires or behavioral tasks, the study coordinator turned off their camera and microphone, but was available if the participant had any questions. 
 
 Participants were recruited through clinician referral and online ads (i.e., Google ads, Craigslist) targeting individuals with a history of depression, anhedonia, apathy, and/or (hypo)mania symptoms. Participants were eligible for participation if they (1) had no history of head injury resulting in loss of consciousness for more than 20 minutes; (2) had not been diagnosed with intellectual disability; (3) had not been diagnosed with any neurological condition; (4) did not meet criteria for substance dependence (excluding nicotine) in the past 6 months; (5) had not received electroconvulsive therapy in the past 8 weeks; and (6) were aged between 18-65. For one of the two studies, participants were also required to score 6 or higher on the Wechsler Test of Adult Reading to be included in the study. Furthermore, clinical participants were eligible if they met criteria for a diagnosis of major depressive disorder and, if they were on medication, they had been on on stable treatment with this medication for at least the past 4 weeks. Non-clinical (control group) participants were eligible if they did not meet criteria for any psychiatric diagnosis and were not currently taking any medication used to treat psychiatric disorders.
+
+51 unique participants were recruited to participate in a behavioral experiment. Of these, 14 participated in both studies. In total, there was data from 20 sessions involving a healthy participant and data from 45 sessions involving a psychiatric participant. Of the 17 healthy participants, 6 identified as men and 11 identified as women. Of the 34 psychiatric patients, 6 identified as men, 27 identified as women, and 1 identified as non-binary. The healthy participants were 24.2 years old on average (sd = 3.5), whereas the psychiatric patients were 27.4 years old on average (sd = 10.6).
 
 \subsubsection*{Infrequency items}
 
@@ -686,7 +770,7 @@ where $N_1$ and $N_2$ are the observed number of healthy and psychiatric partici
 
 \subsection*{Results}
 
-In total, 16 of 65 (24.6\%) participants failed one or more attention checks. Interestingly, the overall proportion of flagged participants was similar to that observed for the original study. Subdivided by group, 6 of 20 healthy participants (30\%) and 10 of 45 psychiatric participants (22\%) were flagged for C/IE responding. Unsurprisingly, given the modest sample size, the difference between the two proportions was not significantly different from zero (two-tailed, two-sample proportions test: $z(63)=0.672$, $p=0.502$, $h=0.178$, 95\% CI = [-0.157, 0.312]). Across the six infrequency items, the average failure rate was 8.5\% (range: 0.0\% -- 19.7\%). In contrast, no participant failed either instructed item. This result further corroborates previous research, which has found that instructed items are poor measures of C/IE responding \cite{barends2019noncompliant-2, thomas2017validity-2, hauser2016attentive-2}.   
+In total, 16 of 65 (24.6\%) sessions involved one or more failed attention checks. Interestingly, the overall proportion of flagged sessions was similar to that observed for the original study. Subdivided by group, 6 of 20 healthy participant sessions (30\%) and 10 of 45 psychiatric participant sessions (22\%) were flagged for C/IE responding. Unsurprisingly, given the modest sample size, the difference between the two proportions was not significantly different from zero (two-tailed, two-sample proportions test: $z(63)=0.672$, $p=0.502$, $h=0.178$, 95\% CI = [-0.157, 0.312]). Across the six infrequency items, the average failure rate was 8.5\% (range: 0.0\% -- 19.7\%). In contrast, no participant failed either instructed item. This result further corroborates previous research, which has found that instructed items are poor measures of C/IE responding \cite{barends2019noncompliant-2, thomas2017validity-2, hauser2016attentive-2}.   
 
 Next, we computed the Bayes factor for each pair of candidate models. A model assuming equal rates of failure between healthy and psychiatric participants was 2.88 times more likely than the model assuming greater rates for psychiatric patients. In turn, a model assuming lower rates of failure for psychiatric patients was 1.27 times more likely than the model assuming equal rates. Finally, a model assuming lower rates of failure for psychiatric patients was 3.65 times more likely than the model assuming higher rates for psychiatric patients. Only the final comparison exceeds the cutoff value of 3, which is conventionally treated as the minimal amount of evidence required to treat a model comparison as meaningful.  
 
