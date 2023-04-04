@@ -8,7 +8,6 @@
 \usepackage[english]{babel}
 \usepackage{graphicx}
 \usepackage{indentfirst}
-\usepackage{xr-hyper} % for cross-referencing between documents
 \usepackage{hyperref}
 \usepackage{float}
 \usepackage{amsmath}
@@ -19,17 +18,6 @@
 \usepackage[font=small, labelfont=it]{caption}
 \usepackage{booktabs}
 \usepackage{xcolor,soul}
-
-% specify footnote margins
-\renewcommand\footnotelayout{%
-  \advance\leftskip 0.7cm
-  \advance\rightskip 0.7cm
- } 
-
-% setup references
-\defbibheading{main}{}
-\addbibresource[label=main]{main.bib}
-\renewcommand*{\bibfont}{\small}
 
 % specify link style
 \hypersetup{
@@ -47,6 +35,790 @@
 
 % specify images path relative to the main .tex file 
 \graphicspath{ {./figures/} }
+
+% ----------------------------------%
+% Define references
+% ----------------------------------%
+
+% setup references
+\renewcommand*{\bibfont}{\small}
+
+% define references
+\begin{filecontents}{main.bib}
+@article{stewart2017crowdsourcing,
+  title={Crowdsourcing samples in cognitive science},
+  author={Stewart, Neil and Chandler, Jesse and Paolacci, Gabriele},
+  journal={Trends in cognitive sciences},
+  volume={21},
+  number={10},
+  pages={736--748},
+  year={2017},
+  publisher={Elsevier}
+}
+
+@article{chandler2016conducting,
+  title={Conducting clinical research using crowdsourced convenience samples},
+  author={Chandler, Jesse and Shapiro, Danielle},
+  journal={Annual review of clinical psychology},
+  volume={12},
+  year={2016}
+}
+
+@article{gillan2016taking,
+  title={Taking psychiatry research online},
+  author={Gillan, Claire M and Daw, Nathaniel D},
+  journal={Neuron},
+  volume={91},
+  number={1},
+  pages={19--23},
+  year={2016},
+  publisher={Elsevier}
+}
+
+@article{rutledge2019machine,
+  title={Machine learning and big data in psychiatry: toward clinical applications},
+  author={Rutledge, Robb B and Chekroud, Adam M and Huys, Quentin JM},
+  journal={Current opinion in neurobiology},
+  volume={55},
+  pages={152--159},
+  year={2019},
+  publisher={Elsevier}
+}
+
+@article{strickland2019use,
+  title={The use of crowdsourcing in addiction science research: Amazon Mechanical Turk.},
+  author={Strickland, Justin C and Stoops, William W},
+  journal={Experimental and Clinical Psychopharmacology},
+  volume={27},
+  number={1},
+  pages={1},
+  year={2019},
+  publisher={American Psychological Association}
+}
+
+@article{enkavi2019large,
+  title={Large-scale analysis of test--retest reliabilities of self-regulation measures},
+  author={Enkavi, A Zeynep and Eisenberg, Ian W and Bissett, Patrick G and Mazza, Gina L and MacKinnon, David P and Marsch, Lisa A and Poldrack, Russell A},
+  journal={Proceedings of the National Academy of Sciences},
+  volume={116},
+  number={12},
+  pages={5472--5477},
+  year={2019},
+  publisher={National Acad Sciences}
+}
+
+@article{kothe2019retention,
+  title={Retention of participants recruited to a one-year longitudinal study via Prolific},
+  author={Kothe, Emily and Ling, Mathew},
+  year={2019},
+  journal={PsyArXiv},
+  publisher={PsyArXiv}
+}
+
+@article{chandler2020participant,
+  title={Participant carelessness and fraud: Consequences for clinical research and potential solutions.},
+  author={Chandler, Jesse and Sisso, Itay and Shapiro, Danielle},
+  journal={Journal of Abnormal Psychology},
+  volume={129},
+  number={1},
+  pages={49},
+  year={2020},
+  publisher={American Psychological Association}
+}
+
+@article{ophir2020turker,
+  title={The turker blues: Hidden factors behind increased depression rates among Amazon’s Mechanical Turkers},
+  author={Ophir, Yaakov and Sisso, Itay and Asterhan, Christa SC and Tikochinski, Refael and Reichart, Roi},
+  journal={Clinical Psychological Science},
+  volume={8},
+  number={1},
+  pages={65--83},
+  year={2020},
+  publisher={Sage Publications Sage CA: Los Angeles, CA}
+}
+
+@article{curran2016methods,
+  title={Methods for the detection of carelessly invalid responses in survey data},
+  author={Curran, Paul G},
+  journal={Journal of Experimental Social Psychology},
+  volume={66},
+  pages={4--19},
+  year={2016},
+  publisher={Elsevier}
+}
+
+@article{desimone2018dirty,
+  title={Dirty data: The effects of screening respondents who provide low-quality data in survey research},
+  author={DeSimone, Justin A and Harms, PD},
+  journal={Journal of Business and Psychology},
+  volume={33},
+  number={5},
+  pages={559--577},
+  year={2018},
+  publisher={Springer}
+}
+
+@article{desimone2018differential,
+  title={The differential impacts of two forms of insufficient effort responding},
+  author={DeSimone, Justin A and DeSimone, Alice J and Harms, PD and Wood, Dustin},
+  journal={Applied Psychology},
+  volume={67},
+  number={2},
+  pages={309--338},
+  year={2018},
+  publisher={Wiley Online Library}
+}
+
+@article{hauser2016attentive,
+  title={Attentive Turkers: MTurk participants perform better on online attention checks than do subject pool participants},
+  author={Hauser, David J and Schwarz, Norbert},
+  journal={Behavior research methods},
+  volume={48},
+  number={1},
+  pages={400--407},
+  year={2016},
+  publisher={Springer}
+}
+
+@article{thomas2017validity,
+  title={Validity and Mechanical Turk: An assessment of exclusion methods and interactive experiments},
+  author={Thomas, Kyle A and Clifford, Scott},
+  journal={Computers in Human Behavior},
+  volume={77},
+  pages={184--197},
+  year={2017},
+  publisher={Elsevier}
+}
+
+@article{barends2019noncompliant,
+  title={Noncompliant responding: Comparing exclusion criteria in MTurk personality research to improve data quality},
+  author={Barends, Ard J and de Vries, Reinout E},
+  journal={Personality and individual differences},
+  volume={143},
+  pages={84--89},
+  year={2019},
+  publisher={Elsevier}
+}
+
+@article{mukherjee_reward_2020,
+  title={Reward and punishment reversal-learning in major depressive disorder},
+  author={Mukherjee, D and Filipwicz, A L S and Vo, K and Satterthwaite, T D and Kable, J W},
+  journal={Journal of Abnormal Psychology},
+  volume={129},
+  number={8},
+  pages={810--823},
+  year={2020}
+}
+
+@article{waltz2007probabilistic,
+  title={Probabilistic reversal learning impairments in schizophrenia: further evidence of orbitofrontal dysfunction},
+  author={Waltz, James A and Gold, James M},
+  journal={Schizophrenia Research},
+  volume={93},
+  number={1-3},
+  pages={296--303},
+  year={2007},
+  publisher={Elsevier}
+}
+
+@article{lowe2008validation,
+  title={Validation and standardization of the Generalized Anxiety Disorder Screener (GAD-7) in the general population},
+  author={Lowe, Bernd and Decker, Oliver and Muller, Stefanie and Brahler, Elmar and Schellberg, Dieter and Herzog, Wolfgang and Herzberg, Philipp Yorck},
+  journal={Medical care},
+  pages={266--274},
+  year={2008},
+  publisher={JSTOR}
+}
+
+@article{hinz2017psychometric,
+  title={Psychometric evaluation of the Generalized Anxiety Disorder Screener GAD-7, based on a large German general population sample},
+  author={Hinz, Andreas and Klein, Annette M and Brahler, Elmar and Glaesmer, Heide and Luck, Tobias and Riedel-Heller, Steffi G and Wirkner, Kerstin and Hilbert, Anja},
+  journal={Journal of affective disorders},
+  volume={210},
+  pages={338--344},
+  year={2017},
+  publisher={Elsevier}
+}
+
+@article{maydeu2006random,
+  title={Random intercept item factor analysis.},
+  author={Maydeu-Olivares, Albert and Coffman, Donna L},
+  journal={Psychological methods},
+  volume={11},
+  number={4},
+  pages={344},
+  year={2006},
+  publisher={American Psychological Association}
+}
+
+@article{deleeuw_2015_jspsych,
+  title={{jsPsych: A JavaScript} library for creating behavioral experiments in a web browser. },
+  author={de Leeuw, J R},
+  journal={Behavior Research Methods},
+  volume={47},
+  number={1},
+  pages={1--12},
+  year={2015}
+}
+
+@article{youngstrom_2013_susd,
+  title={The {7 Up 7 Down Inventory}: A 14-item measure of manic and depressive tendencies carved from the {General Behavior Inventory}},
+  author={Youngstrom, Eric A and Murray, Greg and Johnson, Sheri L and Findling, Robert L},
+  journal={Psychological Assessment},
+  volume={25},
+  number={4},
+  pages={1377--1383},
+  year={2013},
+  publisher={American Psychological Association}
+}
+
+@article{depue1981behavioral,
+  title={A behavioral paradigm for identifying persons at risk for bipolar depressive disorder: a conceptual framework and five validation studies},
+  author={Depue, Richard A and Slater, Judith F and Wolfstetter-Kausch, Heidi and Klein, Daniel and Goplerud, Eric and Farr, David},
+  journal={Journal of Abnormal Psychology},
+  volume={90},
+  number={5},
+  pages={381--437},
+  year={1981},
+  publisher={American Psychological Association}
+}
+
+@article{spitzer2006brief,
+  title={A brief measure for assessing generalized anxiety disorder: the {GAD-7}},
+  author={Spitzer, Robert L and Kroenke, Kurt and Williams, Janet BW and Lowe, Bernd},
+  journal={Archives of Internal Medicine},
+  volume={166},
+  number={10},
+  pages={1092--1097},
+  year={2006},
+  publisher={American Medical Association}
+}
+
+@article{carver1994behavioral,
+  title={Behavioral inhibition, behavioral activation, and affective responses to impending reward and punishment: the {BIS/BAS} scales.},
+  author={Carver, Charles S and White, Teri L},
+  journal={Journal of Personality and Social Psychology},
+  volume={67},
+  number={2},
+  pages={319--333},
+  year={1994},
+  publisher={American Psychological Association}
+}
+
+@article{pagliaccio2016revising,
+  title={Revising the {BIS/BAS} Scale to study development: measurement invariance and normative effects of age and sex from childhood through adulthood},
+  author={Pagliaccio, David and Luking, Katherine R and Anokhin, Andrey P and Gotlib, Ian H and Hayden, Elizabeth P and Olino, Thomas M and Peng, Chun-Zi and Hajcak, Greg and Barch, Deanna M},
+  journal={Psychological ssessment},
+  volume={28},
+  number={4},
+  pages={429--442},
+  year={2016},
+  publisher={American Psychological Association}
+}
+
+@article{snaith1995scale,
+  title={A scale for the assessment of hedonic tone: the Snaith--Hamilton Pleasure Scale},
+  author={Snaith, RP and Hamilton, M and Morley, S and Humayan, A and Hargreaves, D and Trigwell, P},
+  journal={The British Journal of Psychiatry},
+  volume={167},
+  number={1},
+  pages={99--103},
+  year={1995},
+  publisher={Cambridge University Press}
+}
+
+@article{meyer1990development,
+  title={Development and validation of the {Penn State Worry Questionnaire}},
+  author={Meyer, Thomas J and Miller, Mark L and Metzger, Richard L and Borkovec, Thomas D},
+  journal={Behaviour Research and Therapy},
+  volume={28},
+  number={6},
+  pages={487--495},
+  year={1990},
+  publisher={Elsevier}
+}
+
+@article{kertz2014psychometric,
+  title={Psychometric properties of abbreviated and ultra-brief versions of the {Penn State Worry Questionnaire}},
+  author={Kertz, Sarah J and Lee, Josephine and Bjorgvinsson, Throstur},
+  journal={Psychological Assessment},
+  volume={26},
+  number={4},
+  pages={1146--1154},
+  year={2014},
+  publisher={American Psychological Association}
+}
+
+@article{youngstrom2020evaluating,
+  title={Evaluating and Validating GBI Mania and Depression Short Forms for Self-Report of Mood Symptoms},
+  author={Youngstrom, Eric A and Perez Algorta, Guillermo and Youngstrom, Jennifer Kogos and Frazier, Thomas W and Findling, Robert L},
+  journal={Journal of Clinical Child \& Adolescent Psychology},
+  pages={1--17},
+  year={2020},
+  publisher={Taylor \& Francis}
+}
+
+@article{franken2007assessment,
+  title={The assessment of anhedonia in clinical and non-clinical populations: further validation of the Snaith--Hamilton Pleasure Scale (SHAPS)},
+  author={Franken, Ingmar HA and Rassin, Eric and Muris, Peter},
+  journal={Journal of affective disorders},
+  volume={99},
+  number={1-3},
+  pages={83--89},
+  year={2007},
+  publisher={Elsevier}
+}
+
+@article{marjanovic2015inter,
+  title={The inter-item standard deviation (ISD): An index that discriminates between conscientious and random responders},
+  author={Marjanovic, Zdravko and Holden, Ronald and Struthers, Ward and Cribbie, Robert and Greenglass, Esther},
+  journal={Personality and Individual Differences},
+  volume={84},
+  pages={79--83},
+  year={2015},
+  publisher={Elsevier}
+}
+
+@article{ward2018applying,
+  title={Applying social psychology to prevent careless responding during online surveys},
+  author={Ward, MK and Meade, Adam W},
+  journal={Applied Psychology},
+  volume={67},
+  number={2},
+  pages={231--263},
+  year={2018},
+  publisher={Wiley Online Library}
+}
+
+@article{emons2009detection,
+  title={Detection and diagnosis of person misfit from patterns of summed polytomous item scores},
+  author={Emons, Wilco HM},
+  journal={Applied Psychological Measurement},
+  volume={33},
+  number={8},
+  pages={599--619},
+  year={2009},
+  publisher={Sage Publications Sage CA: Los Angeles, CA}
+}
+
+@article{robinson2014inaccurate,
+  title={Inaccurate estimation of disparities due to mischievous responders: Several suggestions to assess conclusions},
+  author={Robinson-Cimpian, Joseph P},
+  journal={Educational Researcher},
+  volume={43},
+  number={4},
+  pages={171--185},
+  year={2014},
+  publisher={Sage Publications Sage CA: Los Angeles, CA}
+}
+
+@article{arias2020little,
+  title={A little garbage in, lots of garbage out: Assessing the impact of careless responding in personality survey data},
+  author={Arias, Victor B and Garrido, LE and Jenaro, C and Martinez-Molina, A and Arias, B},
+  journal={Behavior Research Methods},
+  pages={1--17},
+  year={2020},
+  publisher={Springer}
+}
+
+@article{huang2012detecting,
+  title={Detecting and deterring insufficient effort responding to surveys},
+  author={Huang, Jason L and Curran, Paul G and Keeney, Jessica and Poposki, Elizabeth M and DeShon, Richard P},
+  journal={Journal of Business and Psychology},
+  volume={27},
+  number={1},
+  pages={99--114},
+  year={2012},
+  publisher={Springer}
+}
+
+@article{maniaci2014caring,
+  title={Caring about carelessness: Participant inattention and its effects on research},
+  author={Maniaci, Michael R and Rogge, Ronald D},
+  journal={Journal of Research in Personality},
+  volume={48},
+  pages={61--83},
+  year={2014},
+  publisher={Elsevier}
+}
+
+@article{huang2015detecting,
+  title={Detecting insufficient effort responding with an infrequency scale: Evaluating validity and participant reactions},
+  author={Huang, Jason L and Bowling, Nathan A and Liu, Mengqiao and Li, Yuhui},
+  journal={Journal of Business and Psychology},
+  volume={30},
+  number={2},
+  pages={299--311},
+  year={2015},
+  publisher={Springer}
+}
+
+@article{huang2015insufficient,
+  title={Insufficient effort responding: Examining an insidious confound in survey data.},
+  author={Huang, Jason L and Liu, Mengqiao and Bowling, Nathan A},
+  journal={Journal of Applied Psychology},
+  volume={100},
+  number={3},
+  pages={828},
+  year={2015},
+  publisher={American Psychological Association}
+}
+
+@article{huang2017computational,
+  title={Computational dysfunctions in anxiety: Failure to differentiate signal from noise},
+  author={Huang, He and Thompson, Wesley and Paulus, Martin P},
+  journal={Biological psychiatry},
+  volume={82},
+  number={6},
+  pages={440--446},
+  year={2017},
+  publisher={Elsevier}
+}
+
+@article{brolsma2020challenging,
+  title={Challenging the negative learning bias hypothesis of depression: reversal learning in a naturalistic psychiatric sample},
+  author={Brolsma, Sophie CA and Vrijsen, Janna N and Vassena, Eliana and Kandroodi, Mojtaba Rostami and Bergman, M Annemiek and van Eijndhoven, Philip F and Collard, Rose M and den Ouden, Hanneke EM and Schene, Aart H and Cools, Roshan},
+  journal={Psychological Medicine},
+  pages={1--11},
+  year={2020},
+  publisher={Cambridge University Press}
+}
+
+@article{ritschel2017neural,
+  title={Neural correlates of altered feedback learning in women recovered from anorexia nervosa},
+  author={Ritschel, Franziska and Geisler, Daniel and King, Joseph A and Bernardoni, Fabio and Seidel, Maria and Boehm, Ilka and Vettermann, Richard and Biemann, Ronald and Roessner, Veit and Smolka, Michael N and others},
+  journal={Scientific reports},
+  volume={7},
+  number={1},
+  pages={1--10},
+  year={2017},
+  publisher={Nature Publishing Group}
+}
+
+@article{kool2018mental,
+  title={Mental labour},
+  author={Kool, Wouter and Botvinick, Matthew},
+  journal={Nature human behaviour},
+  volume={2},
+  number={12},
+  pages={899--908},
+  year={2018},
+  publisher={Nature Publishing Group}
+}
+
+@article{elwert2014endogenous,
+  title={Endogenous selection bias: The problem of conditioning on a collider variable},
+  author={Elwert, Felix and Winship, Christopher},
+  journal={Annual review of sociology},
+  volume={40},
+  pages={31--53},
+  year={2014},
+  publisher={Annual Reviews}
+}
+
+@ARTICLE{Kim2018-ev,
+  title    = "Detecting random responders with infrequency scales using an
+              error-balancing threshold",
+  author   = "Kim, Dale S and McCabe, Connor J and Yamasaki, Brianna L and
+              Louie, Kristine A and King, Kevin M",
+  journal  = "Behav. Res. Methods",
+  volume   =  50,
+  number   =  5,
+  pages    = "1960--1970",
+  month    =  oct,
+  year     =  2018,
+  keywords = "Careless responding; Data cleaning; Infrequency scales; Random
+              responding",
+  language = "en"
+}
+
+@article{culbreth2016negative,
+  title={Negative symptoms are associated with an increased subjective cost of cognitive effort.},
+  author={Culbreth, Adam and Westbrook, Andrew and Barch, Deanna},
+  journal={Journal of abnormal psychology},
+  volume={125},
+  number={4},
+  pages={528},
+  year={2016},
+  publisher={American Psychological Association}
+}
+
+@article{kane2016individual,
+  title={Individual differences in the executive control of attention, memory, and thought, and their associations with schizotypy.},
+  author={Kane, Michael J and Meier, Matt E and Smeekens, Bridget A and Gross, Georgina M and Chun, Charlotte A and Silvia, Paul J and Kwapil, Thomas R},
+  journal={Journal of Experimental Psychology: General},
+  volume={145},
+  number={8},
+  pages={1017},
+  year={2016},
+  publisher={American Psychological Association}
+}
+
+@article{robison2017neurotic,
+  title={The neurotic wandering mind: An individual differences investigation of neuroticism, mind-wandering, and executive control},
+  author={Robison, Matthew K and Gath, Katherine I and Unsworth, Nash},
+  journal={The Quarterly Journal of Experimental Psychology},
+  volume={70},
+  number={4},
+  pages={649--663},
+  year={2017},
+  publisher={Taylor \& Francis}
+}
+
+@article{cohen2001impairments,
+  title={Impairments of attention and effort among patients with major affective disorders},
+  author={Cohen, Ronald and Lohr, Ilan and Paul, Robert and Boland, Robert},
+  journal={The Journal of neuropsychiatry and clinical neurosciences},
+  volume={13},
+  number={3},
+  pages={385--395},
+  year={2001},
+  publisher={Am Neuropsych Assoc}
+}
+
+@article{barch2015mechanisms,
+  title={Mechanisms underlying motivational deficits in psychopathology: similarities and differences in depression and schizophrenia},
+  author={Barch, Deanna M and Pagliaccio, David and Luking, Katherine},
+  journal={Behavioral neuroscience of motivation},
+  pages={411--449},
+  year={2015},
+  publisher={Springer}
+}
+
+@article{buchanan2018methods,
+  title={Methods to detect low quality data and its implication for psychological research},
+  author={Buchanan, Erin M and Scofield, John E},
+  journal={Behavior research methods},
+  volume={50},
+  number={6},
+  pages={2586--2596},
+  year={2018},
+  publisher={Springer}
+}
+
+@article{hunter2019excessive,
+  title={Excessive deliberation in social anxiety},
+  author={Hunter, Lindsay E and Meer, Elana A and Gillan, Claire M and Hsu, Ming and Daw, Nathaniel D},
+  journal={bioRxiv},
+  pages={522433},
+  year={2019},
+  publisher={Cold Spring Harbor Laboratory}
+}
+
+@article{litman2017turkprime,
+  title={TurkPrime. com: A versatile crowdsourcing data acquisition platform for the behavioral sciences},
+  author={Litman, Leib and Robinson, Jonathan and Abberbock, Tzvi},
+  journal={Behavior research methods},
+  volume={49},
+  number={2},
+  pages={433--442},
+  year={2017},
+  publisher={Springer}
+}
+
+@article{robinson2019tapped,
+  title={Tapped out or barely tapped? Recommendations for how to harness the vast and largely unused potential of the Mechanical Turk participant pool},
+  author={Robinson, Jonathan and Rosenzweig, Cheskie and Moss, Aaron J and Litman, Leib},
+  journal={PloS one},
+  volume={14},
+  number={12},
+  pages={e0226394},
+  year={2019},
+  publisher={Public Library of Science San Francisco, CA USA}
+}
+
+@online{cloudresearch_2020,
+    author = "Leib Litman",
+    title = "New Solutions Dramatically Improve Research Data Quality on {MTurk}",
+    url  = "https://www.cloudresearch.com/resources/blog/new-tools-improve-research-data-quality-mturk/",
+    addendum = "(Accessed: 2021-02-23)",
+    month = jul,
+    year = 2020
+}
+
+@article{winkler2014permutation,
+  title={Permutation inference for the general linear model},
+  author={Winkler, Anderson M and Ridgway, Gerard R and Webster, Matthew A and Smith, Stephen M and Nichols, Thomas E},
+  journal={Neuroimage},
+  volume={92},
+  pages={381--397},
+  year={2014},
+  publisher={Elsevier}
+}
+
+@article{grant2009typology,
+  title={A typology of reviews: an analysis of 14 review types and associated methodologies},
+  author={Grant, Maria J and Booth, Andrew},
+  journal={Health information \& libraries journal},
+  volume={26},
+  number={2},
+  pages={91--108},
+  year={2009},
+  publisher={Wiley Online Library}
+}
+
+@article{niv2012neural,
+  title={Neural prediction errors reveal a risk-sensitive reinforcement-learning process in the human brain},
+  author={Niv, Yael and Edlund, Jeffrey A and Dayan, Peter and O'Doherty, John P},
+  journal={Journal of Neuroscience},
+  volume={32},
+  number={2},
+  pages={551--562},
+  year={2012},
+  publisher={Soc Neuroscience}
+}
+
+@online{stan,
+    title={Stan Modeling Language Users Guide and Reference Manual},
+    author={{Stan Development Team}},
+    year={2021},
+     url  = "https://mc-stan.org",
+}
+
+@article{wilcox2018guide,
+  title={A guide to robust statistical methods in neuroscience},
+  author={Wilcox, Rand R and Rousselet, Guillaume A},
+  journal={Current protocols in neuroscience},
+  volume={82},
+  number={1},
+  pages={8--42},
+  year={2018},
+  publisher={Wiley Online Library}
+}
+
+@article{tomitaka2018distributional,
+  title={Distributional patterns of item responses and total scores on the PHQ-9 in the general population: data from the National Health and Nutrition Examination Survey},
+  author={Tomitaka, Shinichiro and Kawasaki, Yohei and Ide, Kazuki and Akutagawa, Maiko and Yamada, Hiroshi and Ono, Yutaka and Furukawa, Toshiaki A},
+  journal={BMC psychiatry},
+  volume={18},
+  number={1},
+  pages={1--9},
+  year={2018},
+  publisher={Springer}
+}
+
+@article{eldar2015interaction,
+  title={Interaction between emotional state and learning underlies mood instability},
+  author={Eldar, Eran and Niv, Yael},
+  journal={Nature communications},
+  volume={6},
+  number={1},
+  pages={1--10},
+  year={2015},
+  publisher={Nature Publishing Group}
+}
+
+@article{cooper2007behavioural,
+  title={The behavioural inhibition system and behavioural approach system (BIS/BAS) scales: Measurement and structural invariance across adults and adolescents},
+  author={Cooper, Andrew and Gomez, Rapson and Aucote, Helen},
+  journal={Personality and individual differences},
+  volume={43},
+  number={2},
+  pages={295--305},
+  year={2007},
+  publisher={Elsevier}
+}
+
+@article{leventhal2015measuring,
+  title={Measuring anhedonia in adolescents: a psychometric analysis},
+  author={Leventhal, Adam M and Unger, Jennifer B and Audrain-McGovern, Janet and Sussman, Steve and Volk, Heather E and Strong, David R},
+  journal={Journal of personality assessment},
+  volume={97},
+  number={5},
+  pages={506--514},
+  year={2015},
+  publisher={Taylor \& Francis}
+}
+
+@article{merikangas2007lifetime,
+  title={Lifetime and 12-month prevalence of bipolar spectrum disorder in the National Comorbidity Survey replication},
+  author={Merikangas, Kathleen R and Akiskal, Hagop S and Angst, Jules and Greenberg, Paul E and Hirschfeld, Robert MA and Petukhova, Maria and Kessler, Ronald C},
+  journal={Archives of general psychiatry},
+  volume={64},
+  number={5},
+  pages={543--552},
+  year={2007},
+  publisher={American Medical Association}
+}
+
+@article{merikangas2012true,
+  title={The ‘true’ prevalence of bipolar II disorder},
+  author={Merikangas, Kathleen R and Lamers, Femke},
+  journal={Current opinion in psychiatry},
+  volume={25},
+  number={1},
+  pages={19--23},
+  year={2012},
+  publisher={LWW}
+}
+
+@article{kessler2012twelve,
+  title={Twelve-month and lifetime prevalence and lifetime morbid risk of anxiety and mood disorders in the United States},
+  author={Kessler, Ronald C and Petukhova, Maria and Sampson, Nancy A and Zaslavsky, Alan M and Wittchen, Hans-Ullrich},
+  journal={International journal of methods in psychiatric research},
+  volume={21},
+  number={3},
+  pages={169--184},
+  year={2012},
+  publisher={Wiley Online Library}
+}
+
+@article{yarrington2021impact,
+  title={Impact of the COVID-19 Pandemic on Mental Health among 157,213 Americans},
+  author={Yarrington, Julia S and Lasser, Jana and Garcia, David and Vargas, Jose Hamilton and Couto, Diego Dotta and Marafon, Thiago and Craske, Michelle G and Niles, Andrea N},
+  journal={Journal of Affective Disorders},
+  year={2021},
+  publisher={Elsevier}
+}
+
+@article{harle2017anhedonia,
+  title={Anhedonia and anxiety underlying depressive symptomatology have distinct effects on reward-based decision-making},
+  author={Harl{\'e}, Katia M and Guo, Dalin and Zhang, Shunan and Paulus, Martin P and Yu, Angela J},
+  journal={PloS one},
+  volume={12},
+  number={10},
+  pages={e0186473},
+  year={2017},
+  publisher={Public Library of Science San Francisco, CA USA}
+}
+
+@article{garrett2018updating,
+  title={Updating beliefs under perceived threat},
+  author={Garrett, Neil and Gonz{\'a}lez-Garz{\'o}n, Ana Mar{\'\i}a and Foulkes, Lucy and Levita, Liat and Sharot, Tali},
+  journal={Journal of Neuroscience},
+  volume={38},
+  number={36},
+  pages={7901--7911},
+  year={2018},
+  publisher={Soc Neuroscience}
+}
+
+@article{daw2011model,
+  title={Model-based influences on humans' choices and striatal prediction errors},
+  author={Daw, Nathaniel D and Gershman, Samuel J and Seymour, Ben and Dayan, Peter and Dolan, Raymond J},
+  journal={Neuron},
+  volume={69},
+  number={6},
+  pages={1204--1215},
+  year={2011},
+  publisher={Elsevier}
+}
+
+@article{king2018random,
+  title={Random responses inflate statistical estimates in heavily skewed addictions data},
+  author={King, Kevin M and Kim, Dale S and McCabe, Connor J},
+  journal={Drug and alcohol dependence},
+  volume={183},
+  pages={102--110},
+  year={2018},
+  publisher={Elsevier}
+}
+\end{filecontents}
+\addbibresource{main.bib}
+
+% ----------------------------------%
+% Define author / abstract block
+% ----------------------------------%
 
 % specify some custom commands
 \renewcommand{\baselinestretch}{1.2}
@@ -73,18 +845,17 @@
 % turn date off
 \date{}
 
-% Define paragraph formatting
-\setlength{\parindent}{0em}
-\setlength{\parskip}{1em}
+% ----------------------------------%
+% Main text
+% ----------------------------------%
 
 \begin{document}
-%TC:ignore
 
 \maketitle
 
 % make abstract
 \abstract{
-A common research design in the field of computational psychiatry involves leveraging the power of online participant recruitment to assess correlations between behavior in cognitive tasks and the self-reported severity of psychiatric symptoms in large, diverse samples. Although large online samples have many advantages for psychiatric research, some potential pitfalls of this research design are not widely understood. Here we detail circumstances in which entirely spurious correlations may arise between task behavior and symptom severity as a result of inadequate screening of careless or low-effort responding on psychiatric symptom surveys. Specifically, since many psychiatric symptom surveys have asymmetric ground-truth score distributions in the general population, participants who respond carelessly on these surveys will show apparently elevated symptom levels. If these participants are similarly careless in their task performance, and are not excluded from analysis, this may result in a spurious association between greater symptom scores and worse behavioral task performance. Here, we demonstrate exactly this pattern of results in two independent samples of participants (total $N = 779$) recruited online to complete a self-report symptom battery and one of two common cognitive tasks. We show that many behavior-symptom correlations are entirely abolished when participants flagged for careless responding on surveys are excluded from analysis. We also show that exclusion based on task performance alone is often insufficient to prevent these spurious correlations. Of note, we demonstrate that false-positive rates for these spurious correlations \emph{increase} with sample size, contrary to common assumptions. We offer guidance on how researchers using this general experimental design can guard against this issue in future research; in particular, we recommend the adoption of screening methods for self-report measures that are currently uncommon in this field.
+\noindent Although online samples have many advantages for psychiatric research, some potential pitfalls of this approach are not widely understood. Here, we detail circumstances in which spurious correlations may arise between task behavior and symptom scores. The problem arises because many psychiatric symptom surveys have asymmetric score distributions in the general population, meaning that careless responders on these surveys will show apparently elevated symptom levels. If these participants are similarly careless in their task performance, this may result in a spurious association between symptom scores and task behavior. We demonstrate this pattern of results in two samples of participants (total N = 779) recruited online who performed one of two common cognitive tasks. False-positive rates for these spurious correlations increase with sample size, contrary to common assumptions. Excluding participants flagged for careless responding on surveys abolished these spurious correlations, but exclusion based on task performance alone was less effective.
 }
 
 % page break before introduction
@@ -94,9 +865,6 @@ A common research design in the field of computational psychiatry involves lever
 \setlength{\parindent}{0em}
 \setlength{\parskip}{1em}
 
-%TC:endignore
-
-\begin{refsection}[main]
 \section*{Introduction}
 
 In recent years, online labor markets (e.g., Amazon Mechanical Turk, Prolific, CloudResearch) have become increasingly popular as a source of research participants in the behavioral sciences \cite{stewart2017crowdsourcing}, in no small part due to the ease with which these services allow for recruitment of large, diverse samples. The advantages of online data collection have also begun to be recognized in psychiatric research \cite{chandler2016conducting}, where this method offers several distinct advantages over traditional approaches to participant recruitment. The ability to assess psychiatric symptom severity in large general-population samples makes possible large-scale transdiagnostic analysis \cite{gillan2016taking, rutledge2019machine}, and facilitates recruitment from difficult-to-reach participant populations \cite{strickland2019use}. Online labor markets also facilitate re-recruitment, making them an attractive option for validating the psychometric properties of assessment tools \cite{enkavi2019large} or studying clinical processes longitudinally \cite{kothe2019retention}.
@@ -111,11 +879,12 @@ Here, we demonstrate the real risk that C/IE responding can lead to spurious sym
 
 \section*{Results}
 
-\subsection*{Screening for C/IE responding is common for task behavior but not for self-report surveys}
+% \subsection*{Screening for C/IE responding is common for task behavior but not for self-report surveys}
+\subsection*{Narrative review of task and self-report screening practices}
 
 First, we sought to what extent recent online studies screen participants in a way that would reduce the risk of spurious correlations due to C/IE participants. We performed a narrative literature review of 49 online human behavioral studies, and evaluated whether and how each study performed task and self-report data screening (see Methods for details of the literature search).
 
-Among studies that we reviewed, approximately 80\% (39/49) used at least one method to identify C/IE responding in task behavior (see Table \ref{tab:screening}). Of these, just over half relied on a single screening method, with considerable heterogeneity in behavior screening methods across studies. Most common (46\% of all studies) was identifying participants whose performance was statistically indistinguishable from chance-level on some measure of accuracy. Almost as common (38\%) was screening based on low response variability (i.e., excluding participants who predominantly responded in the same fashion across trials, such as using only a single response key).
+Among studies that we reviewed, approximately 80\% (39/49) used at least one method to identify C/IE responding in task behavior (see Table \ref{tab:tab01}). Of these, just over half relied on a single screening method, with considerable heterogeneity in behavior screening methods across studies. Most common (46\% of all studies) was identifying participants whose performance was statistically indistinguishable from chance-level on some measure of accuracy. Almost as common (38\%) was screening based on low response variability (i.e., excluding participants who predominantly responded in the same fashion across trials, such as using only a single response key).
 
 In contrast, only a minority (19/49, or 39\%) of studies screened for C/IE responding in self-report symptom measures. The most common survey screening method was the use of attention checks, which are prompts for which most responses are unlikely given attentive responding. Participants who do not give the correct response to these prompts are therefore likely to be engaged in C/IE responding. Attention checks can be subdivided into instructed items (in which participants are explicitly told which response to select; e.g., `Please select ``Strongly Agree"'), and infrequency items (in which some responses are logically invalid or exceedingly improbable; e.g., endorsing 'Agree' for the question `I competed in the 1917 Summer Olympic Games'). Of those studies that specified what type of attention check was used, instructed items were the most common method. As we discuss further below, this is notable because best-practice recommendations for data collection in personality psychology explicitly counsel \emph{against} using instructed-item attention checks \cite{barends2019noncompliant, thomas2017validity, hauser2016attentive}. Only a handful of studies employed statistical or so-called unobtrusive screening methods such as outlier detection or personal consistency. 
 
@@ -123,49 +892,53 @@ In sum, whereas screening for C/IE responding in task behavior was relatively co
 
 In the next section, we explicitly test this hypothesis in a large sample of online participants completing a battery of self-report surveys and a behavioral task. Specifically, we measure the empirical correspondence between common task- and survey-based screening methods---as identified in our literature review---so that results are informative with respect to typical study designs in online psychiatry research.
 
-\subsection*{Careless participants appear symptomatic when the overall level of symptom endorsement is low}
+% \subsection*{Careless participants appear symptomatic when the overall level of symptom endorsement is low}
+\subsection*{C/IE participants appear psychiatric when symptoms are rare}
 
 To measure the correspondence of screening measures estimated from task and self-report behavior, we conducted an online behavioral experiment involving a simple decision-making task and a battery of commonly used self-report psychiatric symptom measures (see Methods). A final sample of 386 participants from the Amazon Mechanical Turk (N=186) and Prolific (N=200) online labor markets completed a probabilistic reversal-learning task and 5 self-report symptom measures. The reversal-learning task required participants to learn through trial-and-error which of three options yielded reward most often, and was modeled after similar tasks used to probe reinforcement-learning deficits in psychiatric disorders \cite{waltz2007probabilistic, mukherjee_reward_2020}. The five self-report measures were the 7-up (which measures symptoms of hypomania), the 7-down (which measures symptoms of depression), the GAD-7, (which measures generalized anxiety symptoms), the BIS/BAS (which measures reward and punishment motivations), the SHAPS (which measures anhedonia symptoms), and the PSWQ (which measures worry symptoms), and were chosen based on previous literature to have a variety of expected response distributions (symmetric and asymmetric). In line with current best-practice recommendations in personality psychology \cite{huang2015detecting}, each self-report instrument included one `infrequency' item that could be used to identify C/IE responses in survey data (see Methods for a list of infrequency items). The entire experiment (surveys and task) was designed to require 10 minutes on average to complete (observed mean = 10.28 minutes). To minimize any influence of fatigue on survey responding, participants completed the surveys prior to beginning the task.
 
 To assess the overall quality of the data, we examined the number of participants flagged by the choice accuracy and infrequency item screening measures. Only 26 participants (7\%) were flagged as exhibiting choice behavior at or below statistically chance levels in the reversal-learning task. In contrast, 85 participants (22\%) endorsed a logically invalid or improbable response on one or more of the infrequency items when completing the self-report symptom measures. This discrepancy in the proportion of participants flagged by each method is consistent with previous research, which found varying levels of sensitivity to C/IE responding across screening methods \cite{desimone2018dirty}. The proportion of participants flagged for C/IE responding was marginally but significantly greater on Mechanical Turk compared to Prolific for both task (MTurk: N=18/186; Prolific: N=8/200; two-tailed, two-sample proportions test: $z(384)=2.224$, $p=0.026$, $h=0.230$, 95\% CI = [0.006, 0.107]) and survey data (MTurk: 50/186; Prolific: 35/200; two-tailed, two-sample proportions test: $z(384)=2.223$, $p=0.026$, $h=0.227$, 95\% CI = [0.011, 0.176]).
 
-We hypothesise that spurious behavior-symptom correlations may emerge due to a mean-shift in the average level of symptom endorsement in participants engaging in C/IE responding relative to attentive participants. In turn, a mean-shift is expected to occur when the overall rate of symptom endorsement is low; that is, comparably higher scores are more likely for C/IE participants responding at random on a right skewed questionnaire. In line with our predictions, the average level of symptom endorsement was noticeably exaggerated in C/IE-responding participants for the symptom measures where symptom scores were most positively-skewed (7-up, 7-down, GAD-7; see Figure \ref{fig:distributions}). In contrast, where there was higher rates of symptom endorsement overall, the distributions of symptom scores between the two groups of participants were less noticeably distinct. Permutation testing confirmed that observed mean-shifts in symptom scores for C/IE participants were statistically significant for the majority of symptom measures (Table \ref{tab:validation}).
+We hypothesise that spurious behavior-symptom correlations may emerge due to a mean-shift in the average level of symptom endorsement in participants engaging in C/IE responding relative to attentive participants. In turn, a mean-shift is expected to occur when the overall rate of symptom endorsement is low; that is, comparably higher scores are more likely for C/IE participants responding at random on a right skewed questionnaire. In line with our predictions, the average level of symptom endorsement was noticeably exaggerated in C/IE-responding participants for the symptom measures where symptom scores were most positively-skewed (7-up, 7-down, GAD-7; see Figure \ref{fig:fig01}). In contrast, where there was higher rates of symptom endorsement overall, the distributions of symptom scores between the two groups of participants were less noticeably distinct. Permutation testing confirmed that observed mean-shifts in symptom scores for C/IE participants were statistically significant for the majority of symptom measures (Table \ref{tab:tab02}).
 
-Hereafter, we use the infrequency-item method as a primary means of identifying C/IE responding in our data. To verify this approach, we conducted three validation analyses. The first analysis compared estimated internal consistency of self-report measures between the C/IE and attentive groups. The logic is that, if C/IE responding manifests as a tendency to respond randomly, we should expect to see a decrease in the consistency of a measure in the C/IE responding group \cite{maniaci2014caring, desimone2018dirty, desimone2018differential}. In line with this reasoning, we observed a reduction in Cronbach's $\alpha$ in the C/IE group for the majority of survey instruments (Table \ref{tab:validation}). A permutation test confirmed that the average decrease in internal consistency across measures was greater than would be expected by chance given the difference in participant numbers between groups (two-tailed, paired-samples $t$-test: $t(6)=3.689$, $p=0.021$, $d=1.506$, 95\% CI = [0.048, 0.141]). 
+Hereafter, we use the infrequency-item method as a primary means of identifying C/IE responding in our data. To verify this approach, we conducted three validation analyses. The first analysis compared estimated internal consistency of self-report measures between the C/IE and attentive groups. The logic is that, if C/IE responding manifests as a tendency to respond randomly, we should expect to see a decrease in the consistency of a measure in the C/IE responding group \cite{maniaci2014caring, desimone2018dirty, desimone2018differential}. In line with this reasoning, we observed a reduction in Cronbach's $\alpha$ in the C/IE group for the majority of survey instruments (Table \ref{tab:tab02}). A permutation test confirmed that the average decrease in internal consistency across measures was greater than would be expected by chance given the difference in participant numbers between groups (two-tailed, paired-samples $t$-test: $t(6)=3.689$, $p=0.021$, $d=1.506$, 95\% CI = [0.048, 0.141]). 
 
 Second, we quantified the degree to which participants responded to self-report symptom surveys in a stereotyped fashion; that is, we determined if participants exhibited patterns in their responses that were independent of the contents of the survey items. We fit a random-intercept item factor-analysis model \cite{maydeu2006random} to self-report data (see Methods), and for each participant we estimated an intercept parameter that quantified their bias towards using responses on the left or right side of the response scale, regardless of what that response signifies for a particular self-report measure (e.g., low on one symptom scale versus high on another). We observed a credible difference between the average value of this intercept for the two groups ($\Delta \text{intercept} = 0.67, 95\% \ \text{HDI} = [-0.78, -0.55]$), such that C/IE participants were biased towards using the right-half of survey response options. This translates to a tendency to endorse \emph{more severe} symptoms on the 7-up/7-down and GAD-7 scales (where the rightmost options indicate greater frequency of symptoms) but \emph{less extreme} symptoms or personality traits on the SHAPS and BIS (where the rightmost options indicate lower frequency of symptoms or personality traits) despite these inventories measuring strongly correlated constructs (i.e., depression and anhedonia, anxiety and behavioral inhibition).
 
-Finally, we compared the proportion of participants meeting the cutoff for clinical levels of psychopathology before and after excluding participants based on their responses to the infrequency items. Previous studies have found that applying such measures reduced the prevalence of clinical symptomology in online samples towards ground truth rates from epidemiological studies \cite{ophir2020turker}. On the most positively-skewed measures, the fraction of participants reaching clinical levels of symptom endorsement prior to screening was greater than what would be expected (Table \ref{tab:validation}). For example, 13.0\% of participants scored at or above clinical thresholds for (hypo)mania on the 7-up scale in our sample prior to screening, compared with a 12-month prevalence of 5\% in the general population \cite{merikangas2007lifetime, merikangas2012true}, but this rate was reduced to 4.0\% (in line with the population prevalence estimates) after exclusion of C/IE respondents. We observed a similar pattern for both major depressive disorder and anxiety\footnote{Interestingly, compared to previous literature the proportion of participants meeting threshold on the GAD-7 was elevated. We suspect this may reflect elevated rates of state anxiety during the COVID-19 pandemic \cite{yarrington2021impact}, when these data were collected.} (population prevalence estimates of 7\% and 5\% respectively; \cite{kessler2012twelve, lowe2008validation, hinz2017psychometric}).  In line with previous research, we interpret these inflated rates of clinical symptomology in our sample prior to screening as suggestive of C/IE responding \cite{ophir2020turker}.
+Finally, we compared the proportion of participants meeting the cutoff for clinical levels of psychopathology before and after excluding participants based on their responses to the infrequency items. Previous studies have found that applying such measures reduced the prevalence of clinical symptomology in online samples towards ground truth rates from epidemiological studies \cite{ophir2020turker}. On the most positively-skewed measures, the fraction of participants reaching clinical levels of symptom endorsement prior to screening was greater than what would be expected (Table \ref{tab:tab02}). For example, 13.0\% of participants scored at or above clinical thresholds for (hypo)mania on the 7-up scale in our sample prior to screening, compared with a 12-month prevalence of 5\% in the general population \cite{merikangas2007lifetime, merikangas2012true}, but this rate was reduced to 4.0\% (in line with the population prevalence estimates) after exclusion of C/IE respondents. We observed a similar pattern for both major depressive disorder and anxiety (population prevalence estimates of 7\% and 5\% respectively; \cite{kessler2012twelve, lowe2008validation, hinz2017psychometric}). Interestingly, the proportion of participants meeting threshold on the GAD-7 was elevated compared to previous literature. We suspect this may reflect elevated rates of state anxiety during the COVID-19 pandemic \cite{yarrington2021impact}, when these data were collected. In line with previous research, we interpret these inflated rates of clinical symptomology in our sample prior to screening as suggestive of C/IE responding \cite{ophir2020turker}.
 
-\subsection*{Low correspondence between task and self-report measures of C/IE responding}
+% \subsection*{Low correspondence between task and self-report measures of C/IE responding}
+\subsection*{Low agreement between task and self-report screening measures}
 
-Next, we evaluated the degree of correspondence between behavioral and self-report screening measures in order to determine whether screening on behavior alone was sufficient to identify and remove careless participants. In line with the literature review, we computed multiple measures of C/IE responding from each participant's task behavior and survey responses (see Methods for description of measures). To measure the degree of correspondence between these behavioral and self-report screening measures, we performed two complementary analyses. First, we computed pairwise correlations on the unthresholded (continuous) measures using Spearman's rank correlation. The resulting pairwise similarity matrices are presented in Figure \ref{fig:correspondence} (left panel). After correcting for multiple comparisons, there were few significant correlations between the behavioral and self-report screening measures. Only choice accuracy showed significant associations with any self-report measure (specifically, the infrequency and Mahalonobis distance measures). Crucially, the sizes of these observed correlations were roughly half those observed for the correlations between the self-report measures. This is worrisome as it suggests that, although there is some relationship between C/IE responding on tasks and self-report inventories, the relationship is not strong enough to ensure reliable detection of careless participants using task data alone.
+Next, we evaluated the degree of correspondence between behavioral and self-report screening measures in order to determine whether screening on behavior alone was sufficient to identify and remove careless participants. In line with the literature review, we computed multiple measures of C/IE responding from each participant's task behavior and survey responses (see Methods for description of measures). To measure the degree of correspondence between these behavioral and self-report screening measures, we performed two complementary analyses. First, we computed pairwise correlations on the unthresholded (continuous) measures using Spearman's rank correlation. The resulting pairwise similarity matrices are presented in Figure \ref{fig:fig02} (left panel). After correcting for multiple comparisons, there were few significant correlations between the behavioral and self-report screening measures. Only choice accuracy showed significant associations with any self-report measure (specifically, the infrequency and Mahalonobis distance measures). Crucially, the sizes of these observed correlations were roughly half those observed for the correlations between the self-report measures. This is worrisome as it suggests that, although there is some relationship between C/IE responding on tasks and self-report inventories, the relationship is not strong enough to ensure reliable detection of careless participants using task data alone.
 
-Second, we used the Dice similarity coefficient to quantify agreement between different screening methods in the set of participants flagged for exclusion (Figure \ref{fig:correspondence}, right panel). This approach quantifies the degree of overlap between the set of would-be excluded participants based on different screening measures under a common exclusion rate. Though some measures have relatively clear threshold cutoffs (e.g., chance level performance for task accuracy), the majority of the measures evaluated here do not. As such, we evaluated the measures with respect to the top 10\% of ``suspect" participants flagged by each measure, corresponding roughly to the fraction of participants having performed at chance levels on the reversal-learning task.\footnote{Results of the same analysis repeated for the top 25\% of ``suspicious" participants (corresponding roughly to the fraction of participants flagged by the infrequency-item measure) produced similar results, and are included in the supplement.} Results were largely consistent with the correlation analysis: few pairs of task and self-report screening measures achieved levels of agreement greater than what would be expected by chance. The only significant cross-modality pair identified --- between the infrequency item and choice accuracy measures --- has a similarly coefficient less than 0.4. In other words, when these two measures are used to identify the top 10\% of participants most strongly suspected of C/IE responding, they agree on only two out of every five participants. Screening on choice accuracy alone (the most common method identified in our literature review) would fail to identify the majority of participants most likely engaging in C/IE responding as determined by the infrequency items.
+Second, we used the Dice similarity coefficient to quantify agreement between different screening methods in the set of participants flagged for exclusion (Figure \ref{fig:fig02}, right panel). This approach quantifies the degree of overlap between the set of would-be excluded participants based on different screening measures under a common exclusion rate. Though some measures have relatively clear threshold cutoffs (e.g., chance level performance for task accuracy), the majority of the measures evaluated here do not. As such, we evaluated the measures with respect to the top 10\% of ``suspect" participants flagged by each measure, corresponding roughly to the fraction of participants having performed at chance levels on the reversal-learning task. (Results of the same analysis repeated for the top 25\% of ``suspicious" participants --- corresponding roughly to the fraction of participants flagged by the infrequency-item measure --- produced similar results; see Table SXX.) Results were largely consistent with the correlation analysis: few pairs of task and self-report screening measures achieved levels of agreement greater than what would be expected by chance. The only significant cross-modality pair identified --- between the infrequency item and choice accuracy measures --- has a similarly coefficient less than 0.4. In other words, when these two measures are used to identify the top 10\% of participants most strongly suspected of C/IE responding, they agree on only two out of every five participants. Screening on choice accuracy alone (the most common method identified in our literature review) would fail to identify the majority of participants most likely engaging in C/IE responding as determined by the infrequency items.
 
 Taken together, these results suggest that measures of C/IE responding in task and self-report data do not identify the same set of participants. This means that solely excluding participants on the basis of poor behavioral performance---the most common approach in online studies---is unlikely to identify participants who engage in C/IE responding on self-report surveys. 
 
-\subsection*{Spurious symptom-behavior correlations produced by C/IE responding}
+% \subsection*{Spurious symptom-behavior correlations produced by C/IE responding}
+\subsection*{C/IE responding yields spurious symptom-behavior correlations}
 
 Here we examine the potential consequences of screening only on task behavior in our data. To do this, we estimated the pairwise correlations between the symptom scores of each of the self-report measures and several measures of performance on the reversal learning task. This analysis emulated a typical computational psychiatry analysis, in which the results of primary interest are the correlations between task behavior and self-reported psychiatric symptom severity.
 
-For each participant, we computed both descriptive and computational-model-based measures of behavior on the reversal learning task (see Methods). To understand the effects of applying different forms of screening, we estimated the correlations between each unique pairing of a self-report symptom measure and measure of behavior under four different conditions: no screening, screening only on task behavior (i.e., only participants whose choice accuracy was above chance), screening only on self-report responses (i.e., only participants who responded correctly on all infrequency items), or both. The resulting pairwise behavior-symptom correlations following each screening procedure are presented in Figure \ref{fig:correlations}. We note that we did not correct these correlation analyses for multiple comparisons, since our purpose was to demonstrate the extent of this issue across multiple behavioral measures and self-report symptoms. Any one of these correlations considered individually can be thought of as emulating a conventional analysis where fewer statistical tests would be performed.
+For each participant, we computed both descriptive and computational-model-based measures of behavior on the reversal learning task (see Methods). To understand the effects of applying different forms of screening, we estimated the correlations between each unique pairing of a self-report symptom measure and measure of behavior under four different conditions: no screening, screening only on task behavior (i.e., only participants whose choice accuracy was above chance), screening only on self-report responses (i.e., only participants who responded correctly on all infrequency items), or both. The resulting pairwise behavior-symptom correlations following each screening procedure are presented in Figure \ref{fig:fig03}. We note that we did not correct these correlation analyses for multiple comparisons, since our purpose was to demonstrate the extent of this issue across multiple behavioral measures and self-report symptoms. Any one of these correlations considered individually can be thought of as emulating a conventional analysis where fewer statistical tests would be performed.
 
-When no rejections based on C/IE responding was applied (i.e., all participants were included in the analysis; Figure \ref{fig:correlations}A), many significant correlations emerged between measures of task behavior and symptom scores, in particular for 4 of the self-report instruments (7-up, which measures symptoms of hypomania; 7-down, which measures symptoms of depression; GAD-7, which measures generalized anxiety symptoms; and BIS, which measures tendencies related to behavioral inhibition). Consistent with our predictions, the majority of these correlations involved symptom measures with asymmetric total score distributions. Attending to only the most skewed measures (i.e., 7-up, 7-down, GAD-7), symptom endorsement was correlated with almost every behavioral measure. That is, significant correlations were not restricted only to general behavioral measures often used as proxies for participant effort (e.g., accuracy, inverse temperature $\beta$) but also to measures of specific theoretical interest, such as asymmetry of learning from positive and negative reward prediction errors ($\kappa$). Conversely, we found few significant correlations among symptom measures with more symmetric distributions. This is despite the fact these scales measure similar symptoms and syndromes (e.g., anxiety as measured by the GAD-7 and worry as measured by the PSWQ; depression as measured by the 7-down and anhedonia as measured by the SHAPS). 
+When no rejections based on C/IE responding was applied (i.e., all participants were included in the analysis; Figure \ref{fig:fig03}A), many significant correlations emerged between measures of task behavior and symptom scores, in particular for 4 of the self-report instruments (7-up, which measures symptoms of hypomania; 7-down, which measures symptoms of depression; GAD-7, which measures generalized anxiety symptoms; and BIS, which measures tendencies related to behavioral inhibition). Consistent with our predictions, the majority of these correlations involved symptom measures with asymmetric total score distributions. Attending to only the most skewed measures (i.e., 7-up, 7-down, GAD-7), symptom endorsement was correlated with almost every behavioral measure. That is, significant correlations were not restricted only to general behavioral measures often used as proxies for participant effort (e.g., accuracy, inverse temperature $\beta$) but also to measures of specific theoretical interest, such as asymmetry of learning from positive and negative reward prediction errors ($\kappa$). Conversely, we found few significant correlations among symptom measures with more symmetric distributions. This is despite the fact these scales measure similar symptoms and syndromes (e.g., anxiety as measured by the GAD-7 and worry as measured by the PSWQ; depression as measured by the 7-down and anhedonia as measured by the SHAPS). 
 
-Next, we excluded participants from analysis based on task-behavior screening (i.e., choice accuracy, removing the 7\% of participants exhibiting behavior indistinguishable from chance; Figure \ref{fig:correlations}B). The pattern of correlations was largely unchanged: we again found many significant correlations between measures of behavior and asymmetric symptom measures, but almost no significant correlations involving symmetric symptom measures. This suggests that rejection of participants based on the most common form of behavioral screening (i.e., performance accuracy) had little effect on behavior-symptom correlations as compared to no screening.  
+Next, we excluded participants from analysis based on task-behavior screening (i.e., choice accuracy, removing the 7\% of participants exhibiting behavior indistinguishable from chance; Figure \ref{fig:fig03}B). The pattern of correlations was largely unchanged: we again found many significant correlations between measures of behavior and asymmetric symptom measures, but almost no significant correlations involving symmetric symptom measures. This suggests that rejection of participants based on the most common form of behavioral screening (i.e., performance accuracy) had little effect on behavior-symptom correlations as compared to no screening.  
 
-In stark contrast, when we rejected participants based on self-report screening  (removing 22\% of participants who endorsed one or more invalid or improbable responses on the infrequency items; Figure \ref{fig:correlations}C), the number of significant correlations was markedly reduced, particularly for several of the most skewed symptom measures (7-down, GAD-7) and proxy measures of task attentiveness (e.g., accuracy, inverse temperature). This pattern of correlations was largely similar when rejections were applied based on both task and self-report screening measures (Figure \ref{fig:correlations}D). We also note that with stricter screening, the remaining significant correlations were, for the most part (but not always), weaker. 
+In stark contrast, when we rejected participants based on self-report screening  (removing 22\% of participants who endorsed one or more invalid or improbable responses on the infrequency items; Figure \ref{fig:fig03}C), the number of significant correlations was markedly reduced, particularly for several of the most skewed symptom measures (7-down, GAD-7) and proxy measures of task attentiveness (e.g., accuracy, inverse temperature). This pattern of correlations was largely similar when rejections were applied based on both task and self-report screening measures (Figure \ref{fig:fig03}D). We also note that with stricter screening, the remaining significant correlations were, for the most part (but not always), weaker. 
 
 These findings suggest that many of the significant behavior-symptom correlations observed without strict participant screening may indeed be spurious correlations driven by C/IE responding. Importantly, screening based on task behavior alone did not adequately protect against spurious symptom-behavior correlations in the presence of skewed distributions of symptom endorsement. For instance, consider the 7-down scale, a measure of trait depression: had we not screened participants based on infrequency items, we would have erroneously concluded that there were many significant associations between reversal-learning task performance and self-reported depression. Screening on self-report data allowed us to identify that each of these depression-behavior correlations was likely to be entirely spurious.
 
-One possible objection to this interpretation is that the reduction in significant correlations following self-report screening was a result of the reduced sample size after removal of C/IE respondents (which comprised over 20\% of the sample). To test this alternative hypothesis, we performed the same correlation analysis after removing random subsets of participants, fixing the sample size to that obtained after excluding C/IE respondents. In this case, the pattern of significant correlations was more similar to that before screening than after screening using the infrequency measure (two-tailed, paired-samples $t$-test: $t = 262.490$, $p < 0.001$, $d = 3.713$, 95\% CI = [0.136, 0.138]; Figure \ref{fig:random}, compare to Figure \ref{fig:correlations}A). Thus, the reduction in significant correlations following screening was unlikely to be driven solely by a reduction in statistical power.
+One possible objection to this interpretation is that the reduction in significant correlations following self-report screening was a result of the reduced sample size after removal of C/IE respondents (which comprised over 20\% of the sample). To test this alternative hypothesis, we performed the same correlation analysis after removing random subsets of participants, fixing the sample size to that obtained after excluding C/IE respondents. In this case, the pattern of significant correlations was more similar to that before screening than after screening using the infrequency measure (two-tailed, paired-samples $t$-test: $t = 262.490$, $p < 0.001$, $d = 3.713$, 95\% CI = [0.136, 0.138]; Figure S2, compare to Figure \ref{fig:fig03}A). Thus, the reduction in significant correlations following screening was unlikely to be driven solely by a reduction in statistical power.
 
-Next, we investigated how spurious correlations depended on sample size. To do so, we performed a bootstrapping analysis where we held fixed the proportion of participants engaging in C/IE responding (i.e., 5\%, 10\%, 15\%, 20\%) and increased the total number of participants. Across all analyses, we measured the correlation and between the 7-down depression scale and learning-rate asymmetry ($\kappa$), which we previously identified as likely exhibiting a spurious association. (The following results are not specific to learning-rate asymmetry and generalize to other pairs of variables; Figure \ref{fig:bootstrap_s1}).  
+Next, we investigated how spurious correlations depended on sample size. To do so, we performed a bootstrapping analysis where we held fixed the proportion of participants engaging in C/IE responding (i.e., 5\%, 10\%, 15\%, 20\%) and increased the total number of participants. Across all analyses, we measured the correlation and between the 7-down depression scale and learning-rate asymmetry ($\kappa$), which we previously identified as likely exhibiting a spurious association. (The following results are not specific to learning-rate asymmetry and generalize to other pairs of variables; Figure S3).  
 
-The outputs of the bootstrapping analysis are presented in Figure \ref{fig:bootstrap}. We found that, although estimated correlation magnitudes were independent of sample size (x-axis, left panel), the absolute magnitude of the behavior-symptom correlation increased with the proportion of C/IE participants (different coloured circles, left panel). Crucially, we found false-positive rates for spurious correlations \emph{increased} with increases in sample size in our data for all but the smallest rates of C/IE responding (right panel). This runs counter to a common assumption that larger sample sizes are protective against spurious correlations because they serve to mitigate measurement error. Although this assumption is correct for unsystematic measurement error, it no longer holds in the regime of systematic measurement error (where larger sample sizes reduce the variance of estimates, but do not alter their bias). Instead, our results suggest that, except for low rates of C/IE responding, the false-positive rate for behavioral-symptom correlations will become increasingly inflated as the sample size increases.
+The outputs of the bootstrapping analysis are presented in Figure \ref{fig:fig04}. We found that, although estimated correlation magnitudes were independent of sample size (x-axis, left panel), the absolute magnitude of the behavior-symptom correlation increased with the proportion of C/IE participants (different coloured circles, left panel). Crucially, we found false-positive rates for spurious correlations \emph{increased} with increases in sample size in our data for all but the smallest rates of C/IE responding (right panel). This runs counter to a common assumption that larger sample sizes are protective against spurious correlations because they serve to mitigate measurement error. Although this assumption is correct for unsystematic measurement error, it no longer holds in the regime of systematic measurement error (where larger sample sizes reduce the variance of estimates, but do not alter their bias). Instead, our results suggest that, except for low rates of C/IE responding, the false-positive rate for behavioral-symptom correlations will become increasingly inflated as the sample size increases.
 
-\subsection*{Pattern of results generalizes to alternative tasks, self-report measures, and quality assurance protocols}
+% \subsection*{Pattern of results generalizes to alternative tasks, self-report measures, and quality assurance protocols}
+\subsection*{Findings replicate in second study with alternative measures}
 
 One possible concern with the results presented so far is that they are specific to one instantiation of our experimental design. With more stringent quality assurance protocols during participant recruitment, or perhaps a different task or set of self-report measures, one might wonder if spurious correlations would remain such a threat.
 
@@ -179,7 +952,8 @@ Finally, when we did not apply any exclusions, we observed spurious correlations
 
 In sum, we replicated most of the main findings from the original study in an independent sample of participants completing a different task and other self-report measures. Although we found that screening on task behavior was sufficient to protect against spurious correlations in the replication sample, it is difficult to generalize and predict when or why this might be the case for other datasets. As such, we still believe that screening for C/IE responding in both task and self-report measures is the best approach to protect oneself against the possibility of spurious correlations.
 
-\subsection*{Individuals with and without diagnosed psychiatric disorders fail attention checks at similar rates}
+% \subsection*{Individuals with and without diagnosed psychiatric disorders fail attention checks at similar rates}
+\subsection*{Psychiatric patients do not fail attention checks more often}
 
 One major concern with performing rigorous screening and exclusion of participants based on C/IE detection methods is that we might inadvertently introduce an overcontrol bias \cite{elwert2014endogenous}. That is, to this point we have treated the tendency towards C/IE responding as independent from psychopathology. However, to the extent that C/IE responding reflects lack of motivation \cite{barch2015mechanisms}, avoidance of effort \cite{cohen2001impairments, culbreth2016negative}, or more frequent lapses of attention \cite{kane2016individual, robison2017neurotic}, one might hypothesise a true underlying association between psychopathology and careless responding in online studies. It is thus plausible that rigorous screening of C/IE responding might lead to the differential exclusion of truly symptomatic participants. 
 
@@ -209,37 +983,15 @@ There are several notable limitations to this proof-of-concept study. We used a 
 
 The present study highlights the need for future work on the prevalence of C/IE responding in online samples and its interactions with task-symptom correlations. Many open questions remain, including under what conditions task- and symptom-screening measures might better correspond, what screening measures are most effective and when, and under what conditions spurious correlations are more likely to arise. For example, in the present study, we found that screening on task behavior alone was insufficient to prevent putatively spurious correlations for one task (reversal learning) but not for another (two-step task). This discrepancy may reflect differences in the tasks (e.g., the two-step task may be more challenging and thus more sensitive to C/IE responding) or differences in the screening measures (e.g., choice accuracy across 90 trials may be a noisier measure than win-stay lose-shift choice behavior across 200 trials). One especially pressing question is how sample size affects the likelihood of obtaining spurious correlations. The results of a bootstrapping analysis in our data suggest that false positive rates are likely to increase with sample size. As computational psychiatry studies move towards larger samples to characterize heterogeneity in symptoms (and to increase statistical power), it will be important to understand how sample size may exaggerate the effects of systematic error. It will also be important to understand how this is moderated by overall C/IE responding rates, which we observed to vary across platforms and time, and will presumably continue to change with evolving labor platform and researcher screening practices.
 
-% \section*{Conclusions}
+We conclude with a list of concrete recommendations for future research online studies involving correlations between task behavior and self-report surveys. Moving forward, we would strongly recommend that experimenters employ some form of self-report screening method, preferably one recommended by the best-practices literature (e.g., \cite{huang2015insufficient, curran2016methods, thomas2017validity, desimone2018dirty, ophir2020turker}). Our literature review found that, to date, the majority of online studies assessing behavior-symptom correlations have not used self-report screening, and our results demonstrate that stand-alone task-behavior screening is often insufficent to prevent spurious symptom-behavior correlations induced by C/IE responding. For these reasons, we encourage experimenters to use a variety of data-quality checks for online studies and to be transparent in their reporting of how screening was conducted, how many participants are flagged under each measure, and what thresholds are used for rejection.
 
-Moving forward, we would strongly recommend that experimenters employ some form of self-report screening method, preferably one recommended by the best-practices literature (see Box 1 for a list of concrete recommendations). Our literature review found that, to date, the majority of online studies assessing behavior-symptom correlations have not used self-report screening, and our results demonstrate that stand-alone task-behavior screening is likely to be insufficient. Our results also demonstrate that inadequate screening is likely not merely to result in increased measurement error, as commonly assumed, but may also induce spurious correlations between behavioral task metrics and self-reported psychiatric symptom levels. For these reasons, we encourage experimenters to use a variety of data-quality checks for online studies and to be transparent in their reporting of how screening was conducted, how many participants are flagged under each measure, and what thresholds are used for rejection.
+When collecting self-report questionnaire data, we encourage experimenters to use screening methods sensitive to multiple distinct patterns of C/IE responding (e.g., random responding, straight-lining, side bias) and, if possible, to log all page interactions (e.g., mouse clicks, keyboard presses). We specifically recommend experimenters follow best-practice guidelines and use infrequency-item attention checks rather than instructed-item checks, as multiple studies have now shown that online participants are habituated to and circumvent the latter \cite{barends2019noncompliant, thomas2017validity, hauser2016attentive}. Participants flagged by suspicious responses on attention-check items should either be excluded from further analysis, or assessed using sensitivity analyses to ensure that observed full-sample correlations are robust to their exclusion.
 
-More broadly, we encourage experimenters in computational psychiatry to be mindful of the myriad reasons why participants may perform worse on a behavioral task. Wherever possible, researchers are encouraged to design experiments where the signature of some symptomology could not also be explained by C/IE responding (e.g., \cite{eldar2015interaction, hunter2019excessive}). Finally, we conclude by noting that it is preferable to prevent C/IE responding than to account for it after the fact \cite{ward2018applying}. As such, we recommend researchers take pains to ensure their experiments promote engagement, minimize fatigue and confusion, and reimburse participants fairly and ethically.
-
-%% BOX 1 %%
-\newpage
-\textbf{Box 1: Recommendations for future research}
-
-Here we offer several concrete recommendations for future research investigating symptom-behavior correlations in online samples.
-
-\begin{itemize}
-
-    \item Use multiple screening methods to detect different types of C/IE responding. At a minimum, we recommend screening of both behavioral and self-report data. Within self-report data, we recommend using methods sensitive to multiple distinct patterns of C/IE responding (e.g., random responding, straight-lining, side bias) and, if possible, to log all page interactions (e.g., mouse clicks, keyboard presses).
-
-    \item When collecting self-report questionnaire data, include attention-check items that flag participants who may be engaging in C/IE responding. We recommend following best-practice guidelines in using infrequency-item checks rather than instructed-item checks, as multiple studies have now shown that online participants are habituated to and circumvent the latter \cite{barends2019noncompliant, thomas2017validity, hauser2016attentive}. Participants flagged by suspicious responses on attention-check items should either be excluded from further analysis, or assessed using sensitivity analyses to ensure that observed full-sample correlations are robust to their exclusion.
-
-    \item We found that spurious correlations predominantly affected self-report instruments for which the expected distributions of symptom scores were asymmetric (either positively or negatively skewed). As such, symmetrically-distributed measures of a given construct should be preferred to asymmetrically-distributed measures (though this will often be infeasible given that the frequency of many psychiatric symptoms in the general population is itself positively skewed).
+We found that spurious correlations predominantly affected self-report instruments for which the expected distributions of symptom scores were asymmetric (either positively or negatively skewed). As such, symmetrically-distributed measures of a given construct should be preferred to asymmetrically-distributed measures (though this will often be infeasible given that the prevalence of many psychiatric symptoms in the general population is typically small). Scales with reverse-coded items can be used to quantify the consistency of participants' responses between reverse-coded and non-reverse-coded measures of the same latent construct. With some care, this may be used to identify C/IE responding even for measures that do not include attention-check items \cite{emons2009detection}. Similarly, it may be beneficial to include multiple self-report surveys of the same construct to measure consistency across scales.
     
-    \item Scales with reverse-coded items can be used to quantify the consistency of participants' responses between reverse-coded and non-reverse-coded measures of the same latent construct. With some care, this may be used to identify C/IE responding even for measures that do not include attention-check items \cite{emons2009detection}. Similarly, it may be beneficial to include multiple self-report surveys of the same construct to measure consistency across scales.
-    
-    \item In our experience, we have found it instructive to review discussions on public forums for participants of online labor markets (e.g., Reddit, TurkerNation). Doing so helps an experimenter identify what screening methods would-be participants are already aware of and prepared to answer correctly. (Several examples of workers discussing common attention checks can be found at the Github repository for this project.)
-    
-    \item Consider carefully whether the online methodology is truly appropriate for the research question. In particular, if the project studies syndromes associated with considerable difficulty in task or survey engagement (e.g., severe ADHD, acute mania), symptomatic participants are likely to produce responses that cannot be distinguished from C/IE responding. In this case, correlational research with online samples is likely not the best methodology for the research question.
+In our experience, we have found it instructive to review discussions on public forums for participants of online labor markets (e.g., Reddit, TurkerNation). Doing so helps an experimenter identify what screening methods would-be participants are already aware of and prepared to answer correctly. (Several examples of workers discussing common attention checks can be found at the Github repository for this project.)
 
-\end{itemize}
-
-This is not an exhaustive list, and one overarching recommendation is that researchers studying individual differences in psychiatric symptom endorsement should engage meaningfully with methodological research from the psychological measurement literature, where many of these questions have long been studied \cite{huang2015insufficient, curran2016methods, thomas2017validity, desimone2018dirty, ophir2020turker}.
-
-%% END BOX 1 %%
+More broadly, we encourage experimenters in individual-differences cognitive science research (including computational psychiatry) to be mindful of the myriad reasons why participants may perform worse on a behavioral task. Wherever possible, researchers are encouraged to design experiments where the signature of some psychiatric phenomenon could not also be explained by C/IE responding (e.g., \cite{eldar2015interaction, hunter2019excessive}). Experimenters should also carefully consider whether an online study is truly appropriate for the research question. In particular, if the project aims to study syndromes associated with considerable difficulty in task or survey engagement (e.g., severe ADHD, acute mania), symptomatic participants are likely to produce responses that cannot be distinguished from C/IE responding. In such a case, correlational research in online samples is likely not the best approach for the research question. Finally, we conclude by noting that it is preferable to prevent C/IE responding than to account for it after the fact \cite{ward2018applying}. As such, we recommend researchers take pains to ensure their experiments promote engagement, minimize fatigue and confusion, and compensate participants fairly and ethically.
 
 \section*{Methods}
 
@@ -257,7 +1009,7 @@ The data from multiple participants who completed the experiment were excluded p
 
 Participants performed a probabilistic reversal learning task, explicitly designed to be similar to previous computational psychiatry studies \cite{waltz2007probabilistic, mukherjee_reward_2020}. On every trial of the task, participants were presented with three choice options and were required to choose one. After their choice, participants were presented with probabilistic feedback: a reward (1 point) or a non-reward (0 points). On any trial one choice option dominated the others. When chosen, the dominant option yielded reward with 80\% probability; the subordinate options yielded reward with only 20\% probability. The dominant option changed randomly to one of the two previously subordinate options every 15 trials. Participants completed 90 trials of the task (1 learning block, 5 reversal blocks). 
 
-As a cover story, the probabilistic reversal learning task was introduced to participants as a fishing game in which each choice option was a beach scene made distinguishable by a colored surfboard with unique symbol. Participants were told they were choosing which beach to fish at. Feedback was presented as either a fish (1 point) or trash (0 points). Participants were instructed to earn the most points possible by learning (through trial-and-error) and choosing the best choice option. Participants were also instructed that the best option could change during the task, but were not informed about how often or when this would occur (see the Supplement for the complete instructions). Prior to beginning the experiment, participants had to correctly answer four comprehension questions about the instructions. Failing to correctly answer all items forced the participant to start the instructions over.
+As a cover story, the probabilistic reversal learning task was introduced to participants as a fishing game in which each choice option was a beach scene made distinguishable by a colored surfboard with unique symbol. Participants were told they were choosing which beach to fish at. Feedback was presented as either a fish (1 point) or trash (0 points). Participants were instructed to earn the most points possible by learning (through trial-and-error) and choosing the best choice option. Participants were also instructed that the best option could change during the task, but were not informed about how often or when this would occur (see the Appendix A -- \textit{Task Instructions} for the complete instructions). Prior to beginning the experiment, participants had to correctly answer four comprehension questions about the instructions. Failing to correctly answer all items forced the participant to start the instructions over.
 
 The task was programmed in jsPsych \cite{deleeuw_2015_jspsych} and distributed using custom web-application software. All experiment code is publicly available (see Code Availability statement). A playable demo of the task is available at \url{https://nivlab.github.io/jspsych-demos/tasks/3arm/experiment.html}.
 
@@ -301,7 +1053,7 @@ In this analysis, we did not estimate the factor loadings but instead treated th
 
 Crucially, each participant's responses were also predicted by a random intercept term, $\mu_i$, which was not factor specific but instead was fit across all items. This intercept then reflects a participant's overall bias towards a response level. In our analysis, we coded the response levels such that the smallest value indicated endorsing the leftmost anchor (irrespective of semantic content) and the largest value indicated endorsing the rightmost anchor (irrespective of semantic content). Because the leftmost response option corresponds to symptomology on some scales (SHAPS), and a lack of symptomology for others (GAD-7, 7-up/7-down), we would not expect a consistent nonzero bias in this random intercept term for an attentive participant. 
 
-\subparagraph{Clinical cutoffs.} We compared the proportion of participants in our sample reaching the threshold for clinical symptomology before and after applying exclusions. For the GAD-7, previous research has suggested a clinical cutoff score of 10 or higher \cite{lowe2008validation, hinz2017psychometric}. Though the 7-up/7-down scales do not have firmly established clinical cutoffs recent work has suggested a cutoff score of 12 or higher \cite{youngstrom2020evaluating}, which we use here. Finally, the original authors of the SHAPS scale recommended as a cutoff a score of 3 or more when the items are binarized (1 = ``strongly disagree", ``agree"; 0 = ``strongly agree", ``agree"). We use this scoring approach in Table \ref{tab:validation}.   
+\subparagraph{Clinical cutoffs.} We compared the proportion of participants in our sample reaching the threshold for clinical symptomology before and after applying exclusions. For the GAD-7, previous research has suggested a clinical cutoff score of 10 or higher \cite{lowe2008validation, hinz2017psychometric}. Though the 7-up/7-down scales do not have firmly established clinical cutoffs recent work has suggested a cutoff score of 12 or higher \cite{youngstrom2020evaluating}, which we use here. Finally, the original authors of the SHAPS scale recommended as a cutoff a score of 3 or more when the items are binarized (1 = ``strongly disagree", ``agree"; 0 = ``strongly agree", ``agree"). We use this scoring approach in Table \ref{tab:tab02}.   
 
 \subsubsection*{Correspondence of screening measures}
 
@@ -378,7 +1130,7 @@ where $\beta$ is the inverse temperature, controlling a participant's sensitivit
 
 We fit the reinforcement learning model to each participants' choice behavior using Stan (details above). Notably, 11 participants (3\% of sample) had parameter estimates with poor convergence, i.e., $\hat{R} > 1.1$; their parameters were removed from the correlation analysis. Participants' parameters were fit individually (i.e., not hierarchically) so as to prevent bias during parameter estimation from partial-pooling between attentive and C/IE participants. Parameters were sampled using non-centred parameterisations (i.e., all parameters were sampled separately from a unit normal before being transformed to the appropriate range). Of note, the learning rates were estimated via an offset method such that $\eta_p = \eta + \kappa$ and $\eta_n = \eta - \kappa$, where $\kappa$ is an offset parameter controlling the extent of an asymmetry between the two learning rates. This parameter was also entered into the behavior-symptom correlation analyses. 
 
-We confirmed the model adequately fit participants' choice behavior through a series of posterior checks (Figure \ref{fig:posterior_check}). In particular, we confirmed the model recapitulated the group-average learning curves for each block of the experiment. Moreover, we confirmed that the model was able to recover reasonably well the choice accuracy for each participant.
+We confirmed the model adequately fit participants' choice behavior through a series of posterior checks (Figure S5). In particular, we confirmed the model recapitulated the group-average learning curves for each block of the experiment. Moreover, we confirmed that the model was able to recover reasonably well the choice accuracy for each participant.
 
 The model-based measures included for analysis were: choice sensitivity ($\beta$,  inverse temperature), positive learning rate ($\eta_p$), negative learning rate ($\eta_n$), and learning rate asymmetry ($\kappa = \frac{\eta_p-\eta_n}{\eta_p+\eta_n}$, normalized difference between $\eta_p$ and $\eta_n$). We chose these measures as they have been previously used to assess performance in clinical samples \cite{huang2017computational, brolsma2020challenging, mukherjee_reward_2020, ritschel2017neural}. 
 
@@ -432,7 +1184,7 @@ The authors declare no competing interests.
     \end{tabular}
     \captionsetup{width=0.88\textwidth}
     \caption{The prevalence and types of task and self-report data screening practices in a sample (N=49) of recent online behavioral studies.}
-    \label{tab:screening}
+    \label{tab:tab01}
 \end{table}
 
 \clearpage
@@ -457,14 +1209,14 @@ The authors declare no competing interests.
     \end{tabular}
     \captionsetup{width=0.88\textwidth}
     \caption{Descriptive statistics of the self-report symptom measures between attentive and C/IE participants. Skew: the empirical skewness of the distribution of total symptom scores. Total score: the average symptom score across attentive and C/IE participants. Stars indicate statistical significance at $p<0.05$. Cronbach's $\alpha$: a measure of response consistency, where values closer to 1 indicate greater consistency in responses. \% Clinical Cutoff: the percentage of participants reaching threshold for clinical symptomology before and after screening based on the infrequency measure. (The BIS/BAS scales do not have clinical thresholds.)}
-    \label{tab:validation}
+    \label{tab:tab02}
 \end{table}
 
 \clearpage
 \section*{Figures}
 
 \begin{figure}[h]
-    \includegraphics[width=16cm]{../figures/main_01.png}
+    % \includegraphics[width=16cm]{../figures/main_01.png}
     \centering
     \captionsetup{width=0.88\textwidth}
     \caption{Simulated example of how spurious behavior-symptom correlations can arise when symptom endorsement is rare. \textit{Left:} When symptoms are moderately common in the general population, C/IE respondents ($N=15$; blue) are indistinguishable from attentive participants ($N=85$; red) in self-report measures (x-axis, marginal distribution shown on top). Despite the worse task performance of C/IE respondents (y-axis), no correlation arises between symptom scores and task performance (dots are participants drawn from the shown distributions, with 15\% C/IE participants; dashed line shows the (lack of) Spearman rank correlation.) \textit{Right:} When symptoms are rare in the general population, careless respondents appear symptomatic in self-report measures. As a result, self-report symptom scores show a significant two-sided Spearman rank correlation with task performance. }
@@ -473,44 +1225,41 @@ The authors declare no competing interests.
 
 \clearpage
 \begin{figure}[h]
-    \includegraphics[width=16cm]{../figures/main_02a.png}
+    % \includegraphics[width=16cm]{../figures/main_02a.png}
     \centering
     \captionsetup{width=0.88\textwidth}
     \caption{Raincloud plots of total symptom scores in attentive ($N=301$; red) and C/IE ($N=85$; blue) participants. Each colored dot represents the symptom score for one participant. Black circles: average score within each group (error bars denote 95\% bootstrap confidence interval). Shaded plots: estimated distribution of responses for each group of participants. The scales are ordered approximately according to their estimated skew (see Table 2) from top-left (7-up) to bottom-right (PSWQ). The average level of symptom endorsement is most markedly different between groups in measures with lowest overall rates of endorsement.}
-    \label{fig:distributions}
+    \label{fig:fig01}
 \end{figure}
 
 \clearpage
 \begin{figure}[h]
-    \includegraphics[width=16cm, trim=0 0 3cm 0]{../figures/main_02b.png}
+    % \includegraphics[width=16cm, trim=0 0 3cm 0]{../figures/main_02b.png}
     \centering
     \captionsetup{width=0.88\textwidth}
     \caption{Similarity of task and self-report data screening measures. Each tile corresponds to the Spearman rank correlation (left) and Dice similarity coefficient (right) between two screening measures across $N=386$ participants. Acronyms: INF = infrequency item; ISD = inter-item standard deviation; REL = personal reliability; MAH = Mahalanobis distance; READ = reading time; VAR = choice variability; ACC = choice accuracy; WSLS = win-stay lose-shift rate; RT = suspicious response times. Similarity scores have been thresholded after correcting for multiple comparisons. Numbers denote the strength of statistically significant correlations. Cross-modality correlations between task-behavior (left) and infrequency-item self-report measures (bottom) are in the dashed rectangle.}
-    \label{fig:correspondence}
+    \label{fig:fig02}
 \end{figure}
 
 \clearpage
 \begin{figure}[h]
-    \includegraphics[width=17cm]{../figures/main_03a.png}
+    % \includegraphics[width=17cm]{../figures/main_03a.png}
     \centering
     \captionsetup{width=0.88\textwidth}
-    \caption{Absolute Spearman rank correlations between task behavior (y-axis) and symptom measures (x-axis) under different regimes of data screening and participant exclusions. (A) No Screening = no exclusions ($N=386$). (B) Accuracy Only = exclusions based on chance-level performance in the reversal-learning task ($N=352$). (C) Infrequency Only = exclusions based on invalid or improbable responses to infrequency items ($N=301$). (D) Both Types = exclusions based on the previous two measures ($N=283$). Only statistically significant correlations are shown ($p<0.05$ not corrected for multiple comparisons; all signed correlations are shown in Supplementary Figure \ref{fig:correlations_s1}). Black Xs indicate significant correlations ablated under screening. Acronyms: Acc = choice accuracy; Pts = total points earned; WS = win-stay rate; LS = lose-shift rate; Pers = perseveration errors; $\beta$ = inverse temperature; $\eta_p$ = positive learning rate; $\eta_n$ = negative learning rate; $\kappa$ = learning rate asymmetry.}
-    \label{fig:correlations}
+    \caption{Absolute Spearman rank correlations between task behavior (y-axis) and symptom measures (x-axis) under different regimes of data screening and participant exclusions. (A) No Screening = no exclusions ($N=386$). (B) Accuracy Only = exclusions based on chance-level performance in the reversal-learning task ($N=352$). (C) Infrequency Only = exclusions based on invalid or improbable responses to infrequency items ($N=301$). (D) Both Types = exclusions based on the previous two measures ($N=283$). Only statistically significant correlations are shown ($p<0.05$ not corrected for multiple comparisons; all signed correlations are shown in Figure S1). Black Xs indicate significant correlations ablated under screening. Acronyms: Acc = choice accuracy; Pts = total points earned; WS = win-stay rate; LS = lose-shift rate; Pers = perseveration errors; $\beta$ = inverse temperature; $\eta_p$ = positive learning rate; $\eta_n$ = negative learning rate; $\kappa$ = learning rate asymmetry.}
+    \label{fig:fig03}
 \end{figure}
 
 \clearpage
 \begin{figure}[h]
-    \includegraphics[width=16cm]{../figures/main_03b.png}
+    % \includegraphics[width=16cm]{../figures/main_03b.png}
     \centering
     \captionsetup{width=0.88\textwidth}
     \caption{False positive rates for spurious correlations \emph{increase} with sample size. \textit{Left:} Spearman correlations and 95\% bootstrap confidence intervals between learning rate asymmetry ($\kappa$) and depression scores (7-down) as a function of sample size and proportion of C/IE participants. The thick dashed lines indicate the threshold for statistical significance for the Spearman correlation at the corresponding sample size. Markers are jittered along the x-axis for legibility. \textit{Right:} False positive rates for learning rate asymmetry ($\kappa$) and depression scores (7-down) as a function of sample size and proportion of C/IE participants. False positive rate was calculated as the proportion of bootstrap samples in which the correlation between $\kappa$ and 7-down was statistically significant. The horizontal dotted line denotes the expected false positive rate at $\alpha = .05$.}
-    \label{fig:bootstrap}
+    \label{fig:fig04}
 \end{figure}
 
 \clearpage
-\section*{References}
-
-\printbibliography[heading=main]
-\end{refsection}
+\printbibliography
 
 \end{document}
