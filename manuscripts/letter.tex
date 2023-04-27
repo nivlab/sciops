@@ -14,23 +14,12 @@
 \usepackage[backend=biber,style=nature]{biblatex}
 \usepackage[flushmargin]{footmisc}
 \usepackage[flushleft]{threeparttable}
+\usepackage{array}
 \usepackage[font=small, labelfont=it]{caption}
-\usepackage{csquotes}
+\usepackage{booktabs}
 \usepackage{soul}
-
-% specify footnote margins
-\renewcommand\footnotelayout{%
-  \advance\leftskip 0.7cm
-  \advance\rightskip 0.7cm
- } 
+\usepackage{csquotes}
  
-% specific images path relative to the main .tex file 
-\graphicspath{ {./figures/} }
-
-% setup references
-\addbibresource{letter.bib}
-\renewcommand*{\bibfont}{\small}
-
 % specify link style
 \hypersetup{
     colorlinks=true,
@@ -39,6 +28,350 @@
     urlcolor=cyan,
     citecolor=blue
 }
+
+% specify images path relative to the main .tex file 
+\graphicspath{ {./figures/} }
+
+% ----------------------------------%
+% Define references
+% ----------------------------------%
+
+% setup references
+\renewcommand*{\bibfont}{\small}
+
+% define references
+\begin{filecontents}{letter.bib}
+@INCOLLECTION{Demetriou2015-bq,
+  title     = "{Self-Report} Questionnaires",
+  booktitle = "The Encyclopedia of Clinical Psychology",
+  author    = "Demetriou, Constantina and Ozer, Bilge Uzun and Essau, Cecilia A",
+  pages     = "1--6",
+  month     =  jan,
+  year      =  2015
+}
+
+@article{eklund2016cluster,
+  title={Cluster failure: Why fMRI inferences for spatial extent have inflated false-positive rates},
+  author={Eklund, Anders and Nichols, Thomas E and Knutsson, Hans},
+  journal={Proceedings of the national academy of sciences},
+  volume={113},
+  number={28},
+  pages={7900--7905},
+  year={2016},
+  publisher={National Acad Sciences}
+}
+
+@article{bradley2021unrepresentative,
+  title={Unrepresentative big surveys significantly overestimated US vaccine uptake},
+  author={Bradley, Valerie C and Kuriwaki, Shiro and Isakov, Michael and Sejdinovic, Dino and Meng, Xiao-Li and Flaxman, Seth},
+  journal={Nature},
+  volume={600},
+  number={7890},
+  pages={695--700},
+  year={2021},
+  publisher={Nature Publishing Group}
+}
+
+@article{arias2020little,
+  title={A little garbage in, lots of garbage out: Assessing the impact of careless responding in personality survey data},
+  author={Arias, Victor B and Garrido, LE and Jenaro, C and Martinez-Molina, A and Arias, B},
+  journal={Behavior Research Methods},
+  pages={1--17},
+  year={2020},
+  publisher={Springer}
+}
+
+@article{chandler2020participant,
+  title={Participant carelessness and fraud: Consequences for clinical research and potential solutions.},
+  author={Chandler, Jesse and Sisso, Itay and Shapiro, Danielle},
+  journal={Journal of Abnormal Psychology},
+  volume={129},
+  number={1},
+  pages={49},
+  year={2020},
+  publisher={American Psychological Association}
+}
+
+@book{cohen2013statistical,
+  title={Statistical power analysis for the behavioral sciences},
+  author={Cohen, Jacob},
+  year={2013},
+  publisher={Routledge}
+}
+
+@article{meng2018statistical,
+  title={Statistical paradises and paradoxes in big data (I): Law of large populations, big data paradox, and the 2016 US presidential election.},
+  author={Meng, Xiao-Li},
+  journal={The Annals of Applied Statistics},
+  volume={12},
+  number={2},
+  pages={685--726},
+  year={2018},
+  publisher={JSTOR}
+}
+
+@MISC{prolific_ip_address,
+  title        = "Prolific {IDs}, data collection and security",
+  booktitle    = "Prolific",
+  howpublished = "\url{https://researcher-help.prolific.co/hc/en-gb/articles/360009377494-Prolific-IDs-data-collection-and-security}",
+  note         = "Accessed: 2022-11-9",
+  language     = "en"
+}
+
+@article{dennis2020online,
+  title={Online worker fraud and evolving threats to the integrity of MTurk data: A discussion of virtual private servers and the limitations of IP-based screening procedures},
+  author={Dennis, Sean A and Goodson, Brian M and Pearson, Christopher A},
+  journal={Behavioral Research in Accounting},
+  volume={32},
+  number={1},
+  pages={119--134},
+  year={2020},
+  publisher={American Accounting Association}
+}
+
+@MISC{prolific_ip_address_2,
+  title        = "How does Prolific prevent duplicate participant accounts?",
+  booktitle    = "Prolific",
+  howpublished = "\url{https://researcher-help.prolific.co/hc/en-gb/articles/360009092774-How-does-Prolific-prevent-duplicate-participant-accounts-}",
+  note         = "Accessed: 2022-11-9",
+  language     = "en"
+}
+
+@MISC{cloudresearch_ip_address,
+  title        = "Enhancing Data Quality",
+  howpublished = "\url{https://go.cloudresearch.com/en/knowledge/enhancing-data-quality}",
+  note         = "Accessed: 2022-11-9",
+  language     = "en"
+}
+
+@article{elwert2014endogenous,
+  title={Endogenous selection bias: The problem of conditioning on a collider variable},
+  author={Elwert, Felix and Winship, Christopher},
+  journal={Annual review of sociology},
+  volume={40},
+  pages={31--53},
+  year={2014},
+  publisher={Annual Reviews}
+}
+
+@article{wysocki2022statistical,
+  title={Statistical control requires causal justification},
+  author={Wysocki, Anna C and Lawson, Katherine M and Rhemtulla, Mijke},
+  journal={Advances in Methods and Practices in Psychological Science},
+  volume={5},
+  number={2},
+  pages={25152459221095823},
+  year={2022},
+  publisher={SAGE Publications Sage CA: Los Angeles, CA}
+}
+
+@article{desimone2018differential,
+  title={The differential impacts of two forms of insufficient effort responding},
+  author={DeSimone, Justin A and DeSimone, Alice J and Harms, PD and Wood, Dustin},
+  journal={Applied Psychology},
+  volume={67},
+  number={2},
+  pages={309--338},
+  year={2018},
+  publisher={Wiley Online Library}
+}
+
+@article{robinson2019tapped,
+  title={Tapped out or barely tapped? Recommendations for how to harness the vast and largely unused potential of the Mechanical Turk participant pool},
+  author={Robinson, Jonathan and Rosenzweig, Cheskie and Moss, Aaron J and Litman, Leib},
+  journal={PloS one},
+  volume={14},
+  number={12},
+  pages={e0226394},
+  year={2019},
+  publisher={Public Library of Science San Francisco, CA USA}
+}
+
+@ARTICLE{Kim2018-ev,
+  title    = "Detecting random responders with infrequency scales using an
+              error-balancing threshold",
+  author   = "Kim, Dale S and McCabe, Connor J and Yamasaki, Brianna L and
+              Louie, Kristine A and King, Kevin M",
+  journal  = "Behav. Res. Methods",
+  volume   =  50,
+  number   =  5,
+  pages    = "1960--1970",
+  month    =  oct,
+  year     =  2018,
+  keywords = "Careless responding; Data cleaning; Infrequency scales; Random
+              responding",
+  language = "en"
+}
+
+@article{curran2016methods,
+  title={Methods for the detection of carelessly invalid responses in survey data},
+  author={Curran, Paul G},
+  journal={Journal of Experimental Social Psychology},
+  volume={66},
+  pages={4--19},
+  year={2016},
+  publisher={Elsevier}
+}
+
+@article{murphy2013resting,
+  title={Resting-state fMRI confounds and cleanup},
+  author={Murphy, Kevin and Birn, Rasmus M and Bandettini, Peter A},
+  journal={Neuroimage},
+  volume={80},
+  pages={349--359},
+  year={2013},
+  publisher={Elsevier}
+}
+
+@article{fellner2016spurious,
+  title={Spurious correlations in simultaneous EEG-fMRI driven by in-scanner movement},
+  author={Fellner, Marie-Christin and Volberg, Gregor and Mullinger, Karen J and Goldhacker, Markus and Wimber, Maria and Greenlee, Mark W and Hanslmayr, Simon},
+  journal={Neuroimage},
+  volume={133},
+  pages={354--366},
+  year={2016},
+  publisher={Elsevier}
+}
+
+@article{sullivan2007spurious,
+  title={Spurious genetic associations},
+  author={Sullivan, Patrick F},
+  journal={Biological psychiatry},
+  volume={61},
+  number={10},
+  pages={1121--1126},
+  year={2007},
+  publisher={Elsevier}
+}
+
+@article{barends2019noncompliant,
+  title={Noncompliant responding: Comparing exclusion criteria in MTurk personality research to improve data quality},
+  author={Barends, Ard J and De Vries, Reinout E},
+  journal={Personality and individual differences},
+  volume={143},
+  pages={84--89},
+  year={2019},
+  publisher={Elsevier}
+}
+
+@article{chandler2019online,
+  title={Online panels in social science research: Expanding sampling methods beyond Mechanical Turk},
+  author={Chandler, Jesse and Rosenzweig, Cheskie and Moss, Aaron J and Robinson, Jonathan and Litman, Leib},
+  journal={Behavior research methods},
+  volume={51},
+  pages={2022--2038},
+  year={2019},
+  publisher={Springer}
+}
+
+@article{sulik2021delusion,
+  title={Delusion-like Beliefs and Data Quality: Are Classic Cognitive Biases Artefacts of Carelessness?},
+  author={Sulik, Justin and Ross, Robert M and Balzan, Ryan and McKay, Ryan},
+  year={2021},
+  publisher={PsyArXiv}
+}
+
+@article{hauser2016attentive, 
+  title={Attentive Turkers: MTurk participants perform better on online attention checks than do subject pool participants}, 
+  author={Hauser, David J and Schwarz, Norbert}, 
+  journal={Behavior research methods}, 
+  volume={48}, pages={400--407}, 
+  year={2016}, 
+  publisher={Springer} 
+}
+
+@MISC{Moss2018-vy,
+  title        = "After the Bot Scare: Understanding What's Been Happening With
+                  Data Collection on {MTurk} and How to Stop It",
+  booktitle    = "{CloudResearch}",
+  author       = "Moss, Aaron and Litman, Leib",
+  month        =  sep,
+  year         =  2018,
+  howpublished = "\url{https://www.cloudresearch.com/resources/blog/after-the-bot-scare-understanding-whats-been-happening-with-data-collection-on-mturk-and-how-to-stop-it/}",
+  note         = "Accessed: 2023-3-25"
+}
+
+@MISC{Charalambides2021-fd,
+  title        = "We recently went viral on {TikTok} - here's what we learned",
+  author       = "Charalambides, Nick",
+  month        =  aug,
+  year         =  2021,
+  howpublished = "\url{https://www.prolific.co/blog/we-recently-went-viral-on-tiktok-heres-what-we-learned}",
+  note         = "Accessed: 2023-3-25",
+  language     = "en"
+}
+
+@ARTICLE{Chandler2020-ja,
+  title    = "Participant carelessness and fraud: Consequences for clinical
+              research and potential solutions",
+  author   = "Chandler, Jesse and Sisso, Itay and Shapiro, Danielle",
+  journal  = "J. Abnorm. Psychol.",
+  volume   =  129,
+  number   =  1,
+  pages    = "49--55",
+  month    =  jan,
+  year     =  2020,
+  language = "en"
+}
+
+@ARTICLE{Barends2019-ud,
+  title     = "Noncompliant responding: Comparing exclusion criteria in {MTurk}
+               personality research to improve data quality",
+  author    = "Barends, Ard J and de Vries, Reinout E",
+  journal   = "Pers. Individ. Dif.",
+  publisher = "Elsevier",
+  volume    =  143,
+  pages     = "84--89",
+  month     =  jun,
+  year      =  2019
+}
+
+@article{eyal2021data,
+  title={Data quality of platforms and panels for online behavioral research},
+  author={Eyal, Peer and David, Rothschild and Andrew, Gordon and Zak, Evernden and Ekaterina, Damer},
+  journal={Behavior Research Methods},
+  pages={1--20},
+  year={2021},
+  publisher={Springer}
+}
+
+@article{decker2016creatures,
+  title={From creatures of habit to goal-directed learners: Tracking the developmental emergence of model-based reinforcement learning},
+  author={Decker, Johannes H and Otto, A Ross and Daw, Nathaniel D and Hartley, Catherine A},
+  journal={Psychological science},
+  volume={27},
+  number={6},
+  pages={848--858},
+  year={2016},
+  publisher={Sage Publications Sage CA: Los Angeles, CA}
+}
+
+@article{nussenbaum2020moving,
+  title={Moving developmental research online: comparing in-lab and web-based studies of model-based reinforcement learning},
+  author={Nussenbaum, Kate and Scheuplein, Maximilian and Phaneuf, Camille V and Evans, Michael D and Hartley, Catherine A},
+  journal={Collabra: Psychology},
+  volume={6},
+  number={1},
+  year={2020},
+  publisher={University of California Press}
+}
+
+@article{gelman2006difference,
+  title={The difference between “significant” and “not significant” is not itself statistically significant},
+  author={Gelman, Andrew and Stern, Hal},
+  journal={The American Statistician},
+  volume={60},
+  number={4},
+  pages={328--331},
+  year={2006},
+  publisher={Taylor \& Francis}
+}
+\end{filecontents}
+\addbibresource{letter.bib}
+
+% ----------------------------------%
+% Define author / abstract block
+% ----------------------------------%
 
 % specify some custom commands
 \renewcommand{\baselinestretch}{1.2}
@@ -64,20 +397,25 @@
 % turn date off
 \date{}
 
+% ----------------------------------%
+% Main text
+% ----------------------------------%
+
+\begin{document}
+
+\maketitle
+
 % Define paragraph formatting
 \setlength{\parindent}{0em}
 \setlength{\parskip}{1em}
-
-\begin{document}
-%TC:ignore
-
-\maketitle
 
 \section*{Formatting note}
 
 In the document below, reviewers' comments are indicated in bold typeface. Quoted text from the revised manuscript is presented in quotation blocks; within these excerpts, text that is new is indicated in italicized typeface. All updates to text in the revised manuscript are detailed below.
 
-\section*{Reviewer \#1}
+\section*{Round 1 Reviews}
+
+\subsection*{Reviewer \#1}
 
 \textbf{The authors presented an interesting paper in which they argued that spurious correlations may arise between task behavior and psychiatric symptoms if online studies do not conduct attention or effort level check. Specifically, the authors launched an online study themselves using two common subject pool platforms: Amazon mTurk and Prolific. They found that behavior-symptom correlations were completely abolished when inattentive subjects were removed. The authors also suggested that excluding subjects based on task behavior alone was not sufficient, and that larger sample size further inflated the problem. I find this study timely and important, as online studies are increasingly popular amongst behavioral researchers, particularly since the pandemic started. I also generally agree with the recommendation that online studies should include careful attention check. However, several major flaws in the rationale and design of this study and lack of novelty significantly diminished my enthusiasm.
 }
@@ -108,7 +446,7 @@ We thank the reviewer for this point. We wish to clarify two things. First, this
 
 Second, we note that this result reflects a more general point concerning statistical power. When an effect is truly non-zero, then an increase in sample size increases the power to detect that effect \cite{cohen2013statistical}. However, if a bias is present in the data (e.g. a non-zero correlation between behavioral and self-report measures, driven by the presence of C/IE responding), then increasing the sample size will also increase the probability of detecting it as a significant (spurious) effect \cite{meng2018statistical}. To the reviewer's point, this is moderated by the true magnitude of the effect; larger effects require fewer observations for reliable detection (and vice-versa). If, in another dataset, the bias is larger than what was observed here (i.e. a stronger coupling between C/IE responding in task and self-report), then a smaller proportion of C/IE-responding participants would be necessary to induce a detectable spurious correlation. In sum, we suggest that there is little reason to suspect our results are effect-size dependent except insofar as they reflect general statistical principles. 
 
-\section*{Reviewer \#2}
+\subsection*{Reviewer \#2}
 
 \textbf{This manuscript has multiple strengths. The writing is generally clear (though, I recommend keeping an eye on use of jargon and unnecessarily complex grammar. Writing could be more direct and I would encourage use of plain language). The figures are well done and informative. The study is technically well done. However, while the authors frame this research as significantly progressing the field, it is my view that the contribution is much narrower and I think this makes it a poor fit for Nature Human Behaviour.}
 
@@ -144,7 +482,7 @@ We also agree with the reviewer that there approaches to screening out participa
 
 We respectfully disagree with the reviewer's suggestion that our recommendations are narrowly applicable. With the growing use of online platforms for data collection, the use of self-report surveys alongside online behavioural tasks is becoming more frequent not only in computational psychiatry, but also in fields as broad as cognitive psychology, behavioral economics, business studies, and psycholinguistics. The recommendations that we make in this manuscript complement those of Chandler and colleagues, but apply broadly to all of the fields above. Indeed, the breadth of the potential consequences of careless responding was our primary motivation for submitting this manuscript to a generalist journal such as \textit{Nature Human Behavior}.
 
-\section*{Reviewer \#3}
+\subsection*{Reviewer \#3}
 
 \textbf{This paper addresses an important question for studies that use online testing to assess associations between cognitive processing and symptom questionnaire data, an approach that has increased dramatically (not least due to the COVID-19 pandemic) as online participant pools have been established.}
 
@@ -324,6 +662,113 @@ We thank the reviewer for this helpful suggestion. We have added subheadings to 
 
 We thank the reviewer for this insightful point. We agree with the reviewer that, in principle, extreme values in either direction on this metric could indicate inattentive behavior. As such, one might wonder if we should have used a bidirectional coding of this variable; that is, recode the variable such that values of 0.33 and 1.00 in the native scale have the same resulting value. In practice, however, we found that such an approach actually \textit{reduces} the correlation between choice variability and the other screening measures (unidirectional: $\rho_\mu$ = 0.042; bidirectional: $\rho_\mu$ = 0.027), especially for the other task-based screening measures (unidirectional: $\rho_\mu$ = 0.097; bidirectional: $\rho_\mu$ = 0.045). This is likely because the vast majority of participants do not exhibit large choice perseveration (mean variability = 0.437, IQR = 0.381 -- 0.467). As such, we elected not to include this suggested analysis in the revised manuscript, so as not to bias the correspondence analyses in support of our arguments (that is, to avoid artificially reducing the correlation between task and self-report screening measures). 
 
+\section*{Round 2 Reviews}
+
+\subsection*{Reviewer \#1}
+
+\textbf{I thank the authors for making the effort to provide new data and revise the manuscript per previous comments. In general, the authors did a great job with the new data they have. However, there are still major remaining issues that they did not address in this version of the manuscript.}
+
+\textbf{1. My main concern about the novelty and significance of this work still remains (which is echoed by reviewer 2). The take-home message of the study --- which was essentially that high quality data must be obtained to generate reliable results --- was evident prior to the actual conduction of the study. In fact, many experimental areas, such as experimental psychology, neuroscience, and biomedical sciences have already proven that. For instance, in neuroimaging, spurious correlations come up due to motion \cite{murphy2013resting, fellner2016spurious}; similar issues have been raised in genetics \cite{sullivan2007spurious}. In the context of behavioral research, these attention checks are typically called ``catch trials'' or ``sanity check''. The practice of using these procedures to filter out noisy data has been going on for decades. Even in the context of using online subjects, there is now a very rich literature on this very same point (e.g., \cite{barends2019noncompliant, chandler2019online} and many more).}
+
+We appreciate the reviewer's ongoing concerns about the novelty of our work, but we respectfully disagree. We agree with the reviewer that our ``take-home message'' (i.e., that poor data quality controls can lead to spurious inferences) has been discussed, in the most general sense, elsewhere in science. Nevertheless, this has not precluded previous studies that explicated particular methodological biases from having major impact on research within a field (e.g., \cite{eklund2016cluster, bradley2021unrepresentative}). Moreover, we argue that a general understanding of the need for high-quality data is not sufficient to obviate our findings. By very virtue of its specificity, our manuscript is able to offer concrete recommendations for researchers studying individual differences in cognitive processes. Indeed, since the publication of our initial manuscript on PsyArxiv, many researchers in computational psychiatry have changed their experiment designs to include infrequency items as we suggest (with the preprint already cited 29 times). If the insights and results we present were obvious from the extant literature, then our paper should not have made such a difference in the practices in the field.
+
+\textbf{2. In the revised paper, the authors added data demonstrating that patients with MDD show comparable attention failure rate as HCs. However, one of the key points in my previous comment is that patients with known attention deficits, such as ADHD (and SCZ or addiction), are likely to show heightened failure rate. The conclusion of the paper should be limited to the conditions they've tested (e.g., depression).}
+
+We thank the reviewer for this point. We first wish to note that, in the previous round of reviews, the reviewer did not explicitly mention attention deficits in patients with ADHD, schizophrenia, and/or substance use issues; instead, they wrote:
+
+\begin{displayquote}
+    In fact, there is a very rich literature demonstrating that many psychiatric disorders and symptoms are strongly accompanied by deficits in attention as well as lack of effort. For example, attention deficits have been well established in depression (e.g. Paelecke-Habermann et al, 2005 JAD) and anxiety (Bishop, 2009 Nat Neurosci), the two main types of mental health symptoms measured in this study. Deficits in effort-based behaviors have also been recently documented in these disorders (see Treadway et al, 2012; Bishop and Gagne, 2018).
+\end{displayquote}
+
+To address the reviewer's concerns, we therefore investigated the sensitivity of attention checks in patients diagnosed with major depressive disorder. While we agree that additional studies are necessary to validate attention checks in other patient populations, we respectfully disagree that we neglected to address the reviewer's stated concerns.
+
+Second, we would like to reiterate our concerns with this line of reasoning. If psychiatric participants were in general more likely to fail attention checks in self-report instruments, this would mean their self-reports on such instruments are also unreliable, undermining a very large body of research in which these instruments are considered a standard tool for psychiatric symptom measurement \cite{Demetriou2015-bq}. If it were truly the case that symptomatic participants were more likely to fail attention checks (i.e., because they are experiencing severe symptoms affecting their motivation or attention that render them unable to veridically complete a survey), then there would be little-to-no reason to use self-report symptom measures at all for these clinical populations. Of course, it may be the case that there are some acute psychiatric states for which patients are unable to complete self-report surveys accurately (e.g., mania, psychosis). Barring these, we suggest that our results are in line with the common usage of self-report surveys in psychiatric research. We mention this concern in the manuscript, in the Discussion:
+
+\begin{displayquote}
+Experimenters should also carefully consider whether an online study is truly appropriate for the research question. In particular, if the project aims to study syndromes associated with considerable difficulty in task or survey engagement (e.g., severe ADHD, acute mania), symptomatic participants are likely to produce responses that cannot be distinguished from C/IE responding. In such a case, correlational research in online samples is likely not the best approach for the research question.
+\end{displayquote}
+
+Regardless, we have also tempered our language describing the results of the clinical study in the Discussion. The text now reads:
+
+\begin{displayquote}
+    Though our final sample was small, we did not find evidence that \textit{depressed} patients were more likely to fail attention checks than healthy controls (if anything, non-psychiatric participants were more likely to be flagged by C/IE screening). These results provide preliminary evidence that rigorous C/IE screening is unlikely to result in overcontrol bias. \textit{However, further research with larger samples is necessary to validate attention checks in depressed and other patient populations.} 
+\end{displayquote}
+
+\textbf{3. The authors also added a second task (two-step) to prove the point that their findings are generalizable across tasks. I applaud the authors for being able to replicate the findings with another task. But again, the two-step task is also an RL task as the original task (albeit more complex) and the study still falls short in terms of proving the findings are generalizable across experimental contexts.}
+
+We thank the reviewer for this point. We chose these tasks in particular due to their prevalence in computational psychiatry research, which makes heavy use of RL tasks. We agree that further study is required to better understand the scope of these issues. It is worth noting, however, that that similar results were reported (after the publication of our preprint) by an independent group using non-RL tasks and an alternative set of symptom measures \cite{sulik2021delusion}. Though more research is required, this suggests that our findings are likely generalizable beyond the context of RL tasks. 
+
+\textbf{4. The overall attention failure is quite high for this study – in fact higher than many published studies \cite{hauser2016attentive}. This might imply a potential hidden factor which is boredom (if the main tasks are not perceived as interesting), that plays a role (even more important role) in this particular experimental context.}
+
+We thank the reviewer for this point. We wish to clarify three things. First, the quality of data collected from online labor platforms is always in flux (e.g., \cite{Moss2018-vy, Charalambides2021-fd}). That is, attention check failure rates on one platform at a single (distant) point in time (e.g., data collected on MTurk in 2013--2014; \cite{hauser2016attentive}) may not be an appropriate benchmark for data quality. Second, we do not believe our observed failure rates (i.e., 22\% and 14\% of participants failing one or more infrequency items in the original and replication studies) is abnormally high. Chandler et al. (2020) find evidence for C/IE responding in 18\% of MTurk participants \cite{Chandler2020-ja}. Similarly, Barends \& de Vries (2019) find evidence of C/IE responding in 12-17\% of MTurk participants \cite{Barends2019-ud}. In recent data quality research published by Prolific, attention check failure rates on Prolific and MTurk (using CloudResearch) was 31\% and 53\%, respectively \cite{eyal2021data}. Finally, our behavioral tasks were ``gamified'' and incorporated design elements previously used to sustain engagement in children \cite{decker2016creatures, nussenbaum2020moving}. Of course, participants may still have found our tasks boring, but arguably then C/IE responding would be worse for the majority of online studies that do not utilize task ``gamification''. 
+
+\subsection*{Reviewer \#2}
+
+\textbf{I appreciate the authors' consideration and responses to my suggestions. I maintain that this is a technically well-executed and -written manuscript and am satisfied with their responses to my more minor points. However, my main concern with this paper was and remains that I find it to be too narrow in scope for Nature Human Behavior. The authors did not indicate that they made any substantive changes to the manuscript to address this point and while they make arguments for the paper's novelty, I ultimately continue to feel that this paper contributes an incremental step.}
+
+We thank the reviewer for taking the time to consider our revisions and for praising the technical execution of our work. We appreciate the reviewer's concerns about the scope of our work. To try to at least partially address this, we have noted in the Discussion that our results and conclusions are not applicable only to computational psychiatry research, but to any online individual-differences cognitive science research:
+
+\begin{displayquote}
+    We conclude with a list of concrete recommendations for future online studies involving correlations between task behavior and self-report instruments. \textit{We note that these recommendations are not limited to computational psychiatry studies, but are applicable to any online individual-differences cognitive science research involving similar methods (e.g., behavioral economics, psycholinguistics).}
+\end{displayquote}
+
+\subsection*{Reviewer \#3}
+
+\textbf{The authors have done a great job of responding to the reviewers' comments, and in particular the addition of the second online experiment provides convincing evidence that the attenuation of spurious associations is not driven by over-correction, which was my main concern. Unfortunately, in this second study the pattern of results with the artistic interest scale was difficult to interpret due to the negative skew on this measure, but the results relating to the greed avoidance scale, which is positively skewed like the symptom measures in the initial study, are very clear. I thank the authors for their work in conducting this additional study, which has greatly strengthened the paper.}
+
+\textbf{There are two remaining substantial suggestions:}
+
+\textbf{1. It seems a shame to relegate the results of the replication study to the Appendix, where some readers may never see them. At the very least Figures S7, S8 and especially S9, and Table S11, and possibly some of the supplementary text describing the results, could be promoted to the main manuscript to allow readers to compare between the two online studies more easily.}
+
+We thank the reviewer for this suggestion. While we sympathize with the concerns, our preference is to retain the material in Appendix B, as is, for two reasons. First, the main text is already quite long (over 7,000 words, not including the Methods or Figure/Table captions) and we worry about depleting our readers' attentions before they reach the Discussion (i.e., where our recommendations are). Second, most of the figures and tables from the replication study (e.g., Figures S7, S9; Table S11) require detailed explanation to be meaningfully interpreted. Promoting these to the main text would therefore necessitate adding much of the methods section from Appendix B alongside them, which we worry would counter-productively lengthen and clutter the main text. However, we would be willing to make this change if the editorial staff agree that having the material in the main text is essential, and allow us to extend the overall length of the article.
+
+\textbf{2. There are several discrepancies between the results of the two online studies, to the extent that these merit a specific paragraph in the Discussion section of the main paper. The main issues to cover are: i) The distributions were quite different for some variables in the initial and replication studies (in the second study there was much lower skew for GAD; and C/IE responders did not score significantly higher on anxiety or depression – which is a point that the authors should discuss, as part of the argument for how the spurious correlations arise is through an overall shift towards higher responding on common self-report mental health scales). It's not clear what the explanation is for this, perhaps the authors could speculate. ii) In the second study, exclusion based on WSLS behaviour alone was effective at attenuating spurious correlations (which does somewhat contradict one of the authors' key take-home messages in the original submission!). Perhaps this is due to the more difficult task, which would provide more sensitivity for exclusions based on behaviour alone? What do the authors think? iii) The lower rate of C/IE responding in the second study (which the authors ascribe to new data quality filters on the platforms).}
+
+We thank the reviewer for this important point. To start, we wish to clarify one misunderstanding. In the replication study, we employed a 7-item measure of general anxiety from the HiTOP group; this is different from the GAD-7, which we used in the original study. This alternative anxiety scale was expected to yield an approximately symmetric total score distribution, and thus was hypothesized \emph{not} to show differences in scores between attentive and C/IE responding participants. We note this in the methods section in Appendix B:  
+
+\begin{displayquote}
+    Participants also completed an alternative 7-item measure of general anxiety symptoms over the last year (e.g., ``I was overwhelmed by anxiety.''; [13]). This scale is expected to elicit moderate rates of symptom endorsement, thereby resulting in a symmetric score distribution. We therefore expected the depression and mania measures to be at greater risk for spurious correlations with behavior on the two-step task than the anxiety measure.
+\end{displayquote}
+
+As such, we do not believe it additionally noteworthy that the anxiety scores were less skewed than in the original study, or that participants flagged for C/IE responding did not score significantly higher on the anxiety scale. That scores on the depression scale (7-down) in the replication study were not more inflated in C/IE relative to attentive participants is perplexing, though this may simply reflect the overall smaller number of participants flagged for C/IE responding in the replication study.
+
+We have attempted to address the other discrepancies in the Discussion:
+
+\begin{displayquote}
+    This study highlights the need for more research on the prevalence of C/IE responding in online samples and its interactions with task-symptom correlations. Many open questions remain, including under what conditions task- and symptom-screening measures might better correspond, what screening measures are most effective and when, and under what conditions spurious correlations are more likely to arise. \textit{For example, we found that screening on task behavior alone was insufficient to prevent putatively spurious correlations for one task (reversal learning) but was sufficient for another task (the two-step task). This discrepancy may reflect differences in the tasks (e.g., the two-step task may be more challenging and thus more sensitive to C/IE responding) or differences in the screening measures (e.g., choice accuracy across 90 trials may be a noisier measure than win-stay lose-shift choice behavior across 200 trials).} 
+
+    One especially pressing question is how sample size affects the likelihood of obtaining spurious correlations. The results of a bootstrapping analysis in our data suggest that false positive rates are likely to increase with sample size. As computational psychiatry studies move towards larger samples to characterize heterogeneity in symptoms (and to increase statistical power), it will be important to understand how sample size may exaggerate the effects of systematic error. \textit{It will also be important to understand how this is moderated by overall C/IE responding rates, which we observed to vary across platforms and time, and which will presumably continue to evolve with changing labor platform and researcher screening practices.}
+\end{displayquote}
+
+\textbf{A few final minor suggestions:}
+
+\textbf{3. In the replication study it's notable that one of the associations with depression that was attenuated when using exclusions based on C/IE only seems to return when using both types of exclusions, and was also evident using the WSLS only exclusion – this is the association between depression and sensitivity to reward on the preceding trial (Figure S9). This seems to be quite a plausible association, and it's not clear whether the authors are claiming that it is spurious or not. This should be clarified, as if the authors don't believe it's spurious (and personally I think it's real), presumably this would be a downside to excluding based on C/IE alone, as it's an example of a real association that is actually obscured by their recommended exclusion procedure. Reviewing Figure 4, a similar pattern is actually evident in the initial study, between anxiety and positive learning rate – again, this only becomes non-significant when excluding using C/IE. Are the authors claiming this is spurious, even though it is significant when using both types of exclusion?}
+
+We thank the reviewer for this interesting point, though we wish to clarify the correlation in question (i.e., between depression and sensitivity to reward). Before exclusions are applied, the correlation is $\rho = -0.104$, $p = 0.019$. Under the three exclusion strategies, the correlation is slightly attenuated (WSLS-only: $\rho = -0.097$, $p = 0.044$; infrequency-only: $\rho = -0.091$, $p = 0.058$; both: $\rho = -0.097$, $p = 0.049$). As is apparent, the effect is on the border of significance under all three exclusion strategies and just happens to be, likely by chance, non-significant in one case. We do not believe this is a meaningful difference; that is, in this instance, the difference between ``significant'' and ``not significant'' is not itself statistically significant \cite{gelman2006difference}. As such, this situation does not present a clear downside to excluding based on C/IE responding on surveys alone. (We believe a similar explanation underlies the pattern of correlations between anxiety and positive learning rate in the original study.) We have added new supplementary tables (S14--S17) to facilitate understanding of this point. 
+
+\textbf{4. The authors should temper their conclusions in relation to the study conducted in depressed participants (Discussion, bottom of p17). While this is a useful addition to the manuscript, the finding of a null result in such a small sample is quite ambiguous, and indeed the Bayes factors in favour of the null are hardly convincing. Additionally, the context of online vs clinical recruitment is obviously very different, and patients referred from a clinic may well be more personally invested in the research and thus potentially more attentive for this reason.}
+
+We thank the reviewer for this point (see also Reviewer \#1, point \#2). We have tempered our language describing the results of the clinical study in the Discussion. The text now reads:
+
+\begin{displayquote}
+    Though our final sample was small, we did not find evidence that \textit{depressed} patients were more likely to fail attention checks than healthy controls (if anything, non-psychiatric participants were more likely to be flagged by C/IE screening). These results provide preliminary evidence that rigorous C/IE screening is unlikely to result in overcontrol bias. \textit{However, further research with larger samples is necessary to validate attention checks in depressed and other patient populations.} 
+\end{displayquote}
+
+Regarding the reviwer's last point, we wish to clarify that not all of the patients were recruited via clinician referral; many patients who agreed to participate were recruited via online ads (a process similar to how participants are recruited online from MTurk or Prolific). In any case, we agree that patient populations may be more invested in studies that investigate the conditions they are struggling with. This further suggests that our proposed methods of screening inattentive or careless participants is not likely to present an over-control bias and systematically exclude patients. We note this in the Discussion of Appendix C:
+
+\begin{displayquote}
+    Indeed, whereas healthy controls may be primarily motivated to participate for monetary purposes, patients may be motivated to participate to further scientific research that may ultimately benefit them (or others suffering from the same conditions). That is, patients may have more ``stakes in the game,'' and may therefore be more motivated to provide higher-quality responses.
+\end{displayquote}
+
+\textbf{5. p58 of the supplement states ``However, an unexpected and statistically significant mean-shift'' – since this measure (greed avoidance) is somewhat skewed, why would the mean shift be unexpected? Surely the more surprising finding here is that the attentive and C/IE groups don't differ on depression score, which is clearly skewed.}
+
+We thank the reviewer for the question. To clarify, the mean-shift is unexpected because previous research involving large samples observed that the total score distribution for the greed avoidance scale was relatively symmetric. As such, we \textit{a priori} expected minimal difference in these scores between attentive and C/IE responding participants, as we note in the methods:
+
+\begin{displayquote}
+    Finally, participants completed a 6-item measure of greed avoidance, which measures attitudes towards wealth and status (e.g., ``I am out for my own personal gain''; [14]). Based on previous studies, this scale is expected to elicit moderate rates of endorsement, thereby resulting in a symmetric score distribution. We therefore expected the artistic interests scale to be at greater risk for spurious correlations with behavior on the two-step task than the greed avoidance scale.     
+\end{displayquote}
+
+\clearpage
 \printbibliography
 
 \end{document}
