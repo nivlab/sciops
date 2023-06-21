@@ -7,7 +7,7 @@
 Spurious Correlations in Online Psychiatry Studies
 ==================================================
 
-Code and data for Zorowitz, Solis, Niv, & Bennett (2023). *Inattentive responding can induce spurious associations between task behavior and symptom measures*. Nature Human Behaviour. [https://doi.org/10.1038/s41562-023-01640-7](https://doi.org/10.1038/s41562-023-01640-7)
+Code and data for Zorowitz, Solis, Niv, & Bennett (2023). *Inattentive responding can induce spurious associations between task behavior and symptom measures*. Nature Human Behaviour. `https://doi.org/10.1038/s41562-023-01640-7 <https://doi.org/10.1038/s41562-023-01640-7>`_
 
 Project Organization
 ^^^^^^^^^^^^^^^^^^^^
