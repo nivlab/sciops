@@ -362,27 +362,8 @@
 % Define author / abstract block
 % ----------------------------------%
 
-% specify some custom commands
-\renewcommand{\baselinestretch}{1.2}
-\renewcommand*{\Authsep}{, }
-\renewcommand*{\Authand}{, }
-\renewcommand*{\Authands}{, }
-\renewcommand*{\Affilfont}{\normalsize}
-
-% set up the author block
-\setlength{\affilsep}{2em}   % set the space between author and affiliation
-\author[1,*]{Samuel Zorowitz}
-\author[2]{Johanne Solis}
-\author[1,3]{Yael Niv}
-\author[4]{Daniel Bennett}
-\affil[1]{Princeton Neuroscience Institute, Princeton University, NJ, USA}
-\affil[2]{Rutgers-Princeton Center for Computational Cognitive Neuropsychiatry, Rutgers University, NJ, USA}
-\affil[3]{Department of Psychology, Princeton University, NJ, USA}
-\affil[4]{School of Psychological Sciences, Monash University, Victoria, Australia}
-\affil[*]{Corresponding author (zorowitz@princeton.edu)}
-
 % specify the title
-\title{Supplementary materials for ``Inattentive responding can induce spurious associations between task behavior and symptom measures''}
+\title{}
 
 % turn date off
 \date{}
@@ -391,21 +372,29 @@
 % Main text
 % ----------------------------------%
 
+% Define title of Table of Contents
+\addto\captionsenglish{\renewcommand{\contentsname}{Table of Contents}}
+
 \begin{document}
 
-\maketitle
+% \maketitle
+
+% Change ToC link color
+{\hypersetup{linkcolor=black, linkbordercolor=black} \tableofcontents}
 
 % Define paragraph formatting
 \setlength{\parindent}{0em}
 \setlength{\parskip}{1em}
 
 \clearpage
-\section*{Appendix A}
+\addcontentsline{toc}{section}{Supplementary Materials A - Original Study}
+\section*{Supplementary Materials A}
 \setcounter{figure}{0}
 \setcounter{table}{0}
-\renewcommand{\thetable}{S\arabic{table}}
-\renewcommand{\thefigure}{S\arabic{figure}}
+\renewcommand{\figurename}{Supplementary Figure}
+\renewcommand{\tablename}{Supplementary Table}
 
+\addcontentsline{toc}{subsection}{Supplementary Figures}
 \subsection*{Signed correlation analysis}
 
 \begin{figure}[H]
@@ -443,7 +432,6 @@
 \end{figure}
 
 \clearpage
-
 \subsection*{Posterior predictive checks}
 \begin{figure}[H]
     \includegraphics[width=16cm]{../figures/supp_05.png}
@@ -453,6 +441,7 @@
 \end{figure}
 
 \clearpage
+\addcontentsline{toc}{subsection}{Supplementary Tables}
 \subsection*{Participant demographics}
 \begin{table}[!h]
     \centering
@@ -705,7 +694,8 @@ The following are the unthresholded results of the correlation analyses between 
 \end{table}
 
 \clearpage
-\subsection*{Task Instructions}
+\addcontentsline{toc}{subsection}{Reversal learning task instructions}
+\subsection*{Reversal learning task Instructions}
 
 The following are the instructions given to participants for the probabilistic reversal learning task. As a reminder, the task was given a fishing-themed cover story. Each paragraph below denotes one screen of instructions.
 
@@ -737,6 +727,7 @@ Following the instructions, participants completed a brief comprehension check w
 
 Participants were required to answer all of the items correctly before they could proceed to the task. If they failed to do so, they restarted the instructions. There was no upper limit as to how many times a participant could loop through the instructions (the large majority of participants passed the comprehension check on their first try).
 
+\addcontentsline{toc}{subsection}{Model-based analyses of C/IE behavior}
 \subsection*{C/IE responding manifests as a distinct behavioral strategy}
 
 In an exploratory analysis, we employed a theory-agnostic modeling approach to investigate how C/IE participants on the probabilistic reversal-learning task compared to attentive participants. The motivation for this analysis was to better understand why C/IE responding was inconsistently predicted by chance-level performance, and also correlated with asymmetric learning rates.  
@@ -773,7 +764,8 @@ This pattern of results also helps explain the pre-screening correlations with a
 In sum, the theory-agnostic analysis of task behavior revealed that C/IE participants exhibited a qualitatively distinct behavioral strategy on the probabilistic reversal-learning task. C/IE participants showed less adaptive choice hysteresis. Moreover, they were numerically (but not significantly) less sensitive to outcomes. The latter finding helps clarify in part why we observed low correspondence between task and self-report screening measures (that is, C/IE participants were not significantly more likely to respond randomly during the task). These results also present another hidden danger of C/IE responding: qualitatively distinct patterns of behavior under C/IE responding can bias the estimation of parameters of theoretical interest if not properly accounted for. 
 
 \break
-\section*{Appendix B: Replication study}
+\addcontentsline{toc}{section}{Supplementary Materials B - Replication Study}
+\section*{Supplementary Materials B: Replication study}
 
 \subsection*{Background \& motivation}
 
@@ -783,8 +775,10 @@ Second, we wanted to examine the generalizability of our findings to other behav
 
 Finally, we wanted to examine the generalizability of our findings to other self-report measures. In the original study, we found that self-report symptom measures with low rates of endorsement were more likely to yield spurious correlations with behavior in the presence of C/IE responding, as C/IE participants were more likely to endorse symptoms, as well as to perform poorly on the task. In principle, this effect should not be limited to symptom measures, and should extend to any self-report measure with an expected skewed or asymmetric score distribution. Therefore, in the current replication study, we used two sets of self-report scales: one set of psychiatric symptom measures and one set of personality measures. As before, each set includes scales whose score distributions are expected to be symmetric as well as scales with asymmetric (skewed) score distributions. Crucially, the two personality scales we chose, artistic interests and greed avoidance, measure constructs that should have no meaningful relationship with model-based choice behavior on the two-step task. Therefore, the personality measures serve as a stronger test of our hypothesis that spurious correlations between self-report and behavioral measures are more likely for skewed score distributions. 
 
+\addcontentsline{toc}{subsection}{Methods}
 \subsection*{Methods}
 
+\addcontentsline{toc}{subsubsection}{Participants}
 \subsubsection*{Participants}
 
 400 total participants were recruited to participate in an online behavioral experiment in February, 2022. Specifically, 200 participants were recruited from Amazon Mechanical Turk (MTurk) and 200 participants were recruited from Prolific. The study was approved by the Institutional Review Board of Princeton University (\#11968), and all participants provided informed consent. Total study duration was approximately 20 minutes. Participants received monetary compensation for their time (rate USD \$12/hr), plus an incentive-compatible bonus up to \$1.00 based on task performance. 
@@ -837,6 +831,7 @@ Data from N=7 participants who completed the experiment were excluded prior to a
     \label{tab:S10}
 \end{table}
 
+\addcontentsline{toc}{subsubsection}{Experiment}
 \subsubsection*{Experiment}
 
 Participants completed a gamified version of the two-step task \cite{daw2011model} designed to dissociate ``model-free'' and ``model-based'' decision-making. On every trial of the task, participants' goal is to collect as much ``space treasure'' as possible by traveling to one of two different planets and ``trading'' with one of two aliens who live on that planet. Participants first chose between two different-colored rocket ships (first-stage choice). Each rocket ship had a 70\% chance of traveling to one particular planet (e.g., the green rocket ship to the blue planet and the purple rocket ship to the red planet; common transitions) and a 30\% chance of traveling to the other planet (uncommon transition). The rocket ship and planet colors were randomized across participants, as were the mappings between rocket ships and planets. On each planet, participants chose which of two aliens to ``trade'' with (second-stage choice). If chosen, an alien would give the participant ``treasure'' with some slowly-changing probability, otherwise it would give ``junk''. The reward probabilities for each alien and trial were generated according to independent Gaussian random walks. Participants completed 201 trials of the task, with an optional break after the first half. 
@@ -845,12 +840,14 @@ Prior to the beginning of the experiment, participants had to read a set of inst
 
 The task was programmed in jsPsych \cite{deleeuw_2015_jspsych-2} and distributed using custom web-application software. The experiment code is available at \url{https://github.com/nivlab/sciops}, and the web-software is available at \url{https://github.com/nivlab/nivturk}. A playable demo of the task is available at \url{https://nivlab.github.io/jspsych-demos/tasks/two-step/experiment.html}.
 
+\addcontentsline{toc}{subsubsection}{Self-report measures}
 \subsubsection*{Self-report measures}
 
 Prior to the start of the two-step task, participants completed four self-report measures in a randomized order. One was the 14-item seven-up/seven-down scale (7u/7d; \cite{youngstrom_2013_susd-2}), which measures lifetime incidence of depressive and (hypo)mania symptoms. This scale is expected to elicit lower rates of symptom endorsement, thereby resulting in asymmetric (right-skewed) score distributions. Participants also completed an alternative 7-item measure of general anxiety symptoms over the last year (e.g., ``I was overwhelmed by anxiety.''; \cite{watson2022development}). This scale is expected to elicit moderate rates of symptom endorsement, thereby resulting in a symmetric score distribution. We therefore expected the depression and mania measures to be at greater risk for spurious correlations with behavior on the two-step task than the anxiety measure. 
 
 In addition, participants completed a 6-item measure of artistic interests (e.g., ``I believe in the importance of art''; \cite{ashton2007empirical}). Based on previous studies, this scale is expected to elicit high rates of endorsement, thereby resulting in an asymmetric score distribution. Finally, participants completed a 6-item measure of greed avoidance, which measures attitudes towards wealth and status (e.g., ``I am out for my own personal gain''; \cite{ashton2007empirical}). Based on previous studies, this scale is expected to elicit moderate rates of endorsement, thereby resulting in a symmetric score distribution. We therefore expected the artistic interests scale to be at greater risk for spurious correlations with behavior on the two-step task than the greed avoidance scale. 
 
+\addcontentsline{toc}{subsubsection}{Screening measures correspondence analysis}
 \subsubsection*{Correspondence of screening measures}
 
 As in the original study, we measured the correspondence of screening measures based on the task and self-report behavior. We calculated a number of standard measures of data quality from each participant's task behavior (four in total) and self-report responses (five in total). The self-report screening measures were identical to those used in the original study, except that we used (mostly) new infrequency items. We describe each of the new screening measures below.
@@ -876,14 +873,17 @@ Prior to conducting the study, the infrequency items were piloted on an independ
 
 \subparagraph{Correspondence Analysis.} We measured the correspondence of the above screening measures via two complementary approaches. First, we computed pairwise correlations on the unthresholded (continuous) measures using Spearman's rank correlation. Second, we estimated the pairwise rate of agreement on the binarized measures using the Dice similarity coefficient (looking at the top 10\% most suspicious respondents for each measure). The former approach estimates two measures' monotonic association, whereas the latter approach estimates their agreement as to which participants were most likely engaging in C/IE responding. For significance testing, we used permutation testing wherein a null distribution of similarity scores (Spearman's correlations or Dice coefficients) was generated for each pair of screening measures by iteratively permuting participants' identities within measures and re-estimating the similarity. P-values were computed by comparing the observed score to its respective null distribution. We corrected for multiple comparisons using family-wise error rates \cite{winkler2014permutation-2}.
 
+\addcontentsline{toc}{subsubsection}{Correlation analyses}
 \subsubsection*{Correlations between behavior and symptom measures}
 
 To quantify the effects of both task and self-report data screening on behavior-symptom correlations, we estimated the pairwise correlations between the scale scores of each self-report measure and several measures of model-agnostic performance on the two-step task \cite{gillan2016characterizing}. Logistic regression analyses were conducted with the \textit{statsmodels} package \cite{seabold2010statsmodels} in the python programming language. The model tested if participants' first-stage choice behavior (coded as Stay = 1, Switch = 0) was influenced by the previous trial's reward (coded as Rewarded = 1, Unrewarded = 0), previous trial's transition (coded as Common = 1, Uncommon = 0), and their interaction. Importantly, the interaction term between previous reward and transition is a proxy for the contribution of model-based learning to choice behavior \cite{gillan2016characterizing}.
 
 Correlations between the behavioral measures (i.e., logistic regression coefficients) and self-report measures were calculated using Spearman's rank correlation, after various forms of screening and exclusion. Significance testing was performed using the percentile bootstrap method \cite{wilcox2018guide-2} so as to avoid making any parametric assumptions. These correlation analyses were not corrected for multiple comparisons, since our overarching purpose was to demonstrate the extent of this issue across multiple behavioral measures and self-report symptoms. Any one of these correlations considered individually can be thought of as emulating a conventional analysis where fewer statistical tests would be performed.
 
+\addcontentsline{toc}{subsection}{Results}
 \subsection*{Results}
 
+\addcontentsline{toc}{subsubsection}{Proportion and characterization of C/IE participants}
 \subsubsection*{Careless participants (often) appear symptomatic when the overall level of symptom endorsement is low}
 
 To begin our analysis of the replication dataset, we examined the number of participants flagged by the WSLS and infrequency item screening measures. Only 31 participants (8\%) were flagged as exhibiting choice behavior at or below statistically chance levels in the two-step task. In contrast, 55 participants (14\%) endorsed a logically invalid or improbable response on one or more of the infrequency items when completing the self-report measures. The proportion of participants flagged for C/IE responding was significantly greater on Mechanical Turk compared to Prolific for both task (MTurk: N=23/193; Prolific: N=8/200; two-tailed, two-sample proportions test: $z(391)=2.911$, $p=0.004$, $h=0.305$, 95\% CI = [0.026, 0.132]) and survey data (MTurk: 34/193; Prolific: 21/200; two-tailed, two-sample proportions test: $z(391)= 2.033$, $p=0.042$, $h=0.206$, 95\% CI = [0.003, 0.140]). Across the four infrequency items, the average failure rate was 5.3\% (range: 2.5\% -- 8.9\%). In contrast, no participant failed the instructed item. This discrepancy in the proportion of participants flagged by each type of attention check is consistent with previous research, which found that instructed items are insensitive measures of C/IE responding \cite{barends2019noncompliant-2, thomas2017validity-2, hauser2016attentive-2}.   
@@ -917,6 +917,7 @@ For the personality measures, however, an interesting pattern emerged (Figure \r
     \label{tab:S11}
 \end{table}
 
+\addcontentsline{toc}{subsubsection}{Screening measures correspondence analysis}
 \subsubsection*{Low correspondence between task and self-report measures of C/IE responding}
 
 Next, we evaluated the degree of correspondence between behavioral and self-report screening measures to determine whether screening on behavior alone was sufficient to identify and remove careless participants. To measure the degree of correspondence between these behavioral and self-report screening measures, we performed two complementary analyses. First, we computed pairwise correlations on the unthresholded (continuous) measures using Spearman's rank correlation (Figure \ref{fig:S08}, left panel). After correcting for multiple comparisons, there were a handful of significant correlations between the behavioral and self-report screening measures. Abnormal response times emerged as the metric most correlated with the self-report screening measure. Crucially, as in the original study, the sizes of these observed correlations were roughly half those observed for the correlations between the self-report measures. 
@@ -932,6 +933,7 @@ Second, we used the Dice similarity coefficient to quantify agreement between di
 
 Taken together, these findings corroborate the results of the original study: measures of C/IE responding in task and self-report data do not identify the same set of participants. This means that solely excluding participants on the basis of poor behavioral performance---the most common approach in online studies---is unlikely to identify participants who engage in C/IE responding on self-report surveys. 
 
+\addcontentsline{toc}{subsubsection}{Correlation analyses}
 \subsubsection*{Spurious symptom-behavior correlations produced by C/IE responding}
 
 To understand the effects of applying different forms of screening, we estimated the correlations between each unique pairing of a self-report measure and measure of behavior under four different conditions: no screening, screening only on task behavior (i.e., removing participants whose win-stay lose-shift behavior was not above chance), screening only on self-report responses (i.e., removing only participants who responded incorrectly on one or more infrequency items), or both. The resulting pairwise behavior-symptom correlations following each screening procedure are presented in Figure \ref{fig:S09}. We note that we did not correct these correlation analyses for multiple comparisons, since our purpose was to demonstrate the extent of this issue across multiple behavioral measures and self-report symptoms. Any one of these correlations considered individually can be thought of as emulating a conventional analysis where fewer statistical tests would be performed.
@@ -960,6 +962,8 @@ The results in the replication study did corroborate the findings of the origina
 In summary, we conclude that the results of the original study are not limited to the task and self-report measures used in that study, or to online platforms at a particular point in time. Despite legitimate advances in data quality controls, online labor platforms still suffer from participants engaging in C/IE responding. Given \textit{a priori} uncertainty regarding the ability of task measures alone to screen such participants, we recommend also using infrequency items to detect inattentive responding on self-report measures. Finally, and most importantly, this second study strengthened the finding that C/IE responding is likely to result in mean-shifts in scores for symptom scales with overall low rates of endorsement, which are in turn capable of yielding spurious correlations between self-report and behavioral measures. The best safeguard against such spurious correlations continues to be screening in both domains. 
 
 \break
+
+\addcontentsline{toc}{subsection}{Supplementary Tables}
 \subsection*{Correspondence of screening measures}
 
 The following are the unthresholded results of the screening measure correspondence analyses.
@@ -1088,14 +1092,17 @@ The following are the unthresholded results of the correlation analyses between 
 \end{table}
 
 \break
-\section*{Appendix C: Attention checks in healthy and psychiatric patients}
+\addcontentsline{toc}{section}{Supplementary Materials C - Clinical Study}
+\section*{Supplementary Materials C: Attention checks in healthy and depressed patients}
 
 \subsection*{Background \& motivation}
 
 One concern with using attention checks for screening and exclusion of participants is that we might inadvertently introduce an overcontrol bias \cite{elwert2014endogenous-2}. That is, to the extent that C/IE responding reflects symptoms of psychopathology such as lack of motivation \cite{barch2015mechanisms-2}, avoidance of effort \cite{cohen2001impairments-2, culbreth2016negative-2}, or more frequent lapses of attention \cite{kane2016individual-2, robison2017neurotic-2}, it is plausible that rigorous screening of C/IE responding might lead to the differential exclusion of truly symptomatic participants. As a result, true associations between poor or different task performance and psychopathology symptoms could go undetected (type II error). The purpose of the below preliminary and exploratory study was to examine whether individuals with a confirmed psychiatric disorder were indeed more likely than healthy controls to fail attention checks embedded in self-report symptom scales.  
 
+\addcontentsline{toc}{subsection}{Methods}
 \subsection*{Methods}
 
+\addcontentsline{toc}{subsubsection}{Participants}
 \subsubsection*{Participants}
 
 Participants were recruited as part of two independent studies to investigate reward processing in individuals with and without a history of major depression and bipolar disorder (results of those studies not reported here). The studies were approved by the Institutional Review Board of Rutgers University (\#2019000738, \#2018000629), and all participants provided informed consent. Participants received monetary compensation for their time (rate USD \$20/hr), plus an incentive-compatible bonus based on task performance. 
@@ -1104,11 +1111,12 @@ In both studies, participants volunteered for a multi-session study conducted on
 
 Participants were recruited through clinician referral and online ads (i.e., Google ads, Craigslist) targeting individuals with a history of depression, anhedonia, apathy, and/or (hypo)mania symptoms. Participants were eligible for participation if they (1) had no history of head injury resulting in loss of consciousness for more than 20 minutes; (2) had not been diagnosed with intellectual disability; (3) had not been diagnosed with any neurological condition; (4) did not meet criteria for substance dependence (excluding nicotine) in the past 6 months; (5) had not received electroconvulsive therapy in the past 8 weeks; and (6) were aged between 18-65. For one of the two studies, participants were also required to score 6 or higher on the Wechsler Test of Adult Reading to be included in the study. Furthermore, clinical participants were eligible if they met criteria for a diagnosis of major depressive disorder and, if they were on medication, they had been on on stable treatment with this medication for at least the past 4 weeks. Non-clinical (control group) participants were eligible if they did not meet criteria for any psychiatric diagnosis and were not currently taking any medication used to treat psychiatric disorders.
 
-52 participants were recruited to participate in a behavioral experiment. Of these, 14 participated in both studies. In total, there was data from 20 sessions involving a healthy participant and data from 45 sessions involving a psychiatric participant. Of the 17 healthy participants, 6 identified as men and 11 identified as women. Of the 35 psychiatric patients, 6 identified as men, 27 identified as women, 1 identified as non-binary, and 1 preferred not to say. The healthy participants were 24.2 years old on average (sd = 3.5), whereas the psychiatric patients were 27.4 years old on average (sd = 10.6).
+52 participants were recruited to participate in a behavioral experiment. Of these, 14 participated in both studies. In total, there was data from 20 sessions involving a healthy participant and data from 45 sessions involving a patient with major depressive disorder. Of the 17 healthy participants, 6 identified as men and 11 identified as women. Of the 35 psychiatric patients, 6 identified as men, 27 identified as women, 1 identified as non-binary, and 1 preferred not to say. The healthy participants were 24.2 years old on average (sd = 3.5), whereas the psychiatric patients were 27.4 years old on average (sd = 10.6).
 
+\addcontentsline{toc}{subsubsection}{Attention checks}
 \subsubsection*{Infrequency items}
 
-To measure and compare C/IE responding between healthy and psychiatric participants, we used two sets of attention checks. Each set was composed of three infrequency items and one instructed item. Participants were assigned one or the other set. The six infrequency items were:
+To measure and compare C/IE responding between healthy and MDD patients, we used two sets of attention checks. Each set was composed of three infrequency items and one instructed item. Participants were assigned one or the other set. The six infrequency items were:
 
 \begin{enumerate}
     \item Worrying too much about the 1977 Olympics. (Expected response: \textit{Not at all})
@@ -1119,9 +1127,10 @@ To measure and compare C/IE responding between healthy and psychiatric participa
     \item I am generally able to remember my own name. (Expected response: \textit{True})
 \end{enumerate}
 
+\addcontentsline{toc}{subsubsection}{Analysis}
 \subsubsection*{Analysis}
 
-Of primary interest here was whether psychiatric patients fail infrequency item attention checks at equal or at greater rates than healthy participants. To test this, we conducted Bayesian hypothesis testing using Bayes factors \cite{harms2018making}. Specifically, we defined three competing models:
+Of primary interest here was whether MDD patients fail infrequency item attention checks at equal or at greater rates than healthy participants. To test this, we conducted Bayesian hypothesis testing using Bayes factors \cite{harms2018making}. Specifically, we defined three competing models:
 
 \begin{itemize}
     \item $M_0: \text{Binom}(N_1, p), \text{Binom}(N_2, p)$  
@@ -1129,17 +1138,18 @@ Of primary interest here was whether psychiatric patients fail infrequency item 
     \item $M_2: \text{Binom}(N_1, p + \delta), \text{Binom}(N_2, p - \delta)$  
 \end{itemize}
 
-where $N_1$ and $N_2$ are the observed number of healthy and psychiatric participants, respectively; $p$ is the latent probability of a participant failing one or more attention checks; and $\delta$ is an offset parameter specifying the hypothesized difference in failure rates between groups. Thus, $M_0$ assumes equal rates of failures between healthy and psychiatric participants, whereas $M_1$ and $M_2$  assume greater and lower rates, respectively, for psychiatric participants compared to healthy participants. The common latent probability, $p$, was set to the observed average rate across the two groups. The offset, $\delta$, was set to 0.05. This value was selected because it signifies a difference in portions of $\Delta p = 0.1$, corresponding to a small effect for a difference in proportions test ($h = 0.2$; \cite{cohen2013statistical}). 
+where $N_1$ and $N_2$ are the observed number of healthy and MDD participants, respectively; $p$ is the latent probability of a participant failing one or more attention checks; and $\delta$ is an offset parameter specifying the hypothesized difference in failure rates between groups. Thus, $M_0$ assumes equal rates of failures between healthy and MDD participants, whereas $M_1$ and $M_2$ assume greater and lower rates, respectively, for MDD participants compared to healthy participants. The common latent probability, $p$, was set to the observed average rate across the two groups. The offset, $\delta$, was set to 0.05. This value was selected because it signifies a difference in portions of $\Delta p = 0.1$, corresponding to a small effect for a difference in proportions test ($h = 0.2$; \cite{cohen2013statistical}). 
 
+\addcontentsline{toc}{subsection}{Results}
 \subsection*{Results}
 
-In total, 16 of 65 (24.6\%) sessions involved one or more failed attention checks. Interestingly, the overall proportion of flagged sessions was similar to that observed for the original study. Subdivided by group, 6 of 20 healthy participant sessions (30\%) and 10 of 45 psychiatric participant sessions (22\%) were flagged for C/IE responding. Unsurprisingly, given the modest sample size, the difference between the two proportions was not significantly different from zero (two-tailed, two-sample proportions test: $z(63)=0.672$, $p=0.502$, $h=0.178$, 95\% CI = [-0.157, 0.312]). Across the six infrequency items, the average failure rate was 8.5\% (range: 0.0\% -- 19.7\%). In contrast, no participant failed either instructed item. This result further corroborates previous research, which has found that instructed items are poor measures of C/IE responding \cite{barends2019noncompliant-2, thomas2017validity-2, hauser2016attentive-2}.   
+In total, 16 of 65 (24.6\%) sessions involved one or more failed attention checks. Interestingly, the overall proportion of flagged sessions was similar to that observed for the original study. Subdivided by group, 6 of 20 healthy participant sessions (30\%) and 10 of 45 MDD participant sessions (22\%) were flagged for C/IE responding. Unsurprisingly, given the modest sample size, the difference between the two proportions was not significantly different from zero (two-tailed, two-sample proportions test: $z(63)=0.672$, $p=0.502$, $h=0.178$, 95\% CI = [-0.157, 0.312]). Across the six infrequency items, the average failure rate was 8.5\% (range: 0.0\% -- 19.7\%). In contrast, no participant failed either instructed item. This result further corroborates previous research, which has found that instructed items are poor measures of C/IE responding \cite{barends2019noncompliant-2, thomas2017validity-2, hauser2016attentive-2}.   
 
-Next, we computed the Bayes factor for each pair of candidate models. A model assuming equal rates of failure between healthy and psychiatric participants was 2.88 times more likely than the model assuming greater rates for psychiatric patients. In turn, a model assuming lower rates of failure for psychiatric patients was 1.27 times more likely than the model assuming equal rates. Finally, a model assuming lower rates of failure for psychiatric patients was 3.65 times more likely than the model assuming higher rates for psychiatric patients. Only the final comparison exceeds the cutoff value of 3, which is conventionally treated as the minimal amount of evidence required to treat a model comparison as meaningful.  
+Next, we computed the Bayes factor for each pair of candidate models. A model assuming equal rates of failure between healthy and MDD participants was 2.88 times more likely than the model assuming greater rates for MDD patients. In turn, a model assuming lower rates of failure for MDD patients was 1.27 times more likely than the model assuming equal rates. Finally, a model assuming lower rates of failure for MDD patients was 3.65 times more likely than the model assuming higher rates for MDD patients. Only the final comparison exceeds the cutoff value of 3, which is conventionally treated as the minimal amount of evidence required to treat a model comparison as meaningful.  
 
 \subsection*{Discussion}
 
-Here we sought to examine whether actual psychiatric patients were equally or more likely to fail infrequency items than healthy controls in settings similar to those experienced by online participants (i.e., completing an experiment online, on a computer in one's home or otherwise chosen environment). Although the small sample precludes any definitive conclusion, it is noteworthy that the model least consistent with the data was the one where psychiatric patients were more likely to fail infrequency-item attention checks. Indeed, a model in which healthy controls failed attention checks at a greater rate than patients was credibly preferred to the alternative. This preliminary finding may reflect differences in motivation between patients and controls for participating in psychiatric research. Indeed, whereas healthy controls may be primarily motivated to participate for monetary purposes, patients may be motivated to participate to further scientific research that may ultimately benefit them (or others suffering from the same conditions). That is, patients may have more ``stakes in the game,'' and may therefore be more motivated to provide higher-quality responses. Regardless, further research is required to examine whether this preliminary finding holds in larger samples and other testing contexts. 
+Here we sought to examine whether actual MDD patients were equally or more likely to fail infrequency items than healthy controls in settings similar to those experienced by online participants (i.e., completing an experiment online, on a computer in one's home or otherwise chosen environment). Although the small sample precludes any definitive conclusion, it is noteworthy that the model least consistent with the data was the one where MDD patients were more likely to fail infrequency-item attention checks. Indeed, a model in which healthy controls failed attention checks at a greater rate than patients was credibly preferred to the alternative. This preliminary finding may reflect differences in motivation between patients and controls for participating in psychiatric research. Indeed, whereas healthy controls may be primarily motivated to participate for monetary purposes, patients may be motivated to participate to further scientific research that may ultimately benefit them (or others suffering from the same conditions). That is, patients may have more ``stakes in the game,'' and may therefore be more motivated to provide higher-quality responses. Regardless, further research is required to examine whether this preliminary finding holds in larger samples and other testing contexts. 
 
 \printbibliography[title=Supplementary References]
 
